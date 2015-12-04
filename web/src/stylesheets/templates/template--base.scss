@@ -1,2 +1,40 @@
 @import "../config/base-import";
 @import "../libs/normalize";
+
+header, footer {
+  height: 50px;
+  .bar1 {
+    height: 100px;
+  }
+  &.bar2 {
+    height: 100px;
+  }
+  >.bar3 {
+    height: 100px;
+  }
+  .bar4 & {
+    height: 100px;
+  }
+  &:before {
+    height: 100px;
+  }
+  h1 {
+    .bar5 & {
+      height: 10px;
+    }
+  }
+
+  & + & {
+    margin: 10px;
+  }
+
+  @include breakpoint($bp-tablets-landscape) {
+    height: 70px;
+  }
+
+  @include breakpoint($bp-desktop) {
+    height: 100px;;
+
+  }
+
+}

@@ -1,0 +1,50 @@
+
+@import "../config/base-import";
+
+/*
+	Partial -	Messages
+*/
+
+.message-container {
+  margin: 10px 0;
+  clear: both;
+
+  &.empty {
+    display: none;
+  }
+}
+
+div.message {
+  @include style-message-info;
+
+  & + & {
+    margin-top: 5px;
+  }
+
+  &.error {
+    @include style-message-error;
+  }
+
+  &.success {
+    @include style-message-success;
+  }
+
+  &.warning {
+    @include style-message-warning;
+  }
+
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .miwt-collapsable-content {
+    @include style-popup-box();
+    overflow-y: auto;
+    max-height: 500px;
+  }
+}

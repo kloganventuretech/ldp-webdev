@@ -31,6 +31,7 @@ $color-dark-blue: #043665;
 $color-dark-green: #145432;
 
 $font-arial: Arial, Verdana, sans-serif;
+$font-roboto: Roboto, $font-arial;
 $font-monospace: monospace;
 
 $font-default-color: $color-black;
@@ -41,6 +42,7 @@ $html-entity-nbsp: "\a0";
 
 $bp-mobile-landscape: (min-width 480px);
 $bp-tablets-portrait: (min-width 768px);
+$bp-tablets-only: (min-width 768px) (min-width 1024px);
 $bp-tablets-landscape: (min-width 1024px);
 $bp-desktop: (min-width 1280px);
 $bp-desktop-wide: (min-width: 1400px);
