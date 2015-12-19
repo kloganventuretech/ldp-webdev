@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var rename = require('gulp-rename');
 var minifyCss = require('gulp-minify-css');
 var autoprefixer = require('gulp-autoprefixer');
 var clip = require('gulp-clip-empty-files');
@@ -21,7 +22,11 @@ gulp.task('styles:build', ['styles:clean'], function() {
 			browsers: ['> 1%', 'last 2 versions', 'ie >= 9'],
 			cascade: false
 		}))
-		.pipe(gulp.dest('./web/build/stylesheets'));
+		.pipe(gulp.dest('./web/build/stylesheets'))
+		.pipe(minifyCss())
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(gulp.dest('./web/build/stylesheets'))
+		;
 });
 gulp.task('styles:clean', function(callback) {
 	del(['./web/build/stylesheets']).then(function(data) {

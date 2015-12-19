@@ -1,6 +1,6 @@
 
 @import "../config/base-import";
-
+@import "../mixins/styles";
 /*
 	Partial -	Messages
 */
@@ -27,6 +27,10 @@ div.message {
 
   &.success {
     @include style-message-success;
+  }
+
+  &.important {
+    @include style-message-warning;
   }
 
   &.warning {

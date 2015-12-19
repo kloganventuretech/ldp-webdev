@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="LDP Live (Web)">
+    <serverData>
+      <paths name="LDP Live (Web)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="Stylesheets/Entropy/pages" local="$PROJECT_DIR$/web/build/stylesheets/pages" web="/Stylesheets/Entropy/pages" />
+            <mapping deploy="Stylesheets/Entropy/templates" local="$PROJECT_DIR$/web/build/stylesheets/templates" web="/Stylesheets/Entropy/templates" />
+            <mapping deploy="Stylesheets/Entropy/FlatLab" local="$PROJECT_DIR$/web/FlatLab/stylesheets" web="/Stylesheets/Entropy/FlatLab" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

@@ -14,6 +14,8 @@ $color-grey-33: #333;
 $color-grey-1b: #1b1b1b;
 $color-black: #000;
 
+$color-cloud-grey: #eee;
+
 $color-youtube-black: $color-grey-1b;
 $color-facebook-blue: #3b579d;
 
@@ -51,3 +53,25 @@ $constraint-max-width: 980px;
 
 $spacing-mobile-horizontal: 20px;
 $spacing-between-boxes: 20px;
+
+
+$font-open-sans-bold: Open Sans Bold;
+
+$font-glyph-lib: FontAwesome;
+
+$html-entity-error: '\f071';
+$html-entity-info: '\f129';
+$html-entity-success: '\f00c';
+$html-entity-fixme: '\f0ad';
+
+$color-success-light: #dff0d8;
+$color-success-dark: #3c763d;
+
+$color-info-light: #dff0d8;
+$color-info-dark: #31708f;
+
+$color-warning-light: #faf2cc;
+$color-warning-dark: #8a6d3b;
+
+$color-error-light: #ebcccc;
+$color-error-dark: #a94442;
