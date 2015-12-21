@@ -1,0 +1,48 @@
+// Based on Font Squirrel generated files
+@mixin fontFace($font-name, $file-path, $file-name) {
+	$font-file-path: $path-fonts + $file-path + '/' + $file-name;
+
+	@font-face {
+		font-family: $font-name;
+		src: url($font-file-path + '.eot');
+		src: url($font-file-path + '.eot?#iefix') format('embedded-opentype'),
+		//url($font-file-path + '.woff2') format('woff2'),
+		url($font-file-path + '.woff') format('woff'),
+		url($font-file-path + '.ttf') format('truetype');
+		//url($font-file-path + '.svg#' + $font-name) format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+}
+
+@function themeDesignResourceUrl($path) {
+	@return url($path-theme + $path);
+}
+
+@mixin resetMenu() {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+@mixin anchorUnderlineHover() {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+@mixin clearfix() {
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin textLikeInputs() {
+	input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=submit]):not([type=reset]):not([type=button]) {
+		@content;
+	}
+}

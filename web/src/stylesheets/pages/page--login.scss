@@ -1,18 +1,15 @@
-//@import "../../../../bower_components/bootstrap/scss/variables";
-//@import "../../../../bower_components/bootstrap/scss/mixins";
-//@import "../../../../bower_components/bootstrap/scss/buttons";
-/*login page*/
+@import "../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../bower_components/bootstrap/scss/buttons";
 
 .login-body {
   background-color: #f1f2f7;
 }
 
-.form-signin {
-  max-width: 330px;
-  margin: 100px auto 0;
-  background: #fff;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
+.action-login {
+  @extend .btn-block;
+  @extend .btn-lg;
+  @extend .btn-login;
 }
 
 .form-signin .title {
@@ -57,6 +54,7 @@
   border: 1px solid #eaeaea;
   box-shadow: none;
   font-size: 12px;
+	padding:2px 4px;
 }
 
 .form-signin .action-login {
@@ -127,7 +125,7 @@
   background-color: #f1f2f7;
 }
 .form-signin, .form-signout {
-  max-width: 330px;
+  max-width: 375px;
   margin: 100px auto 0;
   background: #fff;
   border-radius: 5px;

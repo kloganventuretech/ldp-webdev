@@ -19,7 +19,7 @@ gulp.task('styles:build', ['styles:clean'], function() {
 			outputStyle: 'expanded'
 		}))
 		.pipe(autoprefixer({
-			browsers: ['> 1%', 'last 2 versions', 'ie >= 9'],
+			browsers: ['> 1%', 'last 2 versions', 'ie > 9'],
 			cascade: false
 		}))
 		.pipe(gulp.dest('./web/build/stylesheets'))

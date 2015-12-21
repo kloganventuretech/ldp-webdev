@@ -1,3 +1,14 @@
+$brand-primary:                  #528E4D;
+$btn-primary-color:              #fff;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             darken($brand-primary, 0.75);
+
+$btn-secondary-color:            $brand-primary;
+$btn-secondary-bg:               #fff;
+$btn-secondary-border:           $brand-primary;
+
+@import "../../../../bower_components/bootstrap/scss/variables";
+
 $color-white: #fff;
 $color-grey-f9: #f9f9f9;
 $color-grey-f2: #f2f2f2;
@@ -14,7 +25,18 @@ $color-grey-33: #333;
 $color-grey-1b: #1b1b1b;
 $color-black: #000;
 
-$color-cloud-grey: #eee;
+$color-white: #fff;
+$color-almost-white: #f7f7f7;
+$color-smokey-white: #f2f2f2;
+$color-cloud-grey: #e7e7e7;
+$color-lighter-grey: #ddd;
+$color-light-grey: #ccc;
+$color-grey: #aaa;
+$color-dark-grey: #999;
+$color-darker-grey: #777;
+$color-light-charcoal: #555;
+$color-charcoal: #333;
+$color-black: #000;
 
 $color-youtube-black: $color-grey-1b;
 $color-facebook-blue: #3b579d;
@@ -31,10 +53,12 @@ $color-dark-red: #7a0000;
 $color-yellow: #f5e800;
 $color-dark-blue: #043665;
 $color-dark-green: #145432;
+$color-cornsilk: cornsilk;
 
-$font-arial: Arial, Verdana, sans-serif;
-$font-roboto: Roboto, $font-arial;
+$font-roboto: Roboto, $font-family-sans-serif;
 $font-monospace: monospace;
+$font-arial: $font-family-sans-serif;
+$font-open-sans: Open Sans, $font-arial;
 
 $font-default-color: $color-black;
 $font-default-size: 13px;
