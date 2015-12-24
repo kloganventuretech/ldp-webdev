@@ -12,7 +12,9 @@
 		top: 100%;
 
 		ul {
-			@include resetMenu;
+			padding:0;
+			margin:0;
+			list-style: none;
 		}
 
 		label {
@@ -93,6 +95,7 @@
 		background-color: $color-white;
 		padding: 5px 8px;
 		transition: background-color 200ms;
+		text-align: start;
 
 		//TODO underscore fix for HTML generation
 		&.action_column,

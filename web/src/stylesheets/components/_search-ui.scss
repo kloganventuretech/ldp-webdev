@@ -7,7 +7,17 @@
 /* Form Elements
    ========================================================================== */
 @import "../config/base-vars";
+@import "../mixins/general-mixins";
+@import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
+@import "../../../../bower_components/bootstrap/scss/mixins/buttons";
 
+.search > .menu-component,
+.search-wrapper > .menu-component{
+	float:right;
+	margin-right:25px;
+	@include bootstrapButton;
+	@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
 
 
 /* Search Bar
@@ -17,12 +27,6 @@
 	padding: 10px;
 	//background-color: #F9F9F7;
 	//border: 1px dotted #CBC8B9;
-}
-
-.search-bar .constraints,
-.search-bar .result-limit {
-	display: inline-block;
-	padding: 10px;
 }
 
 .search-bar .constraint {
@@ -44,6 +48,10 @@
 /* Actions
    ========================================================================== */
 .search-wrapper .entity-actions,
+.search .entity-actions{
+	float:right;
+}
+.search-wrapper .result-actions,
 .search-wrapper .result-actions {
 	text-align: right;
 	display: block;
@@ -80,6 +88,7 @@
 //	color: #5d5636;
 //}
 
+.search .miwt-table tbody tr:hover td,
 .search-wrapper .miwt-table tbody tr:hover td {
 	background-color: #feffdd;
 }
@@ -97,6 +106,7 @@
 //	background-color: #F9F9F7;
 //}
 
+.search td.actions-col,
 .search-wrapper td.actions-col {
 	width: 1%;
 	white-space: nowrap;
@@ -107,3 +117,7 @@
 //	text-align: right;
 //	padding-right: 10px;
 //}
+
+.search {
+	@include clearfix;
+}

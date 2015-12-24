@@ -1,13 +1,15 @@
-$brand-primary:                  #528E4D;
+$brand-primary:                  #45A73C;
 $btn-primary-color:              #fff;
 $btn-primary-bg:                 $brand-primary;
-$btn-primary-border:             darken($brand-primary, 0.75);
+$btn-primary-border:             darken($brand-primary, 5%);
 
 $btn-secondary-color:            $brand-primary;
 $btn-secondary-bg:               #fff;
 $btn-secondary-border:           $brand-primary;
 
 @import "../../../../bower_components/bootstrap/scss/variables";
+
+$header-bg: #A8ABBA;
 
 $color-white: #fff;
 $color-grey-f9: #f9f9f9;
