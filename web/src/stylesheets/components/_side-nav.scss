@@ -156,6 +156,7 @@
 #nav-accordion .menu li.mi .mia:focus:before,
 #nav-accordion .menu li.mi .mia.active:before{
 	color: #FF6C60;
+	min-width: 15px;
 }
 #nav-accordion .menu .mi > .mia:before{
 	font-family: FontAwesome;

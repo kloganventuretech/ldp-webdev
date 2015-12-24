@@ -1,4 +1,5 @@
-.field span.label {
+.field span.label,
+.top-menu a.dropdown{
 	color: #444;
 	font-size: 90%;
 }
@@ -48,17 +49,28 @@ header {
 }
 
 .top-menu {
+	> li {
+		float: left;
+		text-align: center;
+		margin-top: 3px;
+	}
+
 	> li.link {
 		margin-right: 15px;
 		margin-bottom: 7px;
 	}
-	> li.link > .fa {
-		display: block;
+
+	> li.link > .fa,
+	> li.dropdown a.dropdown-toggle {
+		display: inline-block;
 		color: #444;
 		font-size: 85%;
 		border: 1px solid white;
 		padding: 6px;
 		border-radius: 4px;
+	}
+	.dropdown .welcome {
+		display: inherit;
 	}
 
 	a.fa::before {
@@ -66,7 +78,7 @@ header {
 		font-size: 1.5rem;
 	}
 
-	a span {
+	li.link a span {
 		display: inline-block;
 		margin-top: 5px;
 	}
@@ -82,6 +94,8 @@ header {
 	padding-right: 15px;
 	margin-top: 14px;
 	.fa-bars {
+		min-width: 20px;
+		visibility: hidden;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 20px;
@@ -89,4 +103,7 @@ header {
 			color: darken(#797979, 20%);
 		}
 	}
+}
+.has-side-menu .sidebar-toggle-box .fa-bars{
+	visibility: visible;
 }
