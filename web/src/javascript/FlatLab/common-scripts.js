@@ -98,7 +98,7 @@ jQuery(function () {
 	}
 
 
-	$('form.miwt-form').each(function(idx, el) {
+	/*$('form.miwt-form').each(function(idx, el) {
 		var form = el;
 		form._ldp_cleanup = [];
 		form.submit_options = {
@@ -128,7 +128,7 @@ jQuery(function () {
 
 			}
 		};
-	});
+	});*/
 
 
 });
