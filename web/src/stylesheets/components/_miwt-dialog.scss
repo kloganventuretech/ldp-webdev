@@ -2,7 +2,7 @@
 @import "../../../../bower_components/bootstrap/scss/mixins";
 @import "../../../../bower_components/bootstrap/scss/mixins/buttons";
 
-div.dialog {
+div.window.dialog /*specificity*/ {
 	padding: 0;
 	background-color: $modal-content-bg;
 	background-clip: padding-box;
@@ -14,6 +14,7 @@ div.dialog {
 
 	.titlebar {
 		background-color: $modal-content-bg;
+		height: 70px;
 	}
 
 	td.activewindowtitle {
@@ -23,11 +24,13 @@ div.dialog {
 		margin: 0;
 		line-height: 1.5;
 		font-size: 1.5rem;
+		font-weight: inherit;
 		color: $gray-dark;
-
+		height: auto;
 	}
 	td.windowbuttons {
-		height:auto;
+		color: inherit;
+		height: auto;
 		border-bottom: 1px solid $modal-header-border-color;
 		.btn { // assuming close - only 1 button currently
 			background-color: $modal-content-bg;
@@ -39,6 +42,11 @@ div.dialog {
 		padding:15px;
 		border:none;
 		background-color: $color-white;
+		color:inherit;
+		bottom:initial;
+		left:initial;
+		right:initial;
+		width: 100%;
 		.prop {
 			margin-bottom: 1rem;
 			label {
@@ -48,7 +56,8 @@ div.dialog {
 		}
 	}
 	.actions {
-		text-align: right;
+		width: 100%;
+		text-align: center;
 		border-top: 1px #ccc solid;
 		padding: $modal-inner-padding;
 		border-top: 1px solid $modal-footer-border-color;

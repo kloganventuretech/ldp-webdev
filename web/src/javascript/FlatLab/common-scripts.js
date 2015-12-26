@@ -83,7 +83,15 @@ jQuery(function () {
 
 	$('.popovers').popover();
 
-
+// select2
+	var $select = $('select');
+	if ($select.length && !$select.closest('tr[data-dnd-source-def]').length) {
+		$select
+			.select2({minimumResultsForSearch:10})
+			.addClass("select2-init")
+			.filter('[data-features~="watch"]')
+			.on('change', miwt.observerFormSubmit);
+	}
 
 // custom bar chart
 

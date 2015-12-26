@@ -2,10 +2,19 @@
 @import "../components/messages";
 @import "../components/top-menu";
 @import "../components/side-nav";
+@import "../components/miwt";
 @import "../components/miwt-tables";
 @import "../components/miwt-menu";
 @import "../components/miwt-dialog";
 @import "../components/tabs";
 @import "../components/search-ui";
+@import "../components/prop-ui";
 @import "../components/actions";
 
+
+.update-password-dialog {
+	width: 40rem !important;
+	.windowcontent {
+		text-align: center;
+	}
+}

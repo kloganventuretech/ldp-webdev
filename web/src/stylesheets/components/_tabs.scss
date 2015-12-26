@@ -23,20 +23,18 @@
 				display: block;
 				padding: 5px 10px;
 			}
-
+			&:hover {
+				a {
+					color: $color-light-charcoal;
+					background-color: $color-almost-white;
+				}
+			}
 			&.tab-selected {
 				border-bottom-color: $color-bg-selected;
 
 				a {
 					color: $color-fg;
 					background-color: $color-bg-selected;
-				}
-			}
-
-			&:hover {
-				a {
-					color: $color-light-charcoal;
-					background-color: $color-almost-white;
 				}
 			}
 		}
