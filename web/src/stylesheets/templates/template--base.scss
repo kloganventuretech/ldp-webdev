@@ -9,6 +9,7 @@
 @import "../components/tabs";
 @import "../components/search-ui";
 @import "../components/prop-ui";
+@import "../components/file-chooser";
 @import "../components/actions";
 
 
@@ -17,4 +18,9 @@
 	.windowcontent {
 		text-align: center;
 	}
+}
+
+.select2-container span.select2-selection--multiple,
+.select2-container--default span.select2-selection--multiple {
+	display: inline-block;
 }

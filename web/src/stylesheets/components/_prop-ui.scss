@@ -91,11 +91,15 @@
 			border: 1px solid red;
 		}
 
-		.prop-viewer,
-		.prop-editor {
-			padding: .5rem;
+	}
+	.prop-viewer,
+	.prop-editor {
+		padding: .5rem;
+	}
+	.prop-viewer{
+		.actions.top{
+			display:none;
 		}
-		
 	}
 
 	
