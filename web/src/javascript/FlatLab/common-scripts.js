@@ -1,14 +1,16 @@
 /*---LEFT BAR ACCORDION----*/
 $(function () {
-    $('#nav-accordion ul.menu').dcAccordion({
-        eventType: 'click',
-        autoClose: true,
-        saveState: true,
-        disableLink: true,
-        speed: 'slow',
-        showCount: false,
-        autoExpand: true
-    });
+    try {
+        $('#nav-accordion ul.menu').dcAccordion({
+            eventType: 'click',
+            autoClose: true,
+            saveState: true,
+            disableLink: true,
+            speed: 'slow',
+            showCount: false,
+            autoExpand: true
+        });
+    }catch(e){}
 });
 
 // right slidebar

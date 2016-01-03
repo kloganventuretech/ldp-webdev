@@ -102,5 +102,14 @@
 		}
 	}
 
+	.prop-editor{
+		.prop {
+			input[type=text],
+			input[type=email],
+			textarea {
+				min-width: 20rem;
+			}
+		}
+	}
 	
 }
