@@ -1,4 +1,5 @@
 @import "../config/base-vars";
+@import "../../../../bower_components/bootstrap/scss/mixins/buttons";
 
 /* ==========================================================================
    Basic Styles for Property Editor/Viewer
@@ -108,6 +109,10 @@
 			input[type=email],
 			textarea {
 				min-width: 20rem;
+			}
+
+			.actions {
+				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 			}
 		}
 	}
