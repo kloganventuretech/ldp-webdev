@@ -14,9 +14,9 @@ $(function () {
 });
 
 // right slidebar
-$(function () {
+/*$(function () {
     $.slidebars();
-});
+});*/
 
 jQuery(function () {
 
@@ -56,6 +56,7 @@ jQuery(function () {
     });
 
 // custom scrollbar
+/*
     $("#nav-accordion").niceScroll({
         styler: "fb",
         cursorcolor: "#e8403f",
@@ -76,6 +77,7 @@ jQuery(function () {
         cursorborder: '',
         zindex: '1000'
     });
+*/
 
 // widget tools
 

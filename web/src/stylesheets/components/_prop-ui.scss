@@ -116,5 +116,14 @@
 			}
 		}
 	}
-	
+
+	.picture-editor .drop-zone {
+		text-align: left;
+	}
+	.prop.picture {
+		img {
+			border-radius: 100%;
+			max-height: 200px;
+		}
+	}
 }
