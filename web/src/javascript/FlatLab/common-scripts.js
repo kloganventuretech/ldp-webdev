@@ -97,10 +97,6 @@ jQuery(function () {
 	});
 
 
-//    tool tips
-
-	$('.tooltips').tooltip();
-
 //    popovers
 
 	$('.popovers').popover();
@@ -143,6 +139,20 @@ jQuery(function () {
 
 	handleDataDownload();
 
+	function enableTooltips(ctx){
+		var $ctx = $(ctx || document);
+		$ctx.find(".tooltips").each(function (idx, el) {
+			var $el = $(el);
+			if ($el.hasClass("menu-component")) {
+				$el.find("a[title]").tooltip();
+			} else {
+				$el.tooltip();
+			}
+		});
+	}
+
+	enableTooltips();
+
 
 	$('form.miwt-form').each(function (idx, form) {
 		form.submit_options = {
@@ -154,6 +164,7 @@ jQuery(function () {
 				$.each(data, function(idx, d) {
 					initSelect2(d.node);
 					handleDataDownload(d.node);
+					enableTooltips(d.node);
 				});
 			},
 			postUpdate: function () {

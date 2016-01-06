@@ -1,0 +1,48 @@
+@import "../config/base-vars";
+
+.inlinewindow {
+	.prop-editor {
+		.schedule {
+			.repeat {
+				display: inline-block;
+				margin: 0;
+			}
+			.dow span.rtb,
+			.dow span.ctb {
+				display: inline;
+				.tbl {
+					width: 30px;
+					overflow: hidden;
+					display: inline-block;
+					margin: 0;
+					padding: 0;
+					font-family: monospace;
+					font-size: 16px;
+					vertical-align: bottom;
+					user-select: none;
+				}
+			}
+			.dow-wom-wrapper .actions {
+				display: block;
+				text-align: right;
+				margin-top: -4rem;
+			}
+
+			.dow-wom {
+				border: 1px transparent dotted;
+				padding: 0 4px;
+			}
+			.dow-wom:hover {
+				border: 1px #aaa dotted;
+			}
+		}
+		.repeat-interval-wrapper {
+			label {
+				display: inline-block;
+				padding-right: 4px;
+			}
+			display: inline-block;
+
+		}
+	}
+}

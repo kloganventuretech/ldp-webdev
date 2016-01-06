@@ -12,7 +12,6 @@
 .inlinewindow {
 	.prop-wrapper {
 		max-width: 50rem;
-		margin-left: 5rem;
 
 		input,
 		select,
@@ -55,15 +54,17 @@
 			font-size: 16px;
 			margin: 10px 0;
 		}
-		.prop span.ctb {
+		span.ctb {
 			display: block;
 		}
 		.prop > label {
 			display: block;
 			font-weight: bold;
+			user-select: none;
 		}
 		.prop > label.tbl {
 			display: inline-block;
+			padding-right: 4px;
 		}
 		.prop > .val {
 			display: inline-block;
@@ -116,9 +117,16 @@
 			}
 		}
 	}
-
-	.picture-editor .drop-zone {
-		text-align: left;
+	.user-picture.mode-view{
+		max-width:400px;
+		box-sizing: content-box;
+	}
+	.resource-picture.mode-view {
+		max-width:350px;
+		box-sizing: content-box;
+	}
+	.picture-editor .actions.bottom {
+		text-align: center;
 	}
 	.prop.picture {
 		img {

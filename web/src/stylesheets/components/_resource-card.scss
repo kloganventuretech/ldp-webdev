@@ -26,7 +26,8 @@
 
 
 .resource-name {
-	margin: 0 0 $card-spacer-y;
+	font-size:1.75rem;
+	margin: 0;
 	text-align: center;
 	padding: $card-spacer-y $card-spacer-x;
 	background-color: $card-cap-bg;
@@ -35,6 +36,13 @@
 	&:first-child {
 		@include border-radius($card-border-radius-inner $card-border-radius-inner 0 0);
 	}
+}
+
+.resource-icon {
+	margin-bottom: $card-spacer-y;
+	border-top: 1px #ddd solid;
+	border-bottom: 1px #777 solid;
+	text-align: center;
 }
 
 .resource-description {
@@ -91,7 +99,6 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-between;
 
 	.resource{
 		position:relative;
