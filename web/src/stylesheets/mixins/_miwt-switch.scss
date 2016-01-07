@@ -2,14 +2,14 @@
 
 /** miwt checkbox switch. */
 
-@mixin checkboxSwitch() {
+@mixin checkboxSwitch($anchor-right) {
 	input[type=checkbox] {
 		position: absolute;
 		margin-left: -9999px;
 		visibility: hidden;
 	}
 	[data-switchon="true"] {
-		+ .tbl {
+		~ .tbl {
 			&:before {
 				background-color: $btn-primary-bg;
 			}
@@ -19,8 +19,13 @@
 		}
 	}
 	.tbl:not(:empty) {
-		text-indent: -60px;
-		margin-left: 60px;
+		@if $anchor-right {
+			text-indent: 60px;
+			overflow: visible;
+		} @else {
+			text-indent: -60px;
+			margin-left: 60px;
+		}
 	}
 	.tbl {
 		display: block;
