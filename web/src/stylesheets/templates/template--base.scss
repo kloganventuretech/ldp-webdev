@@ -21,7 +21,13 @@
 	}
 }
 
+.select2-container {
+	font-size: .98rem;
+}
 .select2-container span.select2-selection--multiple,
 .select2-container--default span.select2-selection--multiple {
 	display: inline-block;
+}
+.select2-selection--multiple .select2-search__field {
+	width: 100% !important;
 }

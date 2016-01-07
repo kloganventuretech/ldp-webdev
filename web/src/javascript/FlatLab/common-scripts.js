@@ -111,7 +111,11 @@ jQuery(function () {
 
 			//noinspection JSUnresolvedVariable
 			$select
-				.select2({minimumResultsForSearch: 10})
+				.select2({
+					minimumResultsForSearch: 10,
+					dropdownAutoWidth : true,
+					width: 'resolve'
+				})
 				.addClass(SELECT2_INIT)
 				.filter('[data-features~="watch"]')
 				.on('change', miwt.observerFormSubmit);
@@ -138,6 +142,22 @@ jQuery(function () {
 	}
 
 	handleDataDownload();
+
+	function switchSupport(ctx){
+		var $ctx = $(ctx || document);
+		$ctx.find("input[type=checkbox]").each(function (idx, el) {
+			if(!el.id)
+				return;
+			var otherInput = el.form['_t' + el.id];
+			if(!otherInput || otherInput.hasAttribute('data-switchon'))
+				return;
+			otherInput.setAttribute("data-switchon", el.checked);
+			el.addEventListener('change', function(){
+				otherInput.setAttribute("data-switchon", this.checked);
+			});
+		});
+	}
+
 
 	function enableTooltips(ctx){
 		var $ctx = $(ctx || document);

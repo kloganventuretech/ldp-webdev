@@ -118,8 +118,11 @@
 		}
 	}
 	.user-picture.mode-view{
-		max-width:400px;
+		max-width:325px;
 		box-sizing: content-box;
+		img {
+			max-width:325px;
+		}
 	}
 	.resource-picture.mode-view {
 		max-width:350px;
