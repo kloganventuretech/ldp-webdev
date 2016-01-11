@@ -1,3 +1,50 @@
+@import "../config/base-vars";
+
+.dropdown-menu.extended {
+	max-width: 300px;
+	min-width: 125px;
+	top: 42px;
+	padding: 0;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.176);
+	border: none;
+	border-radius: 4px;
+	text-align: center;
+
+	li a {
+		color:$menu-item-inactive;
+		font-size: 12px;
+		list-style: none;
+		padding: 15px 10px;
+		display: inline-block;
+	}
+
+	li a:hover {
+		background-color: #F7F8F9;
+		color: #2E2E2E;
+	}
+
+	> li:last-child {
+		text-align: center;
+		width: 100%;
+		background: #a9d96c;
+		border-radius: 0 0 3px 3px;
+		color: #a4abbb;
+		border-bottom: none;
+	}
+	> li:last-child > a {
+		width: 100%;
+		color: #fff;
+		border-bottom: none;
+		text-transform: uppercase;
+	}
+	> li:last-child > a:hover{
+		color: #444;
+	}
+}
+
+
+
+
 .field span.label,
 .top-menu a.dropdown{
 	color: #444;
@@ -33,7 +80,7 @@ a.logo:hover, a.logo:focus {
 }
 
 a.logo span {
-	color: #FF6C60;
+	color: $menu-item-active;
 }
 
 header {
@@ -60,14 +107,21 @@ header {
 		margin-bottom: 7px;
 	}
 
-	> li.link > .fa,
+	> li > .fa,
 	> li.dropdown a.dropdown-toggle {
 		display: inline-block;
-		color: #444;
+		color: $menu-item-inactive;
 		font-size: 85%;
 		border: 1px solid white;
 		padding: 6px;
 		border-radius: 4px;
+	}
+	> li.dropdown a.dropdown-toggle:hover,
+	> li > .fa:hover {
+		color:#444;
+	}
+	> li.mi-active > .fa {
+		color: $menu-item-active;
 	}
 	.dropdown .welcome {
 		display: inherit;
@@ -86,24 +140,44 @@ header {
 		border-radius: 20px;
 		vertical-align: text-bottom;
 	}
-}
+	&::after {
+		vertical-align: text-top;
+	}
 
-
-.sidebar-toggle-box {
-	float: left;
-	padding-right: 15px;
-	margin-top: 14px;
-	.fa-bars {
-		min-width: 20px;
-		visibility: hidden;
-		cursor: pointer;
-		display: inline-block;
-		font-size: 20px;
-		&:hover {
-			color: darken(#797979, 20%);
-		}
+	.log-arrow-up {
+		background: url("/_resources/dyn/files/1062808zcd47a38c/_fn/arrow-up.png") no-repeat;
+		width: 20px;
+		height: 11px;
+		position: absolute;
+		right: 20px;
+		top: -10px;
 	}
 }
-.has-side-menu .sidebar-toggle-box .fa-bars{
+
+#main-header {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	.sidebar-toggle-box {
+		flex:1;
+		padding-right: 15px;
+		margin-top: 14px;
+
+		.fa-bars {
+			visibility: hidden;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 20px;
+			&:hover {
+				color: darken(#797979, 20%);
+			}
+		}
+	}
+	a:hover {
+		text-decoration: none;
+	}
+}
+.has-side-menu #main-header .sidebar-toggle-box .fa-bars{
 	visibility: visible;
+	min-width: 20px;
 }

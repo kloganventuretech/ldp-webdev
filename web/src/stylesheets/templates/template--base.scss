@@ -13,6 +13,10 @@
 @import "../components/file-chooser";
 @import "../components/actions";
 
+::selection {
+	background: #FF6C60;
+	color: #fff;
+}
 
 .update-password-dialog {
 	width: 40rem !important;

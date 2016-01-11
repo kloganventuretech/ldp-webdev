@@ -1,105 +1,31 @@
-/*---LEFT BAR ACCORDION----*/
-$(function () {
-	try {
-		$('#nav-accordion').find('ul.menu').dcAccordion({
-			eventType: 'click',
-			autoClose: true,
-			saveState: true,
-			disableLink: true,
-			speed: 'slow',
-			showCount: false,
-			autoExpand: true
-		});
-	}catch(e){}
-});
 
-// right slidebar
-/*$(function () {
-	$.slidebars();
-});*/
+function openSidebar(open){
+	var $body = $("#body-wrapper");
+	if(open){
+		$body.removeClass("sidebar-closed").addClass("sidebar-open");
+	}
+	else {
+		$body.addClass("sidebar-closed").removeClass("sidebar-open");
+	}
+}
 
 jQuery(function () {
 
-//    sidebar dropdown menu auto scrolling
-
-	jQuery('#nav-accordion').find('.mi-parent > div .mil').click(function () {
-		var o = ($(this).offset());
-		diff = 250 - o.top;
-		if (diff > 0)
-			$("#nav-accordion").scrollTo("-=" + Math.abs(diff), 500);
-		else
-			$("#nav-accordion").scrollTo("+=" + Math.abs(diff), 500);
-	});
 
 //    sidebar toggle
 
 	function responsiveView() {
 		var wSize = $(window).width();
-		if (wSize <= 768) {
-			$('#body-wrapper').addClass('sidebar-closed');
-		}
-		else {
-			$('#body-wrapper').addClass('sidebar-open');
-		}
+		openSidebar(wSize > 768);
 	}
 
 	$(window).on('load', responsiveView);
 	$('.fa-bars').click(function () {
-		var $body = $("#body-wrapper");
-		if ($body.hasClass("sidebar-open")) {
-			$body.addClass("sidebar-closed");
-			$body.removeClass("sidebar-open");
-		} else {
-			$body.removeClass("sidebar-closed");
-			$body.addClass("sidebar-open");
-		}
+		var $body = $("#body-wrapper"),
+			open = !$body.hasClass("sidebar-open");
+		openSidebar(open);
 	});
 
-// custom scrollbar
-/*
-	$("#nav-accordion").niceScroll({
-		styler: "fb",
-		cursorcolor: "#e8403f",
-		cursorwidth: '3',
-		cursorborderradius: '10px',
-		background: '#404040',
-		spacebarenabled: false,
-		cursorborder: ''
-	});
-
-	$("html").niceScroll({
-		styler: "fb",
-		cursorcolor: "#e8403f",
-		cursorwidth: '6',
-		cursorborderradius: '10px',
-		background: '#404040',
-		spacebarenabled: false,
-		cursorborder: '',
-		zindex: '1000'
-	});
-*/
-
-// widget tools
-
-	jQuery('.panel .tools .fa-chevron-down').click(function () {
-		var el = jQuery(this).parents(".panel").children(".panel-body");
-		if (jQuery(this).hasClass("fa-chevron-down")) {
-			jQuery(this).removeClass("fa-chevron-down").addClass("fa-chevron-up");
-			el.slideUp(200);
-		} else {
-			jQuery(this).removeClass("fa-chevron-up").addClass("fa-chevron-down");
-			el.slideDown(200);
-		}
-	});
-
-	jQuery('.panel .tools .fa-times').click(function () {
-		jQuery(this).parents(".panel").parent().remove();
-	});
-
-
-//    popovers
-
-	$('.popovers').popover();
 
 	/*const*/
 	var SELECT2_INIT = "select2-init";
@@ -193,5 +119,17 @@ jQuery(function () {
 		};
 	});
 
+	(function(w){
+		var $body = $("#body-wrapper");
+		if($body.length === 0) return;
+		w.addEventListener("orientationchange", function() {
+			if(w.orientation === 0)
+				openSidebar(false);
+		}, false);
+		if(w.orientation && w.orientation === 0) {
+			openSidebar(false);
+		}
+
+	})(window);
 
 });
