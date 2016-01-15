@@ -1,3 +1,5 @@
+@import "../config/base-vars";
+
 .timeline {
   border-collapse: collapse;
   border-spacing: 0;
@@ -8,7 +10,7 @@
 }
 
 .timeline:before {
-  background-color: #C7CBD6;
+  background-color: $gray-lighter;
   bottom: 0px;
   content: "";
   position: absolute;
@@ -17,20 +19,7 @@
   z-index: 0;
 }
 
-h3.timeline-title {
-  margin: 0;
-  color: #C8CCD7;
-  font-size: 20px;
-  font-weight: 400;
-  margin: 0 0 5px;
-  text-transform: uppercase;
-}
-
-.t-info {
-  color: #C8CCD7;
-}
-
-.timeline-item:before, .timeline-item.alt:after {
+.timeline-item:before, :after {
   content: "";
   display: block;
   width: 50%;
