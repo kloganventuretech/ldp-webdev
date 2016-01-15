@@ -2,7 +2,7 @@
 /*--sidebar toggle---*/
 
 #main-wrapper {
-	min-height: calc(100vh - 70px); // minus header height
+	min-height: calc(100vh - 68px); // minus header height
 	display: flex;
 	flex-wrap: nowrap;
 
@@ -13,8 +13,17 @@
 
 .sidebar-closed {
 	#side-nav {
-		width: 0;
+		width: 55px;
 		overflow: hidden;
+		.menu {
+			.mi a.menuitemlabel {
+				padding: 8px 0 8px 8px;
+			}
+
+			span.mil {
+				opacity:0;
+			}
+		}
 	}
 }
 
