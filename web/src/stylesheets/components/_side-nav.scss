@@ -11,7 +11,8 @@
 	}
 }
 
-.sidebar-closed {
+.sidebar-closed,
+#body-wrapper:not(.sidebar-open){
 	#side-nav {
 		width: 55px;
 		overflow: hidden;
@@ -34,10 +35,12 @@
 	min-height: 100%;
 	background: #2a3542;
 }
-#main-content, #side-nav {
+.sidebar-open #main-content,
+.sidebar-open #side-nav,
+.sidebar-closed #main-content,
+.sidebar-closed #side-nav{
 	transition: all 0.5s ease;
 }
-
 .nav-collapse.collapse {
 	display: inline;
 }
@@ -77,7 +80,6 @@
 	color: #fff;
 	display: block;
 	border-radius: 4px;
-	transition: all 0.3s ease;
 }
 
 
@@ -89,11 +91,12 @@
 #side-nav .menu .mi a.menuitemlabel:focus:before,
 #side-nav .menu .mi-active a.menuitemlabel:before{
 	color: $menu-item-active;
-	min-width: 15px;
 }
 #side-nav .menu .mi > .menuitemlabel:before{
 	font-family: FontAwesome;
 	padding-right: 4px;
+	min-width: 22px;
+	display: inline-block;
 }
 #side-nav .menu .my-quick-view > .menuitemlabel:before {
 	content: "\f1ea";

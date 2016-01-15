@@ -1,22 +1,17 @@
 
-function openSidebar(open){
-	var $body = $("#body-wrapper");
-	if(open){
-		$body.removeClass("sidebar-closed").addClass("sidebar-open");
-	}
-	else {
-		$body.addClass("sidebar-closed").removeClass("sidebar-open");
-	}
-}
+// Note: openSidebar function is declared in the HTML of the page (header)
+
 
 jQuery(function () {
+
 
 
 //    sidebar toggle
 
 	function responsiveView() {
 		var wSize = $(window).width();
-		openSidebar(wSize > 768);
+		if (sessionStorage[SIDE_BAR_OPEN] === undefined)
+			openSidebar(!(wSize <= 768));
 	}
 
 	$(window).on('load', responsiveView);
@@ -39,16 +34,17 @@ jQuery(function () {
 			var $result = $select
 				.select2({
 					minimumResultsForSearch: 10,
-					dropdownAutoWidth : true,
+					dropdownAutoWidth: true,
 					width: 'resolve'
 				})
 				.addClass(SELECT2_INIT)
 				.filter('[data-features~="watch"]');
-			if(window.miwt)
+			if (window.miwt)
 				$result.on('change', miwt.observerFormSubmit);
 		}
 	}
-	function destroySelect2(ctx){
+
+	function destroySelect2(ctx) {
 		var $select = $(ctx || document);
 		if (!$select.hasClass(SELECT2_INIT)) {
 			$select = $select.find('select').filter('.' + SELECT2_INIT);
@@ -61,7 +57,7 @@ jQuery(function () {
 
 	initSelect2();
 
-	function handleDataDownload(ctx){
+	function handleDataDownload(ctx) {
 		var $ctx = $(ctx || document);
 		$ctx.find("[data-download]").each(function (idx, el) {
 			el.setAttribute("download", "");
@@ -70,23 +66,23 @@ jQuery(function () {
 
 	handleDataDownload();
 
-	function switchSupport(ctx){
+	function switchSupport(ctx) {
 		var $ctx = $(ctx || document);
 		$ctx.find("input[type=checkbox]").each(function (idx, el) {
-			if(!el.id)
+			if (!el.id)
 				return;
 			var otherInput = el.form['_t' + el.id];
-			if(!otherInput || otherInput.hasAttribute('data-switchon'))
+			if (!otherInput || otherInput.hasAttribute('data-switchon'))
 				return;
 			otherInput.setAttribute("data-switchon", el.checked);
-			el.addEventListener('change', function(){
+			el.addEventListener('change', function () {
 				otherInput.setAttribute("data-switchon", this.checked);
 			});
 		});
 	}
 
 
-	function enableTooltips(ctx){
+	function enableTooltips(ctx) {
 		var $ctx = $(ctx || document);
 		$ctx.find(".tooltips").each(function (idx, el) {
 			var $el = $(el);
@@ -108,7 +104,7 @@ jQuery(function () {
 				return data.content;
 			},
 			postProcessNode: function (data) {
-				$.each(data, function(idx, d) {
+				$.each(data, function (idx, d) {
 					initSelect2(d.node);
 					handleDataDownload(d.node);
 					enableTooltips(d.node);
@@ -120,17 +116,17 @@ jQuery(function () {
 		};
 	});
 
-	(function(w){
+	(function (w) {
 		var $body = $("#body-wrapper");
-		if($body.length === 0) return;
-		w.addEventListener("orientationchange", function() {
-			if(w.orientation === 0)
+		if ($body.length === 0) return;
+		w.addEventListener("orientationchange", function () {
+			if (w.orientation === 0)
 				openSidebar(false);
 		}, false);
-		if(w.orientation && w.orientation === 0) {
+		if (w.orientation && w.orientation === 0 && sessionStorage[SIDE_BAR_CLOSED] === undefined) {
 			openSidebar(false);
 		}
-
 	})(window);
+
 
 });
