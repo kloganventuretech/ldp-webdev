@@ -25,6 +25,15 @@
 	}
 }
 
+section {
+	> h1 {
+		font-size: 2rem;
+	}
+	section > h1 {
+		font-size: 1.75rem;
+	}
+}
+
 .select2-container {
 	font-size: .98rem;
 }

@@ -3,7 +3,7 @@
 .dropdown-menu.extended {
 	max-width: 300px;
 	min-width: 125px;
-	top: 42px;
+	top: 58px;
 	padding: 0;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.176);
 	border: none;
@@ -16,6 +16,7 @@
 		list-style: none;
 		padding: 15px 10px;
 		display: inline-block;
+		transition: all .5s ease;
 	}
 
 	li a:hover {
@@ -115,6 +116,7 @@ header {
 		border: 1px solid white;
 		padding: 6px;
 		border-radius: 4px;
+		transition: all .5s ease;
 	}
 	> li.dropdown a.dropdown-toggle:hover,
 	> li > .fa:hover {
@@ -122,6 +124,9 @@ header {
 	}
 	> li.mi-active > .fa {
 		color: $menu-item-active;
+	}
+	> li.mi-active > .fa:hover {
+		color: darken($menu-item-active, 25%);
 	}
 	.dropdown .welcome {
 		display: inherit;
