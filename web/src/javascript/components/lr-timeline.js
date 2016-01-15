@@ -17,4 +17,6 @@ function registerActivityToggle(idx, element) {
         $element.find('i').removeClass('fa-minus').addClass('fa-plus');
     });
 }
-$('.expand-collapse-activity').each(registerActivityToggle);
+$(document).ready(function onDocReady() {
+    $('.expand-collapse-activity').each(registerActivityToggle);
+});
