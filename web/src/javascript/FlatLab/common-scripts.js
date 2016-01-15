@@ -36,15 +36,16 @@ jQuery(function () {
 		if ($select.length && !($select.closest('.cke_dialog').length || $select.closest('tr[data-dnd-source-def]').length)) {
 
 			//noinspection JSUnresolvedVariable
-			$select
+			var $result = $select
 				.select2({
 					minimumResultsForSearch: 10,
 					dropdownAutoWidth : true,
 					width: 'resolve'
 				})
 				.addClass(SELECT2_INIT)
-				.filter('[data-features~="watch"]')
-				.on('change', miwt.observerFormSubmit);
+				.filter('[data-features~="watch"]');
+			if(window.miwt)
+				$result.on('change', miwt.observerFormSubmit);
 		}
 	}
 	function destroySelect2(ctx){
