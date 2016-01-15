@@ -1,0 +1,164 @@
+@import "../config/base-vars";
+
+.timeline {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: table;
+  position: relative;
+  /*table-layout: fixed;*/
+  width: 100%;
+}
+
+.timeline:before {
+  background-color: $gray-lighter;
+  bottom: 0px;
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 5px;
+  z-index: 0;
+}
+
+.timeline-item:before, :after {
+  content: "";
+  display: block;
+  width: 50%;
+}
+
+.timeline-desk {
+  vertical-align: top;
+  width: 90%;
+}
+
+.timeline-desk h1 {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0 0 5px;
+}
+
+.timeline-desk .card {
+  display: block;
+  margin-left: 25px;
+  position: relative;
+  text-align: left;
+  background: #F4F4F4;
+}
+
+.timeline-item .arrow {
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  display: block;
+  height: 0;
+  left: -1.75%;
+  position: relative;
+  width: 2;
+  z-index: 1;
+}
+.timeline-item .arrow {
+  border-right: 8px solid #F4F4F4 !important;
+}
+
+.timeline-desk span a {
+  text-transform: uppercase;
+}
+
+.timeline .timeline-date {
+  left: -200px;
+  position: absolute;
+  text-align: right;
+  top: 12px;
+  width: 150px;
+}
+
+.timeline-desk h5 span {
+  color: #999999;
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.timeline-item:before {
+  content: "";
+  display: block;
+  width: 50%;
+}
+
+.timeline-desk p {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.timeline-desk .panel {
+  margin-bottom: 5px;
+}
+
+.timeline-desk .album {
+  margin-top: 20px;
+}
+
+.timeline-desk .album a {
+  margin-right: 5px;
+  float: left;
+}
+
+.timeline-desk .notification {
+  background: none repeat scroll 0 0 #FFFFFF;
+  margin-top: 20px;
+  padding: 8px;
+}
+
+.timeline .timeline-icon-custom {
+  left: -1%;
+  position: absolute;
+}
+
+.timeline .timeline-icon-custom {
+  -webkit-border-radius: 50%;
+  display: block;
+  height: 12px;
+  width: 12px;
+}
+
+.activity-date {
+  font-size: 14px;
+}
+
+.task-item-name {
+  font-size: 16px;
+}
+
+.task-item-date {
+  font-size: 12px;
+}
+
+.task-item-status {
+  font-size: 12px;
+}
+
+.activity-summary {
+  font-size: 8px;
+}
+
+.activity-summary .complete {
+  @extend .text-success;
+}
+
+.activity-summary .overdue {
+  @extend .text-danger;
+}
+
+.activity-summary .in-progress {
+  @extend .text-info;
+}
+
+.task-item.completed {
+  @extend .alert-success
+}
+
+.task-item.overdue {
+  @extend .alert-danger;
+}
+
+.task-item.in-progress {
+  @extend .alert-info;
+}
