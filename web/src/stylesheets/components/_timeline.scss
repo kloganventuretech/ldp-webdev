@@ -151,3 +151,7 @@
 .task-item.in-progress {
   @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
 }
+
+.task-item-status {
+  padding-right: 15px;
+}
