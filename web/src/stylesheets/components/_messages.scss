@@ -50,6 +50,7 @@ div.message {
     @include style-popup-box();
     overflow-y: auto;
     max-height: 500px;
+    z-index: 10000;
   }
 }
 
