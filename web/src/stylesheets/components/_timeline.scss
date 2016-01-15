@@ -1,4 +1,7 @@
 @import "../config/base-vars";
+@import "../../../../bower_components/bootstrap/scss/mixins/hover";
+@import "../../../../bower_components/bootstrap/scss/mixins/text-emphasis";
+@import "../../../../bower_components/bootstrap/scss/mixins/alert";
 
 .timeline {
   border-collapse: collapse;
@@ -19,12 +22,6 @@
   z-index: 0;
 }
 
-.timeline-item:before, :after {
-  content: "";
-  display: block;
-  width: 50%;
-}
-
 .timeline-desk {
   vertical-align: top;
   width: 90%;
@@ -41,7 +38,7 @@
   margin-left: 25px;
   position: relative;
   text-align: left;
-  background: #F4F4F4;
+  background: $color-smokey-white;
 }
 
 .timeline-item .arrow {
@@ -55,7 +52,7 @@
   z-index: 1;
 }
 .timeline-item .arrow {
-  border-right: 8px solid #F4F4F4 !important;
+  border-right: 8px solid $color-smokey-white !important;
 }
 
 .timeline-desk span a {
@@ -71,7 +68,7 @@
 }
 
 .timeline-desk h5 span {
-  color: #999999;
+  color: $gray-light;
   display: block;
   font-size: 12px;
   margin-bottom: 4px;
@@ -102,7 +99,7 @@
 }
 
 .timeline-desk .notification {
-  background: none repeat scroll 0 0 #FFFFFF;
+  background: none repeat scroll 0 0 $color-white;
   margin-top: 20px;
   padding: 8px;
 }
@@ -139,26 +136,18 @@
   font-size: 8px;
 }
 
-.activity-summary .complete {
-  @extend .text-success;
-}
-
-.activity-summary .overdue {
-  @extend .text-danger;
-}
-
-.activity-summary .in-progress {
-  @extend .text-info;
-}
+@include text-emphasis-variant('.activity-summary .in-progress', $brand-info);
+@include text-emphasis-variant('.activity-summary .complete', $brand-success);
+@include text-emphasis-variant('.activity-summary .overdue', $brand-danger);
 
 .task-item.completed {
-  @extend .alert-success
+  @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
 }
 
 .task-item.overdue {
-  @extend .alert-danger;
+  @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 }
 
 .task-item.in-progress {
-  @extend .alert-info;
+  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
 }
