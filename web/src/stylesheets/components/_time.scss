@@ -1,0 +1,18 @@
+@import "../config/base-vars";
+
+.inlinewindow {
+	.prop-editor {
+		.time {
+			.prop label {
+				display: none;
+			}
+			.timezone label {
+				display: block;
+			}
+			.clock-period select.val {
+				width: 3.5rem;
+			}
+		}
+
+	}
+}

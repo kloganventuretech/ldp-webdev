@@ -53,4 +53,18 @@
 
 		}
 	}
+
+	.engagement-schedule {
+		.schedule-period {
+			select.val {
+				min-width: 3.5rem;
+			}
+		}
+	}
+	.task-config-editor {
+		.ctb.label-before { // prop.display-timeline
+			max-width: 15rem;
+			@include checkboxSwitchAbsolute();
+		}
+	}
 }

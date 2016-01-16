@@ -120,3 +120,8 @@
 .search {
 	@include clearfix;
 }
+
+select.bulk-actions,
+select.bulk_actions{
+	min-width: 8rem;
+}

@@ -51,7 +51,7 @@
 
 		.prop-group-title {
 			font-weight: bold;
-			font-size: 16px;
+			font-size: 18px;
 			margin: 10px 0;
 		}
 		span.ctb {
@@ -82,6 +82,9 @@
 		.prop {
 			margin-bottom: 1rem;
 			padding: 5px;
+		}
+		.prop-group {
+			margin-bottom: 0;
 		}
 
 		.user-entry-required label:after {
