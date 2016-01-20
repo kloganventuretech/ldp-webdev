@@ -18,6 +18,7 @@
   content: "";
   position: absolute;
   top: 0;
+  left: -0.75%;
   width: 5px;
   z-index: 0;
 }
@@ -46,7 +47,7 @@
   border-top: 8px solid transparent;
   display: block;
   height: 0;
-  left: -1.75%;
+  left: -2%;
   position: relative;
   width: 2%;
   z-index: 1;
@@ -147,19 +148,31 @@
   text-decoration: none !important;
 }
 
+.activity-status {
+  padding-right: 10px;
+}
+
+@include text-emphasis-variant('.activity-summary .unconfirmed', $brand-warning);
+@include text-emphasis-variant('.activity-summary .scheduled', $brand-info);
 @include text-emphasis-variant('.activity-summary .in-progress', $brand-info);
-@include text-emphasis-variant('.activity-summary .complete', $brand-success);
+@include text-emphasis-variant('.activity-summary .completed', $brand-success);
 @include text-emphasis-variant('.activity-summary .overdue', $brand-danger);
+@include text-emphasis-variant('.activity-summary .canceled', $brand-danger);
+@include text-emphasis-variant('.activity-summary .rescheduled', $brand-danger);
+
+.task-item.unconfirmed {
+  @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+}
 
 .task-item.completed {
   @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
 }
 
-.task-item.overdue {
+.task-item.overdue, .task-item.canceled, .task-item.rescheduled {
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 }
 
-.task-item.in-progress {
+.task-item.in-progress, .task-item.scheduled {
   @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
 }
 
