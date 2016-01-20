@@ -52,6 +52,21 @@
 			display: inline-block;
 
 		}
+
+
+		.frequency select.val {
+			min-width: 5rem;
+		}
+		.temporal-direction select.val {
+			min-width: 8rem;
+		}
+		.reschedule-behavior select.val {
+			min-width: 11rem;
+		}
+		.dom select.val {
+			min-width: 4rem;
+		}
+
 	}
 
 	.engagement-schedule {
