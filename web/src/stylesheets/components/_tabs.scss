@@ -46,7 +46,10 @@
 		padding: 15px;
 	}
 }
-
+.nav-actions {
+	text-align: right;
+	margin-bottom: -1.75rem;
+}
 .tab-container {
 	@include style-tab-elements;
 }

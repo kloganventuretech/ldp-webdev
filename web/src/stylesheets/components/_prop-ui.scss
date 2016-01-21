@@ -110,8 +110,10 @@
 		.prop {
 			input[type=text],
 			input[type=email],
+			input[type=url],
+			input[type=tel],
 			textarea {
-				min-width: 20rem;
+				min-width: 25rem;
 			}
 
 			.actions {
