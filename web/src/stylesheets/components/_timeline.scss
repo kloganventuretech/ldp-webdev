@@ -2,157 +2,193 @@
 @import "../../../../bower_components/bootstrap/scss/mixins/hover";
 @import "../../../../bower_components/bootstrap/scss/mixins/text-emphasis";
 @import "../../../../bower_components/bootstrap/scss/mixins/alert";
+@import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
 
-.timeline {
-  border-collapse: collapse;
-  border-spacing: 0;
-  display: table;
-  position: relative;
-  /*table-layout: fixed;*/
-  width: 100%;
+.flex-container {
+	border-top: 3px solid $color-lr-light-grey;
+	.timeline-ui{
+		border-right: 3px solid $color-lr-light-grey;
+		padding-right: 4px;
+	}
 }
 
-.timeline:before {
-  background-color: $gray-lighter;
-  bottom: 0px;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -0.75%;
-  width: 5px;
-  z-index: 0;
+.select-year {
+	label {
+		display: none;
+	}
+	select.val {
+		min-width: 5.5rem;
+	}
+}
+.timeline {
+	position: relative;
+}
+.plan-actions {
+	margin: 5px 5px 0;
+}
+.plan-header,
+.participant-timeline {
+	background-color: $body-bg;
+	border:none;
+	margin-bottom: 0;
+}
+
+.timeline:before:not(.no-data) {
+	background-color: lighten($color-lr-light-grey, 15%);
+	bottom: 0;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 8px;
+	width: 5px;
+	z-index: 0;
 }
 
 .timeline-desk {
-  vertical-align: top;
-  width: 90%;
-}
+	vertical-align: top;
+	h1 {
+		font-size: 16px;
+		font-weight: 300;
+		margin: 0 0 5px;
+	}
 
-.timeline-desk h1 {
-  font-size: 16px;
-  font-weight: 300;
-  margin: 0 0 5px;
+	.card {
+		display: block;
+		margin-left: 25px;
+		position: relative;
+		text-align: left;
+		background: $color-white;
+		border-radius: .5rem;
+	}
+	.card-block {
+		padding: .75rem;
+		@include clearfix();
+	}
+	.arrow {
+		/*border-bottom: 8px solid transparent;
+		border-top: 8px solid transparent;
+		border-right: 8px solid $color-white !important;
+		display: block;
+		height: 0;
+		left: -8px;
+		position: relative;
+		width: 8px;
+		z-index: 1;
+		margin-top:.5rem;*/
+		display: none;
+	}
+	p {
+		font-size: 12px;
+		margin-bottom: 0;
+	}
+	.panel {
+		margin-bottom: 5px;
+	}
 }
-
-.timeline-desk .card {
-  display: block;
-  margin-left: 25px;
-  position: relative;
-  text-align: left;
-  background: $color-smokey-white;
+.timeline-date {
+	left: -200px;
+	position: absolute;
+	text-align: right;
+	top: 12px;
+	width: 150px;
 }
-
-.timeline-item .arrow {
-  border-bottom: 8px solid transparent;
-  border-top: 8px solid transparent;
-  display: block;
-  height: 0;
-  left: -2%;
-  position: relative;
-  width: 2%;
-  z-index: 1;
+.timeline-item {
+	margin-bottom:2rem;
 }
-.timeline-item .arrow {
-  border-right: 8px solid $color-smokey-white !important;
-}
-
-.timeline-desk span a {
-  text-transform: uppercase;
-}
-
-.timeline .timeline-date {
-  left: -200px;
-  position: absolute;
-  text-align: right;
-  top: 12px;
-  width: 150px;
-}
-
-.timeline-desk h5 span {
-  color: $gray-light;
-  display: block;
-  font-size: 12px;
-  margin-bottom: 4px;
-}
-
 .timeline-item:before {
-  content: "";
-  display: block;
-  width: 50%;
+	content: "";
+	display: block;
+	width: 50%;
 }
 
-.timeline-desk p {
-  font-size: 12px;
-  margin-bottom: 0;
+.timeline-icon-custom {
+	margin-top:-10px;
+	left: -20px;
+	position: absolute;
+	border-radius: 50%;
+	display: block;
+	height: 60px;
+	width: 60px;
+	z-index: 2;
+	background-color: $color-lr-cyan;
+	border: 4px solid darken($color-lr-cyan, 15%);
+	text-align: center;
+	.fa {
+		font-size: 36px;
+		margin-top: 9px;
+		color: $color-smokey-white;
+	}
 }
-
-.timeline-desk .panel {
-  margin-bottom: 5px;
-}
-
-.timeline-desk .album {
-  margin-top: 20px;
-}
-
-.timeline-desk .album a {
-  margin-right: 5px;
-  float: left;
-}
-
-.timeline-desk .notification {
-  background: none repeat scroll 0 0 $color-white;
-  margin-top: 20px;
-  padding: 8px;
-}
-
-.timeline .timeline-icon-custom {
-  left: -1%;
-  position: absolute;
-}
-
-.timeline .timeline-icon-custom {
-  -webkit-border-radius: 50%;
-  display: block;
-  height: 12px;
-  width: 12px;
+.timeline-actions {
+	text-align: center;
+	margin: 4px auto;
 }
 
 .activity-date {
-  font-size: 14px;
+	font-size: 14px;
+}
+
+.task-item-wrapper {
+	position:relative;
 }
 
 .task-item-name {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 .task-item-date {
-  font-size: 12px;
+	font-size: 12px;
 }
 
 .task-item-status {
-  font-size: 12px;
+	font-size: 12px;
 }
 
 .activity-summary {
-  font-size: 8px;
+	font-size: 10px;
+	i.fa {
+		cursor: help;
+	}
+	i.fa:not(:first-of-type) {
+		padding-left: 2px;
+	}
 }
 
-.actions.task-item-actions a {
-  text-decoration: none !important;
+.actions.task-item-actions {
+	position: absolute;
+	top:0;
+	right:0;
+	a.fa {
+		text-decoration: none;
+	}
 }
-
-.actions.timeline-card-actions button.expand-collapse-activity {
-  color: $brand-primary !important;
-  background-color: transparent !important;
-  border-color: transparent !important;
-  text-decoration: none !important;
+.timeline-card {
+	padding: .5rem 0 .5rem 1rem;
 }
-
+.timeline-card-actions {
+	float:right;
+	margin: -.5rem 0 0 0;
+	> .btn {
+		color: $color-lr-light-grey !important;
+		background-color: transparent !important;
+		box-shadow: none !important;
+		border: none !important;
+		font-size: 24px !important;
+		padding: 0 !important;
+		outline:none !important;
+	}
+	> .btn:hover {
+		color: $color-lr-grey;
+		background-color: transparent;
+	}
+}
+.activity-name {
+}
 .activity-status {
-  padding-right: 10px;
+	padding-right: 10px;
 }
 
-@include text-emphasis-variant('.activity-summary .unconfirmed', $brand-warning);
+@include text-emphasis-variant('.activity-summary .pending', $brand-warning);
 @include text-emphasis-variant('.activity-summary .scheduled', $brand-info);
 @include text-emphasis-variant('.activity-summary .in-progress', $brand-info);
 @include text-emphasis-variant('.activity-summary .completed', $brand-success);
@@ -160,22 +196,27 @@
 @include text-emphasis-variant('.activity-summary .canceled', $brand-danger);
 @include text-emphasis-variant('.activity-summary .rescheduled', $brand-danger);
 
-.task-item.unconfirmed {
-  @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+.task-item.pending {
+	@include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
 }
 
 .task-item.completed {
-  @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+	@include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
 }
 
 .task-item.overdue, .task-item.canceled, .task-item.rescheduled {
-  @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
+	@include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 }
 
 .task-item.in-progress, .task-item.scheduled {
-  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+	@include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
 }
 
 .task-item-status {
-  padding-right: 15px;
+	padding-right: 15px;
+}
+
+.task-item-icon {
+	display: inline-block;
+	padding-right: 15px;
 }

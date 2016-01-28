@@ -14,11 +14,20 @@ function setupTopMenuActive() {
         if(hostIndex > -1) {
             href = href.slice(hostIndex + host.length);
         }
-        if(href !== '/' && path.startsWith(href)) { // Not doing home page ref
-            $li.addClass('mi-active').removeClass('mi-inactive');
-        }
-        else {
-            $li.addClass('mi-inactive').removeClass('mi-active');
+        if(href !== '/') { // Not doing home page ref
+            if (path.startsWith(href)) {
+                $li.addClass('mi-active').removeClass('mi-inactive');
+            }
+            else {
+                $li.addClass('mi-inactive').removeClass('mi-active');
+            }
+        } else if(href === path) {
+            if (path.startsWith(href)) {
+                $li.addClass('mi-active').removeClass('mi-inactive');
+            }
+            else {
+                $li.addClass('mi-inactive').removeClass('mi-active');
+            }
         }
     });
 }

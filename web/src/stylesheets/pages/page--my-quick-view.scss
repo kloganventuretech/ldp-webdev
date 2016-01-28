@@ -1,9 +1,8 @@
-@import "../components/timeline";
 
 .flex-container{
 	display:flex;
 
-	>.timeline-ui,
+	>.participants,
 	>.tasks{
 		flex:1;
 	}

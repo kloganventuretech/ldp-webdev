@@ -1,4 +1,16 @@
-$brand-primary:                  #45A73C;
+$color-lr-brand: #67B362;
+$color-lr-yellow: #F9BB29;
+$color-lr-blue: #4AB0D5;
+$color-lr-cyan: #6CCAC9;
+$color-lr-red: #EE695B;
+$color-lr-black: #343940;
+$color-lr-grey: #515B6B;
+$color-lr-light-grey: #9699A6;
+
+$lr-page-bg: #F1F2F7;
+
+$body-bg: $lr-page-bg;
+$brand-primary:                  $color-lr-brand;
 $btn-primary-color:              #fff;
 $btn-primary-bg:                 $brand-primary;
 $btn-primary-border:             darken($brand-primary, 5%);
@@ -11,25 +23,12 @@ $enable-shadows:                 true;
 @import "../../../../bower_components/bootstrap/scss/variables";
 
 
-$menu-item-active: #FF6C60;
-$menu-item-inactive: #777;
+$menu-item-active: $color-lr-red;
+$menu-item-inactive: $color-lr-light-grey;
 
 $header-bg: #A8ABBA;
 
 $color-white: #fff;
-$color-grey-f9: #f9f9f9;
-$color-grey-f2: #f2f2f2;
-$color-grey-e7: #e7e7e7;
-$color-grey-d0: #d0d0d0;
-$color-grey-c5: #c5c5c5;
-$color-grey-cc: #ccc;
-$color-grey-bb: #bbb;
-$color-grey-aa: #aaa;
-$color-grey-99: #999;
-$color-grey-77: #777;
-$color-grey-55: #555;
-$color-grey-33: #333;
-$color-grey-1b: #1b1b1b;
 $color-black: #000;
 
 $color-white: #fff;
@@ -43,26 +42,9 @@ $color-dark-grey: #999;
 $color-darker-grey: #777;
 $color-light-charcoal: #555;
 $color-charcoal: #333;
-$color-black: #000;
 
-$color-youtube-black: $color-grey-1b;
-$color-facebook-blue: #3b579d;
-
-
-$color-tan: #e7e1dc;
-$color-grey-tan: #ac9b8f;
-$color-dark-tan: #baa188;
-$color-gold-tan: #c69c6d;
-$color-brown: #603913;
-
-$color-red: #bf1e2e;
-$color-dark-red: #7a0000;
-$color-yellow: #f5e800;
-$color-dark-blue: #043665;
-$color-dark-green: #145432;
 $color-cornsilk: cornsilk;
 
-$font-roboto: Roboto, $font-family-sans-serif;
 $font-monospace: monospace;
 $font-arial: $font-family-sans-serif;
 $font-open-sans: Open Sans, $font-arial;

@@ -92,10 +92,35 @@ jQuery(function () {
 				$el.tooltip();
 			}
 		});
+		$ctx.find('[data-toggle="tooltip"]').tooltip();
+		$ctx.find('[data-toggle="popover"]').popover({
+			trigger: 'hover'
+		});
+
 	}
 
 	enableTooltips();
 
+	var PLUS_CLASS = 'fa-plus-circle';
+	var MINUS_CLASS = 'fa-minus-circle';
+	function registerActivityToggle(idx, element) {
+		var $element = $(element);
+		var $target = $($element.data('target'));
+		$target.on('show.bs.collapse', function onShow(){
+			$element.removeClass('collapsed').addClass('expanded');
+			$element.find('i').removeClass(PLUS_CLASS).addClass(MINUS_CLASS);
+		});
+		$target.on('hide.bs.collapse', function onHide(){
+			$element.removeClass('expanded').addClass('collapsed');
+			$element.find('i').removeClass(MINUS_CLASS).addClass(PLUS_CLASS);
+		});
+	}
+	function setupExpandCollapse(ctx) {
+		var $ctx = $(ctx || document);
+		$ctx.find('[data-toggle="collapse"]').each(registerActivityToggle);
+	}
+
+	setupExpandCollapse();
 
 	$('form.miwt-form').each(function (idx, form) {
 		form.submit_options = {
@@ -108,6 +133,7 @@ jQuery(function () {
 					initSelect2(d.node);
 					handleDataDownload(d.node);
 					enableTooltips(d.node);
+					setupExpandCollapse(d.node);
 				});
 			},
 			postUpdate: function () {
