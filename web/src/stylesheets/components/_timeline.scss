@@ -25,6 +25,7 @@
 }
 .plan-actions {
 	margin: 5px 5px 0;
+	float:right;
 }
 .plan-header,
 .participant-timeline {
@@ -115,7 +116,7 @@
 	text-align: center;
 	.fa {
 		font-size: 36px;
-		margin-top: 9px;
+		margin-top: 7px;
 		color: $color-smokey-white;
 	}
 }
@@ -157,8 +158,8 @@
 
 .actions.task-item-actions {
 	position: absolute;
-	top:0;
-	right:0;
+	top:4px;
+	right:4px;
 	a.fa {
 		text-decoration: none;
 	}
