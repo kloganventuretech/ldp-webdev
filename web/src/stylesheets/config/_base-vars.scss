@@ -6,11 +6,16 @@ $color-lr-red: #EE695B;
 $color-lr-black: #343940;
 $color-lr-grey: #515B6B;
 $color-lr-light-grey: #9699A6;
+$color-lr-canceled: rgba(214, 14, 255, 0.66);
 
 $lr-page-bg: #F1F2F7;
 
 $body-bg: $lr-page-bg;
 $brand-primary:                  $color-lr-brand;
+$brand-danger:                   $color-lr-red;
+$brand-warning:                  $color-lr-yellow;
+$brand-info:                     $color-lr-cyan;
+
 $btn-primary-color:              #fff;
 $btn-primary-bg:                 $brand-primary;
 $btn-primary-border:             darken($brand-primary, 5%);

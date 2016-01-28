@@ -34,15 +34,18 @@
 	margin-bottom: 0;
 }
 
-.timeline:before:not(.no-data) {
-	background-color: lighten($color-lr-light-grey, 15%);
+.timeline:before{
+	background-color: lighten($color-lr-light-grey, 25%);
 	bottom: 0;
 	content: "";
 	position: absolute;
 	top: 0;
-	left: 8px;
-	width: 5px;
+	left: 5px;
+	width: 10px;
 	z-index: 0;
+}
+.timeline.no-data:before {
+	display: none;
 }
 
 .timeline-desk {
@@ -111,13 +114,54 @@
 	height: 60px;
 	width: 60px;
 	z-index: 2;
-	background-color: $color-lr-cyan;
-	border: 4px solid darken($color-lr-cyan, 15%);
+	background-color: $color-lr-light-grey;
+	border: 4px solid darken($color-lr-light-grey, 15%);
 	text-align: center;
 	.fa {
 		font-size: 36px;
 		margin-top: 7px;
+		display: inline-block;
 		color: $color-smokey-white;
+	}
+	.scheduled & {
+		background-color: $color-lr-cyan;
+		border-color: darken($color-lr-cyan, 15%);
+	}
+	.sched-confirmed & {
+		background-color: $color-lr-yellow;
+		border-color: darken($color-lr-yellow, 15%);
+	}
+	.canceled &,
+	.rescheduled & {
+		background-color: $color-lr-canceled;
+		border-color: darken($color-lr-canceled, 15%);
+	}
+	.overdue & {
+		background-color: $color-lr-red;
+		border-color: darken($color-lr-red, 15%);
+	}
+	.in-progress & {
+		background-color: $color-lr-blue;
+		border-color: darken($color-lr-blue, 15%);
+	}
+	.completed & {
+		background-color: $color-lr-brand;
+		border-color: darken($color-lr-brand, 15%);
+	}
+	.cat-on_boarding & .fa:before {
+		content: "\f21d";
+		display: inline-block;
+		margin: 1px 0 0 2px;
+	}
+	.cat-survey & .fa:before {
+		content: "\f044";
+		display: inline-block;
+		margin: 3px 0 0 3px;
+	}
+	.cat-assessment & .fa:before {
+		content: "\f19c";
+		display: inline-block;
+		margin: 0 0 0 2px;
 	}
 }
 .timeline-actions {
@@ -125,12 +169,9 @@
 	margin: 4px auto;
 }
 
-.activity-date {
-	font-size: 14px;
-}
-
 .task-item {
 	position:relative;
+	border-radius: 0;
 }
 
 .task-item-name {
@@ -160,8 +201,45 @@
 	position: absolute;
 	top:4px;
 	right:4px;
+	height:100%;
 	a.fa {
 		text-decoration: none;
+		color:inherit;
+	}
+	a.fa:hover {
+		color: $color-black;
+	}
+
+	&:after {
+		display: block;
+		font-family: FontAwesome;
+		font-size: 18px;
+		position: absolute;
+		bottom: 1rem;
+		width:18px;
+		height:18px;
+		right: 0;
+	}
+	.task-item.pending &:after {
+		content: "\f017";
+	}
+	.task-item.completed &:after {
+		content: "\f00c";
+	}
+	.task-item.scheduled &:after {
+		content: "\f274";
+	}
+	.task-item.in-progress &:after {
+		content: "\f110";
+	}
+	.task-item.canceled &:after {
+		content: "\f273";
+	}
+	.task-item.rescheduled &:after {
+		content: "\f272";
+	}
+	.task-item.overdue &:after {
+		content: "\f06d";
 	}
 }
 .timeline-card {
@@ -185,40 +263,65 @@
 	}
 }
 .activity-name {
+	margin:0;
 }
 .activity-status {
-	padding-right: 10px;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: normal;
+	&:after {
+		content: ": ";
+	}
+}
+.activity-date {
+	font-size: 14px;
+	font-style: italic;
+}
+.activity-details {
+	margin-bottom:1rem;
 }
 
-@include text-emphasis-variant('.activity-summary .pending', $brand-warning);
+@include text-emphasis-variant('.activity-summary .pending', $color-lr-grey);
 @include text-emphasis-variant('.activity-summary .scheduled', $brand-info);
 @include text-emphasis-variant('.activity-summary .in-progress', $brand-info);
 @include text-emphasis-variant('.activity-summary .completed', $brand-success);
 @include text-emphasis-variant('.activity-summary .overdue', $brand-danger);
-@include text-emphasis-variant('.activity-summary .canceled', $brand-danger);
-@include text-emphasis-variant('.activity-summary .rescheduled', $brand-danger);
+@include text-emphasis-variant('.activity-summary .canceled', $color-lr-canceled);
+@include text-emphasis-variant('.activity-summary .rescheduled', $color-lr-canceled);
 
-.task-item.pending {
-	@include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+.task-item {
+	border-left-width: 5px;
+
+	&.pending {
+		@include alert-variant(lighten($color-lr-light-grey, 25%), $color-lr-light-grey, $color-lr-black);
+		border-left-color: $color-lr-grey;
+	}
+
+	&.completed {
+		@include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+		border-left-color: $brand-success;
+	}
+	&.overdue {
+		@include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
+		border-left-color: $brand-danger;
+	}
+	&.canceled, &.rescheduled {
+		@include alert-variant(lighten($color-lr-canceled, 25%), $color-lr-canceled, darken($color-lr-canceled, 75%));
+		border-left-color: $color-lr-canceled;
+	}
+
+	&.in-progress, &.scheduled {
+		@include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+		border-left-color: $brand-info;
+	}
 }
 
-.task-item.completed {
-	@include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
-}
-
-.task-item.overdue, .task-item.canceled, .task-item.rescheduled {
-	@include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
-}
-
-.task-item.in-progress, .task-item.scheduled {
-	@include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
-}
 
 .task-item-status {
-	padding-right: 15px;
+	padding-right: 1ch;
 }
 
 .task-item-icon {
 	display: inline-block;
-	padding-right: 15px;
+	padding-right: 1ch;
 }
