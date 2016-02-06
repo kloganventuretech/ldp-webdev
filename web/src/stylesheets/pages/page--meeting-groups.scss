@@ -1,0 +1,28 @@
+@import "../components/schedule";
+@import "../components/time";
+
+.meeting-group-group-meeting-mgt {
+	display: flex;
+	.group-meeting-selector {
+		flex:1;
+		max-width: 15rem;
+		margin-right:1rem;
+	}
+	.group-meeting-viewer {
+		flex:1;
+	}
+}
+.dialog {
+	.top.actions{
+		display:none;
+	}
+}
+textarea.note-content {
+	resize: both;
+}
+.note-editor-dialog{
+	width:45rem;
+	.prop-editor{
+		text-align: center;
+	}
+}

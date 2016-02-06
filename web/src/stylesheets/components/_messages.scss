@@ -1,6 +1,7 @@
 
 @import "../config/base-vars";
 @import "../mixins/styles";
+@import "../../../../bower_components/bootstrap/scss/mixins/buttons";
 /*
 	Partial -	Messages
 */
@@ -11,6 +12,18 @@
 
   &.empty {
     display: none;
+  }
+  .actionable-message {
+    display: flex;
+    .message-content{
+      flex:1;
+    }
+    .message-actions {
+      flex:0;
+	    .btn {
+		    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+	    }
+    }
   }
 }
 
