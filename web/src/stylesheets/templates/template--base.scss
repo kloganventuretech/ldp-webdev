@@ -27,10 +27,12 @@
 
 section {
 	> h1 {
+		margin: 10px 0;
 		font-size: 2rem;
 	}
 	section > h1 {
 		font-size: 1.75rem;
+		margin: 10px 0;
 	}
 }
 

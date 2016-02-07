@@ -69,7 +69,7 @@
 			display: inline-block;
 		}
 
-		.actions {
+		header .actions, footer .actions {
 			margin: 10px 0;
 			text-align: right;
 		}
@@ -81,6 +81,11 @@
 		.prop {
 			margin-bottom: 1rem;
 			padding: 5px;
+			> .actions, .selected-link {
+				.btn {
+					@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+				}
+			}
 		}
 		.prop-group {
 			margin-bottom: 0;

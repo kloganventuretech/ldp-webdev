@@ -12,6 +12,11 @@
 	> tbody > tr {
 		@include style-table-data-row;
 	}
+	caption {
+		caption-side: top;
+		text-align: left;
+		margin-top: -2.5rem;
+	}
 }
 
 /* MIWT Trees. */
