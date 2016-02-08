@@ -46,13 +46,6 @@ div.window.dialog /*specificity*/ {
 		left:initial;
 		right:initial;
 		width: 100%;
-		.prop {
-			margin-bottom: 1rem;
-			label {
-				display: block;
-				padding: .375rem .75rem;
-			}
-		}
 	}
 	.actions.bottom {
 		width: 100%;

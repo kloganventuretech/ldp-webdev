@@ -7,6 +7,16 @@
 		flex:1;
 		max-width: 15rem;
 		margin-right:1rem;
+		.search-results {
+			border:none;
+			thead {
+				display: none;
+			}
+			tbody tr td {
+				text-align: center;
+				background: inherit;
+			}
+		}
 	}
 	.group-meeting-viewer {
 		flex:1;
@@ -25,4 +35,7 @@ textarea.note-content {
 	.prop-editor{
 		text-align: center;
 	}
+}
+.reschedule-group-meeting{
+	width:35rem!important;
 }

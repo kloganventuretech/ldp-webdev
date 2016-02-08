@@ -53,9 +53,10 @@
 
 
 		&:hover {
+			background-color: $color-cloud-grey;
 			> a.menu-item,
 			> span.menu-item {
-				background-color: $color-cloud-grey;
+				background-color: inherit;
 			}
 		}
 	}

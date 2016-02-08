@@ -36,6 +36,70 @@ section {
 	}
 }
 
+.miwt-calendar {
+	button.open,
+	button.clear {
+		border: none;
+		background: inherit;
+		visibility: hidden;
+		color: $color-lr-light-grey;
+
+		&:before {
+			visibility: visible;
+			display: inline-block;
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			content: "\f073";
+		}
+		&:hover {
+			color: $color-lr-black;
+		}
+	}
+	button.clear {
+		padding-right: 0;
+		&:before {
+			content: '\f00d';
+		}
+	}
+}
+
+.miwt .menu-component .menu-items {
+	.default, .meeting, .group-meeting,
+	.plan-start-date, .email, .reminder, .email-login-info, .assign-eg, .confirmation,
+	.fileentity, .uri {
+		a.menu-item{
+			display: inline-block;
+			width: calc(100% - 30px);
+		}
+		&:before {
+			display: inline-block;
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			content: '\f096';
+		}
+	}
+	.plan-start-date:before {content: "\f271";}
+	.email:before {content: "\f003";}
+	.reminder:before {content: "\f274";}
+	.email-login-info:before {content: "\f090";}
+	.assign-eg:before {content: "\f234";}
+	.confirmation:before {content: "\f087";}
+
+	.default:before {content: "\f012";}
+	.meeting:before {content: "\f007";}
+	.group-meeting:before {content: "\f0c0";}
+
+	.fileentity:before {content: "\f016";}
+	.uri:before {content: "\f0c1";}
+}
+
+/*
 .select2-container {
 	font-size: .98rem;
 }
@@ -46,3 +110,4 @@ section {
 .select2-selection--multiple .select2-search__field {
 	width: 100% !important;
 }
+*/

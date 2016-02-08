@@ -3,7 +3,6 @@
    baiken@vipasolutions.com, sbenes
    Updated July 25, 2014
    ========================================================================== */
-
 /* Form Elements
    ========================================================================== */
 @import "../config/base-vars";
@@ -12,12 +11,11 @@
 @import "../../../../bower_components/bootstrap/scss/mixins/buttons";
 
 .search .entity-actions .menu-component,
-.search-wrapper .entity-actions .menu-component{
-	margin-right:25px;
+.search-wrapper .entity-actions .menu-component {
+	margin-right: 25px;
 	@include bootstrapButton;
 	@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
-
 
 /* Search Bar
    ========================================================================== */
@@ -36,22 +34,25 @@
 }
 
 .search-bar .constraint label {
-	display:block;
+	display: block;
 }
 
 .search-bar .search-actions {
 	display: inline-block;
 	padding: 10px;
 }
+
 .constraint-input-conjunction {
 	padding: 0 4px;
 }
+
 /* Actions
    ========================================================================== */
 .search-wrapper .entity-actions,
-.search .entity-actions{
-	float:right;
+.search .entity-actions {
+	float: right;
 }
+
 .search-wrapper .result-actions,
 .search-wrapper .result-actions {
 	text-align: right;
@@ -93,6 +94,7 @@
 .search-wrapper .miwt-table tbody tr:hover td {
 	background-color: #feffdd;
 }
+
 //
 //.search-wrapper .miwt-table tbody td {
 //	padding: 3px;
@@ -124,6 +126,25 @@
 }
 
 select.bulk-actions,
-select.bulk_actions{
+select.bulk_actions {
 	min-width: 8rem;
+}
+
+.search-bar .range-constraint {
+	white-space: normal;
+	select {
+		min-width: 6rem;
+	}
+	.constraint-label {
+		display: block;
+	}
+	.miwt-calendar{
+		margin-top:4px;
+	}
+	.constraint-operator,
+	.miwt-calendar,
+	.constraint-input-conjunction {
+		white-space: nowrap;
+		display: inline-block;
+	}
 }
