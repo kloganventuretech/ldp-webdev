@@ -131,7 +131,7 @@
 		background-color: $color-lr-cyan;
 		border-color: darken($color-lr-cyan, 15%);
 	}
-	.sched-confirmed & {
+	.confirmed & {
 		background-color: $color-lr-yellow;
 		border-color: darken($color-lr-yellow, 15%);
 	}
@@ -140,13 +140,13 @@
 		background-color: $color-lr-canceled;
 		border-color: darken($color-lr-canceled, 15%);
 	}
-	.overdue & {
-		background-color: $color-lr-red;
-		border-color: darken($color-lr-red, 15%);
-	}
 	.in-progress & {
 		background-color: $color-lr-blue;
 		border-color: darken($color-lr-blue, 15%);
+	}
+	.overdue & {
+		background-color: $color-lr-red;
+		border-color: darken($color-lr-red, 15%);
 	}
 	.completed & {
 		background-color: $color-lr-brand;
