@@ -44,3 +44,19 @@ body div.miwt-ajax-progress {
 		}
 	}
 }
+.dnd-source {
+	cursor:move;
+	cursor:grab;
+	cursor:-webkit-grab;
+}
+.dnd-active {
+	cursor:no-drop;
+	.dnd-source {
+		cursor:move;
+		cursor:grabbing;
+		cursor:-webkit-grabbing;
+	}
+}
+.dnd-target {
+	cursor:copy;
+}
