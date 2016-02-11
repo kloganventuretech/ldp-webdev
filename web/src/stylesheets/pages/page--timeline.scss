@@ -1,3 +1,5 @@
+@import "../components/schedule";
+@import "../components/time";
 @import "../components/timeline";
 
 .flex-container {
@@ -57,5 +59,32 @@
 	}
 	> .tasks {
 		margin-left: 20px;
+	}
+}
+.activity-configurer-dialog {
+	width: 99% !important;
+	height:99%;
+	position:fixed!important;
+	.titlebar_row td {
+		border-bottom-width: 3px !important;
+		border-bottom-color: $color-lr-light-grey !important;
+	}
+	.windowcontent {
+		padding-top:0!important;
+		overflow: hidden!important;
+	}
+	.activity-configurer {
+		display:flex;
+		.toc {
+			flex: 1 0 15rem;
+			padding-right: 1rem;
+			border-right: 3px solid $color-lr-light-grey;
+		}
+		.activities-wrapper {
+			flex:40;
+			min-height: 90vh;
+			max-height: 90vh;
+			overflow: auto;
+		}
 	}
 }
