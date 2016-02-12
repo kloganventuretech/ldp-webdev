@@ -1,0 +1,10 @@
+.message-ctx-editor-dialog{
+	width: 40rem!important;
+	.persistence-actions.top{
+		display: none;
+	}
+	.prop textarea{ /*prop needs a class name*/
+		resize: both;
+		min-width: 90%;
+	}
+}

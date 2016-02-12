@@ -168,6 +168,34 @@
 		margin: 0 0 0 2px;
 	}
 }
+.toolbox {
+	.name {
+		display: inline;
+		padding-left: 1ch;
+	}
+	.repo-item[class*="cat-"],
+	.repo-item.program{
+		display: inline-block;
+		&:before{
+			display: inline-block;
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+	}
+	.repo-item.program:before {
+		content: "\f19d";
+	}
+
+	.cat-default:before {content: "\f012";}
+	.cat-meeting:before {content: "\f007";}
+	.cat-group_meeting:before {content: "\f0c0";}
+	.cat-survey:before {content: "\f044";}
+	.cat-assessment:before {content: "\f19c";}
+	.cat-on_boarding:before {content: "\f21d";}
+}
 .timeline-actions {
 	text-align: center;
 	margin: 4px auto;

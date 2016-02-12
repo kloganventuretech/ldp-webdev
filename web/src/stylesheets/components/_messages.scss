@@ -2,6 +2,7 @@
 @import "../config/base-vars";
 @import "../mixins/styles";
 @import "../../../../bower_components/bootstrap/scss/mixins/buttons";
+@import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
 /*
 	Partial -	Messages
 */
@@ -9,6 +10,7 @@
 .message-container {
 	margin: 10px 0;
 	clear: both;
+	@include clearfix();
 
 	&.empty {
 		display: none;
