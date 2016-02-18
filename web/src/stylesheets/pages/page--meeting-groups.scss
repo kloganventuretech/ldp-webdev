@@ -4,11 +4,11 @@
 .meeting-group-group-meeting-mgt {
 	display: flex;
 	.group-meeting-selector {
-		flex:1;
+		flex: 1;
 		max-width: 15rem;
-		margin-right:1rem;
+		margin-right: 1rem;
 		.search-results {
-			border:none;
+			border: none;
 			thead {
 				display: none;
 			}
@@ -19,23 +19,85 @@
 		}
 	}
 	.group-meeting-viewer {
-		flex:1;
+		flex: 1;
 	}
 }
+
+.group-meeting-viewer,
+.meeting-group-viewer {
+	.prop-body {
+		display: flex;
+		flex-wrap: wrap;
+		> .prop {
+			flex: 1 0 50%;
+		}
+	}
+}
+
 .dialog {
-	.top.actions{
-		display:none;
+	.top.actions {
+		display: none;
 	}
 }
+
 textarea.note-content {
 	resize: both;
 }
-.note-editor-dialog{
-	width:45rem !important;
-	.prop-editor{
+
+.note-editor-dialog {
+	width: 45rem !important;
+	.prop-editor {
 		text-align: center;
 	}
 }
-.reschedule-group-meeting{
-	width:35rem!important;
+
+.reschedule-group-meeting {
+	width: 35rem !important;
+}
+
+.group-meeting-notes-manager {
+	.notes-manager-actions {
+		float: right;
+		margin-top: -4rem;
+	}
+	.message-container {
+		width: calc(100% - 5rem);
+	}
+}
+
+.notes-listing { // Factor out into mixin - see _resource-card.scss
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	.card {
+		flex: 1 0 15rem;
+		padding: .5rem;
+		margin: 5px;
+
+		.actions {
+			position: absolute;
+			right: 1px;
+			top: 0;
+			z-index: 1;
+			.btn {
+				padding: 0;
+				margin: 0;
+				font-size: 16px;
+				height: 24px;
+				width: 24px;
+				overflow: hidden;
+				color: #white;
+				&:before {
+					display: block;
+					content: "\f00d";
+					font-size: 1rem;
+					font-family: FontAwesome;
+				}
+				&:hover {
+					background: $btn-danger-bg;
+				}
+			}
+		}
+	}
 }
