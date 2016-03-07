@@ -1,0 +1,46 @@
+@import "../config/base-vars";
+
+$nav-color-bg: lighten($color-lr-blue, 5%);
+$nav-bg-selected: darken($color-lr-blue, 10%);
+$nav-fg: $color-white;
+
+.goals-viewer{
+	position: relative;
+	.nav-actions{
+		margin-bottom:.25rem;
+	}
+	.persistence-actions{
+		position: absolute;
+		right:5px;
+		top:2.85rem;
+		.btn{
+			color:$brand-primary;
+			background-color: $color-white;
+			&:hover{
+				background-color: $color-smokey-white;
+				color:$brand-primary;
+			}
+		}
+	}
+	.tab-content {
+		padding-top:0;
+		padding-left:0;
+		padding-right:0;
+		border-top-width:0;
+		.navbar {
+			padding-left:0;
+			min-height: 2.85rem;
+			border-radius: 0;
+			background-color: $nav-color-bg;
+			border-right:1px solid $nav-bg-selected;
+			.active {
+				background-color: $nav-bg-selected;
+			}
+			.btn {
+				color:$nav-fg;
+				background-color: $nav-color-bg;
+			}
+		}
+
+	}
+}

@@ -1,39 +1,41 @@
 @import "../config/base-vars";
 
 @mixin style-tab-elements {
-	$color-bg: $color-smokey-white;
-	$color-bg-selected: $color-white;
-	$color-fg: $color-darker-grey;
+	$color-bg: lighten($btn-primary-bg, 5%);
+	$color-bg-selected: darken($btn-primary-bg, 10%);
+	$color-fg: $color-white;
 
 	.tab-items {
-		margin-bottom: -1px;
-		padding-left:0;
+		margin-bottom: 0;
+		padding:0;
+		background-color: $color-bg;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		border-left: 1px solid $color-lighter-grey;
 
 		.ti {
 			display: inline-block;
-			vertical-align: bottom;
-			border: 1px solid $color-lighter-grey;
-			margin-right: 5px;
+			border-right: 1px solid $color-bg-selected;
 			font-family: $font-family-sans-serif;
-
+			color: $color-fg;
 			a {
 				background-color: $color-bg;
-				color: $color-fg;
+				color: inherit;
 				text-decoration: none;
 				display: block;
-				padding: 5px 10px;
+				@include button-size(.6rem, 1.1rem, 1.1rem, $line-height, 0);
+			}
+			&:first-child a {
+				border-top-left-radius: 5px;
 			}
 			&:hover {
 				a {
-					color: $color-light-charcoal;
-					background-color: $color-almost-white;
+					background-color: $color-bg-selected;
 				}
 			}
 			&.tab-selected {
-				border-bottom-color: $color-bg-selected;
 
 				a {
-					color: $color-fg;
 					background-color: $color-bg-selected;
 				}
 			}
