@@ -1,4 +1,5 @@
 @import "../config/base-import";
+@import "../components/actions";
 @import "../components/messages";
 @import "../components/top-menu";
 @import "../components/side-nav";
@@ -11,7 +12,6 @@
 @import "../components/pager";
 @import "../components/prop-ui";
 @import "../components/file-chooser";
-@import "../components/actions";
 
 ::selection {
 	background: #FF6C60;
@@ -67,7 +67,7 @@ section {
 }
 
 .miwt .menu-component .menu-items {
-	.default, .meeting, .group-meeting,
+	.default, .meeting, .meeting-group,
 	.plan-start-date, .email, .reminder, .email-login-info, .assign-eg, .confirmation,
 	.fileentity, .uri {
 		a.menu-item{
@@ -93,7 +93,7 @@ section {
 
 	.default:before {content: "\f012";}
 	.meeting:before {content: "\f007";}
-	.group-meeting:before {content: "\f0c0";}
+	.meeting-group:before {content: "\f0c0";}
 
 	.fileentity:before {content: "\f016";}
 	.uri:before {content: "\f0c1";}
