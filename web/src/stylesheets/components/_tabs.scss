@@ -25,12 +25,12 @@
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			visibility: visible;
-			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+			@include button-variant($color-lr-grey, $btn-secondary-bg, $btn-secondary-border);
 			@include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $line-height, $btn-border-radius);
 		}
 		&:hover:before {
 			background-color: $color-smokey-white;
-			color: darken($brand-primary, 5%);
+			color: darken($color-lr-grey, 10%);
 		}
 	}
 	.back:before {

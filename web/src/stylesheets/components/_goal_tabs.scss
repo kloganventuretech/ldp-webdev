@@ -1,0 +1,85 @@
+@import "../config/base-vars";
+@import "../../../../bower_components/bootstrap/scss/mixins/hover";
+
+$tab-color-bg: lighten($btn-primary-bg, 5%);
+$tab-color-bg-selected: darken($btn-primary-bg, 10%);
+$tab-color-fg: $color-white;
+
+@import "../mixins/tabs";
+
+$nav-color-bg: lighten($color-lr-blue, 5%);
+$nav-bg-selected: darken($color-lr-blue, 10%);
+$nav-fg: $color-white;
+
+.goals-viewer{
+	position: relative;
+	.persistence-actions{
+		position: absolute;
+		right:4.25rem;
+		top:1px;
+		z-index: 1;
+		height:2.5rem;
+		.btn{
+			color:$brand-primary;
+			background-color: $color-white;
+			&:hover{
+				background-color: $color-smokey-white;
+				color:$brand-primary;
+			}
+		}
+	}
+	.nav-actions {
+		$nav-action-color: $brand-primary;
+		.back /*, .other */ {
+			&:before {
+				color: $nav-action-color;
+				@include hover {
+					color: $nav-action-color;
+				}
+
+				&:focus,
+				&.focus {
+					color: $nav-action-color;
+				}
+
+				&:active,
+				&.active,
+				.open > &.dropdown-toggle {
+					color: $nav-action-color;
+					&:hover,
+					&:focus,
+					&.focus {
+						color: $nav-action-color;
+					}
+				}
+			}
+			&:hover:before {
+				color: darken($nav-action-color, 10%);
+			}
+		}
+	}
+	.tab-container {
+		@include style-tab-elements;
+	}
+	.tab-container .tab-content {
+		padding-top:0;
+		padding-left:0;
+		padding-right:0;
+		border-top-width:0;
+		.navbar {
+			padding-left:0;
+			min-height: 2.85rem;
+			border-radius: 0;
+			background-color: $nav-color-bg;
+			border-right:1px solid $nav-bg-selected;
+			.active {
+				background-color: $nav-bg-selected;
+			}
+			.btn {
+				color:$nav-fg;
+				background-color: $nav-color-bg;
+			}
+		}
+
+	}
+}
