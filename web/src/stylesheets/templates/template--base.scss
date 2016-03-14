@@ -69,6 +69,7 @@ section {
 .miwt .menu-component .menu-items {
 	.default, .meeting, .meeting-group,
 	.plan-start-date, .email, .reminder, .email-login-info, .assign-eg, .confirmation,
+	.result-upload,
 	.fileentity, .uri {
 		a.menu-item{
 			display: inline-block;
@@ -90,6 +91,7 @@ section {
 	.email-login-info:before {content: "\f090";}
 	.assign-eg:before {content: "\f234";}
 	.confirmation:before {content: "\f087";}
+	.result-upload:before {content: "\f093";}
 
 	.default:before {content: "\f012";}
 	.meeting:before {content: "\f007";}
