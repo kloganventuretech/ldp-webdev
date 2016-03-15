@@ -37,7 +37,6 @@
 	border:none;
 	margin-bottom: 0;
 }
-
 .timeline:before{
 	background-color: lighten($color-lr-light-grey, 25%);
 	bottom: 0;
@@ -108,7 +107,7 @@
 	display: block;
 	width: 50%;
 }
-
+.timeline-hidden { display: none; }
 .timeline-icon-custom {
 	margin-top:-10px;
 	left: -20px;

@@ -5,6 +5,7 @@
 $tab-color-bg: $color-lr-light-grey !default;
 $tab-color-bg-selected: $color-lr-grey !default;
 $tab-color-fg: $color-white !default;
+$tab-content-color-bg: $color-white !default;
 
 @mixin style-tab-elements {
 
@@ -46,7 +47,7 @@ $tab-color-fg: $color-white !default;
 	}
 
 	.tab-content {
-		background-color: $color-white;
+		background-color: $tab-content-color-bg;
 		border: 1px solid $color-lighter-grey;
 		padding: 15px;
 	}

@@ -1,1 +1,183 @@
+$tab-content-color-bg: inherit;
 @import "../components/goal_tabs";
+@import "../../../../bower_components/bootstrap/scss/mixins/border-radius";
+@import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
+
+.organizational-goals {
+	display: flex;
+}
+
+.repo-item-selector {
+	flex: 0 0;
+}
+
+.repo-item-search {
+	.entity-actions {
+		margin-top: 3rem;
+		margin-bottom: 0;
+	}
+}
+
+.goal-configuration {
+	flex: 1 0;
+	margin: 1rem;
+	border-left: 1px solid #ddd;
+	padding-left: 1rem;
+	> .prop-group {
+		flex: 1;
+		@include border-radius();
+		background-color: $color-white;
+		padding: 1rem;
+		margin: 1rem;
+		min-width: 30rem;
+	}
+}
+
+.smart-wrapper > .prop-group,
+.goal-configuration > .prop-group {
+	flex: 1;
+	@include border-radius();
+	background-color: $color-white;
+	padding: 1rem;
+	margin: 1rem;
+}
+
+.goal-basics {
+	flex: 0 0 100%;
+	@include clearfix();
+	.goal-type {
+		display: none;
+	}
+	.prop.name {
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid #ddd;
+		font-size: 1.25rem;
+		label {
+			font-weight: bold;
+			color: $color-lr-grey;
+		}
+		label:after {
+			content: ": ";
+			padding-right: 1ch;
+		}
+		label, .val {
+			display: inline-block;
+		}
+		.goal-info-actions {
+			display: inline-block;
+			margin-left: 1rem;
+		}
+	}
+	.prop.description {
+		float: left;
+		max-width: calc(100% - 300px);
+		label {
+			font-weight: bold;
+			color: $color-lr-grey;
+		}
+	}
+	.smart-gauge {
+		float: left;
+		text-align: center;
+		margin-left: 32px;
+	}
+	.smart-gauge-label {
+		font-weight: bold;
+		color: $color-lr-grey;
+	}
+}
+
+.smart-wrapper {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: flex-start;
+	max-height: 100rem;/*FIXME russ@venturetech.net : this should only be fore desktop sized displays. */
+	> .prop-group {
+		width: 45%;
+		.actions {
+			margin: 1rem 0;
+		}
+	}
+	.prop {
+		margin-bottom: .5rem;
+		label {
+			font-weight: bold;
+			margin-bottom: .2rem;
+		}
+	}
+}
+
+.make-smart-label {
+	text-indent: 2rem;
+	font-size: 1.25rem;
+	font-weight: bold;
+	color: $color-lr-grey;
+}
+
+.dates-label,
+.goal-measurement-label,
+.prop.confidence label,
+.prop.control label,
+.prop.clarity label,
+.goal-tracking-label {
+	font-weight: bold;
+	color: $color-lr-grey;
+	margin-bottom: .75rem;
+}
+
+.goal-dates-values {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	.prop {
+		flex: 1;
+		label {
+			font-weight: bold;
+		}
+	}
+}
+
+.prop-group.measure-config {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	.prop {
+			flex: 10 45%;
+
+		&.description,
+		&.recording-question {
+			flex-basis: 100%;
+		}
+	}
+}
+.word-actions {
+	display: inline-block;
+}
+.words {
+	caption {
+		margin-top:0;
+		caption-side:bottom;
+	}
+	.word {
+		margin-left: 2ch;
+		display: list-item;
+	}
+}
+.clarity-options .rtb {
+	display: block;
+	padding-left:1rem;
+}
+
+.edit-goal-dialog {
+	width:50rem !important;
+	.prop-header{
+		display: none;
+	}
+	.prop-body{
+
+	}
+
+}

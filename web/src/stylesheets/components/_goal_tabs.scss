@@ -11,7 +11,8 @@ $nav-color-bg: lighten($color-lr-blue, 5%);
 $nav-bg-selected: darken($color-lr-blue, 10%);
 $nav-fg: $color-white;
 
-.goals-viewer{
+.goals-viewer,
+.goal-management{
 	position: relative;
 	.persistence-actions{
 		position: absolute;

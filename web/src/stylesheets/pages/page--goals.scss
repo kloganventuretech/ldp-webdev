@@ -1,6 +1,12 @@
 @import "../components/goal_tabs";
+@import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
 
+.goal-viewer-wrapper {
+	display: flex;
+}
 .goal-viewer {
+	flex:1 0;
+	padding:1rem;
 	h1 {
 		font-size: 1.75rem;
 		.goal-type {
@@ -12,9 +18,21 @@
 		}
 	}
 }
+.alignment {
+	flex-basis: 25%;
+	min-width: 500px;
+	border-left: 1px solid #ddd;
+	margin:1rem;
+	text-align: center;
+}
 
 .goal-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
 	.prop.description {
+		flex-basis: 100%;
 		label {
 			font-weight: bold;
 			padding-right: 1ch;
@@ -26,33 +44,40 @@
 			display: inline;
 		}
 	}
-
-	.measure-config-graph {
-		width: 300px;
+	.start-date{
+		display: none; /* FIXME : find a place to display this in the UI. */
 	}
-	[class^="config-graph"] { /* FIXME : better class name. */
+	.end-date{
+		display: none; /* FIXME : find a place to display this in the UI. */
+	}
+	.goal-measurement{
+		flex:0;
+		text-align: center;
+	}
+	.goal-measurement-actions {
+		margin:1rem;
+	}
+	.measure-config-graph {
+		width: 200px;
+	}
+	.config-graph {
 		position: relative;
 	}
 	.config-graph-text {
 		position: absolute;
-		transform: translate(calc(50% - 42px), calc(50% - 36px));
-		width: 100%;
-		height: 100%;
+		top:calc(50% - 40px);
+		bottom:0;
+		left:0;
+		right:0;
 		font-size: 46px;
 		color: $brand-primary;
 	}
 }
-.measure-config-graph{
-	margin-top:1.5rem;
-	position: relative;
-}
 
 .chart-legend {
-	/*width: 18ch;*/
-	position: absolute;
-	top: .5rem;
-	right: 0;
+	float:left;
 	.legend-header {
+		color:$color-lr-light-grey;
 		font-weight: bold;
 		margin-bottom: .25rem;
 		font-size: .9rem;
@@ -79,27 +104,43 @@
 section.tracking-metrics {
 	border-top: 1px solid #ddd;
 	margin: 1rem;
+	padding-top:1rem;
 	h1 {
 		text-align: center;
 		color: $brand-primary;
 	}
 	h2 {
 		text-align: center;
-		font-size: .85rem;
+		font-size: .9rem;
+		font-style: italic;
+		color: $color-lr-light-grey;
 	}
 	div.tracking-metrics {
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
+		flex-wrap: wrap;
 
 		.tracking-metric {
-			width: 400px;
-			margin: 0 1rem;
+			margin:2rem;
 			h1 {
 				font-weight: bold;
 				text-align: center;
 				font-size: 1rem;
+				color: $color-lr-grey;
 			}
-
+			.measure-config-graph{
+				margin-top:2rem;
+			}
+			.boolean-measure .config-graph,
+			.word-measure .config-graph {
+				display: flex;
+				.chart-legend{
+					margin-left:.5rem;
+				}
+			}
+			.int-measure .config-graph{
+				text-align: center;
+			}
 		}
 	}
 
@@ -108,4 +149,15 @@ section.tracking-metrics {
 .metric-last-updated{
 	text-align: center;
 	margin-top:.75rem;
+}
+.update-tracking-measure-dialog,
+.update-goal-measure-dialog{
+	width:50rem !important;
+	.prop-header{
+		display: none;
+	}
+	.prop-body{
+
+	}
+
 }

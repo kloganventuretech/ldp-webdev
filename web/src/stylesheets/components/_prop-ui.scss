@@ -126,6 +126,12 @@
 		.actions {
 			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 		}
+		span.rtb + span.rtb {
+			padding-left: 1rem;
+		}
+		span.ctb + span.ctb {
+			padding-left: 1rem;
+		}
 	}
 	.miwt-calendar {
 		input[type=text] {
