@@ -46,6 +46,7 @@ div.window.dialog /*specificity*/ {
 		left:initial;
 		right:initial;
 		width: 100%;
+		max-height: calc(100vh - 100px);
 	}
 	.actions.bottom {
 		width: 100%;

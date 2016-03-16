@@ -2,6 +2,28 @@
 @import "../components/schedule";
 @import "../components/time";
 
+.meeting-group-name {
+	margin: 1.25rem;
+	color: $color-lr-grey;
+}
+.group-meeting-take-attendance {
+	.group-name {
+		border-bottom: 1px solid #ccc;
+		margin: 1rem;
+		padding-bottom: .5rem;
+		color: $color-lr-grey;
+	}
+	.prop-body {
+		display: flex;
+		flex-wrap: wrap;
+		.prop {
+			flex: 1 0;
+			&.location {
+				flex: 1 0 100%;
+			}
+		}
+	}
+}
 .meeting-group-group-meeting-mgt {
 	display: flex;
 	.group-meeting-selector {

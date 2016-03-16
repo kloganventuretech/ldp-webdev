@@ -59,15 +59,18 @@
 	}
 }
 .activity-configurer-dialog {
-	width: 99% !important;
-	height:99%;
+	top: 5px !important;
+	bottom: 5px !important;
+	left: 10px !important;
+	right: 10px !important;
 	position:fixed!important;
+	width:auto !important;
 	.titlebar_row td {
-		border-bottom-width: 3px !important;
-		border-bottom-color: $color-lr-light-grey !important;
+		/*border-bottom-width: 3px !important;
+		border-bottom-color: $color-lr-light-grey !important;*/
 	}
 	.windowcontent {
-		padding-top:0!important;
+		/*padding-top:0!important;*/
 		overflow: hidden!important;
 	}
 	.activity-configurer {
@@ -75,13 +78,12 @@
 		.toc {
 			flex: 1 0 15rem;
 			padding-right: 1rem;
-			border-right: 3px solid $color-lr-light-grey;
+			border-right: 1px solid $color-lr-light-grey;
 		}
 		.activities-wrapper {
-			flex:40;
-			min-height: 90vh;
-			max-height: 90vh;
+			flex:40 0;
 			overflow: auto;
+			height: calc(100vh - 80px); // title-bar:70px + top:5px + bottom:5px
 		}
 	}
 }

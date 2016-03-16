@@ -101,6 +101,15 @@ section {
 	.uri:before {content: "\f0c1";}
 }
 
+.instructions {
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	color: $color-lr-grey;
+	font-style: italic;
+}
+p.instructions {
+	padding-bottom: 0;
+}
 
 /*
 .select2-container {

@@ -1,4 +1,5 @@
 @import "../config/base-vars";
+@import "../../../../bower_components/bootstrap/scss/mixins";
 
 .email-preview {
 	.preview-actions {
@@ -6,7 +7,14 @@
 		text-align: right;
 	}
 }
-
+.prop-wrapper .recipients-wrapper > label {
+	display: inline-block;
+}
+.recipient > .btn.remove{
+	@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius);
+	margin-left: 2ch;
+}
 span.et-user-variable {
 	border-bottom: 2px dotted darkgreen;
 }
@@ -24,7 +32,7 @@ span.et-user-variable {
 }
 
 .recipient-editor-dialog{
-	width: 18rem !important;
+	width: 50rem !important;
 }
 
 .link-chooser-dialog {
