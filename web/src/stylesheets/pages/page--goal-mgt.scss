@@ -3,6 +3,8 @@ $tab-content-color-bg: inherit;
 @import "../../../../bower_components/bootstrap/scss/mixins/border-radius";
 @import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
 
+.personal-goals,
+.leadership-goals,
 .organizational-goals {
 	display: flex;
 }
