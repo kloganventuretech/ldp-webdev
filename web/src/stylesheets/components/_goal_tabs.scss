@@ -11,13 +11,21 @@ $nav-color-bg: lighten($color-lr-blue, 5%);
 $nav-bg-selected: darken($color-lr-blue, 10%);
 $nav-fg: $color-white;
 
+h2.plan-name {
+	font-size: 2rem;
+	border-bottom: 1px solid #ccc;
+	margin: 1rem;
+	padding-bottom: .5rem;
+	color: $color-lr-grey;
+}
+
 .goals-viewer,
 .goal-management{
 	position: relative;
 	.persistence-actions{
 		position: absolute;
 		right:4.25rem;
-		top:1px;
+		top:calc(3.75rem + 1px);
 		z-index: 1;
 		height:2.5rem;
 		.btn{

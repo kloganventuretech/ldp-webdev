@@ -4,6 +4,12 @@
 @import "../../../../bower_components/bootstrap/scss/mixins/alert";
 @import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
 
+.plan-name{
+	font-size: 2rem;
+	margin: 1rem 1rem 1.5rem;
+	color: $color-lr-grey;
+}
+
 .flex-container {
 	border-top: 3px solid $color-lr-light-grey;
 	.timeline-ui{
@@ -17,6 +23,8 @@
 }
 
 .select-year {
+	margin-bottom: -2rem;
+	margin-top: 2rem;
 	label {
 		display: none;
 	}

@@ -1,3 +1,4 @@
+@import "../../../../bower_components/bootstrap/scss/mixins";
 @import "../components/schedule";
 @import "../components/time";
 
@@ -20,6 +21,8 @@
 	}
 	.group-meeting-viewer {
 		flex: 1;
+		border-left: 1px solid #ddd;
+		padding-left: 1rem;
 	}
 }
 
@@ -58,7 +61,11 @@ textarea.note-content {
 .group-meeting-notes-manager {
 	.notes-manager-actions {
 		float: right;
-		margin-top: -4rem;
+		margin-top: -3.35rem;
+		.btn {
+			@include button-variant($color-lr-grey, $btn-secondary-bg, $color-lr-light-grey);
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius);
+		}
 	}
 	.message-container {
 		width: calc(100% - 5rem);
