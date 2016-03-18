@@ -1,0 +1,11 @@
+@import "../mixins/miwt-switch";
+
+.prop-wrapper{
+	.auto-complete {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		@include checkboxSwitch(false, 13ch);
+
+	}
+}

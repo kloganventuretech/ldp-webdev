@@ -1,9 +1,10 @@
 @import "../components/schedule";
 @import "../components/time";
 @import "../components/tasks";
+@import "../components/auto-complete-switch";
 
 .prop-wrapper {
 	.reminder-for-task select.val {
-		min-width:6rem;
+		min-width: 6rem;
 	}
 }

@@ -7,7 +7,7 @@
 			.repeat {
 				display: inline-block;
 				margin: 0;
-				padding: 0 0 0 5px;
+				padding: 0;
 
 				@include checkboxSwitch(false);
 
@@ -53,7 +53,6 @@
 
 		}
 
-
 		.frequency select.val {
 			min-width: 5rem;
 		}
@@ -68,12 +67,9 @@
 		}
 
 	}
-
-	.engagement-schedule {
-		.schedule-period {
-			select.val {
-				min-width: 3.5rem;
-			}
+	.schedule-period {
+		select.val {
+			min-width: 4.5rem;
 		}
 	}
 	.task-config-editor {
@@ -94,4 +90,15 @@
 	.start-date-label {
 		font-weight: bold;
 	}
+}
+
+.prop-group.schedule {
+	display: inline-block;
+	.frequency{
+		display: inline;
+	}
+	h1, .repeat-unit, .frequency > label {
+		display: none;
+	}
+
 }

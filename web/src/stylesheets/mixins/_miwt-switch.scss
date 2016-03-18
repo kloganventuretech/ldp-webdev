@@ -1,8 +1,11 @@
 @import "../config/base-vars";
 
-/** miwt checkbox switch. */
-
-@mixin checkboxSwitch($anchor-right) {
+/**
+ * miwt checkbox switch.
+ * @param anchor-right true if label is on the right.
+ * @param width the width of the label.
+ */
+@mixin checkboxSwitch($anchor-right, $width: 60px) {
 	input[type=checkbox] {
 		position: absolute;
 		margin-left: -9999px;
@@ -20,11 +23,11 @@
 	}
 	.tbl:not(:empty) {
 		@if $anchor-right {
-			text-indent: 60px;
+			text-indent: $width;
 			overflow: visible;
 		} @else {
-			text-indent: -60px;
-			margin-left: 60px;
+			text-indent: -$width;
+			margin-left: $width;
 		}
 	}
 	.tbl {
