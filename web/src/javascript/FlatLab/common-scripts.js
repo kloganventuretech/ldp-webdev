@@ -143,8 +143,7 @@ jQuery(function () {
 
 	setupExpandCollapse();
 
-	function deserialzeBS()
-	{
+	function deserialzeBS() {
 		var $ctx = $(document);
 		var myArrayJSON = sessionStorage["tl-expanded"], myArray;
 		if(myArrayJSON) myArray = JSON.parse(myArrayJSON);
@@ -199,6 +198,22 @@ jQuery(function () {
 		if (w.orientation && w.orientation === 0 && sessionStorage[SIDE_BAR_CLOSED] === undefined) {
 			openSidebar(false);
 		}
+		// Track left-menu last click
+		$("[data-lastprop]").each(function(idx, el){
+			var $el = $(el);
+			var data = {
+				"prop" : $el.data("lastprop"),
+				"url" : $el.data("lasturl")
+			};
+			$el.click(data, function(evt){
+				var $target = $(evt.target || evt.toElement), $li = $target.closest('li.mi'),
+					options={"type":"POST"}, prop = evt.data.prop, cn = $li[0].className;
+				options.url = evt.data.url;
+				options.data = {};
+				options.data[prop]=cn;
+				$.ajax(options);
+			});
+		});
 	})(window);
 
 
