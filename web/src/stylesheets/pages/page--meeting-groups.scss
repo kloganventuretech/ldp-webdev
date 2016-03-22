@@ -23,6 +23,14 @@
 			}
 		}
 	}
+	.presence-actions {
+		.presence-btn {
+			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+			&.selected {
+				@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+			}
+		}
+	}
 }
 .meeting-group-group-meeting-mgt {
 	display: flex;
