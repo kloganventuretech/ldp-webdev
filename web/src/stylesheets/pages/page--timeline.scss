@@ -63,7 +63,7 @@
 	.prop-header-title{
 		font-size:inherit;
 		> h1 {
-			font-size: 2rem;
+			font-size: 1.75rem;
 		}
 	}
 }
@@ -100,4 +100,44 @@
 		margin-top:1rem;
 		text-align: center;
 	}
+}
+
+.confirm-task-history-container {
+
+	.prop, .prop-group {
+
+		h1 {
+			font-size: 1.5rem;
+		}
+
+	}
+
+	.prop-body {
+		width: 75%;
+	}
+
+	.task-assignment { /* This may get less specific */
+
+		.entity-actions {
+			margin-bottom: .75rem;
+			padding-right: 0;
+		}
+
+		caption {
+			margin-top: -3.85rem;
+			font-size: 1.5rem;
+			font-weight: 500;
+			color: $color-lr-grey;
+		}
+
+	}
+
+}
+
+.miwt-table {
+
+	.column-label {
+		font-family: $font-family-sans-serif;
+	}
+
 }
