@@ -102,7 +102,7 @@
 	}
 }
 
-.confirm-task-history-container {
+.engagement-viewer {
 
 	.prop, .prop-group {
 
@@ -115,6 +115,10 @@
 	.prop-body {
 		width: 75%;
 	}
+
+}
+
+.confirm-task-history-container {
 
 	.task-assignment { /* This may get less specific */
 
@@ -135,9 +139,32 @@
 }
 
 .miwt-table {
+	border: none;
 
 	.column-label {
 		font-family: $font-family-sans-serif;
+	}
+
+	> thead > tr > th {
+		background-color: lighten($color-lr-light-grey, 25%);
+	}
+
+}
+
+.prop-editor .prop .actions {
+	padding-left: 0;
+}
+
+.actions {
+
+	.btn {
+
+		&.delete {
+			background: $color-white;
+			color: $color-lr-red;
+			border-color: $color-lr-red;
+		}
+
 	}
 
 }
