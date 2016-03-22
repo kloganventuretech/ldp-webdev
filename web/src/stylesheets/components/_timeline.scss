@@ -255,9 +255,10 @@
 		font-size: 18px;
 		position: absolute;
 		bottom: 1rem;
-		width:18px;
-		height:18px;
+		width:24px;
+		height:24px;
 		right: 0;
+		text-align: center;
 	}
 	.task-item.pending &:after {
 		content: "\f017";
@@ -270,6 +271,7 @@
 	}
 	.task-item.in-progress &:after {
 		content: "\f110";
+		animation: fa-spin 5s infinite steps(8);
 	}
 	.task-item.canceled &:after {
 		content: "\f273";
@@ -349,7 +351,11 @@
 		border-left-color: $color-lr-canceled;
 	}
 
-	&.in-progress, &.scheduled {
+	&.in-progress{
+		@include alert-variant(lighten($color-lr-blue, 30%), $color-lr-blue, darken($color-lr-blue, 70%));
+		border-left-color: $color-lr-blue;
+	}
+	&.scheduled {
 		@include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
 		border-left-color: $brand-info;
 	}
