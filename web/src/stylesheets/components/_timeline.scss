@@ -4,9 +4,13 @@
 @import "../../../../bower_components/bootstrap/scss/mixins/alert";
 @import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
 
+.participant-timeline > .card-block {
+	padding: 1.25rem 1.85rem 1.25rem 1.25rem;
+}
+
 .plan-name{
 	font-size: 2rem;
-	margin: 1rem 1rem 1.5rem;
+	margin: 1rem 1rem 1.5rem 0;
 	color: $color-lr-grey;
 }
 
@@ -36,7 +40,7 @@
 	position: relative;
 }
 .plan-actions {
-	margin: 5px 5px 0;
+	margin: 5px 29px 0;
 	float:right;
 }
 .plan-header,
@@ -76,7 +80,7 @@
 		border-radius: .5rem;
 	}
 	.card-block {
-		padding: .75rem;
+		padding: .75rem 1.25rem .75rem .75rem;
 		@include clearfix();
 	}
 	.arrow {
@@ -206,24 +210,38 @@
 .timeline-actions {
 	text-align: center;
 	margin: 4px auto;
+
+	&.top {
+		margin-bottom: 2rem;
+	}
+
 }
 
-.task-item {
-	position:relative;
-	border-radius: 0;
-}
+.task-item-info {
 
-.task-item-name {
-	font-size: 16px;
-	display: inline-block;
-}
+	.task-item-desc {
+		font-size: 0.9rem;
+		line-height: 1.25rem;
+		margin: 5px 0;
+	}
 
-.task-item-date {
-	font-size: 12px;
-}
+	.task-item-name {
+		font-size: 16px;
+		display: inline-block;
+		font-weight: bold;
+		max-width: 95%;
+		vertical-align: top;
+	}
 
-.task-item-status {
-	font-size: 12px;
+	.task-item-date {
+		font-size: 12px;
+		font-style: italic;
+	}
+
+	.task-item-status {
+		font-size: 12px;
+	}
+
 }
 
 .activity-summary {
@@ -239,12 +257,14 @@
 .actions.task-item-actions {
 	position: absolute;
 	top:4px;
-	right:4px;
+	right:7px;
 	height:100%;
+
 	a.fa {
 		text-decoration: none;
 		color:inherit;
 	}
+
 	a.fa:hover {
 		color: $color-black;
 	}
@@ -297,29 +317,55 @@
 		font-size: 24px !important;
 		padding: 0 !important;
 		outline:none !important;
+		float: right;
+		margin-right: 0;
 	}
 	> .btn:hover {
 		color: $color-lr-grey;
 		background-color: transparent;
 	}
-}
-.activity-name {
-	margin:0;
-}
-.activity-status {
-	font-size: 14px;
-	font-style: italic;
-	font-weight: normal;
-	&:after {
-		content: ": ";
+	.activity-summary {
+		clear: right;
+		text-align: right;
+		padding-right: 1px;
 	}
-}
-.activity-date {
-	font-size: 14px;
-	font-style: italic;
 }
 .activity-details {
 	margin-bottom:1rem;
+	color: $color-lr-grey;
+
+	> div {
+		margin-bottom: 5px;
+	}
+
+	label {
+		font-weight: bold;
+		margin: 0 5px 0 0;
+	}
+
+	.activity-name {
+		margin:0 0 10px;
+	}
+
+	.activity-status {
+		font-size: 14px;
+		font-style: italic;
+		font-weight: normal;
+
+		&:after {
+			content: ": ";
+		}
+
+	}
+
+	.activity-process-name {
+	}
+
+	.activity-date {
+		font-size: 14px;
+		font-style: italic;
+	}
+
 }
 
 @include text-emphasis-variant('.activity-summary .pending', $color-lr-grey);
@@ -332,6 +378,8 @@
 
 .task-item {
 	border-left-width: 5px;
+	position: relative;
+	border-radius: 0;
 
 	&.pending {
 		@include alert-variant(lighten($color-lr-light-grey, 25%), $color-lr-light-grey, $color-lr-black);
