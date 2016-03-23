@@ -4,7 +4,33 @@
 
 jQuery(function () {
 
+	var CN_HAS_ERROR = "has-error";
 
+	function errorMessageCleanup(){
+		$("." + CN_HAS_ERROR).each(function (idx, el) {
+			$(el).removeClass(CN_HAS_ERROR);
+		});
+	}
+
+	function setupErrorMessages(ctx){
+		var $ctx = $(ctx || document);
+		var $mc = $ctx.hasClass('message-container') ? $ctx : $ctx.find('.message-container');
+		if($mc.length === 0)
+			return;
+		$mc.find('.error [data-source]').each(function (idx, el) {
+			var $el = $(el), id = $el.data('source');
+			var $prop = $('#' + id);
+			if($prop.length === 0)
+				return;
+			$prop.addClass(CN_HAS_ERROR);
+			$prop.append('<div class="error"><span class="error-message">' + $el.text() + '</span></div>');
+			$el.parent().remove();
+		});
+		if($mc.children().length === 0)
+			$mc.addClass('empty');
+	}
+
+	setupErrorMessages();
 
 //    sidebar toggle
 
@@ -174,16 +200,20 @@ jQuery(function () {
 				return data.content;
 			},
 			postProcessNode: function (data) {
-				$.each(data, function (idx, d) {
-					initSelect2(d.node);
-					handleDataDownload(d.node);
-					enableTooltips(d.node);
-					setupExpandCollapse(d.node);
+				$.each(data, function (idx, ctx) {
+					initSelect2(ctx);
+					handleDataDownload(ctx);
+					enableTooltips(ctx);
+					setupExpandCollapse(ctx);
 					deserialzeBS();
+					setTimeout(function () {
+						setupErrorMessages(ctx);
+					}, 10);
 				});
 			},
 			postUpdate: function () {
 				$(this).trigger('vs:miwt-post-update');
+				errorMessageCleanup();
 			}
 		};
 	});
