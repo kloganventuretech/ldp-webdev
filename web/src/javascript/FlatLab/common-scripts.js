@@ -8,26 +8,35 @@ jQuery(function () {
 
 	function errorMessageCleanup(){
 		$("." + CN_HAS_ERROR).each(function (idx, el) {
-			$(el).removeClass(CN_HAS_ERROR);
+			var $el = $(el);
+			$el.removeClass(CN_HAS_ERROR);
+			$el.find('.error-message').remove();
 		});
 	}
 
 	function setupErrorMessages(ctx){
-		var $ctx = $(ctx || document);
+		var $ctx = $(ctx || document), first;
 		var $mc = $ctx.hasClass('message-container') ? $ctx : $ctx.find('.message-container');
 		if($mc.length === 0)
 			return;
 		$mc.find('.error [data-source]').each(function (idx, el) {
+			if(!first) first = el;
 			var $el = $(el), id = $el.data('source');
 			var $prop = $('#' + id);
 			if($prop.length === 0)
 				return;
 			$prop.addClass(CN_HAS_ERROR);
-			$prop.append('<div class="error"><span class="error-message">' + $el.text() + '</span></div>');
+			$prop.append('<div class="error-message"><span class="error-text">' + $el.text() + '</span></div>');
 			$el.parent().remove();
 		});
-		if($mc.children().length === 0)
-			$mc.addClass('empty');
+		if(!!first) {
+			$mc.append('<div class="message error"><span class="brief">Please review the errors below</span></div>');
+			//noinspection JSUnresolvedFunction - defined in MIWT util.js
+			first.scrollIntoViewIfNeeded(true);
+		}
+		
+		// if($mc.children().length === 0)
+		// 	$mc.addClass('empty');
 	}
 
 	setupErrorMessages();
@@ -36,6 +45,7 @@ jQuery(function () {
 
 	function responsiveView() {
 		var wSize = $(window).width();
+		//noinspection JSUnresolvedVariable - defined in HTML document
 		if (sessionStorage[SIDE_BAR_OPEN] === undefined)
 			openSidebar(!(wSize <= 768));
 	}
@@ -65,8 +75,10 @@ jQuery(function () {
 				})
 				.addClass(SELECT2_INIT)
 				.filter('[data-features~="watch"]');
-			if (window.miwt)
+			if (window.miwt) {
+				//noinspection JSUnresolvedVariable
 				$result.on('change', miwt.observerFormSubmit);
+			}
 		}
 	}
 
@@ -206,14 +218,15 @@ jQuery(function () {
 					enableTooltips(ctx);
 					setupExpandCollapse(ctx);
 					deserialzeBS();
+					if($(ctx).hasClass('message-container') || $(ctx).find('.message-container').length > 0)
+						errorMessageCleanup();
 					setTimeout(function () {
 						setupErrorMessages(ctx);
-					}, 10);
+					}, 1);
 				});
 			},
 			postUpdate: function () {
 				$(this).trigger('vs:miwt-post-update');
-				errorMessageCleanup();
 			}
 		};
 	});
@@ -225,6 +238,7 @@ jQuery(function () {
 			if (w.orientation === 0)
 				openSidebar(false);
 		}, false);
+		//noinspection JSUnresolvedVariable - defined in HTML document
 		if (w.orientation && w.orientation === 0 && sessionStorage[SIDE_BAR_CLOSED] === undefined) {
 			openSidebar(false);
 		}
