@@ -129,6 +129,12 @@ h2.plan-name {
 	}
 
 	.tracking-metric {
+		margin: 0 1.5rem;
+
+		.tracking-metric-renderer .prop-group {
+			padding: 0 !important;
+		}
+
 		+ .tracking-metric {
 			padding-top: 25px;
 			margin-top: 35px;
