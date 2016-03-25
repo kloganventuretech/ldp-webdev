@@ -123,6 +123,9 @@ section.tracking-metrics {
 
 		.tracking-metric {
 			margin:2rem;
+			display: flex;
+			flex-direction: column;
+
 			h1 {
 				font-weight: bold;
 				text-align: center;
@@ -131,6 +134,8 @@ section.tracking-metrics {
 			}
 			.measure-config-graph{
 				margin-top:2rem;
+				min-height: 13.25rem;
+				flex: 1 0 auto;
 			}
 			.boolean-measure .config-graph,
 			.word-measure .config-graph {
@@ -142,6 +147,28 @@ section.tracking-metrics {
 			.int-measure .config-graph{
 				text-align: center;
 			}
+			.metric-last-updated {
+				font-size: $font-size-sm;
+				font-style: italic;
+				color: $color-lr-red;
+				&::before {
+					content: '\f12a';
+					font: normal normal normal 14px/1 FontAwesome;
+					font-size: inherit;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					padding-right: 5px;
+				}
+
+				&.interval-update-received {
+					color: $color-lr-light-grey;
+					&::before {
+						content: '\f087';
+					}
+				}
+
+			}
 		}
 	}
 
@@ -149,8 +176,9 @@ section.tracking-metrics {
 .tracking-metric-actions,
 .metric-last-updated{
 	text-align: center;
-	margin-top:.75rem;
+	margin-top: .75rem;
 }
+
 .update-tracking-measure-dialog,
 .update-goal-measure-dialog{
 	width:50rem !important;
