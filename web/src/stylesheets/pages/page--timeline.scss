@@ -59,14 +59,14 @@
 		margin-left: 20px;
 	}
 }
-.confirm-task-history-container {
+/*.confirm-task-history-container { HIDING THE HEADER TITLE FOR NOW
 	.prop-header-title{
 		font-size:inherit;
 		> h1 {
 			font-size: 1.75rem;
 		}
 	}
-}
+}*/
 .activity-configurer-dialog {
 	top: 5px !important;
 	bottom: 5px !important;
@@ -165,6 +165,26 @@
 			border-color: $color-lr-red;
 		}
 
+	}
+}
+
+.prop-wrapper {
+
+	.prop {
+		margin-bottom: .5rem;
+	}
+
+	.prop-header-title {
+		margin: 0 0 1em;
+		display: none; /* Hide, for now at least */
+	}
+
+	.recipients-wrapper {
+		margin-top: 1.125rem;
+
+		> label {
+			margin-right: 10px;
+		}
 	}
 
 }
