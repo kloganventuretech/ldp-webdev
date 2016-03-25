@@ -116,6 +116,11 @@ input[type=number]{
 	.actions.top {
 		display: none;
 	}
+
+	.address > span {
+		display: block;
+	}
+
 }
 
 .prop-editor {
