@@ -111,6 +111,18 @@ p.instructions {
 	padding-bottom: 0;
 }
 
+.configure-task {
+
+	.prop.time {
+		.prop-group-title { margin-top: 0; }
+	}
+
+	.prop.timezone {
+		> label { margin-top: 15px; }
+	}
+
+}
+
 /*
 .select2-container {
 	font-size: .98rem;
