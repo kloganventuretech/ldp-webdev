@@ -94,11 +94,25 @@
 			width: 100%;
 		}
 
-		.prop.start-time {
-			padding: 2rem;
+		.prop.start-time, .prop.meeting-group {
+			padding: 2rem 2rem 0;
+
 			label {
 				display: block;
+				font-weight: bold;
 			}
+
+			input[type="text"] {
+				border: 1px solid #B7B7B5;
+				border-radius: $border-radius-sm;
+				padding: 2px 5px;
+			}
+
+			.group-name {
+				font-style: italic;
+				margin-bottom: 1rem;
+			}
+
 		}
 
 		.miwt-calendar {
@@ -269,24 +283,6 @@
 
 .prop-editor .prop .actions {
 	padding-left: 0;
-}
-
-.actions {
-
-	.btn {
-
-		&.delete {
-			background: $color-white;
-			color: $color-lr-red;
-			border-color: $color-lr-red;
-
-			&:hover {
-				background: $color-lr-red;
-			}
-
-		}
-
-	}
 }
 
 .prop-wrapper {
