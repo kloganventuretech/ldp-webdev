@@ -55,7 +55,7 @@ div.window.dialog /*specificity*/ {
 		max-height: calc(100vh - 100px);
 		border-radius: $border-radius-lg;
 	}
-	.actions.bottom {
+	.actions.bottom, .actions.top {
 		width: 100%;
 		text-align: right;
 		border-top: 1px #ccc solid;
@@ -76,5 +76,10 @@ div.window.dialog /*specificity*/ {
 		.btn-block + .btn-block {
 			margin-left: 0;
 		}
+	}
+	.actions.top {
+		border-top: none;
+		border-bottom: 1px solid $modal-footer-border-color;
+		padding: 0 0 15px;
 	}
 }
