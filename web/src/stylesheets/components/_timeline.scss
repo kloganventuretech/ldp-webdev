@@ -219,6 +219,11 @@
 
 .task-item-info {
 
+	label, span.tr-prefix, span.val, span.tr-display {
+		display: inline-block;
+		font-size: .9rem;
+	}
+
 	.task-item-desc {
 		font-size: 0.9rem;
 		line-height: 1.25rem;
@@ -244,6 +249,11 @@
 
 	.task-item-scheduling {
 		padding-right: 15px;
+
+		span.tr-prefix {
+			font-weight: bold;
+		}
+
 	}
 
 }
