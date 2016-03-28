@@ -123,6 +123,25 @@ p.instructions {
 
 }
 
+.actions {
+
+	.btn {
+
+		&.delete, &.remove {
+			background: $color-white;
+			color: $color-lr-red;
+			border-color: $color-lr-red;
+
+			&:hover {
+				background: $color-lr-red;
+				border-color: $color-lr-red;
+			}
+
+		}
+
+	}
+}
+
 /*
 .select2-container {
 	font-size: .98rem;
