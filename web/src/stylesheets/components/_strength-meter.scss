@@ -1,13 +1,19 @@
 @import "../config/base-vars";
 
+.smart-gauge-label {
+  font-weight: bold;
+  color: $color-lr-grey;
+  margin-bottom: 8px;
+}
+
 .meter {
   width: 200px;
-  height: 30px;
-  border:1px solid #ddd;
+  height: 35px;
   padding:0;
   margin:0;
   box-sizing: border-box;
   position:relative;
+  border-radius: $border-radius-sm;
   .cat {
     display:inline-block;
     width: 33.33333%;
@@ -17,19 +23,46 @@
   }
   .low{
     background-color: $brand-danger;
+    border-top-left-radius: $border-radius-sm;
+    border-bottom-left-radius: $border-radius-sm;
   }
   .medium{
     background-color: $brand-warning;
   }
   .high {
     background-color: $brand-primary;
+    border-top-right-radius: $border-radius-sm;
+    border-bottom-right-radius: $border-radius-sm;
   }
   .indicator{
     position: absolute;
-    width: 5px;
-    height: 150%;
+    width: 4px;
+    height: 130%;
     background-color: $color-lr-black;
     z-index: 1;
-    top:-25%;
+    top:-14%;
+
+    &::before, &::after {
+      content: '';
+      background: none;
+      position: absolute;
+      margin-left: -8px;
+      display: block;
+    }
+
+    &::before {
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #343940;
+      top: -2px;
+    }
+
+    &::after {
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #343940;
+      bottom: -2px;
+    }
+
   }
 }

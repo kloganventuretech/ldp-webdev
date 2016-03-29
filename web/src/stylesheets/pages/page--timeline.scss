@@ -2,6 +2,7 @@
 @import "../components/schedule";
 @import "../components/time";
 @import "../components/timeline";
+@import "../../../../bower_components/bootstrap/scss/buttons";
 
 .flex-container {
 	display: flex;
@@ -59,14 +60,14 @@
 		margin-left: 20px;
 	}
 }
-.confirm-task-history-container {
+/*.confirm-task-history-container { HIDING THE HEADER TITLE FOR NOW
 	.prop-header-title{
 		font-size:inherit;
 		> h1 {
-			font-size: 2rem;
+			font-size: 1.75rem;
 		}
 	}
-}
+}*/
 .activity-configurer-dialog {
 	top: 5px !important;
 	bottom: 5px !important;
@@ -79,25 +80,228 @@
 		border-bottom-color: $color-lr-light-grey !important;*/
 	}
 	.windowcontent {
-		padding-top:0!important;
-		padding-bottom: 0 !important;
+		padding: 0 !important;
+		height: 100vh;
+		overflow: hidden;
 	}
 	.activity-configurer {
 		height: calc(100vh - 80px - 5rem); // title-bar:70px + top:5px + bottom:5px + persistence-actions:5rem
-		display:flex;
+		//display:flex;
+		display: block;
+
+		> tbody, > tbody > tr, > tbody > tr .miwt-procedure-card-con {
+			display: block;
+			width: 100%;
+		}
+
+		.prop.start-time, .prop.meeting-group {
+			padding: 2rem 2rem 0;
+
+			label {
+				display: block;
+				font-weight: bold;
+			}
+
+			input[type="text"] {
+				border: 1px solid #B7B7B5;
+				border-radius: $border-radius-sm;
+				padding: 2px 5px;
+			}
+
+			.group-name {
+				font-style: italic;
+				margin-bottom: 1rem;
+			}
+
+		}
+
+		.miwt-calendar {
+			display: block;
+			margin-bottom: 1rem;
+		}
+
+		.procedure-navigation-bottom-con {
+			float: right;
+			padding: 1.5rem 1.5rem 0 0;
+		}
+
+		.procedure-navigation {
+
+			.btn {
+				background: $btn-primary-bg;
+				border: 1px solid $btn-primary-border;
+				color: #fff;
+				margin-right: .75rem;
+				font-weight: 300;
+				text-transform: uppercase;
+
+				&.cancel-button {
+					background: #fff;
+					color: $brand-primary;
+
+					&:hover {
+						color: #fff;
+					}
+				}
+
+				&:hover {
+					background: darken($btn-primary-bg, 10%);
+				}
+
+			}
+
+		}
+
+		.miwt-procedure-card {
+
+			> section {
+				display: block;
+				overflow: hidden;
+				height: calc(100vh - 170px);
+			}
+
+		}
+
+		.toc, .activities-wrapper {
+			display: inline-block;
+			vertical-align: top;
+		}
+
 		.toc {
-			flex: 1 0 15rem;
-			padding-top:1rem;
-			padding-right: 1rem;
+			//flex: 1 0 17rem;
+			padding: 2rem;
+			margin-top: 2rem;
 			border-right: 1px solid $color-lr-light-grey;
+			height: calc(100vh - 220px);
+			width: 20%;
 		}
+
+		.toc-entry {
+
+			+ .toc-entry {
+				margin-top: 1rem;
+			}
+
+			span {
+				display: inline-block;
+				vertical-align: top;
+
+				&:first-child {
+					width: 22px;
+				}
+				&:last-child {
+					width: 86%;
+				}
+			}
+		}
+
 		.activities-wrapper {
-			flex:40 0;
+			//flex:40 0;
 			overflow: auto;
+			width: 80%;
+			height: 80vh;
+			margin-bottom: 2rem;
+			padding: 3.25rem 5rem 1rem 3.5rem;
 		}
+
+		.engagement-type {
+			font-size: 1.25rem;
+			font-weight: bold;
+			margin: 1.25rem 0 .75rem .35rem;
+			border-bottom: 1px solid $color-lr-light-grey;
+			display: block;
+			padding-bottom: .5rem;
+		}
+
+		caption { color: $color-lr-grey; font-weight: bold; }
+
+		.entity-actions.actions {
+			margin-bottom: 0;
+			padding-right: 0;
+		}
+
+		.message-container-con {
+			position: absolute;
+			left: 45%;
+		}
+
 	}
 	.persistence-actions{
 		margin-top:1rem;
 		text-align: center;
 	}
+}
+
+.engagement-viewer {
+
+	.prop, .prop-group {
+
+		h1 {
+			font-size: 1.5rem;
+		}
+
+	}
+
+	.prop-body {
+		width: 75%;
+	}
+
+}
+
+.confirm-task-history-container {
+
+	.task-assignment { /* This may get less specific */
+
+		.entity-actions {
+			margin-bottom: .75rem;
+			padding-right: 0;
+		}
+
+		caption {
+			margin-top: -3.85rem;
+			font-size: 1.5rem;
+			font-weight: 500;
+			color: $color-lr-grey;
+		}
+
+	}
+
+}
+
+.miwt-table {
+	border: none;
+
+	.column-label {
+		font-family: $font-family-sans-serif;
+	}
+
+	> thead > tr > th {
+		background-color: lighten($color-lr-light-grey, 25%);
+	}
+
+}
+
+.prop-editor .prop .actions {
+	padding-left: 0;
+}
+
+.prop-wrapper {
+
+	.prop {
+		margin-bottom: .5rem;
+	}
+
+	.prop-header-title {
+		margin: 0 0 1em;
+		display: none; /* Hide, for now at least */
+	}
+
+	.recipients-wrapper {
+		margin-top: 1.125rem;
+
+		> label {
+			margin-right: 10px;
+		}
+	}
+
 }

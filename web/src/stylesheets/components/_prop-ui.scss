@@ -11,13 +11,15 @@
    ========================================================================== */
 
 .prop-wrapper {
-	max-width: 50rem;
+	//max-width: 50rem;
+	max-width: 100%;
 
 	input,
 	textarea {
 		border: 1px solid #B7B7B5;
-		padding: 2px;
+		padding: 2px 5px;
 		margin: 2px;
+		border-radius: $border-radius-lg;
 	}
 
 	input:focus,
@@ -114,6 +116,11 @@ input[type=number]{
 	.actions.top {
 		display: none;
 	}
+
+	.address > span {
+		display: block;
+	}
+
 }
 
 .prop-editor {

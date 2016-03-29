@@ -12,20 +12,15 @@ $tab-content-color-bg: inherit;
 
 .repo-item-selector {
 	flex: 0 0;
-}
-
-.repo-item-search {
-	.entity-actions {
-		margin-top: 3rem;
-		margin-bottom: 0;
-	}
+	background: #fff;
+	border-right: 1px solid #ddd;
+	padding-right: 1em;
 }
 
 .goal-configuration {
 	flex: 1 0;
 	margin: 1rem;
-	border-left: 1px solid #ddd;
-	padding-left: 1rem;
+
 	> .prop-group {
 		flex: 1;
 		@include border-radius();
@@ -41,13 +36,20 @@ $tab-content-color-bg: inherit;
 	flex: 1;
 	@include border-radius();
 	background-color: $color-white;
-	padding: 1rem;
 	margin: 1rem;
+	overflow: hidden;
+
+	.prop-group, .actions, .goal-dates-values, .alignment, > .prop .val {
+		padding: 0 1.5rem;
+	}
+
 }
 
 .goal-basics {
 	flex: 0 0 100%;
 	@include clearfix();
+	color: $color-lr-grey;
+
 	.goal-type {
 		display: none;
 	}
@@ -85,10 +87,6 @@ $tab-content-color-bg: inherit;
 		text-align: center;
 		margin-left: 32px;
 	}
-	.smart-gauge-label {
-		font-weight: bold;
-		color: $color-lr-grey;
-	}
 }
 
 .smart-wrapper {
@@ -98,24 +96,36 @@ $tab-content-color-bg: inherit;
 	flex-direction: column;
 	align-items: flex-start;
 	max-height: 100rem;/*FIXME russ@venturetech.net : this should only be fore desktop sized displays. */
+
 	> .prop-group {
 		width: 45%;
+		color: $color-lr-grey;
+
+		> div:first-child {
+			font-size: 1.25rem;
+			font-weight: bold;
+		}
+
 		.actions {
 			margin: 1rem 0;
 		}
 	}
 	.prop {
-		margin-bottom: .5rem;
+		margin-bottom: .75rem;
 		label {
 			font-weight: bold;
-			margin-bottom: .2rem;
+			margin-bottom: 0;
+		}
+		div.val {
+			font-size: 1rem;
+			font-weight: normal;
 		}
 	}
 }
 
 .make-smart-label {
-	text-indent: 2rem;
-	font-size: 1.25rem;
+	text-indent: 1rem;
+	font-size: 1.5rem;
 	font-weight: bold;
 	color: $color-lr-grey;
 }
@@ -125,10 +135,15 @@ $tab-content-color-bg: inherit;
 .prop.confidence label,
 .prop.control label,
 .prop.clarity label,
-.goal-tracking-label {
+.goal-tracking-label,
+.prop.sign-off label,
+.goal-alignment-label {
 	font-weight: bold;
 	color: $color-lr-grey;
 	margin-bottom: .75rem;
+	display: block;
+	padding: 1rem;
+	background: lighten($color-lr-light-grey, 25%);
 }
 
 .goal-dates-values {

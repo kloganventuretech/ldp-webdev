@@ -2,6 +2,18 @@
 @import "../components/schedule";
 @import "../components/time";
 
+.meeting-group-search {
+
+	.pager-search-results {
+		padding: 0 10px;
+	}
+
+	.actions {
+		text-align: left;
+	}
+
+}
+
 .meeting-group-name {
 	margin: 1.25rem;
 	color: $color-lr-grey;

@@ -50,6 +50,7 @@
 				padding-right: 4px;
 			}
 			display: inline-block;
+			margin-bottom: 0.5rem;
 
 		}
 
@@ -99,6 +100,36 @@
 	}
 	h1, .repeat-unit, .frequency > label {
 		display: none;
+	}
+
+}
+
+.prop-wrapper {
+
+	&.meeting-group-val-editor {
+
+		.repeat-interval-wrapper {
+			margin-bottom: 0.5rem;
+		}
+
+		.prop {
+			padding-left: 0;
+		}
+
+		.facilitator-name {
+			margin-right: 1rem;
+		}
+
+		.dow span.ctb {
+			display: inline-block;
+			vertical-align: baseline;
+
+			label {
+				margin-bottom: 0;
+			}
+
+		}
+
 	}
 
 }

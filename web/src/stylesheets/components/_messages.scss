@@ -79,3 +79,34 @@ div.message {
 .picture-editor .message {
 	padding: 5px 5px 5px 16px !important;
 }
+
+div.has-error {
+	background-color: $color-error-light;
+	border: 1px solid $color-error-dark;
+
+	.error-message {
+		display: inline-block;
+		padding-left: 1.75rem;
+		color: $color-error-dark;
+		position: relative;
+
+		&::before {
+			content: '\f071';
+			display: inline-block;
+			font-family: FontAwesome;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 400;
+			left: 7px;
+			line-height: 1;
+			position: absolute;
+			text-decoration: inherit;
+			text-rendering: optimizelegibility;
+			text-transform: none;
+			top: 3px;
+			vertical-align: middle;
+			color: $color-error-dark;
+		}
+
+	}
+}
