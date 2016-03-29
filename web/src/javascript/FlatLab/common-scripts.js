@@ -64,6 +64,7 @@ jQuery(function () {
 // select2
 	function initSelect2(ctx) {
 		var $select = $(ctx || document).find('select');
+		if($select.length === 0 && !!ctx && ctx.nodeName.toLowerCase() == 'select') $select = $(ctx);
 		if ($select.length && !($select.closest('.cke_dialog').length || $select.closest('tr[data-dnd-source-def]').length)) {
 
 			//noinspection JSUnresolvedVariable
@@ -100,6 +101,7 @@ jQuery(function () {
 		$ctx.find("[data-download]").each(function (idx, el) {
 			el.setAttribute("download", "");
 		});
+		if(!!ctx && ctx.hasAttribute("[data-download]")) ctx.setAttribute("download", "");
 	}
 
 	handleDataDownload();
@@ -121,7 +123,8 @@ jQuery(function () {
 
 
 	function enableTooltips(ctx) {
-		var $ctx = $(ctx || document);
+		var $ctx = !!ctx ? $(ctx.parentNode || document) : $(ctx || document);
+		
 		$ctx.find(".tooltips").each(function (idx, el) {
 			var $el = $(el);
 			if ($el.hasClass("menu-component")) {
@@ -175,7 +178,7 @@ jQuery(function () {
 		});
 	}
 	function setupExpandCollapse(ctx) {
-		var $ctx = $(ctx || document);
+		var $ctx = !!ctx ? $(ctx.parentNode || document) : $(ctx || document);
 		$ctx.find('[data-toggle="collapse"]').each(registerActivityToggle);
 	}
 
