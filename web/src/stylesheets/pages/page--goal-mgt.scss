@@ -25,7 +25,7 @@ $tab-content-color-bg: inherit;
 		flex: 1;
 		@include border-radius();
 		background-color: $color-white;
-		padding: 1rem;
+		padding: 1rem 1rem 1.75rem;
 		margin: 1rem;
 		min-width: 30rem;
 	}
@@ -61,6 +61,8 @@ $tab-content-color-bg: inherit;
 		label {
 			font-weight: bold;
 			color: $color-lr-grey;
+			margin-bottom: 0;
+			padding-top: .35rem;
 		}
 		label:after {
 			content: ": ";
@@ -72,11 +74,14 @@ $tab-content-color-bg: inherit;
 		.goal-info-actions {
 			display: inline-block;
 			margin-left: 1rem;
+			padding-right: 0;
+			float: right;
 		}
 	}
 	.prop.description {
 		float: left;
-		max-width: calc(100% - 300px);
+		width: calc(100% - 26rem);
+
 		label {
 			font-weight: bold;
 			color: $color-lr-grey;
@@ -89,6 +94,11 @@ $tab-content-color-bg: inherit;
 	}
 }
 
+.smart-section-label-wrapper {
+	margin-top: 2rem;
+	padding-left: 1rem;
+}
+
 .smart-wrapper {
 	display: flex;
 	justify-content: space-around;
@@ -98,7 +108,7 @@ $tab-content-color-bg: inherit;
 	max-height: 100rem;/*FIXME russ@venturetech.net : this should only be fore desktop sized displays. */
 
 	> .prop-group {
-		width: 45%;
+		width: 47%;
 		color: $color-lr-grey;
 
 		> div:first-child {
