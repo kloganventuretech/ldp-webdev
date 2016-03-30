@@ -84,7 +84,8 @@ jQuery(function () {
 	}
 
 	function destroySelect2(ctx) {
-		var $select = $(ctx || document);
+		if(!ctx) return;
+		var $select = $(ctx);
 		if (!$select.hasClass(SELECT2_INIT)) {
 			$select = $select.find('select').filter('.' + SELECT2_INIT);
 		}
