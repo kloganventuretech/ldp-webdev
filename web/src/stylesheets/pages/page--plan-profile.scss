@@ -16,14 +16,16 @@
 		display: flex;
 		flex-direction: column;
 
-		.plan-info-content {
+		&.plan-info {
 			display: flex;
 			flex-direction: column;
+			flex: 1 1 48%;
 		}
 
-		.plan-supporters {
+		&.plan-supporters {
 			display: flex;
 			flex-direction: column;
+			flex: 2 1 60%;
 		}
 
 		.card-block {
@@ -37,6 +39,7 @@
 		border-bottom: 1px solid $color-lighter-grey;
 		margin-bottom: 1.75rem;
 		padding-bottom: 1rem;
+		width: 100%;
 	}
 
 	.prop {
@@ -59,9 +62,7 @@
 	display: flex;
 	flex: 1 auto;
 	padding-bottom: 1rem;
-
-	> div {
-	}
+	align-items: center;
 
 	.user-details-pic {
 		max-width: 50%;
@@ -76,6 +77,12 @@
 
 		.prop {
 			padding-left: 2rem;
+			line-height: 1.25rem;
+
+			+ .prop {
+				margin-top: .75rem;
+			}
+
 		}
 
 	}
@@ -84,6 +91,7 @@
 
 .positions, .preferences {
 	margin-top: 1rem;
+	width: 100%;
 
 	h4 {
 		font-size: 1.25rem;
@@ -111,16 +119,22 @@
 }
 
 .supporters-content {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
 
 	.supporter {
 		display: flex;
 		align-items: center;
 		text-align: left;
 		margin-bottom: 2rem;
+		max-width: 48%;
 
 		.supporter-image {
-			flex: 1 0 auto;
-			max-width: 40%;
+			flex-grow: 1;
+			flex-shrink: 1;
+			width: 100%;
+			max-width: 8.5rem;
 
 			img {
 				overflow: hidden;
@@ -129,9 +143,11 @@
 		}
 
 		.supporter-text {
-			flex: auto;
+			flex-grow: 1;
+			flex-shrink: 2;
 			line-height: 1.25rem;
 			padding-left: 1rem;
+			min-width: 1px;
 
 			.supporter-type {
 				font-weight: bold;
@@ -140,9 +156,26 @@
 
 			.supporter-name, .supporter-email {
 				font-size: .9rem;
-				word-wrap: break-word;
 			}
 
+			.supporter-email {
+				overflow-wrap: break-word;
+				word-wrap: break-word;
+				-ms-word-break: break-all;
+				word-break: break-word;
+			}
+
+		}
+
+	}
+}
+
+@media (max-width: 1270px) {
+	.supporters-content {
+		flex-direction: column;
+
+		> .supporter {
+			max-width: 100%;
 		}
 
 	}
