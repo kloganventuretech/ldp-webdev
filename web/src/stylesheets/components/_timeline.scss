@@ -20,6 +20,7 @@
 	font-size: 2rem;
 	margin: 1rem 1rem 1.5rem 0;
 	color: $color-lr-grey;
+	font-weight: 300;
 }
 
 .flex-container {
@@ -41,7 +42,7 @@
 		display: none;
 	}
 	select.val {
-		min-width: 5.5rem;
+		min-width: 8.5rem;
 	}
 }
 .timeline {
@@ -97,6 +98,11 @@
 
 		> .actions.configuration-actions {
 			padding: 0 0 1.25rem .75rem;
+
+			.btn {
+				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+			}
+
 		}
 
 	}
@@ -292,7 +298,7 @@
 	.task-item-name {
 		font-size: 16px;
 		display: inline-block;
-		font-weight: bold;
+		font-weight: 500;
 		max-width: 92%;
 		vertical-align: top;
 		padding-right: 1.25rem;
@@ -312,7 +318,7 @@
 		padding-right: 15px;
 
 		span.tr-prefix {
-			font-weight: bold;
+			font-weight: 500;
 		}
 
 	}
@@ -320,7 +326,7 @@
 	.prop-group.dates {
 
 		+ .task-item-desc {
-			margin-top: 5px;
+			margin-top: 2px;
 		}
 
 	}
@@ -358,13 +364,35 @@
 	right:7px;
 	height:100%;
 
-	a.fa {
+	a.fa, .btn.fa {
 		text-decoration: none;
 		color:inherit;
 	}
 
 	a.fa:hover {
 		color: $color-black;
+	}
+
+	.btn.configure-task {
+		background: none;
+		border: none;
+		box-shadow: none;
+		width: 16px;
+		overflow: hidden;
+		white-space: nowrap;
+		margin: -4px 7px 0 0;
+		padding: 0;
+
+		&.fa-cog::before {
+			padding-right: 5px;
+		}
+
+		&:hover, &:focus {
+			background: none;
+			border: none;
+			color: inherit;
+		}
+
 	}
 
 	&:after {
@@ -407,6 +435,8 @@
 .timeline-card-actions {
 	float:right;
 	margin: -.5rem 0 0 0;
+	text-align: right;
+
 	> .btn {
 		color: $color-lr-light-grey !important;
 		background-color: transparent !important;
@@ -415,8 +445,12 @@
 		font-size: 24px !important;
 		padding: 0 !important;
 		outline:none !important;
-		float: right;
 		margin-right: 0;
+
+		+ .btn {
+			margin-left: .5rem;
+		}
+
 	}
 	> .btn:hover {
 		color: $color-lr-grey;
@@ -436,7 +470,7 @@
 	}
 
 	label {
-		font-weight: bold;
+		font-weight: 500;
 		margin: 0 .35rem 0 0;
 	}
 
@@ -472,7 +506,7 @@
 			content: ':';
 			display: inline-block;
 			color: inherit;
-			font-weight: bold;
+			font-weight: 500;
 		}
 	}
 }
@@ -525,7 +559,8 @@
 		padding: .5rem 0 .5rem 0.25rem;
 
 		.btn {
-			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+			text-transform: none;
 		}
 
 	}
