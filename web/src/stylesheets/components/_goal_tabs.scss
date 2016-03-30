@@ -103,14 +103,33 @@ h2.plan-name {
 		}
 
 	}
+
+	.message-container {
+		padding: 1rem 2rem;
+
+		.message-actions {
+			display: block;
+			padding: 0.5rem 0;
+		}
+
+	}
+
 }
 
 .goal-management {
 
-	.repo-item-search .entity-actions {
-		margin: 1.45rem 0 1rem;
-		float: left;
-		padding-left: 20px;
+	.repo-item-search {
+
+		.entity-actions {
+			margin: 1.45rem 0 1rem;
+			float: left;
+			padding-left: 20px;
+		}
+
+		.search-bar {
+			clear: both;
+		}
+
 	}
 
 	.pager-search-results {
@@ -135,11 +154,14 @@ h2.plan-name {
 			padding: 0 !important;
 		}
 
+		.actions.tracking-metric-actions { padding: 0; }
+
 		+ .tracking-metric {
 			padding-top: 25px;
 			margin-top: 35px;
 			border-top: 1px solid $color-cloud-grey;
 		}
+
 	}
 
 }
