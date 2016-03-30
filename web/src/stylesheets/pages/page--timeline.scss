@@ -10,6 +10,7 @@
 	> .timeline-ui,
 	> .tasks {
 		flex: 2;
+		padding-top: 1rem;
 	}
 	> .toolbox {
 		padding: 0;
@@ -57,7 +58,18 @@
 
 	}
 	> .tasks {
+		flex: 1;
 		margin-left: 20px;
+		color: $color-lr-grey;
+
+		h1 {
+			font-size: 1.75rem;
+		}
+		h2 {
+			font-size: 1rem;
+			font-style: italic;
+		}
+
 	}
 }
 /*.confirm-task-history-container { HIDING THE HEADER TITLE FOR NOW
@@ -289,6 +301,7 @@
 
 	.prop {
 		margin-bottom: .5rem;
+		padding: 4px 5px 3px;
 	}
 
 	.prop-header-title {
@@ -304,4 +317,10 @@
 		}
 	}
 
+}
+
+.reminder-engagement {
+	.btn.close {
+		display: none;
+	}
 }
