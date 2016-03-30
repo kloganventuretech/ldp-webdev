@@ -7,8 +7,8 @@
 }
 
 .meter {
-  width: 200px;
-  height: 35px;
+  width: 20rem;
+  height: 40px;
   padding:0;
   margin:0;
   box-sizing: border-box;
@@ -61,7 +61,7 @@
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
       border-bottom: 10px solid #343940;
-      bottom: -2px;
+      bottom: 0;
     }
 
   }
