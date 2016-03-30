@@ -4,6 +4,14 @@
 @import "../../../../bower_components/bootstrap/scss/mixins/alert";
 @import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
 
+// Just hiding for now, may have engineers remove later
+.activity-details {
+	.activity-process-name, .activity-category {
+		display: none;
+	}
+}
+
+
 .participant-timeline > .card-block {
 	padding: 1.25rem 1.85rem 1.25rem 1.25rem;
 }
@@ -12,6 +20,7 @@
 	font-size: 2rem;
 	margin: 1rem 1rem 1.5rem 0;
 	color: $color-lr-grey;
+	font-weight: 300;
 }
 
 .flex-container {
@@ -33,15 +42,21 @@
 		display: none;
 	}
 	select.val {
-		min-width: 5.5rem;
+		min-width: 8.5rem;
 	}
 }
 .timeline {
 	position: relative;
 }
 .plan-actions {
-	margin: 5px 29px 0;
-	float:right;
+	/*margin: 5px 29px 0;
+	float:right;*/
+	text-align: center;
+
+	.btn {
+		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+	}
+
 }
 .plan-header,
 .participant-timeline {
@@ -78,6 +93,18 @@
 		text-align: left;
 		background: $color-white;
 		border-radius: .5rem;
+		font-size: 0.9rem;
+		line-height: 1.25rem;
+
+		> .actions.configuration-actions {
+			padding: 0 0 1.25rem .75rem;
+
+			.btn {
+				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+			}
+
+		}
+
 	}
 	.card-block {
 		padding: .75rem 1.25rem .75rem .75rem;
@@ -211,31 +238,71 @@
 	text-align: center;
 	margin: 4px auto;
 
+	> .btn {
+		margin-right: 0;
+		@include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-root, $line-height-lg, $btn-border-radius-lg);
+
+		&.past::after, &.future::after {
+			display: inline-block;
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			padding-left: .45rem;
+		}
+
+		&.past::after {
+			content: '\f078';
+		}
+
+		&.future::after {
+			content: '\f077';
+		}
+
+	}
+
 	&.top {
-		margin-bottom: 2rem;
+		margin-bottom: 0;
+
+		> .btn { margin-bottom: 2rem; }
+
 	}
 
 }
 
+.prop-wrapper .task-item-info {
+	.prop {
+		margin-bottom: 0;
+
+		label, .tr-prefix, .val, .tr-display {
+			display: inline;
+			/*font-size: 0.9rem;
+			line-height: 1.25rem;*/
+		}
+
+		label, .tr-prefix {
+			margin: 0 .35rem 0 0;
+			line-height: 1.25rem;
+		}
+	}
+}
+
 .task-item-info {
 
-	label, span.tr-prefix, span.val, span.tr-display {
-		display: inline-block;
-		font-size: .9rem;
-	}
-
-	.task-item-desc {
+	/*.task-item-desc {
 		font-size: 0.9rem;
 		line-height: 1.25rem;
-		margin: 5px 0;
-	}
+	}*/
 
 	.task-item-name {
 		font-size: 16px;
 		display: inline-block;
-		font-weight: bold;
-		max-width: 95%;
+		font-weight: 500;
+		max-width: 92%;
 		vertical-align: top;
+		padding-right: 1.25rem;
+		margin-bottom: .35rem;
 	}
 
 	.task-item-date {
@@ -251,7 +318,30 @@
 		padding-right: 15px;
 
 		span.tr-prefix {
-			font-weight: bold;
+			font-weight: 500;
+		}
+
+	}
+
+	.prop-group.dates {
+
+		+ .task-item-desc {
+			margin-top: 2px;
+		}
+
+	}
+
+	.task-item-transition {
+		padding: 4px 5px 3px;
+
+		.tr-prefix, .tr-display {
+			font-size: .9rem;
+			line-height: 1.25rem;
+			display: inline;
+		}
+
+		.tr-prefix {
+			margin: 0 .35rem 0 0;
 		}
 
 	}
@@ -274,13 +364,35 @@
 	right:7px;
 	height:100%;
 
-	a.fa {
+	a.fa, .btn.fa {
 		text-decoration: none;
 		color:inherit;
 	}
 
 	a.fa:hover {
 		color: $color-black;
+	}
+
+	.btn.configure-task {
+		background: none;
+		border: none;
+		box-shadow: none;
+		width: 16px;
+		overflow: hidden;
+		white-space: nowrap;
+		margin: -4px 7px 0 0;
+		padding: 0;
+
+		&.fa-cog::before {
+			padding-right: 5px;
+		}
+
+		&:hover, &:focus {
+			background: none;
+			border: none;
+			color: inherit;
+		}
+
 	}
 
 	&:after {
@@ -323,6 +435,8 @@
 .timeline-card-actions {
 	float:right;
 	margin: -.5rem 0 0 0;
+	text-align: right;
+
 	> .btn {
 		color: $color-lr-light-grey !important;
 		background-color: transparent !important;
@@ -331,8 +445,12 @@
 		font-size: 24px !important;
 		padding: 0 !important;
 		outline:none !important;
-		float: right;
 		margin-right: 0;
+
+		+ .btn {
+			margin-left: .5rem;
+		}
+
 	}
 	> .btn:hover {
 		color: $color-lr-grey;
@@ -345,20 +463,20 @@
 	}
 }
 .activity-details {
-	margin-bottom:1rem;
 	color: $color-lr-grey;
 
 	> div {
-		margin-bottom: 5px;
+		margin-bottom: 8px;
 	}
 
 	label {
-		font-weight: bold;
-		margin: 0 5px 0 0;
+		font-weight: 500;
+		margin: 0 .35rem 0 0;
 	}
 
 	.activity-name {
 		margin:0 0 10px;
+		padding-right: 1.75rem;
 	}
 
 	.activity-status {
@@ -382,6 +500,17 @@
 
 }
 
+.activity-details, .task-item-info {
+	label, .tr-prefix {
+		&::after {
+			content: ':';
+			display: inline-block;
+			color: inherit;
+			font-weight: 500;
+		}
+	}
+}
+
 @include text-emphasis-variant('.activity-summary .pending', $color-lr-grey);
 @include text-emphasis-variant('.activity-summary .scheduled', $brand-info);
 @include text-emphasis-variant('.activity-summary .in-progress', $brand-info);
@@ -389,6 +518,10 @@
 @include text-emphasis-variant('.activity-summary .overdue', $brand-danger);
 @include text-emphasis-variant('.activity-summary .canceled', $color-lr-canceled);
 @include text-emphasis-variant('.activity-summary .rescheduled', $color-lr-canceled);
+
+.task-items {
+	padding-top: .75rem;
+}
 
 .task-item {
 	border-left-width: 5px;
@@ -421,8 +554,22 @@
 		@include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
 		border-left-color: $brand-info;
 	}
+
+	.actions.configuration-actions {
+		padding: .5rem 0 .5rem 0.25rem;
+
+		.btn {
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+			text-transform: none;
+		}
+
+	}
+
 }
 
+.prop-group.dates {
+	.prop + .prop { margin-left: 1rem; }
+}
 
 .task-item-status {
 	padding-right: 1ch;
@@ -430,5 +577,5 @@
 
 .task-item-icon {
 	display: inline-block;
-	padding-right: 1ch;
+	padding: 0 .35rem 0 .25rem;
 }

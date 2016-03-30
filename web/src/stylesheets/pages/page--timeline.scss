@@ -10,6 +10,7 @@
 	> .timeline-ui,
 	> .tasks {
 		flex: 2;
+		padding-top: 1rem;
 	}
 	> .toolbox {
 		padding: 0;
@@ -57,7 +58,18 @@
 
 	}
 	> .tasks {
+		flex: 1;
 		margin-left: 20px;
+		color: $color-lr-grey;
+
+		h1 {
+			font-size: 1.75rem;
+		}
+		h2 {
+			font-size: 1rem;
+			font-style: italic;
+		}
+
 	}
 }
 /*.confirm-task-history-container { HIDING THE HEADER TITLE FOR NOW
@@ -246,6 +258,10 @@
 		width: 75%;
 	}
 
+	.btn.engagement-completed {
+		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	}
+
 }
 
 .confirm-task-history-container {
@@ -289,6 +305,7 @@
 
 	.prop {
 		margin-bottom: .5rem;
+		padding: 4px 5px 3px;
 	}
 
 	.prop-header-title {
@@ -302,6 +319,22 @@
 		> label {
 			margin-right: 10px;
 		}
+	}
+
+}
+
+.reminder-engagement {
+	.btn.close {
+		display: none;
+	}
+}
+
+div.window.configure-task  {
+
+	.activity-template-value-editor, .prop-header {
+
+		.prop-header-actions { display: none; }
+
 	}
 
 }

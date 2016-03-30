@@ -18,7 +18,7 @@
 		overflow: hidden;
 		.menu {
 			.mi a.menuitemlabel {
-				padding: 8px 0 8px 8px;
+				padding: 8px 0 8px 14px;
 			}
 
 			span.mil {
@@ -46,16 +46,13 @@
 }
 
 #side-nav .menu {
-	margin: 15px 0 0;
+	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-#side-nav .menu .mi{
-	/*line-height: 20px !important;*/
-	margin-bottom: 5px;
-	margin-left:10px;
-	margin-right:10px;
+#side-nav .menu .mi {
+	border-bottom: 1px solid #4f5a69;
 	overflow: hidden;
 	white-space: nowrap;
 }
@@ -65,21 +62,19 @@
 }
 
 #side-nav .menu .mi a.menuitemlabel{
-	color: #aeb2b7;
+	color: #e1e4e6;
 	text-decoration: none;
 	display: block;
-	padding: 15px 0 15px 10px;
+	padding: 23px 0 20px 15px;
 	outline: none;
 	transition: all 0.3s ease;
+	font-weight: 400;
 }
 
-#side-nav .menu .mi a.menuitemlabel.mi-active,
+#side-nav .menu .mi.mi-active a.menuitemlabel,
 #side-nav .menu .mi a.menuitemlabel:hover, 
 #side-nav .menu .mi a.menuitemlabel:focus {
-	background: #35404d;
-	color: #fff;
-	display: block;
-	border-radius: 4px;
+	background: #4f5a69;
 }
 
 
@@ -90,13 +85,16 @@
 #side-nav .menu .mi a.menuitemlabel:hover:before,
 #side-nav .menu .mi a.menuitemlabel:focus:before,
 #side-nav .menu .mi-active a.menuitemlabel:before{
-	color: $menu-item-active;
+	//color: $menu-item-active;
 }
 #side-nav .menu .mi > .menuitemlabel:before{
 	font-family: FontAwesome;
-	padding-right: 4px;
-	min-width: 22px;
+	padding-right: .75rem;
+	min-width: 40px;
 	display: inline-block;
+	font-size: 1.5rem;
+	margin-top: -2px;
+	vertical-align: middle;
 }
 #side-nav .menu .my-quick-view > .menuitemlabel:before {
 	content: "\f1ea";
@@ -129,14 +127,15 @@
 	content: "\f03e";
 }
 #side-nav .menu .timeline-nav > .menuitemlabel:before {
-	content: "\f073";
+	content: "\f126";
+	padding-left: 7px;
 }
 #side-nav .menu .goals > .menuitemlabel:before {
-	content: "\f0e4";
+	content: "\f201";
 }
 #side-nav .menu .profile > .menuitemlabel:before {
-	content: "\f0c0";
+	content: "\f022";
 }
 #side-nav .menu .resources > .menuitemlabel:before {
-	content: "\f03e";
+	content: "\f0b1";
 }

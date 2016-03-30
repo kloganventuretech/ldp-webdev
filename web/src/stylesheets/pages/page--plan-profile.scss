@@ -1,0 +1,182 @@
+@import "../config/base-vars";
+
+.plan-name {
+	color: $color-lr-grey;
+	padding: .75rem 0;
+}
+
+.plan-profile {
+	color: $color-lr-grey;
+	display: flex;
+	flex-flow: row;
+
+	section.card {
+		padding: 2rem;
+		margin: 0 1rem 1rem 0;
+		display: flex;
+		flex-direction: column;
+
+		&.plan-info {
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 48%;
+		}
+
+		&.plan-supporters {
+			display: flex;
+			flex-direction: column;
+			flex: 2 1 60%;
+		}
+
+		.card-block {
+			padding: 0;
+			width: 100%;
+		}
+
+	}
+
+	h4.card-title {
+		border-bottom: 1px solid $color-lighter-grey;
+		margin-bottom: 1.75rem;
+		padding-bottom: 1rem;
+		width: 100%;
+	}
+
+	.prop {
+
+		> label {
+			font-weight: bold;
+			margin-bottom: 0;
+		}
+
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+}
+
+.user-details {
+	display: flex;
+	flex: 1 auto;
+	padding-bottom: 1rem;
+	align-items: center;
+
+	.user-details-pic {
+		max-width: 50%;
+
+		img {
+			border-radius: 100%;
+		}
+
+	}
+
+	.user-details-text {
+
+		.prop {
+			padding-left: 2rem;
+			line-height: 1.25rem;
+
+			+ .prop {
+				margin-top: .75rem;
+			}
+
+		}
+
+	}
+
+}
+
+.positions, .preferences {
+	margin-top: 1rem;
+	width: 100%;
+
+	h4 {
+		font-size: 1.25rem;
+	}
+
+}
+
+.user-positions.plan-positions {
+	margin-top: -2rem;
+
+	.miwt-table {
+		border: none;
+
+		> thead > tr > th {
+			background: lighten($color-lr-light-grey, 25%);
+			font-family: $font-arial;
+		}
+
+		> thead > tr > td {
+			padding: 10px 8px;
+		}
+
+	}
+
+}
+
+.supporters-content {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+
+	.supporter {
+		display: flex;
+		align-items: center;
+		text-align: left;
+		margin-bottom: 2rem;
+		max-width: 48%;
+
+		.supporter-image {
+			flex-grow: 1;
+			flex-shrink: 1;
+			width: 100%;
+			max-width: 8.5rem;
+
+			img {
+				overflow: hidden;
+				border-radius: 100%;
+			}
+		}
+
+		.supporter-text {
+			flex-grow: 1;
+			flex-shrink: 2;
+			line-height: 1.25rem;
+			padding-left: 1rem;
+			min-width: 1px;
+
+			.supporter-type {
+				font-weight: bold;
+				margin-bottom: .15rem;
+			}
+
+			.supporter-name, .supporter-email {
+				font-size: .9rem;
+			}
+
+			.supporter-email {
+				overflow-wrap: break-word;
+				word-wrap: break-word;
+				-ms-word-break: break-all;
+				word-break: break-word;
+			}
+
+		}
+
+	}
+}
+
+@media (max-width: 1270px) {
+	.supporters-content {
+		flex-direction: column;
+
+		> .supporter {
+			max-width: 100%;
+		}
+
+	}
+}

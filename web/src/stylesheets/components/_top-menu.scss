@@ -97,6 +97,7 @@ header {
 }
 
 .top-menu {
+
 	> li {
 		float: left;
 		text-align: center;
@@ -130,6 +131,16 @@ header {
 	}
 	.dropdown .welcome {
 		display: inherit;
+		line-height: 1rem;
+		padding-right: .5rem;
+		text-align: right;
+		font-style: italic;
+
+		> .username {
+			font-weight: bold;
+			font-style: normal;
+		}
+
 	}
 
 	a.fa::before {
@@ -140,6 +151,7 @@ header {
 	li.link a span {
 		display: inline-block;
 		margin-top: 5px;
+		font-family: $font-arial;
 	}
 	img.profile-pic {
 		border-radius: 20px;

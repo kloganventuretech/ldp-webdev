@@ -8,6 +8,8 @@
 .goal-viewer {
 	flex:1 0;
 	padding:1rem;
+	color: $color-lr-grey;
+
 	h1 {
 		font-size: 1.75rem;
 		.goal-type {
@@ -25,12 +27,36 @@
 	border-left: 1px solid #ddd;
 	margin:1rem;
 	text-align: center;
+	padding-top: 2rem;
+
+	.card {
+		background: $color-lr-brand;
+		color: $color-white;
+		margin: 0 auto;
+		width: 75%;
+		border: 1px solid darken($color-lr-brand, 10%);
+		box-shadow: inset 0 0 3px lighten($color-lr-brand, 5%);
+		font-size: 1.75rem;
+		line-height: 2.5rem;
+		font-weight: 300;
+
+		.card-block {
+			padding: 3rem 2rem;
+		}
+
+		+ .card {
+			margin-top: 2rem;
+		}
+
+	}
+
 }
 
 .goal-wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	flex-direction: column;
 
 	.prop.description {
 		flex-basis: 100%;
@@ -51,15 +77,23 @@
 	.end-date{
 		display: none; /* FIXME : find a place to display this in the UI. */
 	}
-	.goal-measurement{
-		flex:0;
+	> .goal-measurement{
+		display: flex;
 		text-align: center;
+		flex-direction: column;
+
+		.goal-measurement {
+			align-self: center;
+			width: 100%;
+		}
+
 	}
 	.goal-measurement-actions {
 		margin:1rem;
 	}
 	.measure-config-graph {
 		width: 200px;
+		margin: 0 auto;
 	}
 	.config-graph {
 		position: relative;
@@ -73,6 +107,52 @@
 		font-size: 46px;
 		color: $brand-primary;
 	}
+	.smart-gauge {
+		padding: 2rem 0 3rem;
+		align-self: center;
+	}
+
+	//CAROUSEL
+	.carousel-indicators {
+		display: none;
+	}
+
+	.carousel-control {
+
+		&.right, &.left {
+			background-image: none;
+			text-shadow: none;
+		}
+
+		.icon-next, .icon-prev {
+			color: $color-lr-grey;
+			font-size: 4rem;
+			margin-top: -4rem;
+			height: 4rem;
+		}
+
+	}
+
+	.carousel-inner {
+
+		.carousel-caption {
+			position: relative;
+			bottom: auto;
+			left: auto;
+			right: auto;
+			color: $color-lr-light-grey;
+			text-shadow: none;
+			padding: 1rem 0;
+
+			p {
+				font-size: 1rem;
+				font-weight: 700;
+			}
+
+		}
+
+	}
+
 }
 
 .chart-legend {
@@ -187,6 +267,33 @@ section.tracking-metrics {
 	}
 	.prop-body{
 
+	}
+
+}
+
+.personal-alignment {
+
+	.chart-legend {
+		padding-top: 1rem;
+		float: none;
+		margin: 0 auto;
+		width: 10rem;
+
+		ul {
+			text-align: left;
+		}
+
+	}
+
+}
+
+/* ----- MEDIA QUERIES */
+@media (min-width: 1280px) {
+
+	.goal-wrapper {
+		> .goal-measurement .goal-measurement {
+			width: 50%;
+		}
 	}
 
 }
