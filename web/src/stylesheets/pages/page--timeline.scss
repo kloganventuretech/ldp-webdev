@@ -258,6 +258,10 @@
 		width: 75%;
 	}
 
+	.btn.engagement-completed {
+		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	}
+
 }
 
 .confirm-task-history-container {
@@ -323,4 +327,14 @@
 	.btn.close {
 		display: none;
 	}
+}
+
+div.window.configure-task  {
+
+	.activity-template-value-editor, .prop-header {
+
+		.prop-header-actions { display: none; }
+
+	}
+
 }
