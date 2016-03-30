@@ -1,0 +1,149 @@
+@import "../config/base-vars";
+
+.plan-name {
+	color: $color-lr-grey;
+	padding: .75rem 0;
+}
+
+.plan-profile {
+	color: $color-lr-grey;
+	display: flex;
+	flex-flow: row;
+
+	section.card {
+		padding: 2rem;
+		margin: 0 1rem 1rem 0;
+		display: flex;
+		flex-direction: column;
+
+		.plan-info-content {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.plan-supporters {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.card-block {
+			padding: 0;
+			width: 100%;
+		}
+
+	}
+
+	h4.card-title {
+		border-bottom: 1px solid $color-lighter-grey;
+		margin-bottom: 1.75rem;
+		padding-bottom: 1rem;
+	}
+
+	.prop {
+
+		> label {
+			font-weight: bold;
+			margin-bottom: 0;
+		}
+
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+}
+
+.user-details {
+	display: flex;
+	flex: 1 auto;
+	padding-bottom: 1rem;
+
+	> div {
+	}
+
+	.user-details-pic {
+		max-width: 50%;
+
+		img {
+			border-radius: 100%;
+		}
+
+	}
+
+	.user-details-text {
+
+		.prop {
+			padding-left: 2rem;
+		}
+
+	}
+
+}
+
+.positions, .preferences {
+	margin-top: 1rem;
+
+	h4 {
+		font-size: 1.25rem;
+	}
+
+}
+
+.user-positions.plan-positions {
+	margin-top: -2rem;
+
+	.miwt-table {
+		border: none;
+
+		> thead > tr > th {
+			background: lighten($color-lr-light-grey, 25%);
+			font-family: $font-arial;
+		}
+
+		> thead > tr > td {
+			padding: 10px 8px;
+		}
+
+	}
+
+}
+
+.supporters-content {
+
+	.supporter {
+		display: flex;
+		align-items: center;
+		text-align: left;
+		margin-bottom: 2rem;
+
+		.supporter-image {
+			flex: 1 0 auto;
+			max-width: 40%;
+
+			img {
+				overflow: hidden;
+				border-radius: 100%;
+			}
+		}
+
+		.supporter-text {
+			flex: auto;
+			line-height: 1.25rem;
+			padding-left: 1rem;
+
+			.supporter-type {
+				font-weight: bold;
+				margin-bottom: .15rem;
+			}
+
+			.supporter-name, .supporter-email {
+				font-size: .9rem;
+				word-wrap: break-word;
+			}
+
+		}
+
+	}
+}
