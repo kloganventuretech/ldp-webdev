@@ -49,12 +49,12 @@ input[type=number]{
 .prop-wrapper {
 	.prop-header-title {
 		font-size: 22px;
-		font-weight: bold;
+		font-weight: 500;
 		margin: 1em 0;
 	}
 
 	.prop-group-title {
-		font-weight: bold;
+		font-weight: 500;
 		font-size: 18px;
 		margin: 10px 0;
 	}
@@ -63,7 +63,7 @@ input[type=number]{
 	}
 	.prop > label {
 		display: block;
-		font-weight: bold;
+		font-weight: 500;
 		user-select: none;
 	}
 	.prop > label.tbl {
