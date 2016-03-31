@@ -3,6 +3,10 @@
 @import "../../../../bower_components/bootstrap/scss/mixins";
 @import "../../../../bower_components/bootstrap/scss/buttons";
 
+#main-content {
+	min-height: calc(100vh - 87px); //window height - footer
+}
+
 .login-body {
 	background-color: #f1f2f7;
 }
@@ -73,6 +77,10 @@
 .form-signin p {
 	text-align: center;
 	margin: 0;
+}
+
+.label, label {
+	font-weight: 500;
 }
 
 .form-signin a {
@@ -160,7 +168,7 @@
 
 			> span {
 				color: #444;
-				font-weight: bold;
+				font-weight: 500;
 				font-size: 90%;
 			}
 
