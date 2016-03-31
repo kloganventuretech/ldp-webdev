@@ -96,7 +96,8 @@ input[type=number]{
 		margin-bottom: 0;
 	}
 
-	.user-entry-required label:after {
+	.user-entry-required label:after,
+	.user-entry-required caption:after{
 		content: "*";
 		color: #ff0000;
 	}
