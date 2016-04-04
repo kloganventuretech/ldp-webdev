@@ -13,7 +13,7 @@
 
 
 .participant-timeline {
-	padding: 0 2rem 1.25rem 1.5rem;
+	padding: 0 3rem 1.25rem 1.5rem;
 
 	.plan-header {
 		padding: 0 0 1.25rem;
@@ -24,7 +24,6 @@
 		h3 {
 			float: left;
 			margin-bottom: 0;
-			padding: 0 !important;
 		}
 	}
 
@@ -35,7 +34,7 @@
 
 .plan-name{
 	font-size: 2rem;
-	margin: 0;
+	margin: 1rem 1rem 1.5rem 0;
 	color: $color-lr-grey;
 	font-weight: 300;
 }
@@ -43,9 +42,8 @@
 .flex-container {
 	border-top: 3px solid $color-lr-light-grey;
 	.timeline-ui{
-		border-right: 1px solid lighten($color-lr-light-grey, 25%);
+		border-right: 3px solid $color-lr-light-grey;
 		padding-right: 4px;
-
 		& + .timeline-ui {
 			border-right-width: 0;
 			padding-right:0;
@@ -163,12 +161,6 @@
 }
 .timeline-item {
 	margin-bottom:2rem;
-
-	&.rescheduled, &.canceled, &.completed {
-		.prop.dstart { display: none; }
-		.prop-group.dates .prop + .prop { margin-left: 0; }
-	}
-
 }
 .timeline-item:before {
 	content: "";
@@ -669,12 +661,3 @@
 	padding: 0 .35rem 0 0;
 	min-width: 1.5rem;
 }
-
-.form-engagement-interactive {
-	.btn.go {
-		@include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-base, $line-height-lg, $btn-border-radius-lg);
-		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-		font-weight: 300;
-	}
-}
-
