@@ -10,7 +10,8 @@
 	> .timeline-ui,
 	> .tasks {
 		flex: 2;
-		padding-top: 1rem;
+		padding-top: 1.5rem;
+		color: $color-lr-grey;
 	}
 	> .toolbox {
 		padding: 0;
@@ -60,7 +61,7 @@
 	> .tasks {
 		flex: 1;
 		margin-left: 20px;
-		color: $color-lr-grey;
+		//color: $color-lr-grey;
 
 		h1 {
 			font-size: 1.75rem;
@@ -225,7 +226,10 @@
 			padding-bottom: .5rem;
 		}
 
-		caption { color: $color-lr-grey; font-weight: bold; }
+		caption {
+			//color: $color-lr-grey;
+			font-weight: bold;
+		}
 
 		.entity-actions.actions {
 			margin-bottom: 0;
@@ -277,7 +281,7 @@
 			margin-top: -3.85rem;
 			font-size: 1.5rem;
 			font-weight: 500;
-			color: $color-lr-grey;
+			//color: $color-lr-grey;
 		}
 
 	}
@@ -305,7 +309,7 @@
 
 	.prop {
 		margin-bottom: .5rem;
-		padding: 4px 5px 3px;
+		padding: 4px 0 3px;
 	}
 
 	.prop-header-title {
