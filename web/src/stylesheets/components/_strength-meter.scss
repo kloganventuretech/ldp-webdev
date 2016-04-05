@@ -1,14 +1,17 @@
 @import "../config/base-vars";
 
 .smart-gauge-label {
-  font-weight: bold;
+  font-weight: 400;
   color: $color-lr-grey;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  &:after {
+    content: ": ";
+  }
 }
 
 .meter {
-  width: 20rem;
-  height: 40px;
+  width: 15rem;
+  height: 30px;
   padding:0;
   margin:0;
   box-sizing: border-box;
@@ -25,20 +28,23 @@
     background-color: $brand-danger;
     border-top-left-radius: $border-radius-sm;
     border-bottom-left-radius: $border-radius-sm;
+    border-bottom: 3px solid darken($brand-danger, 18%);
   }
   .medium{
     background-color: $brand-warning;
+    border-bottom: 3px solid darken($brand-warning, 18%);
   }
   .high {
     background-color: $brand-primary;
     border-top-right-radius: $border-radius-sm;
     border-bottom-right-radius: $border-radius-sm;
+    border-bottom: 3px solid darken($brand-primary, 18%);
   }
   .indicator{
     position: absolute;
-    width: 4px;
+    width: 1px;
     height: 130%;
-    background-color: $color-lr-black;
+    background-color: transparent;
     z-index: 1;
     top:-14%;
 
@@ -46,22 +52,22 @@
       content: '';
       background: none;
       position: absolute;
-      margin-left: -8px;
+      margin-left: -18px;
       display: block;
     }
 
     &::before {
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 10px solid #343940;
-      top: -2px;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-bottom: 30px solid darken($lr-page-bg, 13%);
+      bottom: -8px;
     }
 
     &::after {
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 10px solid #343940;
-      bottom: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-bottom: 30px solid $color-lr-grey;
+      bottom: -5px;
     }
 
   }
