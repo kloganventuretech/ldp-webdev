@@ -14,7 +14,7 @@ $nav-fg: $color-white;
 h2.plan-name {
 	font-size: 2rem;
 	border-bottom: 1px solid #ccc;
-	margin: 0;
+	margin: 1rem 0;
 	padding-bottom: .5rem;
 	color: $color-lr-grey;
 	font-weight: 300;
@@ -26,7 +26,7 @@ h2.plan-name {
 	.persistence-actions{
 		position: absolute;
 		right:4.25rem;
-		top:calc(4rem + 1px);
+		top:calc(3.75rem + 1px);
 		z-index: 1;
 		height:2.5rem;
 		.btn{
