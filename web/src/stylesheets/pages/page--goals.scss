@@ -12,6 +12,9 @@
 
 	h1 {
 		font-size: 1.75rem;
+		font-weight: 400;
+		margin-bottom: 1.35rem;
+
 		.goal-type {
 			color: $brand-primary;
 			padding-right: 1ch;
@@ -27,21 +30,29 @@
 	border-left: 1px solid #ddd;
 	margin:1rem;
 	text-align: center;
-	padding-top: 2rem;
+	padding-top: .35rem;
+	font-weight: 400;
+	font-size: 1.75rem;
+	color: $color-lr-grey;
 
 	.card {
 		background: $color-lr-brand;
 		color: $color-white;
-		margin: 0 auto;
+		margin: 1.5rem auto 0;
 		width: 75%;
 		border: 1px solid darken($color-lr-brand, 10%);
 		box-shadow: inset 0 0 3px lighten($color-lr-brand, 5%);
 		font-size: 1.75rem;
 		line-height: 2.5rem;
 		font-weight: 300;
+		border-bottom: 3px solid darken($color-lr-brand, 15%);
 
 		.card-block {
 			padding: 3rem 2rem;
+			min-height: 17rem;
+			display: flex;
+			flex: 1;
+			align-items: center;
 		}
 
 		+ .card {
@@ -56,31 +67,40 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	flex-direction: column;
+	flex-direction: row;
 
-	.prop.description {
-		flex-basis: 100%;
+	.description, .start-date, .end-date {
+
 		label {
-			font-weight: bold;
+			display: block;
+			font-weight: 400;
 			padding-right: 1ch;
+			margin-bottom: 0;
 			&:after {
 				content: ": ";
 			}
 		}
+
 		div.val {
 			display: inline;
 		}
+
 	}
-	.start-date{
-		display: none; /* FIXME : find a place to display this in the UI. */
+
+	.description {
+		flex: 3;
+		padding: 0 3rem 3.5rem 0;
 	}
-	.end-date{
-		display: none; /* FIXME : find a place to display this in the UI. */
+
+	.start-date, .end-date {
+		flex: 1;
 	}
+
 	> .goal-measurement{
 		display: flex;
 		text-align: center;
 		flex-direction: column;
+		flex: 2 0 100%;
 
 		.goal-measurement {
 			align-self: center;
@@ -89,10 +109,10 @@
 
 	}
 	.goal-measurement-actions {
-		margin:1rem;
+		margin:0;
 	}
 	.measure-config-graph {
-		width: 200px;
+		width: 325px;
 		margin: 0 auto;
 	}
 	.config-graph {
@@ -104,12 +124,14 @@
 		bottom:0;
 		left:0;
 		right:0;
-		font-size: 46px;
+		font-size: 3rem;
+		font-weight: 400;
 		color: $brand-primary;
 	}
-	.smart-gauge {
-		padding: 2rem 0 3rem;
-		align-self: center;
+	.prop-group.smart-gauge {
+		display: flex;
+		flex: 2;
+		justify-content: flex-end;
 	}
 
 	//CAROUSEL
@@ -145,8 +167,9 @@
 			padding: 1rem 0;
 
 			p {
-				font-size: 1rem;
-				font-weight: 700;
+				font-size: 1.25rem;
+				font-weight: 500;
+				margin-bottom: 0;
 			}
 
 		}
@@ -184,8 +207,9 @@
 
 section.tracking-metrics {
 	border-top: 1px solid #ddd;
-	margin: 1rem;
-	padding-top:1rem;
+	margin: 2.85rem 1.5rem 1.5rem;
+	padding-top: 1.75rem;
+
 	h1 {
 		text-align: center;
 		color: $brand-primary;
@@ -207,7 +231,7 @@ section.tracking-metrics {
 			flex-direction: column;
 
 			h1 {
-				font-weight: bold;
+				font-weight: 500;
 				text-align: center;
 				font-size: 1rem;
 				color: $color-lr-grey;
@@ -292,7 +316,7 @@ section.tracking-metrics {
 
 	.goal-wrapper {
 		> .goal-measurement .goal-measurement {
-			width: 50%;
+			width: 35%;
 		}
 	}
 
