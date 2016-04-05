@@ -8,15 +8,16 @@ $tab-color-fg: $color-white;
 @import "../mixins/tabs";
 
 $nav-color-bg: lighten($color-lr-blue, 5%);
-$nav-bg-selected: darken($color-lr-blue, 10%);
+$nav-bg-selected: darken($color-lr-light-blue, 10%);
 $nav-fg: $color-white;
 
 h2.plan-name {
 	font-size: 2rem;
 	border-bottom: 1px solid #ccc;
-	margin: 1rem;
+	margin: 1rem 0;
 	padding-bottom: .5rem;
 	color: $color-lr-grey;
+	font-weight: 300;
 }
 
 .goals-viewer,
@@ -78,8 +79,8 @@ h2.plan-name {
 			padding:0;
 			min-height: auto;
 			border-radius: 0;
-			background-color: $nav-color-bg;
-			border-right:1px solid $nav-bg-selected;
+			background-color: $color-lr-light-blue;
+			border-right:1px solid $color-lr-light-blue;
 
 			.nav-item + .nav-item {
 				margin-left: 0;
@@ -87,9 +88,10 @@ h2.plan-name {
 
 			.btn {
 				color:$nav-fg;
-				background-color: $nav-color-bg;
+				background-color: $color-lr-light-blue;
 				padding: 0.55rem 1rem;
 				border-radius: 0;
+				border-right: 1px solid $nav-bg-selected;
 
 				&:hover {
 					background-color: $nav-bg-selected;
@@ -130,21 +132,28 @@ h2.plan-name {
 			clear: both;
 		}
 
-	}
-
-	.pager-search-results {
-		padding-left: 12px;
-
-		.search-results.miwt-table {
+		table.miwt-table {
 			border: none;
-
-			> thead { display: none; }
-
-			> thead > tr > th, > tbody > tr > td {
-				background: none;
-				text-align: left;
-			}
+			margin-top: 0;
 		}
+
+		.pager-goalconfig-results {
+			padding: 0 1rem;
+			margin-top: 0;
+
+			.goalconfig-results {
+
+				thead { display: none; }
+
+				> thead > tr > th, > tbody > tr > td {
+					background: none;
+					text-align: left !important;
+				}
+
+			}
+
+		}
+
 	}
 
 	.tracking-metric {
