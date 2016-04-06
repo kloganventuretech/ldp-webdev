@@ -36,16 +36,16 @@
 	color: $color-lr-grey;
 
 	.card {
-		background: $color-lr-brand;
+		background: $color-lr-light-grey;
 		color: $color-white;
 		margin: 1.5rem auto 0;
 		width: 75%;
-		border: 1px solid darken($color-lr-brand, 10%);
-		box-shadow: inset 0 0 3px lighten($color-lr-brand, 5%);
+		border: 1px solid darken($color-lr-light-grey, 10%);
+		box-shadow: inset 0 0 3px lighten($color-lr-light-grey, 5%);
 		font-size: 1.75rem;
 		line-height: 2.5rem;
 		font-weight: 300;
-		border-bottom: 3px solid darken($color-lr-brand, 15%);
+		border-bottom: 3px solid darken($color-lr-light-grey, 15%);
 
 		.card-block {
 			padding: 3rem 2rem;
@@ -57,6 +57,13 @@
 
 		+ .card {
 			margin-top: 2rem;
+		}
+
+		&.primary {
+			background: $color-lr-brand;
+			border: 1px solid darken($color-lr-brand, 10%);
+			box-shadow: inset 0 0 3px lighten($color-lr-brand, 5%);
+			border-bottom-color: darken($color-lr-brand, 15%);
 		}
 
 	}
@@ -88,8 +95,8 @@
 	}
 
 	.description {
-		flex: 3;
-		padding: 0 3rem 3.5rem 0;
+		flex: 2;
+		padding: 0 3rem 2rem 0;
 	}
 
 	.start-date, .end-date {
@@ -130,8 +137,9 @@
 	}
 	.prop-group.smart-gauge {
 		display: flex;
-		flex: 2;
-		justify-content: flex-end;
+		flex: 2 1 100%;
+		justify-content: center;
+		padding-bottom: 3rem;
 	}
 
 	//CAROUSEL
@@ -213,6 +221,7 @@ section.tracking-metrics {
 	h1 {
 		text-align: center;
 		color: $brand-primary;
+		margin-bottom: 0;
 	}
 	h2 {
 		text-align: center;
@@ -311,13 +320,85 @@ section.tracking-metrics {
 
 }
 
+
+/* ----- UPDATE GOALS DIALOG */
+.int-measure-value-editor {
+
+	.value-indicator {
+
+		> div {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+	}
+
+	.last-reported, .range-bound-label {
+		font-weight: 400;
+
+		&::after {
+			content: ': ';
+			padding-right: 5px;
+		}
+
+	}
+
+	.int-measure-slider {
+		margin-top: 1rem;
+
+		> span {
+			display: inline-block;
+			vertical-align: top;
+
+			&.slider-editor {
+				margin-bottom: 0;
+				padding: 0 10px;
+
+				input {
+					border: none;
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+
 /* ----- MEDIA QUERIES */
-@media (min-width: 1280px) {
+@media (min-width: 1300px) {
 
 	.goal-wrapper {
 		> .goal-measurement .goal-measurement {
 			width: 35%;
 		}
+	}
+
+}
+
+@media (min-width: 1500px) {
+
+	.goal-wrapper {
+		flex-direction: column;
+		max-height: 39rem;
+
+		.description, .start-date, .end-date, .prop-group.smart-gauge {
+			padding: 1rem;
+			flex: 1;
+			width: 40%;
+			justify-content: flex-start;
+		}
+
+		.goal-measurement {
+			width: 60%;
+			justify-content: center;
+
+			.goal-measurement { width: 100%; }
+
+		}
+
 	}
 
 }
