@@ -7,10 +7,14 @@
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
       <webServer id="e0b7c140-a0ac-4872-892e-0aab03357d9d" name="LDP Live (Web)" url="https://ldp-release.venturetech.net/_files/Web">
-        <fileTransfer mountedRoot="$USER_HOME$/mounts/ldp-live" accessType="MOUNT" />
+        <fileTransfer port="0" mountedRoot="$USER_HOME$/mounts/ldp-live" accessType="MOUNT" />
+      </webServer>
+      <webServer id="c97a816b-f697-494f-bf60-bd160aa28a2c" name="LDP QA (Web)" url="https://ldp-qa.venturetech.net/_files/Web">
+        <fileTransfer port="0" mountedRoot="$USER_HOME$/mounts/ldp-qa" accessType="MOUNT" />
       </webServer>
     </option>
   </component>

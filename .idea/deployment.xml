@@ -7,10 +7,20 @@
           <mappings>
             <mapping deploy="Stylesheets/Entropy/pages" local="$PROJECT_DIR$/web/build/stylesheets/pages" web="/Stylesheets/Entropy/pages" />
             <mapping deploy="Stylesheets/Entropy/templates" local="$PROJECT_DIR$/web/build/stylesheets/templates" web="/Stylesheets/Entropy/templates" />
-            <mapping deploy="Stylesheets/Entropy/FlatLab" local="$PROJECT_DIR$/web/build/stylesheets/FlatLab" web="/Stylesheets/Entropy/FlatLab" />
-            <mapping deploy="Javascript/Entropy/FlatLab" local="$PROJECT_DIR$/web/build/javascript/FlatLab" web="/Javascript/Entropy/FlatLab" />
             <mapping deploy="Design/Entropy/font" local="$PROJECT_DIR$/web/build/design/fonts" web="/Design/Entropy/font" />
             <mapping deploy="Javascript/Entropy/components" local="$PROJECT_DIR$/web/build/javascript/components" web="Javascript/Entropy/components" />
+            <mapping deploy="Javascript/Entropy/templates" local="$PROJECT_DIR$/web/build/javascript/templates" web="Javascript/Entropy/templates" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="LDP QA (Web)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="Stylesheets/Entropy/pages" local="$PROJECT_DIR$/web/build/stylesheets/pages" web="/Stylesheets/Entropy/pages" />
+            <mapping deploy="Stylesheets/Entropy/templates" local="$PROJECT_DIR$/web/build/stylesheets/templates" web="/Stylesheets/Entropy/templates" />
+            <mapping deploy="Design/Entropy/font" local="$PROJECT_DIR$/web/build/design/fonts" web="/Design/Entropy/font" />
+            <mapping deploy="Javascript/Entropy/components" local="$PROJECT_DIR$/web/build/javascript/components" web="Javascript/Entropy/components" />
+            <mapping deploy="Javascript/Entropy/templates" local="$PROJECT_DIR$/web/build/javascript/templates" web="Javascript/Entropy/templates" />
           </mappings>
         </serverdata>
       </paths>
