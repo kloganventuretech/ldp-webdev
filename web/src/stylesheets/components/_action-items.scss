@@ -42,26 +42,20 @@
 
 			&.overdue-btn {
 				color: $color-lr-red;
+				border: 1px solid lighten($color-lr-red, 20%);
 
 				.btn {
 					border-color: $color-lr-red;
-				}
-
-				&.active, &:hover {
-					border: 1px solid lighten($color-lr-red, 20%);
 				}
 
 			}
 
 			&.active-btn {
 				color: $color-lr-blue;
+				border: 1px solid lighten($color-lr-blue, 20%);
 
 				.btn {
 					border-color: $color-lr-blue;
-				}
-
-				&.active, &:hover {
-					border: 1px solid lighten($color-lr-blue, 20%);
 				}
 
 			}
