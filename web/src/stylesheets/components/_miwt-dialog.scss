@@ -14,7 +14,10 @@ div.window.dialog /*specificity*/ {
 	.titlebar {
 		background-color: lighten($color-lr-light-grey, 25%);
 		height: 70px;
-		border-radius: $border-radius-lg;
+		border-top-left-radius: $border-radius-lg;
+		border-top-right-radius: $border-radius-lg;
+		position: relative;
+		z-index: 501;
 	}
 
 	td.activewindowtitle {
@@ -53,7 +56,9 @@ div.window.dialog /*specificity*/ {
 		right: initial;
 		width: 100%;
 		max-height: calc(100vh - 100px);
-		border-radius: $border-radius-lg;
+		border-bottom-left-radius: $border-radius-lg;
+		border-bottom-right-radius: $border-radius-lg;
+		z-index: 502;
 	}
 	.actions.bottom, .actions.top {
 		width: 100%;
@@ -82,4 +87,58 @@ div.window.dialog /*specificity*/ {
 		border-bottom: 1px solid $modal-footer-border-color;
 		padding: 0 0 15px;
 	}
+
+	&::before {
+		content: '';
+		background: rgba(42,53,66,0.9);
+		display: block;
+		height: 100%;
+		width: 100%;
+		z-index: 499;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+
+	h2 {
+		font-size: 1rem;
+		padding-bottom: .15rem !important;
+	}
+
+	.email-notifications {
+		margin-bottom: 1rem;
+	}
+
+	.miwt-table {
+		font-size: 85%;
+
+		> tbody > tr {
+			border-bottom: 1px solid lighten($color-lr-light-grey, 25%);
+		}
+
+	}
+
+	textarea {
+		border: 1px solid lighten($color-lr-light-grey, 25%);
+		border-radius: $border-radius-sm;
+	}
+
+	.note {
+		margin-top: 1rem;
+
+		label, .tal {
+			font-weight: 500;
+			margin-bottom: 0;
+		}
+
+	}
+
+	/* ----- Let's size specific dialog windows. */
+	&.configure-tasks {
+	}
+	&.view-engagement-dialog {
+		//width: auto !important;
+
+	}
+
 }
