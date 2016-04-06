@@ -4,6 +4,8 @@ var rename = require('gulp-rename');
 var minifyCss = require('gulp-minify-css');
 var autoprefixer = require('gulp-autoprefixer');
 var clip = require('gulp-clip-empty-files');
+var sourcemaps = require("gulp-sourcemaps");
+var uglify = require('gulp-uglify');
 var del = require('del');
 
 gulp.task('default', ['build']);
@@ -36,7 +38,11 @@ gulp.task('styles:clean', function(callback) {
 
 gulp.task('javascript', ['javascript:build']);
 gulp.task('javascript:build', ['javascript:clean'], function() {
-	return gulp.src('./web/src/javascript/**/*.js')
+	return gulp.src(['./web/src/javascript/**/*.js'])
+		.pipe(sourcemaps.init())
+		.pipe(uglify())
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('./web/build/javascript'));
 });
 gulp.task('javascript:clean', function(callback) {
