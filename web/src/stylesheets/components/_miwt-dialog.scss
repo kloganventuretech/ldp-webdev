@@ -140,15 +140,5 @@ div.window.dialog /*specificity*/ {
 		//width: auto !important;
 
 	}
-	&.edit-goal-dialog {
-		z-index: 1090 !important;
-	}
-
-	.emailtemplate-config {
-		.recipient {
-			display: block;
-			margin-bottom: .5rem;
-		}
-	}
 
 }
