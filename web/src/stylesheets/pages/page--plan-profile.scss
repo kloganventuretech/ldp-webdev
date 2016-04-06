@@ -11,10 +11,12 @@
 	flex-flow: row;
 
 	section.card {
-		padding: 2rem;
 		margin: 0 1rem 1rem 0;
 		display: flex;
 		flex-direction: column;
+		border-radius: $border-radius-lg;
+		overflow: hidden;
+		padding-bottom: 2rem;
 
 		&.plan-info {
 			display: flex;
@@ -29,7 +31,6 @@
 		}
 
 		.card-block {
-			padding: 0;
 			width: 100%;
 		}
 
@@ -37,15 +38,16 @@
 
 	h4.card-title {
 		border-bottom: 1px solid $color-lighter-grey;
-		margin-bottom: 1.75rem;
-		padding-bottom: 1rem;
+		padding: 0;
+		margin: 0;
 		width: 100%;
+		font-weight: 500;
 	}
 
 	.prop {
 
 		> label {
-			font-weight: bold;
+			font-weight: 500;
 			margin-bottom: 0;
 		}
 
@@ -56,6 +58,19 @@
 		height: auto;
 	}
 
+	.plan-info-content, .supporters-content, .plan-supporters .actions {
+		padding: 0 2rem;
+	}
+
+}
+
+.plan-info-header, .plan-supporters-header {
+	font-weight: 500;
+	color: $color-lr-grey;
+	margin-bottom: 2rem;
+	display: block;
+	padding: 1rem 1.5rem;
+	background: lighten($color-lr-light-grey, 25%);
 }
 
 .user-details {
@@ -150,7 +165,7 @@
 			min-width: 1px;
 
 			.supporter-type {
-				font-weight: bold;
+				font-weight: 500;
 				margin-bottom: .15rem;
 			}
 
@@ -159,6 +174,7 @@
 			}
 
 			.supporter-email {
+				color: $color-lr-light-blue;
 				overflow-wrap: break-word;
 				word-wrap: break-word;
 				-ms-word-break: break-all;
