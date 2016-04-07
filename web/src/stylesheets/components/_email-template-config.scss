@@ -13,9 +13,18 @@
 	display: inline-block;
 }
 .recipient > .btn.remove{
-	@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
-	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius);
+	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius);
 	margin-left: 2ch;
+	background: $color-white;
+	color: $color-lr-red;
+	border-color: $color-lr-red;
+
+	&:hover {
+		background: $color-lr-red;
+		border-color: $color-lr-red;
+		color: $color-white;
+		box-shadow: none;
+	}
 }
 span.et-user-variable {
 	border-bottom: 2px dotted darkgreen;

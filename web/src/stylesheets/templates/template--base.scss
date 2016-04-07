@@ -32,6 +32,13 @@ body {
 	}
 }
 
+#main-content-wc-0 {
+	h2, h3 {
+		font-weight: 300;
+		padding: .75rem 0 1rem;
+	}
+}
+
 section {
 	> h1 {
 		margin: 10px 0;
@@ -75,7 +82,7 @@ section {
 
 .miwt .menu-component .menu-items {
 	.default, .meeting, .meeting-group,
-	.plan-start-date, .email, .reminder, .email-login-info, .assign-eg, .confirmation,
+	.plan-start-date, .form, .email, .reminder, .email-login-info, .assign-eg, .confirmation,
 	.result-upload,	.fileentity, .uri, .manual {
 		a.menu-item{
 			display: inline-block;
@@ -92,6 +99,7 @@ section {
 		}
 	}
 	.plan-start-date:before {content: "\f271";}
+	.form:before { content: "\f00b"; }
 	.email:before {content: "\f003";}
 	.reminder:before {content: "\f274";}
 	.email-login-info:before {content: "\f090";}
@@ -142,6 +150,7 @@ p.instructions {
 			&:hover {
 				background: $color-lr-red;
 				border-color: $color-lr-red;
+				color: $color-white;
 			}
 
 		}
@@ -149,7 +158,7 @@ p.instructions {
 	}
 }
 
-footer {
+#page-footer {
 	padding: 2rem 0;
 	background: #4F5A69;
 	width: 100%;
@@ -157,7 +166,7 @@ footer {
 	color: $color-white;
 	text-align: center;
 
-	> p {
+	p {
 		margin: 0;
 	}
 

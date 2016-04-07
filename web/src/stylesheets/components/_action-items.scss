@@ -1,0 +1,246 @@
+@import "../config/base-vars";
+@import "../../../../bower_components/bootstrap/scss/mixins/hover";
+@import "../../../../bower_components/bootstrap/scss/mixins/text-emphasis";
+@import "../../../../bower_components/bootstrap/scss/mixins/alert";
+@import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
+
+#action-item-mgt {
+
+	h3 {
+		padding: 0 0 1.25rem;
+		border-bottom: 1px solid lighten($color-lr-light-grey, 25%);
+		border-radius: 0;
+		margin-bottom: 1.25rem;
+	}
+
+	.custom-search-btn-wrapper {
+		display: flex;
+		flex: 1;
+		justify-content: space-around;
+
+		.custom-search-btn {
+			text-align: center;
+			font-size: 1.35rem;
+			padding: 1rem;
+			border-radius: $border-radius-lg;
+
+			> * {
+				display: block;
+			}
+
+			.btn {
+				border-radius: 100%;
+				border: 6px solid transparent;
+				margin: 0 auto;
+				padding: 0;
+				font-size: 3rem;
+				width: 9rem;
+				height: 9rem;
+				background: none;
+			}
+
+
+			&.overdue-btn {
+				color: $color-lr-red;
+				border: 1px solid lighten($color-lr-red, 20%);
+
+				.btn {
+					border-color: $color-lr-red;
+				}
+
+			}
+
+			&.active-btn {
+				color: $color-lr-blue;
+				border: 1px solid lighten($color-lr-blue, 20%);
+
+				.btn {
+					border-color: $color-lr-blue;
+				}
+
+			}
+
+			&.active, &:hover {
+				background: rgba(255,255,255,0.45);
+			}
+
+		}
+
+	}
+
+
+	.search-bar {
+		display: none; // HIDE FOR NOW
+
+		padding: 1rem 0;
+		margin: 2rem auto 1.75rem;
+		border-top: 1px solid lighten($color-lr-light-grey, 25%);
+		border-bottom: 1px solid lighten($color-lr-light-grey, 25%);
+
+		.constraints {
+			position: relative;
+			display: block;
+			width: 75%;
+			margin: 0 auto;
+
+			&::after {
+				content: "\f002";
+				display: block;
+				font-family: FontAwesome;
+				font-size: 18px;
+				position: absolute;
+				bottom: 9px;
+				width:24px;
+				height:24px;
+				right: 7px;
+				text-align: center;
+				color: lighten($color-lr-light-grey, 20%);
+				z-index: 1;
+			}
+		}
+
+		.constraint {
+			margin: 0;
+			border: 1px solid lighten($color-lr-light-grey, 25%);
+			border-radius: $border-radius-lg;
+			width: 100%;
+			padding: .35rem .5rem;
+		}
+
+		.search-actions {
+			display: none;
+		}
+
+	}
+
+	.engagement {
+		position: relative;
+	}
+
+	.engagement-results {
+
+		thead {
+			display: none;
+		}
+
+	}
+
+	.search .miwt-table tbody tr:hover td,
+	.search-wrapper .miwt-table tbody tr:hover td,
+	.miwt-table > tbody > tr:nth-child(2n) > td,
+	.miwt-table > tbody > tr > td {
+		background: none;
+	}
+
+	.miwt-table > tbody > tr > td {
+		padding-bottom: 1.75rem;
+	}
+
+	.miwt-table > tbody > tr.no_data > td {
+		text-align: center;
+		color: $color-lr-grey;
+	}
+
+}
+
+.pager-engagement-results {
+	margin-top: 2.5rem;
+
+	.engagement-actions {
+		position: absolute;
+		right: 2px;
+		top: 23px;
+		z-index: 1;
+
+		.btn {
+			background: none;
+			border: none;
+			width: 20px;
+			overflow: hidden;
+			white-space: nowrap;
+			padding: 0;
+
+			&::before {
+				padding-right: 5px;
+			}
+
+		}
+
+	}
+
+}
+
+.engagement-data-wrapper {
+	display: flex;
+	flex: 1;
+	justify-content: space-between;
+
+	.profile-img {
+		overflow: hidden;
+		background: #fff;
+		min-height: 80px !important;
+		min-width: 80px;
+		max-width: 80px;
+		border-radius: 100%;
+		flex: 1;
+	}
+
+	.engagement-data {
+		width: 84.999%;
+		padding-left: 1rem;
+		flex: 2 0 65%;
+
+		.from-name, .engagement-status {
+			font-size: 70%;
+		}
+
+		.engagement-status {
+			font-style: italic;
+			float: right;
+		}
+
+		.from-name {
+			float: left;
+		}
+
+		.engagement-name {
+			display: block;
+			font-size: 90%;
+			clear: both;
+			float: left;
+			width: 100%;
+			padding: 1rem;
+			background: #fff;
+			border: 1px solid lighten($color-lr-light-grey, 25%);
+			border-radius: $border-radius-lg;
+			position: relative;
+			margin-top: .25rem;
+
+			&::before, &::after {
+				content:'';
+				display: block;
+				position: absolute;
+				left: -.5rem;
+				top: 16px;
+			}
+
+			&::before {
+				border-top: 11px solid transparent;
+				border-bottom: 11px solid transparent;
+				border-right: 11px solid lighten($color-lr-light-grey, 25%);
+				margin-left: -3px;
+			}
+
+			&::after {
+				border-top: 10px solid transparent;
+				border-bottom: 10px solid transparent;
+				border-right: 10px solid #fff;
+				margin-top: 1px;
+				margin-left: -2px;
+			}
+
+		}
+
+	}
+
+}

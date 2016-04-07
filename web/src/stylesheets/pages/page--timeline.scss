@@ -2,6 +2,7 @@
 @import "../components/schedule";
 @import "../components/time";
 @import "../components/timeline";
+@import "../components/action-items";
 @import "../../../../bower_components/bootstrap/scss/buttons";
 
 .flex-container {
@@ -9,12 +10,12 @@
 
 	> .timeline-ui,
 	> .tasks {
-		flex: 2;
-		padding-top: 1rem;
+		flex: 1;
+		margin-top: 1.5rem;
+		color: $color-lr-grey;
 	}
 	> .toolbox {
 		padding: 0;
-		flex: 1;
 		margin: 1rem;
 		.trigger {
 			width: 100%;
@@ -56,11 +57,16 @@
 			text-overflow: ellipsis;
 		}
 
+		&.timeline-ui {
+			flex: 1 1 30%;
+		}
+
 	}
 	> .tasks {
-		flex: 1;
-		margin-left: 20px;
-		color: $color-lr-grey;
+		//background: lighten($body-bg, 5%);
+		//margin-left: 20px;
+		padding-left: 2rem;
+		border-left: 1px solid #fff;
 
 		h1 {
 			font-size: 1.75rem;
@@ -225,7 +231,10 @@
 			padding-bottom: .5rem;
 		}
 
-		caption { color: $color-lr-grey; font-weight: bold; }
+		caption {
+			//color: $color-lr-grey;
+			font-weight: bold;
+		}
 
 		.entity-actions.actions {
 			margin-bottom: 0;
@@ -277,7 +286,7 @@
 			margin-top: -3.85rem;
 			font-size: 1.5rem;
 			font-weight: 500;
-			color: $color-lr-grey;
+			//color: $color-lr-grey;
 		}
 
 	}
@@ -305,7 +314,7 @@
 
 	.prop {
 		margin-bottom: .5rem;
-		padding: 4px 5px 3px;
+		padding: 4px 0 3px;
 	}
 
 	.prop-header-title {
@@ -334,6 +343,23 @@ div.window.configure-task  {
 	.activity-template-value-editor, .prop-header {
 
 		.prop-header-actions { display: none; }
+
+	}
+
+}
+
+@media (min-width: 1300px) {
+
+	.flex-container {
+		display: flex;
+
+		> .timeline-ui {
+			flex: 1 1 60%;
+		}
+
+		> .tasks {
+			flex: 1 1 45%;
+		}
 
 	}
 
