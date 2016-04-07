@@ -25,8 +25,6 @@ jQuery(function () {
 
 	setupCharts();
 
-	setupAdvancedExpandCollapse();
-
 	$('form.miwt-form').each(function (idx, form) {
 		form.submit_options = {
 			preProcessNode: function (data) {
@@ -41,7 +39,6 @@ jQuery(function () {
 					setupExpandCollapse(ctx);
 					deserialzeBS();
 					setupCharts(ctx);
-					setupAdvancedExpandCollapse(ctx);
 					if($(ctx).hasClass('message-container') || $(ctx).find('.message-container').length > 0)
 						errorMessageCleanup();
 					setTimeout(function () {
