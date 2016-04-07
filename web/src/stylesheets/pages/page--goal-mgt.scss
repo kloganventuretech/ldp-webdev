@@ -11,7 +11,7 @@ $tab-content-color-bg: inherit;
 }
 
 .repo-item-selector {
-	flex: 0 0;
+	flex: 0 0 auto; /* need to explicitly state all 0 0 auto for safari */
 	background: #fff;
 	border-right: 1px solid #ddd;
 	padding: 0 .75rem;
@@ -48,7 +48,7 @@ $tab-content-color-bg: inherit;
 
 .smart-wrapper > .prop-group,
 .goal-configuration > .prop-group {
-	flex: 1;
+	flex: 1 0 auto; /* Need to explicitly state 1 0 auto for Safari */
 	@include border-radius();
 	background-color: $color-white;
 	margin: 1rem;
