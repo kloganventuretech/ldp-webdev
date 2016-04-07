@@ -24,6 +24,7 @@
 		h3 {
 			float: left;
 			margin-bottom: 0;
+			padding: 0 !important;
 		}
 	}
 
@@ -162,6 +163,12 @@
 }
 .timeline-item {
 	margin-bottom:2rem;
+
+	&.rescheduled, &.canceled, &.completed {
+		.prop.dstart { display: none; }
+		.prop-group.dates .prop + .prop { margin-left: 0; }
+	}
+
 }
 .timeline-item:before {
 	content: "";
@@ -661,5 +668,13 @@
 	display: inline;
 	padding: 0 .35rem 0 0;
 	min-width: 1.5rem;
+}
+
+.form-engagement-interactive {
+	.btn.go {
+		@include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-base, $line-height-lg, $btn-border-radius-lg);
+		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+		font-weight: 300;
+	}
 }
 
