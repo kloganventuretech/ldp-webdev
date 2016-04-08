@@ -34,16 +34,19 @@ function registerActivityToggle(idx, element) {
 			$element.removeClass('collapsed').addClass('expanded');
 			$element.find('i').removeClass(PLUS_CLASS).addClass(MINUS_CLASS);
 			addTLExpanded($element.attr("id"));
+			$addTargs.each(function(idx2, addTarg) {
+				$(addTarg).collapse('show');
+			});
 		}
 		else
 		{
 			$element.removeClass('expanded').addClass('collapsed');
 			$element.find('i').removeClass(MINUS_CLASS).addClass(PLUS_CLASS);
 			removeTLExpanded($element.attr("id"));
+			$addTargs.each(function(idx2, addTarg) {
+				$(addTarg).collapse('hide');
+			});
 		}
-		$addTargs.each(function(idx2, addTarg) {
-			$(addTarg).collapse('toggle');
-		});
 		return false;
 	});
 }

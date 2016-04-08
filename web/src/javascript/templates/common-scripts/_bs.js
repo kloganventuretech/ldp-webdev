@@ -14,7 +14,9 @@ function deserialzeBS() {
 			// One-shot?
 			//myArray = myArray.filter(function (el) {return el != id;});
 			//i--;
-			$found.click();
+			if($found.hasClass('collapsed')) {
+				$found.click();
+			}
 		}
 	}
 	sessionStorage["tl-expanded"] = JSON.stringify(myArray);
