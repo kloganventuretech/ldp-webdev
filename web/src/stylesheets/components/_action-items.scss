@@ -37,6 +37,7 @@
 				width: 9rem;
 				height: 9rem;
 				background: none;
+				outline: none;
 			}
 
 
@@ -61,7 +62,7 @@
 			}
 
 			&.active, &:hover {
-				background: rgba(255,255,255,0.45);
+				background: $color-white;
 			}
 
 		}
@@ -181,6 +182,7 @@
 		min-height: 80px !important;
 		min-width: 80px;
 		max-width: 80px;
+		height: 80px !important;
 		border-radius: 100%;
 		flex: 1;
 	}
@@ -192,15 +194,19 @@
 
 		.from-name, .engagement-status {
 			font-size: 70%;
+			width: 100%;
 		}
 
 		.engagement-status {
 			font-style: italic;
 			float: right;
+			max-width: 42%;
+			text-align: right;
 		}
 
 		.from-name {
 			float: left;
+			max-width: 42%;
 		}
 
 		.engagement-name {
@@ -237,6 +243,55 @@
 				border-right: 10px solid #fff;
 				margin-top: 1px;
 				margin-left: -2px;
+			}
+
+		}
+
+	}
+
+}
+
+@media (max-width: 1280px) {
+
+	#action-item-mgt .custom-search-btn-wrapper .custom-search-btn .btn {
+		width: 5.5rem;
+		height: 5.5rem;
+		font-size: 2rem;
+	}
+
+}
+
+@media (max-width: 1120px) {
+
+	#action-item-mgt {
+
+		.custom-search-btn-wrapper {
+			flex-direction: column;
+
+			.custom-search-btn {
+				margin-bottom: .75rem;
+			}
+
+		}
+
+	}
+
+	.engagement-data-wrapper {
+		flex-direction: column;
+
+		.profile-img {
+			margin-bottom: 1rem;
+			align-self: center;
+		}
+
+		.engagement-data {
+			width: 100%;
+			flex: 2;
+
+			.engagement-name {
+				&::after, &::before {
+					display: none;
+				}
 			}
 
 		}
