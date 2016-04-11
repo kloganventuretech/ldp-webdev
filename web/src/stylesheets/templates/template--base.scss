@@ -55,8 +55,8 @@ section {
 	button.clear {
 		border: none;
 		background: inherit;
-		visibility: hidden;
-		color: $color-lr-light-grey;
+		box-shadow: none;
+		color: #fff;
 
 		&:before {
 			visibility: visible;
@@ -67,9 +67,13 @@ section {
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			content: "\f073";
+			color: $color-lr-light-grey;
 		}
 		&:hover {
-			color: $color-lr-black;
+			color: #fff;
+			&:before {
+				color: $color-lr-black;
+			}
 		}
 	}
 	button.clear {
@@ -170,6 +174,10 @@ p.instructions {
 		margin: 0;
 	}
 
+}
+
+.select2-container--open {
+	z-index: 1200;
 }
 
 /*
