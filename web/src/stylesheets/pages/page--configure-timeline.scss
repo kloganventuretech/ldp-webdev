@@ -1,0 +1,7 @@
+.timeline-item {
+
+	&.rescheduled, &.canceled {
+		display: block;
+	}
+
+}
