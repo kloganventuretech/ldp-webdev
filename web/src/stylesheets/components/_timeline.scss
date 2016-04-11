@@ -134,16 +134,6 @@
 		@include clearfix();
 	}
 	.arrow {
-		/*border-bottom: 8px solid transparent;
-		border-top: 8px solid transparent;
-		border-right: 8px solid $color-white !important;
-		display: block;
-		height: 0;
-		left: -8px;
-		position: relative;
-		width: 8px;
-		z-index: 1;
-		margin-top:.5rem;*/
 		display: none;
 	}
 	p {
@@ -169,6 +159,10 @@
 		.prop-group.dates .prop + .prop { margin-left: 0; }
 	}
 
+	&.rescheduled, &.canceled {
+		display: none;
+	}
+
 }
 .timeline-item:before {
 	content: "";
@@ -185,8 +179,7 @@
 	height: 80px;
 	width: 80px;
 	z-index: 2;
-	background-color: $color-lr-light-grey;
-	border: 4px solid darken($color-lr-light-grey, 15%);
+	border: 4px solid darken($color-lr-light-grey, 10%);
 	text-align: center;
 	.fa {
 		font-size: 42px;
@@ -194,25 +187,13 @@
 		display: inline-block;
 		color: $color-smokey-white;
 	}
-	.scheduled & {
-		background-color: $color-lr-cyan;
-		border-color: darken($color-lr-cyan, 15%);
+	.canceled &, .rescheduled &, .scheduled &, .pending & {
+		background-color: lighten($color-lr-light-grey, 15%);
+		border-color: darken($color-lr-light-grey, 10%);
 	}
-	.confirmed & {
-		background-color: $color-lr-yellow;
-		border-color: darken($color-lr-yellow, 15%);
-	}
-	.canceled & {
-		background-color: $color-lr-canceled;
-		border-color: darken($color-lr-canceled, 15%);
-	}
-	.rescheduled & {
-		background-color: $color-lr-rescheduled;
-		border-color: darken($color-lr-rescheduled, 15%);
-	}
-	.in-progress & {
-		background-color: $color-lr-blue;
-		border-color: darken($color-lr-blue, 15%);
+	.in-progress &, .confirmed & {
+		background-color: lighten($color-lr-brand, 20%);
+		border-color: darken($color-lr-brand, 8%);
 	}
 	.overdue & {
 		background-color: $color-lr-red;
@@ -222,6 +203,22 @@
 		background-color: $color-lr-brand;
 		border-color: darken($color-lr-brand, 15%);
 	}
+
+	//Add a slash-thru to canceled and rescheduled iconts
+	.canceled &, .rescheduled & {
+		&::after {
+			content: '';
+			background: darken($color-lr-light-grey, 10%);
+			display: block;
+			height: 103%;
+			width: 5px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: rotate(45deg);
+		}
+	}
+
 	.cat-on_boarding & .fa:before {
 		content: "\f21d";
 		display: inline-block;
@@ -550,14 +547,12 @@
 	}
 
 	.activity-status {
-		font-size: 14px;
+		font-size: .75rem;
+		line-height: .8rem;
 		font-style: italic;
-		font-weight: normal;
-
-		&:after {
-			content: ": ";
-		}
-
+		font-weight: 300;
+		margin-bottom: .5rem;
+		display: block;
 	}
 
 	.activity-process-name {
@@ -566,6 +561,14 @@
 	.activity-date {
 		font-size: 14px;
 		font-style: italic;
+	}
+
+	.prop-group.dates, .prop.activity-time {
+		display: inline;
+	}
+
+	.prop-group.dates {
+		margin-right: 1.5rem;
 	}
 
 }
@@ -581,13 +584,13 @@
 	}
 }
 
-@include text-emphasis-variant('.activity-summary .pending', $color-lr-grey);
-@include text-emphasis-variant('.activity-summary .scheduled', $brand-info);
-@include text-emphasis-variant('.activity-summary .in-progress', $brand-info);
+@include text-emphasis-variant('.activity-summary .pending', $color-lr-light-grey);
+@include text-emphasis-variant('.activity-summary .scheduled', $color-lr-light-grey);
+@include text-emphasis-variant('.activity-summary .in-progress', lighten($color-lr-brand, 25%));
 @include text-emphasis-variant('.activity-summary .completed', $brand-success);
 @include text-emphasis-variant('.activity-summary .overdue', $brand-danger);
-@include text-emphasis-variant('.activity-summary .canceled', $color-lr-canceled);
-@include text-emphasis-variant('.activity-summary .rescheduled', $color-lr-rescheduled);
+@include text-emphasis-variant('.activity-summary .canceled', $color-lr-light-grey);
+@include text-emphasis-variant('.activity-summary .rescheduled', $color-lr-light-grey);
 
 .task-items {
 	padding-top: .75rem;
@@ -598,11 +601,10 @@
 	position: relative;
 	border-radius: 0;
 
-	&.pending {
+	&.pending, &.canceled, &.rescheduled, &.scheduled {
 		@include alert-variant(lighten($color-lr-light-grey, 25%), $color-lr-light-grey, $color-lr-black);
 		border-left-color: $color-lr-grey;
 	}
-
 	&.completed {
 		@include alert-variant($color-lr-brand, darken($color-lr-brand, 15%), $color-white);
 		border-left-color: darken($color-lr-brand, 15%);
@@ -611,23 +613,9 @@
 		@include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 		border-left-color: $brand-danger;
 	}
-	&.canceled {
-		@include alert-variant(lighten($color-lr-canceled, 17%),$color-lr-canceled, darken($color-lr-canceled, 28%));
-		border-left-color: $color-lr-canceled;
-	}
-
-	&.rescheduled {
-		@include alert-variant($color-lr-rescheduled, $color-lr-rescheduled, darken($color-lr-rescheduled, 75%));
-		border-left-color: $color-lr-rescheduled;
-	}
-
-	&.in-progress{
-		@include alert-variant(lighten($color-lr-blue, 30%), $color-lr-blue, darken($color-lr-blue, 70%));
-		border-left-color: $color-lr-blue;
-	}
-	&.scheduled {
-		@include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
-		border-left-color: $brand-info;
+	&.in-progress {
+		@include alert-variant(lighten($color-lr-brand, 30%), darken($color-lr-brand, 15%), darken($color-lr-brand, 18%));
+		border-left-color: darken($color-lr-brand, 15%);
 	}
 
 	.actions.configuration-actions {
