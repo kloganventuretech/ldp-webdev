@@ -83,6 +83,7 @@ div.message {
 div.has-error {
 	background-color: $color-error-light;
 	border: 1px solid $color-error-dark;
+	padding: 5px !important;
 
 	.error-message {
 		display: inline-block;
