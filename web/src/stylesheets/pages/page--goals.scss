@@ -6,7 +6,7 @@
 	display: flex;
 }
 .goal-viewer {
-	flex:1 0;
+	flex: 2;
 	padding:1rem;
 	color: $color-lr-grey;
 
@@ -25,7 +25,7 @@
 	}
 }
 .alignment {
-	flex-basis: 25%;
+	flex: 1;
 	min-width: 500px;
 	border-left: 1px solid #ddd;
 	margin:1rem;
@@ -36,16 +36,16 @@
 	color: $color-lr-grey;
 
 	.card {
-		background: $color-lr-light-grey;
+		background: lighten($color-lr-light-grey, 25%);
 		color: $color-white;
 		margin: 1.5rem auto 0;
 		width: 75%;
-		border: 1px solid darken($color-lr-light-grey, 10%);
-		box-shadow: inset 0 0 3px lighten($color-lr-light-grey, 5%);
+		border: 1px solid $color-lr-light-grey;
+		box-shadow: inset 0 0 3px lighten($color-lr-light-grey, 30%);
 		font-size: 1.75rem;
 		line-height: 2.5rem;
 		font-weight: 300;
-		border-bottom: 3px solid darken($color-lr-light-grey, 15%);
+		border-bottom: 3px solid $color-lr-light-grey;
 
 		.card-block {
 			padding: 3rem 2rem;
@@ -60,10 +60,10 @@
 		}
 
 		&.primary {
-			background: $color-lr-brand;
-			border: 1px solid darken($color-lr-brand, 10%);
-			box-shadow: inset 0 0 3px lighten($color-lr-brand, 5%);
-			border-bottom-color: darken($color-lr-brand, 15%);
+			background: lighten($color-lr-light-grey, 15%);
+			border: 1px solid $color-lr-light-grey;
+			box-shadow: inset 0 0 3px lighten($color-lr-light-grey, 20%);
+			border-bottom: 3px solid darken($color-lr-light-grey, 5%);
 		}
 
 	}
@@ -368,11 +368,11 @@ section.tracking-metrics {
 
 
 /* ----- MEDIA QUERIES */
-@media (min-width: 1300px) {
+@media (max-width: 1499px) {
 
 	.goal-wrapper {
 		> .goal-measurement .goal-measurement {
-			width: 35%;
+			width: 100%;
 		}
 	}
 
