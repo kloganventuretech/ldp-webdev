@@ -216,7 +216,19 @@
 				padding-left: 1.5rem !important;
 			}
 
+			.task-label {
+				padding: .25rem .5rem;
 
+				&.active {
+					background: $color-lr-brand;
+					color: #fff;
+
+					a {
+						color: #fff;
+					}
+
+				}
+			}
 
 		}
 
@@ -254,11 +266,15 @@
 			width: 70%;
 			padding: 1.25rem 5rem 1rem 3.5rem;
 			margin-left: 30%;
+
+			.engagement-editor {
+				margin-top: 3.5rem;
+			}
+
 		}
 
 		.engagement-type {
-			//background: lighten($color-lr-light-grey, 25%);
-			background: $color-lr-brand;
+			background: $color-lr-grey;
 			color: #fff;
 			font-size: 1.25rem;
 			font-weight: 400;
@@ -411,6 +427,18 @@ div.window.configure-task  {
 			flex: 1;
 		}
 
+	}
+
+	.activity-configurer-dialog {
+		.activity-configurer {
+			section.toc {
+				width: 20%;
+			}
+
+			.activities-wrapper {
+				width: 80%;
+			}
+		}
 	}
 
 }
