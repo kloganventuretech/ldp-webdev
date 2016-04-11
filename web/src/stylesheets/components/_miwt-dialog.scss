@@ -210,7 +210,7 @@ input[type="text"], textarea, .select2-container, .prop.email-preview {
 }
 
 @media (min-width:1300px) {
-	div.window.dialog {
+	div.window.dialog:not(.activity-configurer-dialog) {
 		max-width: 65rem;
 	}
 }
