@@ -78,14 +78,6 @@
 
 	}
 }
-/*.confirm-task-history-container { HIDING THE HEADER TITLE FOR NOW
-	.prop-header-title{
-		font-size:inherit;
-		> h1 {
-			font-size: 1.75rem;
-		}
-	}
-}*/
 .activity-configurer-dialog {
 	top: 5px !important;
 	bottom: 5px !important;
@@ -93,10 +85,7 @@
 	right: 10px !important;
 	position:fixed!important;
 	width:auto !important;
-	.titlebar_row td {
-		/*border-bottom-width: 3px !important;
-		border-bottom-color: $color-lr-light-grey !important;*/
-	}
+
 	.windowcontent {
 		padding: 0 !important;
 		height: 100vh;
@@ -208,11 +197,12 @@
 			> h1 {
 				font-size: 1.5rem;
 				margin: 0 0 5px;
+				display: none;
 			}
 
 			h2.engagement-heading {
-				font-size: 1.15rem !important;
-				font-weight: 400 !important;
+				font-size: 90% !important;
+				font-weight: 300 !important;
 				padding-left: 1.5rem !important;
 			}
 
@@ -260,6 +250,16 @@
 					width: 86%;
 				}
 			}
+
+			&.activity {
+				font-size: 1.25rem;
+
+				i.fa {
+					padding-top: 9px;
+				}
+
+			}
+
 		}
 
 		.activities-wrapper {
@@ -314,32 +314,12 @@
 
 	}
 
-	.prop-body {
+	/*.prop-body {
 		width: 75%;
-	}
+	}*/
 
 	.btn.engagement-completed {
 		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-	}
-
-}
-
-.confirm-task-history-container {
-
-	.task-assignment { /* This may get less specific */
-
-		.entity-actions {
-			margin-bottom: .75rem;
-			padding-right: 0;
-		}
-
-		caption {
-			margin-top: -3.85rem;
-			font-size: 1.5rem;
-			font-weight: 500;
-			//color: $color-lr-grey;
-		}
-
 	}
 
 }
@@ -381,6 +361,12 @@
 		}
 	}
 
+	.prop.email-preview, .prop-group.variables {
+		h1 {
+			font-size: 1.25rem;
+		}
+	}
+
 }
 
 .reminder-engagement {
@@ -414,6 +400,19 @@ div.window.configure-task  {
 
 	}
 
+	.activity-configurer-dialog {
+		.activity-configurer {
+			section.toc {
+				width: 20%;
+			}
+
+			.activities-wrapper {
+				width: 80%;
+				margin-left: 20%;
+			}
+		}
+	}
+
 }
 
 @media (max-width: 1280px) {
@@ -427,18 +426,6 @@ div.window.configure-task  {
 			flex: 1;
 		}
 
-	}
-
-	.activity-configurer-dialog {
-		.activity-configurer {
-			section.toc {
-				width: 20%;
-			}
-
-			.activities-wrapper {
-				width: 80%;
-			}
-		}
 	}
 
 }
