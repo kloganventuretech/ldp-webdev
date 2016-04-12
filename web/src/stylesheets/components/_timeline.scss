@@ -529,6 +529,7 @@
 	}
 
 }
+
 .activity-details {
 	//color: $color-lr-grey;
 
@@ -614,7 +615,7 @@
 		border-left-color: $brand-danger;
 	}
 	&.in-progress {
-		@include alert-variant(lighten($color-lr-brand, 30%), darken($color-lr-brand, 15%), darken($color-lr-brand, 18%));
+		@include alert-variant(lighten($color-lr-brand, 30%), darken($color-lr-brand, 15%), darken($color-lr-brand, 25%));
 		border-left-color: darken($color-lr-brand, 15%);
 	}
 
