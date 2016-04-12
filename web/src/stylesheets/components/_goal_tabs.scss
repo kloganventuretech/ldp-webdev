@@ -8,7 +8,7 @@ $tab-color-fg: $color-white;
 @import "../mixins/tabs";
 
 $nav-color-bg: lighten($color-lr-blue, 5%);
-$nav-bg-selected: darken($color-lr-light-blue, 10%);
+$nav-bg-selected: darken($color-lr-blue, 10%);
 $nav-fg: $color-white;
 
 h2.plan-name {
@@ -24,11 +24,15 @@ h2.plan-name {
 .goal-management{
 	position: relative;
 	.persistence-actions{
-		position: absolute;
+		/*position: absolute;
 		right:4.25rem;
-		top:calc(4rem + 1px);
+		top: 4rem;
 		z-index: 1;
-		height:2.5rem;
+		height:2.5rem;*/
+		float: right;
+		padding-right: 4.25rem;
+		margin-top: .25rem;
+
 		.btn{
 			color:$brand-primary;
 			background-color: $color-white;
@@ -70,6 +74,11 @@ h2.plan-name {
 	}
 	.tab-container {
 		@include style-tab-elements;
+		.tab-items {
+			.ti.tab-selected a, .ti:hover a {
+				background-color: darken($color-lr-brand, 15%);
+			}
+		}
 	}
 	.tab-container .tab-content {
 		padding: 0;
@@ -79,8 +88,8 @@ h2.plan-name {
 			padding:0;
 			min-height: auto;
 			border-radius: 0;
-			background-color: $color-lr-light-blue;
-			border-right:1px solid $color-lr-light-blue;
+			background-color: lighten($color-lr-light-grey, 15%);
+			border-right:1px solid lighten($color-lr-light-grey, 15%);
 
 			.nav-item + .nav-item {
 				margin-left: 0;
@@ -88,18 +97,18 @@ h2.plan-name {
 
 			.btn {
 				color:$nav-fg;
-				background-color: $color-lr-light-blue;
-				padding: 0.55rem 1rem;
+				background-color: lighten($color-lr-light-grey, 15%);
+				padding: 0.5rem 1rem;
 				border-radius: 0;
-				border-right: 1px solid $nav-bg-selected;
+				border-right: 1px solid $color-lr-light-grey;
 
 				&:hover {
-					background-color: $nav-bg-selected;
+					background-color: $color-lr-light-grey;
 				}
 
 			}
 			.active .btn {
-				background-color: $nav-bg-selected;
+				background-color: $color-lr-light-grey;
 			}
 
 		}

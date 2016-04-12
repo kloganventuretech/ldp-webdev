@@ -6,18 +6,18 @@
 	display: flex;
 }
 .goal-viewer {
-	flex:1 0;
+	flex: 2;
 	padding:1rem;
 	color: $color-lr-grey;
 
 	h1 {
 		font-size: 1.75rem;
-		font-weight: 400;
+		font-weight: 300;
 		margin-bottom: 1.35rem;
 
 		.goal-type {
-			color: $brand-primary;
-			padding-right: 1ch;
+			font-weight: 400;
+			padding-right: .25rem;
 			&:after {
 				content: ": ";
 			}
@@ -25,7 +25,7 @@
 	}
 }
 .alignment {
-	flex-basis: 25%;
+	flex: 1;
 	min-width: 500px;
 	border-left: 1px solid #ddd;
 	margin:1rem;
@@ -36,16 +36,16 @@
 	color: $color-lr-grey;
 
 	.card {
-		background: $color-lr-light-grey;
+		background: lighten($color-lr-light-grey, 25%);
 		color: $color-white;
 		margin: 1.5rem auto 0;
 		width: 75%;
-		border: 1px solid darken($color-lr-light-grey, 10%);
-		box-shadow: inset 0 0 3px lighten($color-lr-light-grey, 5%);
+		border: 1px solid $color-lr-light-grey;
+		box-shadow: inset 0 0 3px lighten($color-lr-light-grey, 30%);
 		font-size: 1.75rem;
 		line-height: 2.5rem;
 		font-weight: 300;
-		border-bottom: 3px solid darken($color-lr-light-grey, 15%);
+		border-bottom: 3px solid $color-lr-light-grey;
 
 		.card-block {
 			padding: 3rem 2rem;
@@ -60,10 +60,10 @@
 		}
 
 		&.primary {
-			background: $color-lr-brand;
-			border: 1px solid darken($color-lr-brand, 10%);
-			box-shadow: inset 0 0 3px lighten($color-lr-brand, 5%);
-			border-bottom-color: darken($color-lr-brand, 15%);
+			background: lighten($color-lr-light-grey, 15%);
+			border: 1px solid $color-lr-light-grey;
+			box-shadow: inset 0 0 3px lighten($color-lr-light-grey, 20%);
+			border-bottom: 3px solid darken($color-lr-light-grey, 5%);
 		}
 
 	}
@@ -75,6 +75,28 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	flex-direction: row;
+
+	.goal-info-wrapper, .goal-measurement {
+		display: flex;
+	}
+
+	.goal-info-wrapper {
+		flex: 1;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	> .goal-measurement{
+		text-align: center;
+		flex-direction: column;
+		flex: 2;
+
+		.goal-measurement {
+			align-self: center;
+			width: 100%;
+		}
+
+	}
 
 	.description, .start-date, .end-date {
 
@@ -95,26 +117,18 @@
 	}
 
 	.description {
-		flex: 2;
-		padding: 0 3rem 2rem 0;
+		flex: 2 1 100%;
+		order: 3;
+		width: 100%;
+		padding: 1.5rem 3rem 1.5rem 0;
 	}
 
 	.start-date, .end-date {
 		flex: 1;
+		width: 35%;
+		font-size: 85%;
 	}
 
-	> .goal-measurement{
-		display: flex;
-		text-align: center;
-		flex-direction: column;
-		flex: 2 0 100%;
-
-		.goal-measurement {
-			align-self: center;
-			width: 100%;
-		}
-
-	}
 	.goal-measurement-actions {
 		margin:0;
 	}
@@ -137,9 +151,10 @@
 	}
 	.prop-group.smart-gauge {
 		display: flex;
-		flex: 2 1 100%;
-		justify-content: center;
+		flex: 1;
+		justify-content: flex-start;
 		padding-bottom: 3rem;
+		order: 4;
 	}
 
 	//CAROUSEL
@@ -189,8 +204,8 @@
 .chart-legend {
 	float:left;
 	.legend-header {
-		color:$color-lr-light-grey;
-		font-weight: bold;
+		color:$color-lr-grey;
+		font-weight: 500;
 		margin-bottom: .25rem;
 		font-size: .9rem;
 	}
@@ -218,13 +233,15 @@ section.tracking-metrics {
 	margin: 2.85rem 1.5rem 1.5rem;
 	padding-top: 1.75rem;
 
+	h1, h2 {
+		text-align: left;
+	}
+
 	h1 {
-		text-align: center;
-		color: $brand-primary;
 		margin-bottom: 0;
+		display: inline-block;
 	}
 	h2 {
-		text-align: center;
 		font-size: .9rem;
 		font-style: italic;
 		color: $color-lr-light-grey;
@@ -329,11 +346,12 @@ section.tracking-metrics {
 		> div {
 			display: inline-block;
 			vertical-align: middle;
+			margin-right: 1.5rem;
 		}
 
 	}
 
-	.last-reported, .range-bound-label {
+	.last-reported, .range-bound-label, .current {
 		font-weight: 400;
 
 		&::after {
@@ -368,11 +386,17 @@ section.tracking-metrics {
 
 
 /* ----- MEDIA QUERIES */
-@media (min-width: 1300px) {
+@media (max-width: 1150px) {
+	.goal-wrapper {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 1499px) {
 
 	.goal-wrapper {
 		> .goal-measurement .goal-measurement {
-			width: 35%;
+			width: 100%;
 		}
 	}
 
@@ -381,18 +405,9 @@ section.tracking-metrics {
 @media (min-width: 1500px) {
 
 	.goal-wrapper {
-		flex-direction: column;
 		max-height: 39rem;
 
-		.description, .start-date, .end-date, .prop-group.smart-gauge {
-			padding: 1rem;
-			flex: 1;
-			width: 40%;
-			justify-content: flex-start;
-		}
-
 		.goal-measurement {
-			width: 60%;
 			justify-content: center;
 
 			.goal-measurement { width: 100%; }

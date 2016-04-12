@@ -25,6 +25,8 @@ jQuery(function () {
 
 	setupCharts();
 
+	navHightlight();
+
 	$('form.miwt-form').each(function (idx, form) {
 		form.submit_options = {
 			preProcessNode: function (data) {
@@ -80,6 +82,5 @@ jQuery(function () {
 			});
 		});
 	})(window);
-
 
 });

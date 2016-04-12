@@ -25,7 +25,7 @@ div.window.dialog /*specificity*/ {
 		border-bottom: 1px solid $modal-header-border-color;
 		text-align: left;
 		margin: 0;
-		line-height: 1.5;
+		line-height: 1;
 		font-size: 1.35rem;
 		font-weight: inherit;
 		color: $color-lr-grey;
@@ -112,8 +112,8 @@ div.window.dialog /*specificity*/ {
 	.miwt-table {
 		font-size: 85%;
 
-		> tbody > tr {
-			border-bottom: 1px solid lighten($color-lr-light-grey, 25%);
+		> tbody > tr + tr {
+			border-top: 1px solid lighten($color-lr-light-grey, 25%);
 		}
 
 	}
@@ -121,6 +121,7 @@ div.window.dialog /*specificity*/ {
 	textarea {
 		border: 1px solid lighten($color-lr-light-grey, 25%);
 		border-radius: $border-radius-sm;
+		height: 3rem;
 	}
 
 	.note {
@@ -133,12 +134,53 @@ div.window.dialog /*specificity*/ {
 
 	}
 
-	/* ----- Let's size specific dialog windows. */
+	input[type="text"] {
+		border: 1px solid lighten($color-lr-light-grey, 25%);
+		border-radius: $border-radius-sm;
+		padding: 2px 5px;
+	}
+
+	.prop-group.time {
+		label.prop-group-title {
+			margin-bottom: -2.5rem;
+			font-size: 1rem;
+		}
+
+		.zoned-time-editor {
+			span.time, span.timezone {
+				display: inline-block;
+			}
+			span.timezone {
+				margin-left: 1.5rem;
+			}
+		}
+
+	}
+
+	.prop.subject {
+		input[type="text"] {
+			width: 100%;
+		}
+	}
+
+	.task-assignment {
+		.entity-actions {
+			margin-top: .5rem;
+			margin-bottom: -.15rem;
+			padding-right: 0;
+
+		}
+		.entity-action {
+			margin-right: 0 !important;
+			padding: 0 !important;
+		}
+	}
+
+	/* ----- Let's style specific dialog windows. */
 	&.configure-tasks {
 	}
 	&.view-engagement-dialog {
-		//width: auto !important;
-
+		width: 50%;
 	}
 	&.edit-goal-dialog {
 		z-index: 1090 !important;
@@ -151,4 +193,30 @@ div.window.dialog /*specificity*/ {
 		}
 	}
 
+	.email-preview-content {
+		height: 200px;
+	}
+
+	.engagement-viewer {
+		h1 {
+			font-size: 1.35rem;
+		}
+	}
+
+	&.reschedule-task, &.confirm-task {
+		.prop-header-actions {
+			display: none;
+		}
+	}
+
+}
+
+.select2-container {
+	max-width: 65%;
+}
+
+@media (min-width:1300px) {
+	div.window.dialog:not(.activity-configurer-dialog) {
+		max-width: 65rem;
+	}
 }

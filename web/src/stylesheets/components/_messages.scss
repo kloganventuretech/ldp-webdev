@@ -80,9 +80,10 @@ div.message {
 	padding: 5px 5px 5px 16px !important;
 }
 
-div.has-error {
+div.has-error, span.has-error {
 	background-color: $color-error-light;
 	border: 1px solid $color-error-dark;
+	padding: 5px !important;
 
 	.error-message {
 		display: inline-block;

@@ -131,7 +131,8 @@ input[type=number]{
 		input[type=url],
 		input[type=tel],
 		textarea {
-			min-width: 25rem;
+			//min-width: 25rem;
+			width: 45%;
 		}
 
 		.actions {
@@ -147,6 +148,7 @@ input[type=number]{
 	.miwt-calendar {
 		input[type=text] {
 			min-width:8rem;
+			max-width: 8rem;
 		}
 	}
 }
