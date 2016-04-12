@@ -10,8 +10,8 @@
 }
 
 .meter {
-  width: 15rem;
-  height: 30px;
+  width: 12rem;
+  height: 20px;
   padding:0;
   margin:0;
   box-sizing: border-box;
@@ -52,21 +52,21 @@
       content: '';
       background: none;
       position: absolute;
-      margin-left: -18px;
+      margin-left: -12px;
       display: block;
     }
 
     &::before {
-      border-left: 18px solid transparent;
-      border-right: 18px solid transparent;
-      border-bottom: 30px solid darken($lr-page-bg, 13%);
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 20px solid darken($lr-page-bg, 13%);
       bottom: -8px;
     }
 
     &::after {
-      border-left: 18px solid transparent;
-      border-right: 18px solid transparent;
-      border-bottom: 30px solid $color-lr-grey;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 20px solid $color-lr-grey;
       bottom: -5px;
     }
 
