@@ -191,7 +191,7 @@
 			height: calc(100vh - 220px);
 			width: 30%;
 			position: fixed;
-			left: 5px;
+			//left: 5px;
 			top: 80px;
 
 			> h1 {
@@ -236,7 +236,7 @@
 			}
 
 			+ .toc-entry {
-				margin-top: 1rem;
+				margin-top: .35rem;
 			}
 
 			span {
@@ -264,7 +264,7 @@
 
 		.activities-wrapper {
 			width: 70%;
-			padding: 1.25rem 5rem 1rem 3.5rem;
+			padding: 1.25rem 2rem 1rem 3.5rem;
 			margin-left: 30%;
 
 			.engagement-editor {
@@ -283,6 +283,10 @@
 			padding: .5rem .75rem;
 		}
 
+		.miwt-table {
+			margin-top: 1.5rem;
+		}
+
 		caption {
 			color: $color-lr-grey;
 		}
@@ -297,11 +301,35 @@
 			left: 45%;
 		}
 
+		.user-entry-required {
+			input[value=""], tr.no_data {
+				border: 2px solid $color-lr-yellow;
+				background: lighten($color-lr-yellow, 35%);
+			}
+			tr.no_data > td {
+				background: lighten($color-lr-yellow, 35%);
+			}
+		}
+
 	}
 	.persistence-actions{
 		margin-top:1rem;
 		text-align: center;
 	}
+
+	.prop-editor {
+		.prop {
+			input[type=text],
+			input[type=email],
+			input[type=url],
+			input[type=tel],
+			textarea {
+				min-width: auto;
+				width: 65%;
+			}
+		}
+	}
+
 }
 
 .engagement-viewer {
@@ -401,15 +429,18 @@ div.window.configure-task  {
 	}
 
 	.activity-configurer-dialog {
+		left: 15rem !important;
+		right: 15rem !important;
+
 		.activity-configurer {
 			section.toc {
 				width: 20%;
 			}
 
-			.activities-wrapper {
-				width: 80%;
-				margin-left: 20%;
-			}
+			/*.activities-wrapper {
+				width: 71%;
+				margin-left: 29%;
+			}*/
 		}
 	}
 
