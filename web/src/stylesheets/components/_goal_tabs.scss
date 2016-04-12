@@ -24,11 +24,15 @@ h2.plan-name {
 .goal-management{
 	position: relative;
 	.persistence-actions{
-		position: absolute;
+		/*position: absolute;
 		right:4.25rem;
 		top: 4rem;
 		z-index: 1;
-		height:2.5rem;
+		height:2.5rem;*/
+		float: right;
+		padding-right: 4.25rem;
+		margin-top: .25rem;
+
 		.btn{
 			color:$brand-primary;
 			background-color: $color-white;
@@ -84,8 +88,8 @@ h2.plan-name {
 			padding:0;
 			min-height: auto;
 			border-radius: 0;
-			background-color: $color-lr-blue;
-			border-right:1px solid $color-lr-blue;
+			background-color: lighten($color-lr-light-grey, 15%);
+			border-right:1px solid lighten($color-lr-light-grey, 15%);
 
 			.nav-item + .nav-item {
 				margin-left: 0;
@@ -93,18 +97,18 @@ h2.plan-name {
 
 			.btn {
 				color:$nav-fg;
-				background-color: $color-lr-blue;
-				padding: 0.55rem 1rem;
+				background-color: lighten($color-lr-light-grey, 15%);
+				padding: 0.5rem 1rem;
 				border-radius: 0;
-				border-right: 1px solid $nav-bg-selected;
+				border-right: 1px solid $color-lr-light-grey;
 
 				&:hover {
-					background-color: $nav-bg-selected;
+					background-color: $color-lr-light-grey;
 				}
 
 			}
 			.active .btn {
-				background-color: $nav-bg-selected;
+				background-color: $color-lr-light-grey;
 			}
 
 		}
