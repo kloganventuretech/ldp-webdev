@@ -58,6 +58,7 @@ function setupChart(target) {
 				var canvasContext = canvas.getContext('2d');
 				canvas.setAttribute("height", "200");
 				canvas.setAttribute("width", "300");
+				canvas.setAttribute("data-xlabelrotation","45");
 				//noinspection JSUnresolvedFunction
 				return new Chart(canvasContext).Bar(data, options);
 			}
