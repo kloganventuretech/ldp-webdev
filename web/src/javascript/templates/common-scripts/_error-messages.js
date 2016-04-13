@@ -22,8 +22,14 @@ function setupErrorMessages(ctx){
 		var $prop = $('#' + id);
 		if($prop.length === 0)
 			return;
-		$prop.addClass(CN_HAS_ERROR);
-		$prop.append('<div class="error-message"><span class="error-text">' + $el.text() + '</span></div>');
+		if($prop.prop('tagName').toLowerCase() != 'div') {
+			$prop.wrap("<span></span>");
+			$prop.parent().addClass(CN_HAS_ERROR);
+			$prop.parent().append('<span class="error-message"><span class="error-text">' + $el.text() + '</span></span>');
+		} else {
+			$prop.addClass(CN_HAS_ERROR);
+			$prop.append('<div class="error-message"><span class="error-text">' + $el.text() + '</span></div>');
+		}
 		$el.parent().remove();
 	});
 	if(!!first) {
