@@ -25,7 +25,7 @@ jQuery(function () {
 
 	setupCharts();
 
-	navHightlight();
+	navHighlight();
 
 	$('form.miwt-form').each(function (idx, form) {
 		form.submit_options = {
@@ -41,6 +41,7 @@ jQuery(function () {
 					setupExpandCollapse(ctx);
 					deserialzeBS();
 					setupCharts(ctx);
+					navHighlight();
 					if($(ctx).hasClass('message-container') || $(ctx).find('.message-container').length > 0)
 						errorMessageCleanup();
 					setTimeout(function () {
