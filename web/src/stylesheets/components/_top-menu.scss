@@ -15,7 +15,7 @@
 		font-size: 12px;
 		list-style: none;
 		padding: 15px 10px;
-		display: inline-block;
+		display: block;
 		transition: all .5s ease;
 	}
 
@@ -27,7 +27,8 @@
 	> li:last-child {
 		text-align: center;
 		width: 100%;
-		background: #a9d96c;
+		//background: #a9d96c;
+		background: $color-lr-red;
 		border-radius: 0 0 3px 3px;
 		color: #a4abbb;
 		border-bottom: none;
@@ -137,6 +138,9 @@ header {
 	> li.mi-active > .fa:hover {
 		color: darken($menu-item-active, 25%);
 	}
+	.dropdown {
+		margin-top: 8px;
+	}
 	.dropdown .welcome {
 		display: inherit;
 		line-height: 1rem;
@@ -145,7 +149,7 @@ header {
 		font-style: italic;
 
 		> .username {
-			font-weight: bold;
+			font-weight: 500;
 			font-style: normal;
 		}
 
