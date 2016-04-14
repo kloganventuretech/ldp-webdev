@@ -74,6 +74,11 @@
 
 	.btn {
 		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+
+		&.configure {
+			@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border)
+		}
+
 	}
 
 	.selection {
@@ -187,21 +192,25 @@
 		display: inline-block;
 		color: $color-smokey-white;
 	}
-	.canceled &, .rescheduled &, .scheduled &, .pending & {
+	.canceled &, .rescheduled &, .scheduled &, .pending &, .external-no-schedule & {
 		background-color: lighten($color-lr-light-grey, 15%);
 		border-color: darken($color-lr-light-grey, 10%);
 	}
-	.in-progress &, .confirmed & {
-		background-color: lighten($color-lr-brand, 20%);
-		border-color: darken($color-lr-brand, 8%);
+	.in-progress &/*, .confirmed &*/ {
+		background-color: $color-lr-brand;
+		border-color: darken($color-lr-brand, 15%);
+	}
+	.confirmed & {
+		background-color: $color-lr-brand;
+		border-color: $color-lr-brand;
 	}
 	.overdue & {
 		background-color: $color-lr-red;
 		border-color: darken($color-lr-red, 15%);
 	}
 	.completed & {
-		background-color: $color-lr-brand;
-		border-color: darken($color-lr-brand, 15%);
+		background-color: lighten($color-lr-brand, 20%);
+		border-color: lighten($color-lr-brand, 20%);
 	}
 
 	//Add a slash-thru to canceled and rescheduled iconts
@@ -272,7 +281,7 @@
 
 	> .btn {
 		margin-right: 0;
-		@include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-root, $line-height-lg, $btn-border-radius-lg);
+		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 
 		&.past::after, &.future::after {
 			display: inline-block;
@@ -282,7 +291,7 @@
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			padding-left: .45rem;
-			color: darken($color-lr-brand, 15%);
+			color: $color-lr-brand;
 		}
 
 		&.past::after {
@@ -335,9 +344,9 @@
 
 	.task-item-name {
 		font-size: 16px;
-		display: inline;
+		display: inline-block;
 		font-weight: 500;
-		max-width: 92%;
+		max-width: 82%;
 		vertical-align: top;
 		padding-right: 1.25rem;
 		margin-bottom: .35rem;
@@ -405,6 +414,38 @@
 	a.fa, .btn.fa {
 		text-decoration: none;
 		color:inherit;
+		border: 1px solid transparent;
+		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $border-radius-sm);
+		padding-right: 2rem;
+
+		span {
+			font-family: $font-roboto;
+		}
+
+		&[title="Take Action"] {
+			@include button-variant($color-lr-brand, $color-white, $color-lr-brand);
+
+			&:before {
+				//font-family: FontAwesome;
+				position: absolute;
+				right: .9rem;
+			}
+
+		}
+
+		&[title="View"] {
+			@include button-variant(darken($color-lr-light-grey, 5%), $color-white,
+							darken($color-lr-light-grey, 5%));
+
+			&:before {
+				content: '\f06e';
+				//font-family: FontAwesome;
+				position: absolute;
+				right: .9rem;
+			}
+
+		}
+
 	}
 
 	a.fa:hover {
@@ -412,14 +453,15 @@
 	}
 
 	.btn.configure-task {
+		font-size: 1.25rem;
 		background: none;
 		border: none;
 		box-shadow: none;
-		width: 16px;
+		width: 18px;
 		overflow: hidden;
 		white-space: nowrap;
-		margin: -4px 7px 0 0;
-		padding: 0;
+		margin: -4px 5px 0 0;
+		padding: 3px 0 0;
 
 		&.fa-cog::before {
 			padding-right: 5px;
@@ -449,6 +491,7 @@
 	}
 	.task-item.completed &:after {
 		content: "\f00c";
+		bottom: 0;
 	}
 	.task-item.scheduled &:after {
 		content: "\f274";
@@ -587,8 +630,8 @@
 
 @include text-emphasis-variant('.activity-summary .pending', $color-lr-light-grey);
 @include text-emphasis-variant('.activity-summary .scheduled', $color-lr-light-grey);
-@include text-emphasis-variant('.activity-summary .in-progress', lighten($color-lr-brand, 25%));
-@include text-emphasis-variant('.activity-summary .completed', $brand-success);
+@include text-emphasis-variant('.activity-summary .in-progress', $brand-success);
+@include text-emphasis-variant('.activity-summary .completed', lighten($color-lr-brand, 25%));
 @include text-emphasis-variant('.activity-summary .overdue', $brand-danger);
 @include text-emphasis-variant('.activity-summary .canceled', $color-lr-light-grey);
 @include text-emphasis-variant('.activity-summary .rescheduled', $color-lr-light-grey);
@@ -607,7 +650,7 @@
 		border-left-color: $color-lr-grey;
 	}
 	&.completed {
-		@include alert-variant($color-lr-brand, darken($color-lr-brand, 15%), $color-white);
+		@include alert-variant(lighten($color-lr-brand, 30%), darken($color-lr-brand, 15%), darken($color-lr-brand, 25%));
 		border-left-color: darken($color-lr-brand, 15%);
 	}
 	&.overdue {
@@ -615,7 +658,7 @@
 		border-left-color: $brand-danger;
 	}
 	&.in-progress {
-		@include alert-variant(lighten($color-lr-brand, 30%), darken($color-lr-brand, 15%), darken($color-lr-brand, 25%));
+		@include alert-variant($color-lr-brand, darken($color-lr-brand, 15%), $color-white);
 		border-left-color: darken($color-lr-brand, 15%);
 	}
 
@@ -664,6 +707,14 @@
 		@include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-base, $line-height-lg, $btn-border-radius-lg);
 		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 		font-weight: 300;
+	}
+}
+
+@media (max-width: 1280px) {
+	.task-item-info {
+		.task-item-name {
+			max-width: 79%;
+		}
 	}
 }
 

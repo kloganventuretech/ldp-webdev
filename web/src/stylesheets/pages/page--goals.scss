@@ -4,16 +4,19 @@
 
 .goal-viewer-wrapper {
 	display: flex;
+	flex-flow: column nowrap;
 }
 .goal-viewer {
-	flex: 2;
+	flex: 2 1 70%;
 	padding:1rem;
 	color: $color-lr-grey;
+	position: relative;
 
 	h1 {
 		font-size: 1.75rem;
 		font-weight: 300;
 		margin-bottom: 1.35rem;
+		padding-right: 7.5rem;
 
 		.goal-type {
 			font-weight: 400;
@@ -23,15 +26,24 @@
 			}
 		}
 	}
+
+	.actions.goal-actions {
+		position: absolute;
+		right: 1rem;
+		top: 1.45rem;
+	}
+
 }
 .alignment {
-	flex: 1;
-	min-width: 500px;
-	border-left: 1px solid #ddd;
-	margin:1rem;
+	display: flex;
+	flex-flow: column nowrap;
+	flex: 1 1 40%;
+	border-top: 1px solid #ddd;
+	border-left: none;
+	margin: 1rem 0 1rem 1rem;
 	text-align: center;
-	padding-top: .35rem;
-	font-weight: 400;
+	padding-top: 2.5rem;
+	font-weight: 300;
 	font-size: 1.75rem;
 	color: $color-lr-grey;
 
@@ -44,7 +56,6 @@
 		box-shadow: inset 0 0 3px lighten($color-lr-light-grey, 30%);
 		font-size: 1.75rem;
 		line-height: 2.5rem;
-		font-weight: 300;
 		border-bottom: 3px solid $color-lr-light-grey;
 
 		.card-block {
@@ -53,6 +64,7 @@
 			display: flex;
 			flex: 1;
 			align-items: center;
+			justify-content: center;
 		}
 
 		+ .card {
@@ -75,6 +87,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	flex-direction: row;
+	padding: 1rem;
 
 	.goal-info-wrapper, .goal-measurement {
 		display: flex;
@@ -84,6 +97,7 @@
 		flex: 1;
 		flex-direction: row;
 		flex-wrap: wrap;
+		font-size: 85%;
 	}
 
 	> .goal-measurement{
@@ -126,7 +140,7 @@
 	.start-date, .end-date {
 		flex: 1;
 		width: 35%;
-		font-size: 85%;
+		//font-size: 85%;
 	}
 
 	.goal-measurement-actions {
@@ -240,6 +254,7 @@ section.tracking-metrics {
 	h1 {
 		margin-bottom: 0;
 		display: inline-block;
+		padding-right: 0;
 	}
 	h2 {
 		font-size: .9rem;
@@ -303,6 +318,13 @@ section.tracking-metrics {
 	}
 
 }
+
+.goal-measurement-actions, .tracking-metric-actions {
+	.btn {
+		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+	}
+}
+
 .tracking-metric-actions,
 .metric-last-updated{
 	text-align: center;
@@ -386,9 +408,16 @@ section.tracking-metrics {
 
 
 /* ----- MEDIA QUERIES */
-@media (max-width: 1150px) {
-	.goal-wrapper {
+
+@media (min-width: 1100px) {
+	.alignment {
 		flex-direction: column;
+		border-left: 1px solid #ddd;
+		border-top: none;
+		padding-top: .35rem;
+	}
+	.goal-wrapper, .goal-viewer-wrapper {
+		flex-direction: row;
 	}
 }
 

@@ -176,6 +176,17 @@ div.window.dialog /*specificity*/ {
 		}
 	}
 
+	.search .entity-actions .menu-component,
+	.search-wrapper .entity-actions .menu-component {
+		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+
+		li.menu ul.menu-items {
+			top: auto;
+			bottom: -10px;
+		}
+
+	}
+
 	/* ----- Let's style specific dialog windows. */
 	&.configure-tasks {
 	}
