@@ -281,7 +281,7 @@
 
 	> .btn {
 		margin-right: 0;
-		@include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-root, $line-height-lg, $btn-border-radius-lg);
+		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 
 		&.past::after, &.future::after {
 			display: inline-block;
@@ -291,7 +291,7 @@
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			padding-left: .45rem;
-			color: darken($color-lr-brand, 15%);
+			color: $color-lr-brand;
 		}
 
 		&.past::after {
