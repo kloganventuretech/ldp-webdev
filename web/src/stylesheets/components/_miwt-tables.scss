@@ -2,10 +2,23 @@
 
 .miwt-table {
 	@include style-table;
+	font-size: 90%;
 
 	> thead > tr {
 		> th {
-			@include style-table-heading;
+			//@include style-table-heading;
+			background: lighten($color-lr-light-grey, 25%);
+			color: $color-lr-grey;
+			font-family: $font-roboto;
+			line-height: 24px;
+			padding: 5px 8px;
+			text-align: left;
+			font-weight: 400;
+
+			a {
+				color: $color-lr-grey;
+			}
+
 		}
 	}
 
