@@ -180,6 +180,16 @@ div.window.dialog /*specificity*/ {
 	.search-wrapper .entity-actions .menu-component {
 		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 
+		> a.menu-item {
+			font-size: 12px;
+
+			&:before {
+				font-size: 10px;
+				margin-top: -2px;
+				padding-right: 4px;
+			}
+		}
+
 		li.menu ul.menu-items {
 			top: auto;
 			bottom: -10px;
