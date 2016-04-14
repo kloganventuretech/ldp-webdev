@@ -37,6 +37,12 @@
 	padding: 10px;
 	//background-color: #F9F9F7;
 	//border: 1px dotted #CBC8B9;
+
+	input[type="text"] {
+		border: 1px solid #aaa;
+		border-radius: $border-radius-lg;
+	}
+
 }
 
 .search-bar .constraint {
@@ -44,10 +50,17 @@
 	white-space: nowrap;
 	margin: 5px;
 	padding: 5px;
+
+	.select2-container {
+		max-width: 10rem !important;
+	}
+
 }
 
 .search-bar .constraint label {
 	display: block;
+	font-size: 90%;
+	margin-bottom: .25rem;
 }
 
 .search-bar .search-actions {
