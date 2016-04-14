@@ -1,7 +1,7 @@
 /**
  * Created by vtdev on 4/7/16.
  */
-function navHightlight() {
+function navHighlight() {
 
 	$('div.window.dialog .activity-configurer').scroll(function(event) {
 
