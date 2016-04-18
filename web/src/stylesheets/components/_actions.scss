@@ -4,7 +4,7 @@
 .actions .btn {
 	margin-right:4px;
 }
-.actions .btn, .procedure-navigation .btn, .recipients .btn {
+.actions .btn, .procedure-navigation .btn {
 	@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 
 	&.save, &.add, &.finish-button, &.save_exit, &.confirm, &.engagement-completed {
@@ -33,7 +33,7 @@
 		display: block;
 	}
 
-	&.go, &.back-home {
+	&.go {
 		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 	}
 
