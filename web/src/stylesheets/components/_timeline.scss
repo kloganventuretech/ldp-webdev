@@ -13,7 +13,7 @@
 
 
 .participant-timeline {
-	padding: 0 2rem 1.25rem 1.5rem;
+	padding: 0 2rem 1.25rem 0;
 
 	.plan-header {
 		padding: 0 0 1.25rem;
@@ -29,7 +29,7 @@
 	}
 
 	> .card-block {
-		padding: 1.25rem 0 0 3rem;
+		padding: 1.25rem 0 0 2rem;
 	}
 }
 
@@ -71,6 +71,8 @@
 	float:right;
 	text-align: center;
 	padding-top: 2px;
+	width: 100%;
+	margin-top: .75rem;
 
 	.btn {
 		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
@@ -708,6 +710,21 @@
 		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 		font-weight: 300;
 	}
+}
+
+@media (min-width: 1024px) {
+
+	.participant-timeline {
+		padding: 0 2rem 1.25rem 1.5rem;
+		> .card-block {
+			padding: 1.25rem 0 0 3rem;
+		}
+	}
+	.plan-actions {
+		width: auto;
+		margin-top: 0;
+	}
+
 }
 
 @media (max-width: 1280px) {
