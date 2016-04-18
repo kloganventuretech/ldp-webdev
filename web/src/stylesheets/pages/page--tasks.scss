@@ -1,1 +1,39 @@
 @import "../components/tasks";
+
+
+div.window.dialog {
+  .engagement-actions {
+
+    &.actions {
+      margin-bottom: 0;
+    }
+
+    .btn.close {
+      display: none;
+    }
+
+  }
+
+  .actions {
+    margin-bottom: 0;
+
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    .configure-task {
+      @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+      float: right;
+      font-family: $font-roboto;
+
+      &:before {
+        padding-right: 5px;
+        font-family: FontAwesome;
+      }
+
+    }
+
+  }
+}
