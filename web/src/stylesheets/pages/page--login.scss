@@ -70,8 +70,14 @@
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: 300;
-	box-shadow: 0 4px darken($btn-primary-border, 12%);
+	//box-shadow: 0 4px darken($btn-primary-border, 12%);
 	margin-bottom: 20px;
+
+	&:hover {
+		background-color: darken($btn-primary-bg, 15%);
+		color: $color-white;
+	}
+
 }
 
 .form-signin p {
