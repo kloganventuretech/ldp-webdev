@@ -20,11 +20,17 @@ table.add-participant-plan {
 	table.procedure-navigation-bottom{
 		td {
 			padding: 0 5px;
+
+			&.disabled-con {
+				padding: 0;
+			}
+
 		}
 		span.disabled {
+			display: none;
 			background-color: transparent;
 		}
-		.btn {
+		/*.btn {
 			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 		}
 		.btn.next-button:not(:disabled),
@@ -34,7 +40,7 @@ table.add-participant-plan {
 		}
 		.btn:disabled {
 			color: $color-dark-grey;
-		}
+		}*/
 
 	}
 }
