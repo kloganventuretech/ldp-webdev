@@ -7,15 +7,7 @@
 .actions .btn, .procedure-navigation .btn {
 	@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 
-	/*&:first-child {
-		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-	}
-
-	&:not(:first-child) {
-		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
-	}*/
-
-	&.save, &.add, &.finish-button, &.save_exit, &.confirm {
+	&.save, &.add, &.finish-button, &.save_exit, &.confirm, &.engagement-completed {
 		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 	}
 
@@ -30,6 +22,19 @@
 			color: $color-white;
 		}
 
+	}
+
+}
+
+.btn {
+
+	&.engagement-completed {
+		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+		display: block;
+	}
+
+	&.go {
+		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 	}
 
 }
