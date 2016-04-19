@@ -33,9 +33,13 @@ body {
 }
 
 #main-content-wc-0 {
-	h2, h3 {
+	h1, h2, h3 {
 		font-weight: 300;
 		padding: .75rem 0 1rem;
+	}
+	.text h1 {
+		font-size: 2rem;
+		color: $color-lr-grey;
 	}
 }
 
@@ -159,6 +163,25 @@ p.instructions {
 
 .select2-container--open {
 	z-index: 1200;
+}
+
+.user-search {
+	.search-results {
+		thead tr th {
+			&:nth-of-type(2) {
+				min-width: 7rem;
+			}
+			&.control {
+				min-width: 3.5rem;
+			}
+		}
+		tbody tr td:nth-of-type(8) {
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+			-ms-word-break: break-all;
+			word-break: break-all;
+		}
+	}
 }
 
 /*
