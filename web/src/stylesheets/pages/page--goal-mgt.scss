@@ -54,7 +54,7 @@ $tab-content-color-bg: inherit;
 	margin: 1rem;
 	overflow: hidden;
 
-	.prop-group, .actions, .goal-dates-values, .alignment, > .prop .val {
+	.prop-group, .actions, .goal-dates-values, .alignment, > .prop .val, .add-new-alignment > .user-entry-required {
 		padding: 0 1.5rem;
 	}
 
@@ -122,10 +122,9 @@ $tab-content-color-bg: inherit;
 	flex-wrap: wrap;
 	flex-direction: column;
 	align-items: flex-start;
-	max-height: 100rem;/*FIXME russ@venturetech.net : this should only be fore desktop sized displays. */
 
 	> .prop-group {
-		width: 47%;
+		width: 95%;
 		color: $color-lr-grey;
 
 		> div:first-child {
@@ -226,4 +225,17 @@ $tab-content-color-bg: inherit;
 
 	}
 
+}
+
+@media (min-width:1024px) {
+	.smart-wrapper {
+		align-items: stretch;
+		flex-flow: row wrap;
+		justify-content: space-between;
+
+		> .prop-group {
+			width: 45%;
+		}
+
+	}
 }
