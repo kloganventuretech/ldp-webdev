@@ -10,12 +10,22 @@
 
 	.actions {
 		text-align: left;
+
+		&.entity-actions {
+			margin-top: .5rem;
+			float: left;
+			padding-left: 20px;
+		}
+	}
+
+	.search-bar {
+		clear: both;
 	}
 
 }
 
 .meeting-group-name {
-	margin: 1.25rem;
+	//margin: 1.25rem;
 	color: $color-lr-grey;
 }
 .group-meeting-take-attendance {
@@ -97,7 +107,12 @@ textarea.note-content {
 }
 
 .reschedule-group-meeting {
-	width: 35rem !important;
+	max-width: 65rem !important;
+
+	input[type="text"], textarea {
+		width: 65% !important;
+	}
+
 }
 
 .group-meeting-notes-manager {
