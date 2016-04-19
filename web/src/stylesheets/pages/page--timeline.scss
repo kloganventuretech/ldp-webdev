@@ -175,7 +175,8 @@
 			padding: 0 2rem;
 			margin-top: 2rem;
 			border-right: 1px solid $color-lr-light-grey;
-			height: calc(100vh - 220px);
+			//height: calc(100vh - 80px);
+			height: auto;
 			width: 30%;
 			position: fixed;
 			//left: 5px;
@@ -307,6 +308,28 @@
 			}
 		}
 
+		.resource-selector-label {
+			font-weight: 400;
+			margin-bottom: -2.5rem;
+
+			+ .actions {
+				float: right;
+			}
+
+		}
+
+		.actions:not(.entity-actions) {
+			padding-right: 0;
+			margin-bottom: .25rem;
+
+			.btn.add {
+				@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+				text-transform: none;
+
+			}
+
+		}
+
 	}
 	.persistence-actions{
 		margin-top:1rem;
@@ -407,6 +430,14 @@ div.window.configure-task  {
 
 	}
 
+}
+
+@media (min-width: 768px) {
+	.flex-container {
+		> .tasks {
+			display: block;
+		}
+	}
 }
 
 @media (min-width: 1300px) {
