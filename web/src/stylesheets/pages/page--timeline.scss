@@ -8,14 +8,6 @@
 .flex-container {
 	display: flex;
 
-	.no-config-message {
-		display: none;
-	}
-
-	.view-action-items {
-		display: none;
-	}
-
 	> .timeline-ui,
 	> .tasks {
 		flex: 1;
@@ -435,63 +427,6 @@ div.window.configure-task  {
 	.activity-template-value-editor, .prop-header {
 
 		.prop-header-actions { display: none; }
-
-	}
-
-}
-
-@media (max-width: 767px) {
-
-	.flex-container {
-		flex-direction: column;
-
-		.no-config-message {
-			display: block;
-			font-size: 90%;
-			margin-top: 1.5rem;
-			text-align: center;
-
-			p {
-				margin-bottom: 0;
-				color: $color-lr-red;
-			}
-
-		}
-
-		.view-action-items, .view-timeline {
-			display: block;
-			margin: 1.5rem 0 0;
-			text-align: center;
-
-			button {
-				display: inline-block;
-				@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
-				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
-			}
-		}
-
-		.timeline-ui {
-			padding-right: 0;
-			border-right: none;
-			margin-top: 1rem;
-
-			&.toolbox {
-				display: none;
-			}
-		}
-
-		> .tasks {
-			display: none;
-		}
-
-	}
-
-	.participant-timeline {
-		padding-right: 0;
-
-		> .card-block {
-			padding-left: 0;
-		}
 
 	}
 
