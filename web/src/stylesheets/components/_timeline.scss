@@ -516,12 +516,11 @@
 	padding: .5rem 0 .5rem 1.5rem;
 
 	.recently-modified & {
-		/*box-shadow: 0 0 12px rgba(42, 53, 66, 0.4);
-		border: none;*/
+		border-bottom: 3px solid lighten($color-lr-light-grey, 5%);
 	}
 	.last-interacted & {
 		box-shadow: 0 0 25px rgba(42, 53, 66, 0.6);
-		border: none;
+		//border: none;
 	}
 
 }
