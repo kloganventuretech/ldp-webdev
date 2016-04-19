@@ -515,30 +515,15 @@
 .timeline-card {
 	padding: .5rem 0 .5rem 1.5rem;
 
+	.recently-modified & {
+		border-bottom: 3px solid lighten($color-lr-light-grey, 5%);
+	}
 	.last-interacted & {
 		box-shadow: 0 0 25px rgba(42, 53, 66, 0.6);
 		//border: none;
 	}
 
-	&::after {
-		content: 'Recently Modified';
-		font-size: 75%;
-		bottom: 7px;
-		right: 19px;
-		position: absolute;
-		opacity: 0;
-		font-style: italic;
-	}
-
 }
-
-.recently-modified {
-	.timeline-card::after {
-		opacity: 1;
-		transition: opacity 1s ease-in-out;
-	}
-}
-
 .timeline-card-actions {
 	float:right;
 	margin: -.5rem 0 0 0;
