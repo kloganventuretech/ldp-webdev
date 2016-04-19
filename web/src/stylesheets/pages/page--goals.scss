@@ -43,9 +43,13 @@
 	margin: 1rem 0 1rem 1rem;
 	text-align: center;
 	padding-top: 2.5rem;
-	font-weight: 300;
-	font-size: 1.75rem;
-	color: $color-lr-grey;
+
+	.alignment-header {
+		margin-bottom: 1.25rem;
+		font-weight: 300;
+		font-size: 1.75rem;
+		color: $color-lr-grey;
+	}
 
 	.card {
 		background: lighten($color-lr-light-grey, 25%);
