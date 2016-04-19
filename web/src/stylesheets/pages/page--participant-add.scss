@@ -2,7 +2,7 @@
 @import "../mixins/miwt-switch";
 
 .edm-confirmation .ctb.label-before {
-	max-width: 30rem;
+	width: 34rem;
 	@include checkboxSwitchAbsolute;
 }
 
@@ -12,9 +12,15 @@
 		margin-bottom: 2rem;
 	}
 	.entity-actions {
-		margin-top: -4.5rem;
+		margin-top: 0rem;
 		margin-bottom: 1rem;
-		margin-right:-1rem;
+		margin-right: -1.45rem;
+	}
+}
+
+.add-participant-plan {
+	.email {
+		input { width: 80% !important; }
 	}
 }
 
@@ -24,6 +30,6 @@
 
 .miwt-procedure-card {
 	h1 {
-		margin-bottom: 2rem;
+		margin-bottom: .75rem;
 	}
 }
