@@ -78,6 +78,26 @@ h2.plan-name {
 			.ti.tab-selected a, .ti:hover a {
 				background-color: darken($color-lr-brand, 15%);
 			}
+
+			li {
+
+				a::before {
+					content: '';
+					font-size: inherit;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					font-family: FontAwesome;
+					display: inline-block;
+					padding-right: 7px;
+				}
+
+				&.organizational a::before { content: '\f0f7'; }
+				&.leadership a::before { content: '\f0c0'; }
+				&.personal a::before { content: '\f24e'; }
+
+			}
+
 		}
 	}
 	.tab-container .tab-content {
