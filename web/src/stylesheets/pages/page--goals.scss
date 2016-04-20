@@ -52,15 +52,15 @@
 	}
 
 	.card {
-		background: lighten($color-lr-light-grey, 25%);
+		background: lighten($color-lr-light-grey, 15%);
 		color: $color-white;
 		margin: 1.5rem auto 0;
 		width: 75%;
-		border: 1px solid $color-lr-light-grey;
+		border: 1px solid darken($color-lr-light-grey, 5%);
 		box-shadow: inset 0 0 3px lighten($color-lr-light-grey, 30%);
 		font-size: 1.75rem;
+		font-weight: 400;
 		line-height: 2.5rem;
-		border-bottom: 3px solid $color-lr-light-grey;
 
 		.card-block {
 			padding: 3rem 2rem;
@@ -76,10 +76,9 @@
 		}
 
 		&.primary {
-			background: lighten($color-lr-light-grey, 15%);
-			border: 1px solid $color-lr-light-grey;
-			box-shadow: inset 0 0 3px lighten($color-lr-light-grey, 20%);
-			border-bottom: 3px solid darken($color-lr-light-grey, 5%);
+			background: $color-lr-light-grey;
+			border: 1px solid darken($color-lr-light-grey, 5%);
+			box-shadow: 0 0 19px rgba(42, 53, 66, 0.7);
 		}
 
 	}
