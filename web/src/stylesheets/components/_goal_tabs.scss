@@ -116,7 +116,10 @@ h2.plan-name {
 	}
 
 	.message-container {
-		padding: 1rem 2rem;
+
+		div.message {
+			margin: 1rem 2rem;
+		}
 
 		.message-actions {
 			display: block;
