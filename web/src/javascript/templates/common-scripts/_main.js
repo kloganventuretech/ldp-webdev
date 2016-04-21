@@ -6,12 +6,7 @@ jQuery(function () {
 
 	setupErrorMessages();
 
-	$(window).on('load', responsiveView);
-	$('.fa-bars').click(function () {
-		var $body = $("#body-wrapper"),
-			open = !$body.hasClass("sidebar-open");
-		openSidebar(open);
-	});
+
 
 	initSelect2();
 
@@ -58,14 +53,6 @@ jQuery(function () {
 	(function (w) {
 		var $body = $("#body-wrapper");
 		if ($body.length === 0) return;
-		w.addEventListener("orientationchange", function () {
-			if (w.orientation === 0)
-				openSidebar(false);
-		}, false);
-		//noinspection JSUnresolvedVariable - defined in HTML document
-		if (w.orientation && w.orientation === 0 && sessionStorage[SIDE_BAR_CLOSED] === undefined) {
-			openSidebar(false);
-		}
 		// Track left-menu last click
 		$("[data-lastprop]").each(function(idx, el){
 			var $el = $(el);
