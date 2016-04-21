@@ -184,6 +184,13 @@ p.instructions {
 	}
 }
 
+@media (max-width: 767px)
+and (orientation:portrait) {
+	.header {
+		min-height: 50px;
+	}
+}
+
 /*
 .select2-container {
 	font-size: .98rem;
