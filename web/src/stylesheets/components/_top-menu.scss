@@ -101,7 +101,7 @@ header {
 		text-indent: -75rem;
 		white-space: nowrap;
 		margin-left: 7px;
-		width: 25%;
+		width: 40%;
 	}
 }
 
@@ -197,7 +197,7 @@ header {
 			visibility: hidden;
 			cursor: pointer;
 			display: inline-block;
-			font-size: 20px;
+			font-size: 25px;
 			vertical-align: middle;
 			&:hover {
 				color: darken(#797979, 20%);
@@ -211,4 +211,33 @@ header {
 .has-side-menu #main-header .sidebar-toggle-box .fa-bars{
 	visibility: visible;
 	min-width: 20px;
+}
+
+@media (max-width: 767px) {
+	.top-menu {
+		margin-top: 0;
+
+		.dropdown {
+			margin-top: 0;
+		}
+
+		li.link {
+			margin-bottom: 0;
+			margin-right: 0;
+
+			a {
+				&.fa {
+					width: 35px;
+					text-align: center;
+					padding: 6px 3px;
+					&::before { font-size: 1.15rem; }
+				}
+				span {
+					text-indent: -250%;
+					overflow: hidden;
+					white-space: nowrap;
+				}
+			}
+		}
+	}
 }
