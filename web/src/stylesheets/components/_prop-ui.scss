@@ -176,3 +176,17 @@ input[type=number]{
 		max-height: 200px;
 	}
 }
+
+@media (max-width: 767px) {
+	.prop-editor {
+		.prop {
+			input[type=text],
+			input[type=email],
+			input[type=url],
+			input[type=tel],
+			textarea {
+				width: 100%;
+			}
+		}
+	}
+}
