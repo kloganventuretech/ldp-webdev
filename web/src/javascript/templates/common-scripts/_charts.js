@@ -1,6 +1,8 @@
+//noinspection JSUnresolvedVariable
 /**
  * Created by vtdev on 4/7/16.
  */
+
 function setupCharts(ctx) {
 	var $ctx = !!ctx ? $(ctx.parentNode || document) : $(ctx || document);
 	$ctx.find('[data-chart-type]').each(function(idx, target) {
@@ -45,8 +47,8 @@ function setupChart(target) {
 			isLegendSupported: true,
 			createChart: function setupLine(canvas, data, options) {
 				var canvasContext = canvas.getContext('2d');
-				canvas.setAttribute("height", "200");
-				canvas.setAttribute("width", "300");
+				//canvas.setAttribute("height", "200");
+				//canvas.setAttribute("width", "400");
 				//noinspection JSUnresolvedFunction
 				return new Chart(canvasContext).Line(data, options);
 			}
