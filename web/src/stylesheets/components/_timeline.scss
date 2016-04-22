@@ -664,6 +664,7 @@
 
 @include text-emphasis-variant('.activity-summary .pending', $color-lr-light-grey);
 @include text-emphasis-variant('.activity-summary .scheduled', $color-lr-light-grey);
+@include text-emphasis-variant('.activity-summary .external-no-schedule', $color-lr-light-grey);
 @include text-emphasis-variant('.activity-summary .in-progress', $brand-success);
 @include text-emphasis-variant('.activity-summary .completed', lighten($color-lr-brand, 25%));
 @include text-emphasis-variant('.activity-summary .overdue', $brand-danger);
@@ -679,7 +680,7 @@
 	position: relative;
 	border-radius: 0;
 
-	&.pending, &.canceled, &.rescheduled, &.scheduled, &.no-schedule {
+	&.pending, &.canceled, &.rescheduled, &.scheduled, &.external-no-schedule {
 		@include alert-variant(lighten($color-lr-light-grey, 25%), $color-lr-light-grey, $color-lr-black);
 		border-left-color: $color-lr-grey;
 	}
@@ -778,8 +779,8 @@
 				font-size: 1rem;
 			}
 
-			&:not(.task-item-name) {
-				font-size: 90% !important;
+			&:not(.task-item-name), .tr-display, .tr-prefix {
+				font-size: .75rem !important;
 			}
 
 			.task-type { display: none;	}
