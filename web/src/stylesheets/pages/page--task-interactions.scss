@@ -3,10 +3,6 @@
 @import "../../../../bower_components/bootstrap/scss/mixins";
 @import "../../../../bower_components/bootstrap/scss/buttons";
 
-#side-nav, .fa.fa-bars {
-	display: none !important;
-}
-
 .task-interaction {
 	background: $color-white;
 	border: 1px solid lighten($color-lr-light-grey, 25%);
@@ -23,26 +19,15 @@
 		font-weight: 500;
 	}
 
-	.actions.top-actions {
-		position: absolute;
-		right: 15px;
-		top: 15px;
-	}
-
-	.persistence-actions.top {
-		display: none;
-	}
-
 	.btn {
 
 		&.back {
 			float: right;
 			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
 			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
-			color: transparent;
-			width: 40px;
-			overflow: hidden;
-			white-space: nowrap;
+			position: absolute;
+			right: 15px;
+			top: 15px;
 
 			&::before {
 				content: '\f112';
@@ -50,22 +35,7 @@
 				display: inline-block;
 				font-size: inherit;
 				padding-right: 5px;
-				color: $color-lr-brand;
 			}
-
-			&:hover, &:focus {
-				color: transparent !important;
-			}
-
-		}
-
-		&.configure {
-			@extend .back;
-
-			&::before {
-				content: '\f013';
-			}
-
 		}
 
 		&.remove {
@@ -146,15 +116,7 @@
 }
 
 @media (max-width: 768px) {
-	#main-content-wc-0 {
-		padding: .5rem 1rem;
-	}
 	.task-interaction {
 		width: 100%;
-		padding: 3rem 1rem 2rem;
-		font-size: 1.15rem;
-	}
-	.btn {
-		white-space: normal;
 	}
 }
