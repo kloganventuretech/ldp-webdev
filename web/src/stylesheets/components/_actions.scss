@@ -4,7 +4,7 @@
 .actions .btn {
 	margin-right:4px;
 }
-.actions .btn, .procedure-navigation .btn {
+.actions .btn, .procedure-navigation .btn, .recipients .btn {
 	@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 
 	&.save, &.add, &.finish-button, &.save_exit, &.confirm, &.engagement-completed {
