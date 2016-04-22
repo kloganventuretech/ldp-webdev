@@ -1,0 +1,122 @@
+@import "../config/base-vars";
+@import "../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../bower_components/bootstrap/scss/buttons";
+
+.task-interaction {
+	background: $color-white;
+	border: 1px solid lighten($color-lr-light-grey, 25%);
+	border-radius: $border-radius-lg;
+	margin: 2rem auto 0;
+	padding: 2rem;
+	width: 70%;
+	overflow: hidden;
+	color: $color-lr-grey;
+	font-size: 1.35rem;
+	position: relative;
+
+	strong {
+		font-weight: 500;
+	}
+
+	.btn {
+
+		&.back {
+			float: right;
+			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+			position: absolute;
+			right: 15px;
+			top: 15px;
+
+			&::before {
+				content: '\f112';
+				font-family: FontAwesome;
+				display: inline-block;
+				font-size: inherit;
+				padding-right: 5px;
+			}
+		}
+
+		&.remove {
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+			margin-left: 1rem;
+		}
+
+	}
+
+	.task-viewer, .detail-view {
+		font-size: 1rem;
+		border-top: 1px solid lighten($color-lr-light-grey, 25%);
+		margin-top: 1.25rem;
+		padding-top: 2rem;
+
+		h1 {
+			font-size: 1.25rem;
+		}
+
+		.btn.close {
+			display: none;
+		}
+
+		.prop-header-title {
+			margin: 0;
+
+			h1 {padding-top: 0 !important;}
+		}
+
+	}
+
+	.emailtemplate-config {
+		.prop-header-actions { display: none; }
+	}
+
+	.recipients-wrapper {
+
+		label, .recipient-actions {
+			display: inline-block;
+			vertical-align: middle;
+			margin-bottom: 0;
+		}
+
+		.recipient {
+			display: block;
+			margin-bottom: .5rem;
+		}
+
+	}
+
+	.note {
+		margin-top: 1.5rem;
+
+		label {
+			font-weight: 400;
+		}
+
+	}
+
+	textarea {
+		padding: .25rem;
+		border-radius: $border-radius-lg;
+		border: 1px solid lighten($color-lr-light-grey, 25%);
+	}
+
+	.select2-container {
+		max-width: 45%;
+	}
+
+	.prop-footer-actions {
+
+		.persistence-actions.bottom {
+			text-align: right;
+		}
+
+	}
+
+}
+
+@media (max-width: 768px) {
+	.task-interaction {
+		width: 100%;
+	}
+}
