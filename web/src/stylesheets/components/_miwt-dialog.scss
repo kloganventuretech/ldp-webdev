@@ -260,6 +260,17 @@ div.window.dialog /*specificity*/ {
 	max-width: 65%;
 }
 
+@media (max-width: 767px) {
+	div.window.dialog {
+		.windowcontent {
+			padding: 10px;
+		}
+		td.activewindowtitle {
+			font-size: 1.1rem;
+		}
+	}
+}
+
 @media (min-width:1300px) {
 	div.window.dialog:not(.activity-configurer-dialog) {
 		max-width: 65rem;
