@@ -8,6 +8,10 @@
 .flex-container {
 	display: flex;
 
+	.no-config-message {
+		display: none;
+	}
+
 	.view-action-items {
 		display: none;
 	}
@@ -440,6 +444,19 @@ div.window.configure-task  {
 
 	.flex-container {
 		flex-direction: column;
+
+		.no-config-message {
+			display: block;
+			font-size: 90%;
+			margin-top: 1.5rem;
+			text-align: center;
+
+			p {
+				margin-bottom: 0;
+				color: $color-lr-red;
+			}
+
+		}
 
 		.view-action-items, .view-timeline {
 			display: block;
