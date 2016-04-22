@@ -37,7 +37,7 @@
 .alignment {
 	display: flex;
 	flex-flow: column nowrap;
-	flex: 1 1 40%;
+	flex: 1 1 30%;
 	border-top: 1px solid #ddd;
 	border-left: none;
 	margin: 1rem 0 1rem 1rem;
@@ -270,9 +270,10 @@ section.tracking-metrics {
 		flex-wrap: wrap;
 
 		.tracking-metric {
-			margin:2rem;
+			margin:2rem 1rem;
 			display: flex;
 			flex-direction: column;
+			width: 45%;
 
 			h1 {
 				font-weight: 500;
@@ -291,6 +292,9 @@ section.tracking-metrics {
 				.chart-legend{
 					margin-left:.5rem;
 				}
+			}
+			.config-graph {
+				width: 100%;
 			}
 			.int-measure .config-graph{
 				text-align: center;
