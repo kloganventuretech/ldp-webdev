@@ -91,7 +91,6 @@
 	justify-content: center;
 	flex-direction: row;
 	padding: 1rem;
-	flex: 1;
 
 	.goal-info-wrapper, .goal-measurement {
 		display: flex;
@@ -322,12 +321,6 @@ section.tracking-metrics {
 				}
 
 			}
-
-			[data-chart-type="pie"] {
-				max-width: 250px;
-				margin: 0 auto;
-			}
-
 		}
 	}
 
@@ -423,50 +416,10 @@ section.tracking-metrics {
 
 /* ----- MEDIA QUERIES */
 @media (max-width: 767px) {
-	#main-content-wc-0 {
-		padding: .5rem;
-	}
-	.goal-wrapper {
-		flex-direction: column;
-	}
-	section.tracking-metrics {
-		div.tracking-metrics {
+	div.tracking-metrics {
 
-			.tracking-metric {
-				width: 100%;
-			}
-		}
-	}
-}
-
-@media (max-width: 1099px) {
-	.goals-viewer,
-	.goal-management {
-		.tab-container {
-			.tab-items .ti {
-				a {
-					font-size: 1rem;
-				}
-			}
-		}
-	}
-	.goal-viewer {
-		flex: 2;
-	}
-	.alignment {
-		flex: 1;
-		margin: 1rem;
-	}
-	.goal-wrapper {
-		.goal-info-wrapper {
-			flex: 1;
-			flex-direction: column;
-		}
-		.description {
-			flex: 1;
-		}
-		.start-date, .end-date {
-			width: 75%;
+		.tracking-metric {
+			width: 100%;
 		}
 	}
 }
