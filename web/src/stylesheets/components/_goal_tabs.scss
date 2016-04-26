@@ -36,6 +36,15 @@ h2.plan-name {
 		.btn{
 			color:$brand-primary;
 			background-color: $color-white;
+
+			&.configure {
+				&::before {
+					content: '\f013';
+					font-family: FontAwesome;
+					padding-right: 3px;
+				}
+			}
+
 			&:hover{
 				background-color: $color-smokey-white;
 				color:$brand-primary;
@@ -206,4 +215,37 @@ h2.plan-name {
 
 	}
 
+}
+
+@media (max-width: 767px) {
+	h2.plan-name {
+		font-size: 1.5rem;
+	}
+
+	.goals-viewer,
+	.goal-management{
+		.btn {
+			&.configure {
+				color: transparent !important;
+				width: 48px;
+				overflow: hidden;
+				white-space: nowrap;
+				&::before {
+					color: $color-lr-brand !important;
+				}
+			}
+		}
+
+		.tab-container {
+			.tab-items .ti {
+				a {
+					color: transparent;
+					white-space: nowrap;
+					width: 52px;
+					&::before { color: $color-white; }
+				}
+			}
+		}
+
+	}
 }
