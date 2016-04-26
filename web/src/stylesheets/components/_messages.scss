@@ -85,6 +85,19 @@ div.has-error, span.has-error {
 	border: 1px solid $color-error-dark;
 	padding: 5px !important;
 
+	&.profile-roles {
+		margin-bottom: 1rem;
+
+		.error-message {
+			margin-top: .75rem;
+		}
+
+		.pager {
+			margin-bottom: 0;
+		}
+
+	}
+
 	.error-message {
 		display: inline-block;
 		padding-left: 1.75rem;
