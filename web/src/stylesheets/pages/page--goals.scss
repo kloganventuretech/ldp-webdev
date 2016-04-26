@@ -415,6 +415,14 @@ section.tracking-metrics {
 
 
 /* ----- MEDIA QUERIES */
+@media (max-width: 767px) {
+	div.tracking-metrics {
+
+		.tracking-metric {
+			width: 100%;
+		}
+	}
+}
 
 @media (min-width: 1100px) {
 	.alignment {
