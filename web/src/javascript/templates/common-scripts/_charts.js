@@ -66,6 +66,8 @@ function setupChart(target) {
 				var canvasContext = canvas.getContext('2d');
 				canvas.setAttribute("height", "200");
 				canvas.setAttribute("width", "300");
+				target.style.height = "207px";
+				target.style.width = "325px";
 				//noinspection JSUnresolvedFunction
 				return new Chart(canvasContext).Line(data, options);
 			}
