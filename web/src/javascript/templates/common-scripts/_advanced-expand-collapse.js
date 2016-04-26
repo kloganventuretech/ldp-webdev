@@ -33,7 +33,7 @@ function registerActivityToggle(idx, element) {
 		if($element.hasClass('collapsed')) {
 			$element.removeClass('collapsed').addClass('expanded');
 			$element.find('i').removeClass(PLUS_CLASS).addClass(MINUS_CLASS);
-			addTLExpanded($element.attr("id"));
+			addTLExpanded($element.attr("data-advanced-collapse-id"));
 			$addTargs.each(function(idx2, addTarg) {
 				$(addTarg).collapse('show');
 			});
@@ -42,7 +42,7 @@ function registerActivityToggle(idx, element) {
 		{
 			$element.removeClass('expanded').addClass('collapsed');
 			$element.find('i').removeClass(MINUS_CLASS).addClass(PLUS_CLASS);
-			removeTLExpanded($element.attr("id"));
+			removeTLExpanded($element.attr("data-advanced-collapse-id"));
 			$addTargs.each(function(idx2, addTarg) {
 				$(addTarg).collapse('hide');
 			});
