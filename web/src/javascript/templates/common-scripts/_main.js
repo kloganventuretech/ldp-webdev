@@ -14,6 +14,8 @@ jQuery(function () {
 
 	enableTooltips();
 
+	scrollToTaskIfSpecified();
+
 	setupExpandCollapse();
 
 	deserialzeBS();
