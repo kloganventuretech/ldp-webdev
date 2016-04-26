@@ -7,6 +7,11 @@
 }
 
 .profile-roles {
+	&.has-error {
+		.actions.bottom {
+			text-align: right;
+		}
+	}
 	.actions.bottom {
 		text-align: center;
 		margin-bottom: 2rem;
