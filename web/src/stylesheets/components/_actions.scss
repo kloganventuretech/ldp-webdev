@@ -33,7 +33,7 @@
 		display: block;
 	}
 
-	&.go {
+	&.go, &.back-home {
 		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 	}
 
