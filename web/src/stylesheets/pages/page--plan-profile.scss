@@ -8,7 +8,7 @@
 .plan-profile {
 	color: $color-lr-grey;
 	display: flex;
-	flex-flow: row;
+	flex-flow: row wrap;
 
 	section.card {
 		margin: 0 1rem 1rem 0;
@@ -21,27 +21,37 @@
 		&.plan-info {
 			display: flex;
 			flex-direction: column;
-			flex: 1 1 48%;
+			flex: 1 1 35%;
 		}
 
 		&.plan-supporters {
 			display: flex;
 			flex-direction: column;
-			flex: 2 1 60%;
+			flex: 1 1 50%;
+		}
+
+		&.search.search-wrapper {
+			flex: 2 1 100%;
 		}
 
 		.card-block {
 			width: 100%;
 		}
 
+		.card-header {
+			background: none;
+			border-bottom: none;
+			padding: 1.25rem;
+		}
+
 	}
 
-	h4.card-title {
+	h1.card-title {
 		border-bottom: 1px solid $color-lighter-grey;
-		padding: 0;
+		padding-top: 0 !important;
 		margin: 0;
 		width: 100%;
-		font-weight: 500;
+		font-size: 2rem;
 	}
 
 	.prop {
@@ -108,7 +118,7 @@
 	margin-top: 1rem;
 	width: 100%;
 
-	h4 {
+	h2 {
 		font-size: 1.25rem;
 	}
 
@@ -130,12 +140,15 @@
 		}
 
 	}
+	.actions.entity-actions {
+		margin-top: -2rem;
+	}
 
 }
 
 .supporters-content {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column nowrap;
 	justify-content: space-between;
 
 	.supporter {
@@ -143,7 +156,8 @@
 		align-items: center;
 		text-align: left;
 		margin-bottom: 2rem;
-		max-width: 48%;
+		flex: 1;
+		padding-right: 1rem;
 
 		.supporter-image {
 			flex-grow: 1;
@@ -186,13 +200,40 @@
 	}
 }
 
-@media (max-width: 1270px) {
-	.supporters-content {
-		flex-direction: column;
+@media (max-width: 768px) {
+	.plan-profile {
+		flex-flow: column nowrap;
 
-		> .supporter {
-			max-width: 100%;
+		section.card {
+			flex: 1 !important;
 		}
 
 	}
+}
+
+@media (min-width: 1280px) {
+	.plan-profile {
+		flex-flow: row wrap;
+
+		section.card {
+
+			&.plan-info {
+				flex: 1 1 25%;
+			}
+
+			&.plan-supporters {
+				flex: 1 1 50%;
+			}
+		}
+	}
+
+	.supporters-content {
+		flex-flow: row wrap;
+
+		.supporter {
+			max-width: 48%;
+		}
+
+	}
+
 }
