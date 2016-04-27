@@ -1,0 +1,91 @@
+@import "../config/base-vars";
+
+.goal-updater {
+
+	.goal-update {
+		padding-top: 0;
+	}
+
+}
+
+.goal-label {
+	font-size: 1.5rem;
+	border-bottom: 1px solid lighten($color-lr-light-grey, 25%);
+	padding-bottom: .75rem;
+	margin-bottom: 0;
+}
+
+.goal-update {
+	.goal-progress-label {
+		font-size: 1.35rem;
+		font-weight: 400;
+		margin-bottom: .75rem;
+	}
+	label:not(.tbl) {
+		font-weight: 400;
+		&::after {
+			content: ':';
+			padding-right: 5px;
+		}
+	}
+	input {
+		border: 1px solid lighten($color-lr-light-grey, 25%);
+		border-radius: $border-radius-sm;
+	}
+
+	&.card-block .card-block {
+		padding: 0;
+	}
+
+}
+
+section.tracking-metrics-update {
+	border: none;
+	border-radius: 0;
+	border-top: 1px solid lighten($color-lr-light-grey, 25%);
+	margin-top: 1rem;
+	padding-top: 1.25rem;
+
+	> .card-headertracking-metrics-update-header {
+		padding-bottom: 0;
+
+		> .tracking-metrics-label {
+			font-size: 1.35rem;
+			font-weight: 400;
+		}
+
+	}
+
+	.tracking-metric-update {
+		border-radius: 0;
+		border: none;
+		border-bottom: 1px solid lighten($color-lr-light-grey, 25%);
+		margin-bottom: 1rem;
+		padding-bottom: .75rem;
+
+		.tracking-metric-label {
+			font-size: 1.15rem;
+			font-weight: 400;
+			margin-bottom: .25rem;
+		}
+
+	}
+
+	.rtb {
+		display: block;
+
+		label {
+			padding-left: 5px;
+		}
+
+	}
+
+}
+
+.goal-progress .goal-progress, .tracking-metric-update {
+	margin-left: 1.5rem;
+}
+
+.click-here-container {
+	span { padding-right: 5px; }
+}
