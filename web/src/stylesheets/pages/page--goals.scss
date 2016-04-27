@@ -151,11 +151,11 @@
 		margin:0;
 	}
 	.measure-config-graph {
-		width: 325px;
 		margin: 0 auto;
 	}
 	.config-graph {
 		position: relative;
+		@extend .measure-config-graph;
 	}
 	.config-graph-text {
 		position: absolute;
