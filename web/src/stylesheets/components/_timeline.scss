@@ -315,11 +315,11 @@
 		}
 
 		&.past::after {
-			content: '\f078';
+			content: '\f077';
 		}
 
 		&.future::after {
-			content: '\f077';
+			content: '\f078';
 		}
 
 		&:hover {
@@ -746,10 +746,24 @@
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 600px) {
+
+	#main-content-wc-0 {
+		padding: .5rem .8rem;
+	}
 
 	.plan-name {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
+	}
+
+	.timeline-icon-custom {
+		left: -9px !important;
+		width: 35px !important;
+		height: 35px !important;
+		i.fa {
+			font-size: 17px !important;
+			margin-top: 5px !important;
+		}
 	}
 
 	.plan-actions {
@@ -762,6 +776,11 @@
 			&:hover, &:focus { color: transparent; }
 
 		}
+
+		.select2-container {
+			width: 6rem !important;
+		}
+
 	}
 
 	.participant-timeline {
@@ -856,6 +875,12 @@
 			&[title="View"]::before, &[title="Take Action"]::before {
 				right: 11px;
 			}
+		}
+	}
+
+	.activity-details, .task-item-info {
+		.activity-desc, .task-item-desc, .prop.activity-program-name {
+			display: none !important;
 		}
 	}
 
