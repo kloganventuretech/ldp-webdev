@@ -152,10 +152,11 @@
 	}
 	.measure-config-graph {
 		margin: 0 auto;
+		position: relative;
 	}
 	.config-graph {
-		position: relative;
-		@extend .measure-config-graph;
+		//position: relative;
+		margin: 0 auto;
 	}
 	.config-graph-text {
 		position: absolute;
@@ -286,6 +287,7 @@ section.tracking-metrics {
 				margin-top:2rem;
 				min-height: 13.25rem;
 				flex: 1 0 auto;
+				position: relative;
 			}
 			.boolean-measure .config-graph,
 			.word-measure .config-graph {
@@ -295,10 +297,8 @@ section.tracking-metrics {
 				}
 			}
 			.config-graph {
-				width: 100%;
-			}
-			.int-measure .config-graph{
 				text-align: center;
+				margin: 0 auto;
 			}
 			.metric-last-updated {
 				font-size: $font-size-sm;
@@ -430,13 +430,30 @@ section.tracking-metrics {
 		flex-direction: column;
 	}
 	section.tracking-metrics {
-		div.tracking-metrics {
 
+		div.tracking-metrics {
 			.tracking-metric {
 				width: 100%;
+				margin: 1rem 0;
 			}
 		}
+
 	}
+
+	.goal-measurement, section.tracking-metrics {
+		.config-graph {
+			width: 250px !important;
+		}
+	}
+
+	.chart-legend {
+		float: none;
+		position: absolute;
+		left: -30px;
+		top: -15px;
+		text-align: left;
+	}
+
 }
 
 @media (max-width: 1099px) {
