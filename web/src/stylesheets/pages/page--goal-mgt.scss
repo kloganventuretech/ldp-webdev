@@ -211,9 +211,20 @@ $tab-content-color-bg: inherit;
 		display: list-item;
 	}
 }
-.clarity-options .rtb {
+.prop-editor .prop span.rtb {
 	display: block;
-	padding-left:1rem;
+	padding-left: 0;
+	margin-bottom: .35rem;
+
+	+ span.rtb {
+		padding-left: 0;
+	}
+
+	label {
+		display: inline;
+		padding-left: .25rem;
+	}
+
 }
 
 .edit-goal-dialog {
