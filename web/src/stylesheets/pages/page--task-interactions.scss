@@ -29,6 +29,10 @@
 		top: 15px;
 	}
 
+	.persistence-actions.top {
+		display: none;
+	}
+
 	.btn {
 
 		&.back {
@@ -148,6 +152,7 @@
 	.task-interaction {
 		width: 100%;
 		padding: 3rem 1rem 2rem;
+		font-size: 1.15rem;
 	}
 	.btn {
 		white-space: normal;
