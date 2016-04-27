@@ -154,3 +154,17 @@
 		}
 	}
 }
+@media (max-width: 767px) {
+	.sidebar-closed,
+	#body-wrapper:not(.sidebar-open){
+		#side-nav {
+			width: 0;
+			overflow: hidden;
+		}
+	}
+	.sidebar-open {
+		#side-nav {
+			width: 55px;
+		}
+	}
+}
