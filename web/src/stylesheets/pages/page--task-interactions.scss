@@ -116,6 +116,12 @@
 
 	}
 
+	.reminder-engagement {
+		h2 {
+			font-size: 1rem;
+		}
+	}
+
 	.note {
 		margin-top: 1.5rem;
 
@@ -129,6 +135,7 @@
 		padding: .25rem;
 		border-radius: $border-radius-lg;
 		border: 1px solid lighten($color-lr-light-grey, 25%);
+		width: 100%;
 	}
 
 	.select2-container {
@@ -150,11 +157,15 @@
 		padding: .5rem 1rem;
 	}
 	.task-interaction {
+		max-width: 91vw;
 		width: 100%;
 		padding: 3rem 1rem 2rem;
 		font-size: 1.15rem;
 	}
 	.btn {
 		white-space: normal;
+	}
+	.miwt-table-con {
+		overflow: auto;
 	}
 }
