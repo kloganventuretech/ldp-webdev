@@ -192,6 +192,7 @@ header {
 		padding-top: 9px;
 		padding-right: 15px;
 		margin-top: 0;
+		z-index: 98;
 
 		.fa-bars {
 			visibility: hidden;
@@ -240,7 +241,11 @@ header {
 			margin-top: 0;
 		}
 
-
+		> li.dropdown {
+			flex: 1;
+			float: none;
+			display: flex;
+		}
 
 		> li.link {
 			margin: 0;
@@ -264,6 +269,10 @@ header {
 					//white-space: nowrap;
 				}
 			}
+		}
+
+		.dropdown-toggle::after {
+			display: none;
 		}
 
 		.dropdown-menu.extended {
