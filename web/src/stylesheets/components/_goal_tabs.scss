@@ -1,5 +1,6 @@
 @import "../config/base-vars";
 @import "../../../../bower_components/bootstrap/scss/mixins/hover";
+@import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
 
 $tab-color-bg: lighten($btn-primary-bg, 5%);
 $tab-color-bg-selected: darken($btn-primary-bg, 10%);
@@ -144,6 +145,16 @@ h2.plan-name {
 
 	}
 
+	.goal-selector {
+
+		.goal-selector-nav {
+			@include clearfix();
+			width: 100%;
+			overflow: auto;
+		}
+
+	}
+
 	.message-container {
 		padding: 0;
 
@@ -237,6 +248,16 @@ h2.plan-name {
 		}
 
 		.tab-container {
+
+			.tab-content .goal-selector {
+				overflow: auto;
+
+				.goal-selector-nav {
+					width: 200%;
+				}
+
+			}
+
 			.tab-items .ti {
 				a {
 					color: transparent;
