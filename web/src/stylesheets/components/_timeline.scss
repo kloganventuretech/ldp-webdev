@@ -622,6 +622,16 @@
 	.activity-name {
 		margin:0 0 10px;
 		padding-right: 1.75rem;
+
+		.group-name::after {
+			content: ':';
+			padding-right: 5px;
+		}
+
+		.meeting-name {
+			font-weight: 300;
+		}
+
 	}
 
 	.activity-status {
