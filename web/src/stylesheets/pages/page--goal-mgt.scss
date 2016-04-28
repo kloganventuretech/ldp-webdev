@@ -33,7 +33,7 @@ $tab-content-color-bg: inherit;
 		background-color: $color-white;
 		padding: 1rem 1rem 1.75rem;
 		margin: 1rem;
-		min-width: 30rem;
+		//min-width: 30rem;
 	}
 
 	.goal-basics, .smart-wrapper {
@@ -52,7 +52,7 @@ $tab-content-color-bg: inherit;
 	@include border-radius();
 	background-color: $color-white;
 	margin: 1rem;
-	overflow: hidden;
+	//overflow: hidden;
 
 	.prop-group, .actions, .goal-dates-values, .alignment, > .prop .val, .add-new-alignment > .user-entry-required {
 		padding: 0 1.5rem;
@@ -80,10 +80,11 @@ $tab-content-color-bg: inherit;
 		}
 		label:after {
 			content: ": ";
-			padding-right: 1ch;
+			padding-right: 5px;
 		}
 		label, .val {
-			display: inline-block;
+			display: inline;
+			white-space: normal;
 		}
 		.goal-info-actions {
 			display: inline-block;
@@ -234,6 +235,100 @@ $tab-content-color-bg: inherit;
 	}
 	.prop-body{
 
+	}
+
+}
+
+@media (max-width:767px) {
+	#main-content-wc-0 {
+		padding: .5rem .75rem;
+	}
+
+	.tab-container .tab-content {
+		border: none !important;
+	}
+
+	.personal-goals,
+	.leadership-goals,
+	.organizational-goals {
+		flex-flow: column nowrap;
+	}
+
+	.repo-item-selector {
+		padding: 0;
+	}
+
+	.goal-management {
+
+		.repo-item-search .search-bar {
+			clear: none;
+			float: right;
+			margin: 0;
+		}
+
+		.goalconfig-results .actions {
+			text-align: center;
+		}
+
+	}
+
+	.smart-wrapper {
+		> .prop-group {
+			margin: 1rem 0;
+			width: 100%;
+		}
+	}
+
+	.goal-configuration {
+		margin: 0;
+		flex: 1;
+
+		> .prop-group {
+			margin: 1rem 0;
+		}
+	}
+
+	.prop-group.measure-config {
+		flex-flow: column nowrap;
+
+		.prop {
+			flex: 1 0 0 !important;
+		}
+
+	}
+
+	.goal-basics {
+
+		.prop-group.goal-info {
+			@include clearfix();
+		}
+		.prop.name {
+			position: relative;
+			padding-right: 2.25rem;
+
+			.goal-info-actions {
+				position: absolute;
+				top: -5px;
+				right: -1rem;
+				float: none;
+			}
+		}
+		.smart-gauge {
+			clear: left;
+			text-align: left;
+			margin-left: 0;
+		}
+		.prop.name, .prop.description, .prop.status {
+			clear: left;
+			padding-left: 0;
+			max-width: 100%;
+			width: 100%;
+			margin-bottom: .5rem;
+		}
+	}
+
+	.edit-goal-dialog {
+		width: 95% !important;
 	}
 
 }
