@@ -116,9 +116,10 @@
 
 	}
 
-	.reminder-engagement {
+	.tracked-email {
 		h2 {
 			font-size: 1rem;
+			font-style: italic;
 		}
 	}
 
@@ -150,6 +151,11 @@
 
 	}
 
+	.miwt-table-con {
+		overflow: auto;
+		margin-bottom: 1rem;
+	}
+
 }
 
 @media (max-width: 768px) {
@@ -164,8 +170,5 @@
 	}
 	.btn {
 		white-space: normal;
-	}
-	.miwt-table-con {
-		overflow: auto;
 	}
 }
