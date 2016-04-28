@@ -245,6 +245,14 @@ header {
 			flex: 1;
 			float: none;
 			display: flex;
+
+			a.dropdown-toggle {
+				img.profile-pic {
+					max-width: 75% !important;
+					height: auto !important;
+				}
+			}
+
 		}
 
 		> li.link {
@@ -260,7 +268,7 @@ header {
 					width: 35px;
 					text-align: center;
 					padding: 6px 3px;
-					&::before { font-size: 1.15rem; }
+					&::before { font-size: 1.3rem; }
 				}
 				span {
 					display: none;
@@ -281,7 +289,7 @@ header {
 			left: auto;
 			right: 0;
 			border-radius: 0;
-			box-shadow: none;
+			box-shadow: 0 0 5px rgba(0,0,0,0.3);
 
 			> li:last-child {
 				border-radius: 0;
