@@ -83,6 +83,10 @@
 
 	}
 
+	.personal-alignment-graph {
+		position: relative;
+	}
+
 }
 
 .goal-wrapper {
@@ -443,6 +447,17 @@ section.tracking-metrics {
 	.goal-measurement, section.tracking-metrics {
 		.config-graph {
 			width: 250px !important;
+		}
+	}
+
+	.alignment {
+		.personal-alignment-graph, .leadership-alignment-graph {
+			width: 300px !important;
+			.chart-legend {
+				position: relative;
+				left: auto;
+				top: auto;
+			}
 		}
 	}
 
