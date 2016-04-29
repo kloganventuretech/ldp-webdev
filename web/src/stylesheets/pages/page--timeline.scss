@@ -7,7 +7,6 @@
 
 .flex-container {
 	display: flex;
-	position: relative;
 
 	.no-config-message {
 		display: none;
@@ -446,6 +445,7 @@ div.window.configure-task  {
 
 	.flex-container {
 		flex-direction: column;
+		position: relative;
 
 		.no-config-message {
 			display: block;
