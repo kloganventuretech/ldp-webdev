@@ -1,0 +1,17 @@
+section.card {
+	display: flex;
+}
+.card-title{
+	text-align: center;
+}
+a.plan-link{
+	font-size:2rem;
+}
+.prop label:after {
+	content: ":";
+	padding-right: 1ch;
+	padding-bottom: 1rem;
+}
+.search-results thead{
+	display: none;
+}
