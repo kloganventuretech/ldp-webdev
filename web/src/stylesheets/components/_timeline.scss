@@ -657,6 +657,21 @@
 
 	.prop-group.dates {
 		margin-right: 1.5rem;
+
+		.ical-actions {
+			a {
+				color: transparent;
+				width: 25px;
+				&:hover {
+					color: transparent !important;
+				}
+
+				&::before {
+					color: $color-lr-grey;
+					padding-left: 5px;
+				}
+			}
+		}
 	}
 
 }
