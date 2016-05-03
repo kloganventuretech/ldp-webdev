@@ -5,3 +5,8 @@
 	}
 
 }
+
+.task-item.pending .actions.task-item-actions, .activity-details .prop.activity-program-name,
+.task-item-scheduling, .prop.task-type {
+	display: block;
+}
