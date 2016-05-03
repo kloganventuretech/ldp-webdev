@@ -1,5 +1,9 @@
 @import "../config/base-vars";
 
+#side-nav, .fa-bars.tooltips {
+	display: none !important;
+}
+
 .goal-updater {
 	color: $color-lr-grey;
 
@@ -14,21 +18,37 @@
 
 }
 
+.card-headergoal-update-card-header {
+	padding: 1.25rem 0;
+}
+
+.message-container {
+	.brief {
+		font-size: 80%;
+	}
+}
+
 .goal-label {
 	font-size: 1.5rem;
 	border-bottom: 1px solid lighten($color-lr-light-grey, 25%);
 	padding-bottom: .75rem;
 	margin-bottom: 0;
+	font-weight: 400;
+}
+
+div.prop.goal-progress {
+	margin-bottom: 1rem;
 }
 
 .goal-update {
+	/*display: flex;
+	flex: 1 0 0;
+	flex-flow: column nowrap;*/
 	padding: 0;
-	display: flex;
-	flex-flow: column wrap;
 
 	.goal-progress-label {
-		font-size: 1.35rem;
-		font-weight: 400;
+		font-size: 1.25rem;
+		font-weight: 300;
 		margin-bottom: .75rem;
 	}
 	label:not(.tbl) {
@@ -49,43 +69,52 @@
 
 }
 
+.goal-progress.int-measure-value-editor {
+	/*display: flex;
+	flex: 1 0 0;
+	flex-flow: column nowrap;*/
+	border: none;
+	margin: .5rem;
+	padding: 1rem 1.5rem;
+	background: $color-white;
+}
+
 section.tracking-metrics-update {
 	border: none;
 	border-radius: 0;
-	margin-top: 2rem;
-	display: flex;
-	flex-flow: row wrap;
-	flex: 1;
+	margin: 0;
 	background: transparent;
 
 	.prop-group.tracking-metrics {
-		display: flex;
-		flex: 1;
+		/*display: flex;
+		flex: 1 0 0;
 		justify-content: space-between;
+		flex-flow: column nowrap;*/
 	}
 
 	> .card-headertracking-metrics-update-header {
 		padding-bottom: 0;
-		flex: 1 1 100%;
+		//flex: 1 0 0;
 
 		> .tracking-metrics-label {
-			font-size: 1.35rem;
-			font-weight: 400;
+			font-size: 1.25rem;
+			font-weight: 300;
 		}
 
 	}
 
 	.tracking-metric-update {
-		display: flex;
-		flex: 1;
-		flex-flow: column nowrap;
+		/*display: flex;
+		flex: 2 0 0;
+		flex-flow: column nowrap;*/
 		border: none;
-		margin: .5rem;
+		margin: 0 .5rem .75rem;
 		padding-bottom: .75rem;
-		overflow: hidden;
 
 		.card-headertracking-metric-update-header {
 			background: lighten($color-lr-light-grey, 25%);
+			border-top-left-radius: $border-radius-sm;
+			border-top-right-radius: $border-radius-sm;
 			padding: 1rem 1.5rem;
 		}
 
@@ -98,6 +127,7 @@ section.tracking-metrics-update {
 
 		.tracking-metric-editor {
 			padding: 1rem 1.5rem;
+			//flex: 2 0 0;
 		}
 
 	}
@@ -113,17 +143,68 @@ section.tracking-metrics-update {
 
 }
 
-.goal-progress.int-measure-value-editor {
-	display: flex;
-	flex: 1 1 0;
-	flex-flow: column nowrap;
-	border: none;
-	margin: .5rem;
-	padding-bottom: .75rem;
-	overflow: hidden;
-	background: $color-white;
+.range-bound-value-label, .int-measure-current-value-label, .int-measure-last-value-label {
+	padding-left: 5px;
 }
 
 .click-here-container {
 	span { padding-right: 5px; }
+}
+
+
+@media (min-width: 1024px) {
+	.goal-update {
+		display: flex;
+		flex-flow: row nowrap;
+
+		.goal-progress.int-measure-value-editor {
+			margin: 0 .5rem .5rem 0;
+			flex: 1;
+		}
+
+	}
+	div.prop.goal-progress {
+		margin-bottom: 0;
+		flex: 1;
+		display: flex;
+		flex-flow: column wrap;
+	}
+	section.tracking-metrics-update {
+		display: flex;
+		flex: 2;
+		flex-flow: column nowrap;
+
+		> .card-headertracking-metrics-update-header {
+			margin-left: .5rem;
+			flex-grow: 1;
+			flex-shrink: 0;
+		}
+
+		.prop-group.tracking-metrics {
+			display: flex;
+			flex-flow: row wrap;
+		}
+
+		.tracking-metric-update {
+			flex: 1 0 45%;
+		}
+
+	}
+
+}
+
+@media (min-width: 1280px) {
+	.goal-update {
+		.goal-progress.int-measure-value-editor {
+			margin: 0 .5rem 0 0;
+		}
+	}
+
+	section.tracking-metrics-update {
+		.tracking-metric-update {
+			flex: 1 0 0;
+			margin: 0 .5rem;
+		}
+
+	}
 }
