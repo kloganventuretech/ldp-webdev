@@ -60,10 +60,25 @@
 		}
 
 		&.configure {
-			@extend .back;
+			float: right;
+			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+			color: transparent;
+			width: 40px;
+			overflow: hidden;
+			white-space: nowrap;
 
 			&::before {
 				content: '\f013';
+				font-family: FontAwesome;
+				display: inline-block;
+				font-size: inherit;
+				padding-right: 5px;
+				color: $color-lr-brand;
+			}
+
+			&:hover, &:focus {
+				color: transparent !important;
 			}
 
 		}
@@ -156,6 +171,25 @@
 		margin-bottom: 1rem;
 	}
 
+	.report-actions {
+		margin-bottom: .5rem;
+		a {
+			background-color: $color-white;
+			border: 1px solid $color-lr-brand;
+			font-weight: 400;
+			color: $color-lr-brand;
+			padding: .375rem 1rem;
+			line-height: 1.5rem;
+			display: inline-block;
+			border-radius: $border-radius-sm;
+			text-align: center;
+			&:hover {
+				text-decoration: none;
+				background: lighten($color-lr-light-grey, 30%);
+			}
+		}
+	}
+
 }
 
 @media (max-width: 768px) {
@@ -170,5 +204,36 @@
 	}
 	.btn {
 		white-space: normal;
+	}
+}
+
+@media (min-width: 1024px) {
+	.task-interaction {
+		.btn {
+
+			&.back {
+				float: right;
+				@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
+				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+				color: $color-lr-brand;
+				width: auto;
+				overflow: visible;
+				white-space: normal;
+
+				&::before {
+					content: '\f112';
+					font-family: FontAwesome;
+					display: inline-block;
+					font-size: inherit;
+					padding-right: 5px;
+					color: $color-lr-brand;
+				}
+
+				&:hover, &:focus {
+					color: $color-lr-brand !important;
+				}
+
+			}
+		}
 	}
 }
