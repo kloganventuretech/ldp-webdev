@@ -26,16 +26,18 @@
 
 
 .resource-name {
-	font-size:1.75rem;
+	font-size:1.15rem;
 	margin: 0;
 	text-align: center;
 	padding: $card-spacer-y $card-spacer-x;
-	background-color: $card-cap-bg;
-	border-bottom: $card-border-width solid $card-border-color;
+	background-color: lighten($color-lr-light-grey, 25%);
+	border-top-left-radius: $border-radius-sm;
+	border-top-right-radius: $border-radius-sm;
+	font-weight: 400 !important;
 
-	&:first-child {
+	/*&:first-child {
 		@include border-radius($card-border-radius-inner $card-border-radius-inner 0 0);
-	}
+	}*/
 }
 
 .resource-icon {
@@ -103,6 +105,15 @@
 
 	.resource{
 		position:relative;
+		display: flex;
+		flex: 1;
+
+		.resource-viewer {
+			display: flex;
+			flex-flow: column nowrap;
+			flex: 1;
+			justify-content: space-between;
+		}
 
 		.actions {
 			position: absolute;
