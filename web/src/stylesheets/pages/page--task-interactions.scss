@@ -196,6 +196,36 @@
 		}
 	}
 
+	.result-upload-interactive {
+		.btn {
+			&.engagement-completed {
+				margin-top: 1.75rem;
+			}
+			&.delete {
+				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+			}
+		}
+		.file-row {
+			margin-bottom: 1.5rem;
+			padding-bottom: 1.5rem;
+			border-bottom: 1px solid lighten($color-lr-light-grey, 25%);
+
+			.published, .persistence-actions {
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 1rem;
+			}
+
+			.view {
+				margin-bottom: .35rem;
+			}
+			label.publish-file {
+				margin-left: 5px;
+				margin-bottom: 0;
+			}
+		}
+	}
+
 }
 
 @media (max-width: 768px) {
