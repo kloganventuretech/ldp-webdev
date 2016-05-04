@@ -182,6 +182,17 @@
 	.prop-body {
 		font-size: 85%;
 		margin-top: 1.75rem;
+
+		.miwt-calendar {
+			input[type="text"] {
+				min-width: calc(100% - 64px) !important;
+			}
+		}
+
+	}
+
+	.persistence-actions.actions {
+		margin-top: 0;
 	}
 
 }
@@ -374,6 +385,13 @@
 				display: inline-block;
 				width: 30%;
 			}
+			.prop.user-entry-required {
+				width: 40%;
+				display: inline-block;
+				input[type="text"] {
+					width: 95% !important;
+				}
+			}
 		}
 	}
 
@@ -424,7 +442,11 @@
 	.user-positions.plan-positions {
 		.prop-body {
 			.prop:not(.user-entry-required) {
-				width: 45%;
+				width: 50%;
+			}
+			.prop.user-entry-required {
+				display: block;
+				width: 100%;
 			}
 		}
 	}
