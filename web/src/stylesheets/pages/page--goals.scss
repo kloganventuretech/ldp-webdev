@@ -139,7 +139,8 @@
 	}
 
 	.goal-ev {
-		flex: 2 1 100%;
+		flex: 2 0 100%;
+		width: 100%;
 		padding-bottom: 1.5rem;
 	}
 
@@ -479,6 +480,9 @@ div.window.dialog {
 		.description {
 			flex: 1;
 		}
+		.goal-ev {
+			flex: 2;
+		}
 		.start-date, .end-date {
 			width: 75%;
 		}
@@ -495,6 +499,13 @@ div.window.dialog {
 	.goal-wrapper, .goal-viewer-wrapper {
 		flex-direction: row;
 	}
+
+	.goal-wrapper {
+		.goal-ev {
+			flex: 2 0 100%;
+		}
+	}
+
 }
 
 @media (max-width: 1499px) {
@@ -567,7 +578,7 @@ and (orientation:portrait) {
 			flex-flow: row wrap;
 			order: 2;
 		}
-		.description {
+		.description, .goal-ev {
 			flex: 2 0 100%;
 		}
 		.start-date, .end-date, .prop-group.smart-gauge {
