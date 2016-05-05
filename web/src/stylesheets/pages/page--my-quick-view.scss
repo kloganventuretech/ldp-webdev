@@ -9,15 +9,11 @@
 	color: $color-lr-grey;
 
 	> .miwt:not(.tasks) {
-		flex: 2 0 50%;
+		flex: 1 0 0;
 	}
 
 	> .tasks {
-		flex: 1 0 35%;
-	}
-
-	>.tasks{
-		margin-left: 20px;
+		flex: 1 0 0;
 	}
 
 	.engagement-search {
@@ -35,6 +31,10 @@
 	.actions.search-actions {
 		.btn {
 			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+
+			&.search {
+				display: none;
+			}
 		}
 	}
 
@@ -48,7 +48,7 @@
 			flex-flow: column nowrap;
 
 			> .constraint {
-				flex: 1;
+				flex: 1 0 0;
 				align-self: center;
 				padding: 1rem;
 				width: 100%;
@@ -303,16 +303,27 @@
 				flex-flow: row wrap;
 				> .constraint {
 					width: auto;
+					flex: 1 0 50%;
 				}
 			}
 		}
 	}
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1024px) {
 
 	.flex-container {
 		flex-flow: row nowrap;
+
+		> .miwt:not(.tasks) {
+			flex: 2 0 50%;
+		}
+
+		> .tasks {
+			flex: 1 0 35%;
+			margin: -5rem 0 0 20px;
+		}
+
 	}
 
 }
