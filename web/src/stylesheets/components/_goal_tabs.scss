@@ -46,6 +46,22 @@ h2.plan-name {
 				}
 			}
 
+			&.show-completed {
+				&::before {
+					content: '\f058';
+					font-family: FontAwesome;
+					padding-right: 3px;
+				}
+			}
+
+			&.hide-completed {
+				&::before {
+					content: '\f05d';
+					font-family: FontAwesome;
+					padding-right: 3px;
+				}
+			}
+
 			&:hover{
 				background-color: $color-smokey-white;
 				color:$brand-primary;
@@ -236,7 +252,7 @@ h2.plan-name {
 	.goals-viewer,
 	.goal-management{
 		.btn {
-			&.configure {
+			&.configure, &.completed-goals-toggle {
 				color: transparent !important;
 				width: 48px;
 				overflow: hidden;
@@ -263,7 +279,12 @@ h2.plan-name {
 					color: transparent;
 					white-space: nowrap;
 					width: 52px;
-					&::before { color: $color-white; }
+					font-size: 0 !important;
+
+					&::before {
+						color: $color-white;
+						font-size: 1rem;
+					}
 				}
 			}
 		}
