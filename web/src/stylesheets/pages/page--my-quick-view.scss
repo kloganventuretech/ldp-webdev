@@ -1,12 +1,333 @@
+@import "../config/base-vars";
+@import "../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../bower_components/bootstrap/scss/buttons";
 
 .flex-container{
 	display:flex;
+	flex-flow: column nowrap;
+	color: $color-lr-grey;
 
-	>.participants,
-	>.tasks{
-		flex:1;
+	> .miwt:not(.tasks) {
+		flex: 2 0 50%;
 	}
+
+	> .tasks {
+		flex: 1 0 35%;
+	}
+
 	>.tasks{
 		margin-left: 20px;
 	}
+
+	.engagement-search {
+
+		.search-bar { //Hide at request of Russ/Dao
+			display: none;
+		}
+
+	}
+
+}
+
+.myquickview-mgt {
+
+	.actions.search-actions {
+		.btn {
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+		}
+	}
+
+	.constraints {
+		font-size: 1.25rem;
+		font-weight: 300;
+
+		&.standard {
+			display: flex;
+			justify-content: space-between;
+			flex-flow: column nowrap;
+
+			> .constraint {
+				flex: 1;
+				align-self: center;
+				padding: 1rem;
+				width: 100%;
+			}
+
+		}
+
+		> .constraint {
+			text-align: center;
+			position: relative;
+
+			label {
+				line-height: 1;
+				margin-bottom: 0;
+				color: $color-white;
+				cursor: pointer;
+
+				&.checkbox-constrsint {
+					font-weight: 400;
+				}
+
+			}
+
+		}
+
+		input.checkbox-constrsint {
+			visibility: hidden;
+			width: 0;
+			height: 0;
+		}
+
+	}
+
+	.participant-pipeline-wrapper, .success-areas-wrapper {
+		> span[data-features="watch"] {
+			display: flex;
+			justify-content: center;
+			position: relative;
+			flex: 1;
+		}
+	}
+
+	.participant-pipeline-wrapper {
+		color: $color-white;
+		background: $color-lr-grey;
+		border-radius: $border-radius;
+		border: 1px solid darken($color-lr-grey, 15%);
+
+		.plan-state-onboarding, .plan-state-ongoing {
+			padding: .5rem 1rem;
+
+			> span > label.tbl {
+				display: block;
+			}
+
+			input[checked="checked"] + label.checkbox-constrsint {
+				border: 1px solid $color-white;
+			}
+
+		}
+		label.checkbox-constrsint {
+			font-size: 1.75rem;
+			padding: .25rem .5rem;
+			border: 1px solid transparent;
+		}
+
+	}
+
+	.success-areas-wrapper {
+
+		.constraint {
+			display: flex;
+			flex: 1;
+			margin: 0 .15rem;
+			position: relative;
+
+			.ctb.label-after {
+				display: flex;
+				flex: 1;
+			}
+
+			label.checkbox-constrsint {
+				padding: 3rem 0;
+				border-width: 1px;
+				border-style: solid;
+				z-index: 9;
+				font-size: 2rem;
+				border-radius: $border-radius;
+				flex: 1;
+			}
+			input.checkbox-constrsint {
+				position: absolute;
+				left: 50%;
+				top: 25%;
+				z-index: -1;
+			}
+
+			&.danger {
+				label.checkbox-constrsint {
+					background: $color-lr-red;
+					border-color: darken($color-lr-red, 15%);
+				}
+			}
+			&.warning {
+				label.checkbox-constrsint {
+					background: $color-lr-yellow;
+					border-color: darken($color-lr-yellow, 15%);
+				}
+			}
+			&.success {
+				label.checkbox-constrsint {
+					background: $color-lr-brand;
+					border-color: darken($color-lr-brand, 15%);
+				}
+			}
+
+			.checkbox-constrsint[checked="checked"] + label.checkbox-constrsint {
+				box-shadow: 0 0 8px rgba(0,0,0,0.8);
+			}
+
+		}
+
+	}
+
+	.constraints.detailed {
+		display: flex;
+		flex-flow: row wrap;
+		font-size: .85rem;
+		font-weight: 400;
+		margin-bottom: .75rem;
+		max-width: 100%;
+
+		.constraint.success-area-wrapper {
+			flex: 1 1 18%;
+			display: flex;
+			flex-flow: column nowrap;
+			padding: .5rem;
+			background: lighten($color-lr-light-grey, 15%);
+			margin: .15rem;
+			border-radius: $border-radius;
+			border: 1px solid $color-lr-light-grey;
+			//min-width: 6rem;
+
+			> span {
+				flex: 1;
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: flex-end;
+				justify-content: center;
+				margin-top: .5rem;
+				padding-top: 8px;
+
+				span.constraint {
+					flex: 1;
+
+					&.danger {
+						background: $color-lr-red;
+
+						.checkbox-constrsint[checked="checked"] + label.checkbox-constrsint {
+							border-bottom: 3px solid darken($color-lr-red, 15%);
+						}
+
+					}
+
+					&.warning {
+						background: $color-lr-yellow;
+
+						.checkbox-constrsint[checked="checked"] + label.checkbox-constrsint {
+							border-bottom: 3px solid darken($color-lr-yellow, 15%);
+						}
+
+					}
+
+					&.success {
+						background: $color-lr-brand;
+
+						.checkbox-constrsint[checked="checked"] + label.checkbox-constrsint {
+							border-bottom: 3px solid darken($color-lr-brand, 15%);
+						}
+
+					}
+
+					> span.ctb.label-after {
+						display: flex;
+						flex: 0 1 auto;
+
+						label.checkbox-constrsint {
+							flex: 1;
+							padding: .25rem 0;
+						}
+
+					}
+
+					input.checkbox-constrsint {
+						margin-left: -4px;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.pager {
+
+		.miwt-table > tbody {
+
+			> tr > td {
+
+				&:nth-of-type(4) {
+					max-width: 9rem;
+					word-break: break-all;
+					word-break: break-word;
+				}
+
+				&.last-column {
+					min-width: 9rem;
+
+					div {
+						display: flex;
+						justify-content: space-around;
+						flex-flow: row wrap;
+
+						.danger {
+							color: $color-lr-red;
+						}
+						.warning {
+							color: $color-lr-yellow;
+						}
+						.success {
+							color: $color-lr-brand;
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+@media (min-width:768px) {
+	.myquickview-mgt {
+		.constraints {
+			&.standard {
+				flex-flow: row wrap;
+				> .constraint {
+					width: auto;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+
+	.flex-container {
+		flex-flow: row nowrap;
+	}
+
+}
+
+@media (min-width: 1281px) {
+	.myquickview-mgt {
+
+		.constraints.detailed {
+
+			.constraint.success-area-wrapper {
+				flex: 1;
+			}
+
+		}
+
+	}
+
 }
