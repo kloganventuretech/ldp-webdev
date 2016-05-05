@@ -17,6 +17,7 @@
 		display: flex;
 		flex: 1;
 		justify-content: space-around;
+		flex-direction: row;
 
 		.custom-search-btn {
 			text-align: center;
@@ -248,6 +249,15 @@
 
 		}
 
+	}
+
+}
+
+@media (min-width: 768px)
+and (orientation: portrait) {
+
+	#action-item-mgt .custom-search-btn-wrapper {
+		flex-direction: column;
 	}
 
 }
