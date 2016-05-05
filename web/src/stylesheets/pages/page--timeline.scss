@@ -464,11 +464,25 @@ div.window.configure-task  {
 			display: block;
 			margin: 1.5rem 0 0;
 			text-align: center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 9;
 
 			button {
 				display: inline-block;
 				@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
-				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+				padding: 0.5rem;
+				background: #fff;
+				border: 1px solid $color-lr-brand;
+				border-radius: 100%;
+				line-height: 1;
+			}
+		}
+
+		.view-timeline {
+			button {
+				padding: 0.5rem 0.75rem;
 			}
 		}
 
