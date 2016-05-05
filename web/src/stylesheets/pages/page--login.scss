@@ -62,10 +62,12 @@
 	box-shadow: none;
 	font-size: 12px;
 	padding:2px 4px;
+	width: 100%;
 }
 
 .form-signin .action-login,
-.form-signin button.submit {
+.form-signin button.submit,
+.form-signin .action-password {
 	background: $btn-primary-bg;
 	color: #fff;
 	text-transform: uppercase;
@@ -87,6 +89,10 @@
 
 .label, label {
 	font-weight: 500;
+	display: block;
+	padding: 0;
+	margin-bottom: .25rem;
+	text-align: left;
 }
 
 .form-signin a {
@@ -136,7 +142,24 @@
 }
 
 
+.set-pw-intro {
+	padding: 1rem;
+	color: $color-success-dark;
+	font-weight: 400;
+	background: $color-success-light;
+	border: 1px solid $color-success-dark;
+	border-radius: $border-radius;
+	max-width: 375px;
+	margin: 100px auto 0;
 
+	p {
+		margin-bottom: 0;
+	}
+
+	+ .password-reset.form-signin {
+		margin-top: 1rem;
+	}
+}
 
 #authentication {
 	background-color: #f1f2f7;
@@ -149,8 +172,8 @@
 	-webkit-border-radius: 5px;
 }
 .form-signin .fields{
-	text-align: center;
-	padding:20px;
+	text-align: left;
+	padding:20px 3rem;
 }
 .form-signin .message-container,
 .form-signin .actions {
@@ -158,8 +181,10 @@
 	padding-right:20px;
 }
 .form-signin {
+
 	.text p, .password-rules {
 		color: $color-lr-grey;
+		font-size: 90%;
 	}
 
 	.message-container{
@@ -170,7 +195,8 @@
 		padding: 10px 0;
 
 		div.email {
-			padding-bottom: 15px;
+			padding: 0 3rem 15px;
+			text-align: left;
 
 			> span {
 				color: #444;
@@ -197,7 +223,7 @@
 }
 
 .password-reset {
-	.password-rules { padding-top: 25px; }
+	.password-rules { padding: 25px 20px 0; }
 
 	.username .value { color: $color-lr-grey; font-size: .9rem; }
 

@@ -368,7 +368,7 @@
 		font-weight: 500;
 		max-width: 82%;
 		vertical-align: top;
-		padding-right: 1.25rem;
+		padding-right: 2.25rem;
 		margin-bottom: .35rem;
 	}
 
@@ -622,6 +622,16 @@
 	.activity-name {
 		margin:0 0 10px;
 		padding-right: 1.75rem;
+
+		.group-name::after {
+			content: ':';
+			padding-right: 5px;
+		}
+
+		.meeting-name {
+			font-weight: 300;
+		}
+
 	}
 
 	.activity-status {
@@ -647,6 +657,21 @@
 
 	.prop-group.dates {
 		margin-right: 1.5rem;
+
+		.ical-actions {
+			a {
+				color: transparent;
+				width: 25px;
+				&:hover {
+					color: transparent !important;
+				}
+
+				&::before {
+					color: $color-lr-grey;
+					padding-left: 5px;
+				}
+			}
+		}
 	}
 
 }
@@ -743,6 +768,11 @@
 		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 		font-weight: 300;
 	}
+}
+
+.task-item.pending .actions.task-item-actions, .activity-details .prop.activity-program-name,
+.task-item-scheduling, .prop.task-type {
+	display: none;
 }
 
 

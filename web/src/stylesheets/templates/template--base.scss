@@ -184,11 +184,46 @@ p.instructions {
 	}
 }
 
+.back-top {
+	display: none;
+}
+
+div.calendar {
+	z-index: 1900 !important;
+}
+
 @media (max-width: 767px)
 and (orientation:portrait) {
+
+	.back-top {
+		display: block;
+		bottom: 1.5rem;
+		position: absolute;
+		right: 0;
+
+		a {
+			padding: 5px 7px 7px;
+			border: 1px solid $color-lr-brand;
+			border-radius: 100%;
+			line-height: 1;
+			display: inline-block;
+			background: #fff;
+		}
+
+	}
+
 	.header {
 		min-height: 50px;
 	}
+
+	#main-wrapper main {
+		margin-top: -3.75rem;
+	}
+
+	#main-content-wc-0 h1, #main-content-wc-0 h2, #main-content-wc-0 h3 {
+		padding-left: 2.5rem;
+	}
+
 }
 
 /*

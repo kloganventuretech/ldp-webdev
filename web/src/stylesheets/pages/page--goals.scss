@@ -83,6 +83,10 @@
 
 	}
 
+	.personal-alignment-graph {
+		position: relative;
+	}
+
 }
 
 .goal-wrapper {
@@ -116,7 +120,7 @@
 
 	}
 
-	.description, .start-date, .end-date {
+	.description, .start-date, .end-date, .goal-ev {
 
 		label {
 			display: block;
@@ -129,9 +133,15 @@
 		}
 
 		div.val {
-			display: inline;
+			display: inline-block;
 		}
 
+	}
+
+	.goal-ev {
+		flex: 2 0 100%;
+		width: 100%;
+		padding-bottom: 1.5rem;
 	}
 
 	.description {
@@ -265,6 +275,7 @@ section.tracking-metrics {
 		font-size: .9rem;
 		font-style: italic;
 		color: $color-lr-light-grey;
+		padding-left: 0 !important;
 	}
 	div.tracking-metrics {
 		display: flex;
@@ -387,8 +398,9 @@ section.tracking-metrics {
 
 	}
 
-	.last-reported, .range-bound-label, .current {
+	label, .int-measure-current-value label {
 		font-weight: 400;
+		display: inline-block;
 
 		&::after {
 			content: ': ';
@@ -396,6 +408,12 @@ section.tracking-metrics {
 		}
 
 	}
+
+	.range-bound-value-label, .int-measure-current-value-label, .int-measure-last-value-label {
+		padding-left: 5px;
+	}
+
+	.prop { padding: 0; }
 
 	.int-measure-slider {
 		margin-top: 1rem;
@@ -420,41 +438,21 @@ section.tracking-metrics {
 
 }
 
+div.window.dialog {
 
-/* ----- MEDIA QUERIES */
-@media (max-width: 767px) {
-	#main-content-wc-0 {
-		padding: .5rem;
-	}
-	.goal-wrapper {
-		flex-direction: column;
-	}
-	section.tracking-metrics {
-
-		div.tracking-metrics {
-			.tracking-metric {
-				width: 100%;
-				margin: 1rem 0;
-			}
+	.goal-repo-item-editor {
+		.prop-header-actions {
+			display: none;
 		}
-
-	}
-
-	.goal-measurement, section.tracking-metrics {
-		.config-graph {
-			width: 250px !important;
+		.prop-body .predicted-ev-editor {
+			margin-top: 1rem;
 		}
-	}
-
-	.chart-legend {
-		float: none;
-		position: absolute;
-		left: -30px;
-		top: -15px;
-		text-align: left;
 	}
 
 }
+
+
+/* ----- MEDIA QUERIES */
 
 @media (max-width: 1099px) {
 	.goals-viewer,
@@ -482,6 +480,9 @@ section.tracking-metrics {
 		.description {
 			flex: 1;
 		}
+		.goal-ev {
+			flex: 2;
+		}
 		.start-date, .end-date {
 			width: 75%;
 		}
@@ -498,6 +499,13 @@ section.tracking-metrics {
 	.goal-wrapper, .goal-viewer-wrapper {
 		flex-direction: row;
 	}
+
+	.goal-wrapper {
+		.goal-ev {
+			flex: 2 0 100%;
+		}
+	}
+
 }
 
 @media (max-width: 1499px) {
@@ -522,6 +530,131 @@ section.tracking-metrics {
 
 		}
 
+	}
+
+}
+
+@media (max-width: 767px)
+and (orientation:portrait) {
+	#main-content-wc-0 {
+		padding: .5rem;
+	}
+
+	.goal-viewer {
+
+		h1 {
+			padding: 0 3rem 0 0 !important;
+			font-size: 1.5rem;
+		}
+
+		.btn.edit {
+			color: transparent !important;
+			width: 40px;
+			padding: 5px 12px;
+			overflow: hidden;
+			white-space: nowrap;
+
+			&::before {
+				content: '\f040';
+				font-family: FontAwesome;
+				padding-right: 3px;
+				color: $color-lr-brand;
+			}
+
+			&:hover, &:focus {
+				color: transparent !important;
+			}
+
+		}
+
+	}
+
+	.goal-wrapper {
+		flex-flow: column nowrap;
+		padding: 0;
+
+		.goal-info-wrapper {
+			flex: 1;
+			flex-flow: row wrap;
+			order: 2;
+		}
+		.description, .goal-ev {
+			flex: 2 0 100%;
+		}
+		.start-date, .end-date, .prop-group.smart-gauge {
+			flex: 1 0 auto;
+			width: auto;
+		}
+		.prop-group.goal-measurement {
+			padding-bottom: 3rem;
+			order: 1;
+
+			.measure-config-graph .config-graph {
+				width: 250px !important;
+				height: 166px !important;
+			}
+
+		}
+
+		.carousel-control {
+			.icon-prev {
+				left: 0;
+				margin-left: 0;
+			}
+			.icon-next {
+				right: 0;
+				margin-right: 0;
+			}
+		}
+
+	}
+
+	section.tracking-metrics {
+		margin: 2.85rem 0 1.5rem;
+
+		div.tracking-metrics {
+			.tracking-metric {
+				width: 100%;
+				margin: 1rem 0;
+			}
+		}
+
+	}
+
+	.goal-measurement, section.tracking-metrics {
+		.config-graph {
+			width: 250px !important;
+		}
+	}
+
+	.alignment {
+		.personal-alignment-graph, .leadership-alignment-graph {
+			width: 300px !important;
+			.chart-legend {
+				position: relative;
+				left: auto;
+				top: auto;
+			}
+		}
+	}
+
+	.chart-legend {
+		float: none;
+		position: absolute;
+		left: -30px;
+		top: -15px;
+		text-align: left;
+	}
+
+	.update-tracking-measure-dialog,
+	.update-goal-measure-dialog {
+		width: auto !important;
+	}
+
+	.back-top {
+		bottom: auto;
+		margin-top: .75rem;
+		right: .5rem;
 	}
 
 }

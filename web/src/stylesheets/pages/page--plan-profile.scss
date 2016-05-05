@@ -1,5 +1,9 @@
 @import "../config/base-vars";
 
+#main-content-wc-0 {
+	padding: .5rem 1rem;
+}
+
 .plan-name {
 	color: $color-lr-grey;
 	padding: .75rem 0;
@@ -8,30 +12,33 @@
 .plan-profile {
 	color: $color-lr-grey;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column nowrap;
 
 	section.card {
 		margin: 0 1rem 1rem 0;
 		display: flex;
 		flex-direction: column;
 		border-radius: $border-radius-lg;
-		overflow: hidden;
 		padding-bottom: 2rem;
+		//flex: 1;
 
 		&.plan-info {
 			display: flex;
 			flex-direction: column;
-			flex: 1 1 35%;
+			flex: 1 0 auto;
 		}
 
 		&.plan-supporters {
 			display: flex;
 			flex-direction: column;
-			flex: 1 1 50%;
+			flex: 1 0 auto;
 		}
 
 		&.search.search-wrapper {
-			flex: 2 1 100%;
+			//flex: 2 0 auto;
+			flex-grow: 1;
+			flex-shrink: 0;
+			flex-flow: column nowrap;
 		}
 
 		.card-block {
@@ -46,12 +53,29 @@
 
 	}
 
+	.search.search-wrapper {
+		> div {
+			flex: 1 0 auto;
+		}
+		.search-bar {
+			margin: 0;
+			padding: 0 10px;
+		}
+		.search-actions {
+			.btn {
+				padding: .25rem .75rem;
+				font-size: .75rem;
+			}
+		}
+	}
+
 	h1.card-title {
 		border-bottom: 1px solid $color-lighter-grey;
 		padding-top: 0 !important;
 		margin: 0;
 		width: 100%;
 		font-size: 2rem;
+		padding-left: 0 !important;
 	}
 
 	.prop {
@@ -69,7 +93,7 @@
 	}
 
 	.plan-info-content, .supporters-content, .plan-supporters .actions {
-		padding: 0 2rem;
+		padding: 0 1rem;
 	}
 
 }
@@ -88,6 +112,7 @@
 	flex: 1 auto;
 	padding-bottom: 1rem;
 	align-items: center;
+	flex-flow: column nowrap;
 
 	.user-details-pic {
 		max-width: 50%;
@@ -101,7 +126,7 @@
 	.user-details-text {
 
 		.prop {
-			padding-left: 2rem;
+			padding-left: 0;
 			line-height: 1.25rem;
 
 			+ .prop {
@@ -120,12 +145,18 @@
 
 	h2 {
 		font-size: 1.25rem;
+		padding-left: 0 !important;
 	}
 
 }
 
 .user-positions.plan-positions {
 	margin-top: -2rem;
+
+	.miwt-table-con {
+		overflow: auto;
+		width: 100%;
+	}
 
 	.miwt-table {
 		border: none;
@@ -139,11 +170,58 @@
 			padding: 10px 8px;
 		}
 
+		.action-column .btn {
+			display: block;
+			margin-bottom: .25rem;
+		}
+
 	}
 	.actions.entity-actions {
 		margin-top: -2rem;
 	}
 
+	.prop-wrapper, .prop {
+		padding: 0 !important;
+	}
+
+	.prop-body {
+		font-size: 85%;
+		margin-top: 1.75rem;
+
+		.miwt-calendar {
+			input[type="text"] {
+				min-width: calc(100% - 64px) !important;
+			}
+		}
+
+	}
+
+	.persistence-actions.actions {
+		margin-top: 0;
+	}
+
+}
+
+.preferences, .user-positions.plan-positions {
+	.persistence-actions {
+		&.top {
+			display: none;
+		}
+		&.bottom {
+			text-align: right;
+			.btn {
+				padding: .375rem .75rem;
+				font-size: .75rem;
+				line-height: 1.5;
+				text-transform: none;
+			}
+		}
+	}
+
+	.preferences-editor, .personal-goals-private-editor, .plan-preferences-viewer {
+		padding: 0;
+
+	}
 }
 
 .supporters-content {
@@ -156,14 +234,15 @@
 		align-items: center;
 		text-align: left;
 		margin-bottom: 2rem;
-		flex: 1;
+		flex-grow: 1;
+		flex-shrink: 0;
 		padding-right: 1rem;
 
 		.supporter-image {
 			flex-grow: 1;
 			flex-shrink: 1;
 			width: 100%;
-			max-width: 8.5rem;
+			max-width: 6.5rem;
 
 			img {
 				overflow: hidden;
@@ -200,25 +279,192 @@
 	}
 }
 
-@media (max-width: 768px) {
-	.plan-profile {
+.plan-results {
+	display: flex;
+	flex-flow: column wrap;
+
+	.plan-result {
+		padding: .75rem;
+		background: $body-bg;
+		border: 1px solid lighten($color-lr-light-grey, 5%);
+		border-radius: $border-radius-sm;
+		flex-grow: 1;
+		flex-shrink: 0;
+		margin: 0 0 1rem;
+		display: flex;
 		flex-flow: column nowrap;
 
-		section.card {
-			flex: 1 !important;
+		h2 {
+			font-size: 1rem;
+			font-weight: 500 !important;
+			padding: 0 0 .25rem !important;
+			margin-bottom: .3rem;
+			flex: 0 1 auto;
+		}
+
+		.prop, .result-actions {
+			font-size: 85%;
+		}
+
+		.prop {
+			margin-bottom: .15rem;
+
+			label {
+				&::after {
+					content: ':';
+					padding-right: 5px;
+				}
+			}
+			span.val {
+				line-height: 1;
+			}
+		}
+
+		.prop-group.dates {
+			> span {
+				display: block;
+			}
 		}
 
 	}
+
+	.result-actions {
+		text-align: left;
+
+		> div {
+			margin-bottom: .5rem;
+			font-style: italic;
+		}
+
+		a, .btn {
+			padding: .35rem .75rem;
+			background: $color-white;
+			border: 1px solid $color-lr-brand;
+			border-radius: $border-radius-sm;
+			margin-right: .5rem;
+			font-size: $font-size-sm;
+			line-height: $line-height-sm;
+			display: inline-block;
+			vertical-align: top;
+			font-weight: 400;
+			margin-bottom: .5rem;
+			&:hover {
+				text-decoration: none;
+				background: lighten($color-lr-light-grey, 30%);
+			}
+		}
+	}
+
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
+	.plan-profile {
+
+		.plan-info-content, .supporters-content, .plan-supporters .actions {
+			padding: 0 2rem;
+		}
+
+	}
+
+	.user-details {
+		flex-flow: row nowrap !important;
+
+		.user-details-pic {
+			max-width: 40%;
+		}
+
+		.user-details-text {
+			.prop {
+				padding-left: 2rem;
+			}
+		}
+
+	}
+
+	.user-positions.plan-positions {
+		.prop-editor .miwt-calendar input[type="text"] {
+			min-width: 5.25rem;
+		}
+		.prop-body {
+			.prop:not(.user-entry-required) {
+				display: inline-block;
+				width: 30%;
+			}
+			.prop.user-entry-required {
+				width: 40%;
+				display: inline-block;
+				input[type="text"] {
+					width: 95% !important;
+				}
+			}
+		}
+	}
+
+}
+
+@media (min-width:1024px) {
+
 	.plan-profile {
 		flex-flow: row wrap;
 
 		section.card {
 
 			&.plan-info {
-				flex: 1 1 25%;
+				flex: 1 0 0;
+			}
+
+			&.plan-supporters {
+				flex: 1 0 0;
+			}
+
+			&.search.search-wrapper {
+				flex: 2 0 100%;
+			}
+		}
+	}
+
+	.plan-results {
+		flex-flow: row wrap;
+		.plan-result {
+			width: 23%;
+			max-width: 24%;
+			margin: .5rem;
+		}
+		.result-actions {
+			display: flex;
+			flex: 1 0 auto;
+			flex-flow: column nowrap;
+			justify-content: flex-end;
+			align-items: flex-start;
+
+			a, .btn {
+				flex: 0 1 auto;
+			}
+
+		}
+	}
+
+	.user-positions.plan-positions {
+		.prop-body {
+			.prop:not(.user-entry-required) {
+				width: 50%;
+			}
+			.prop.user-entry-required {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+
+}
+
+@media (min-width: 1250px) {
+
+	.plan-profile {
+		section.card {
+
+			&.plan-info {
+				flex: 1 1 30%;
 			}
 
 			&.plan-supporters {
@@ -231,9 +477,19 @@
 		flex-flow: row wrap;
 
 		.supporter {
-			max-width: 48%;
+			flex: 1 0 48%;
 		}
 
 	}
 
+}
+
+@media (min-width: 1281px) {
+	.user-positions.plan-positions {
+		.prop-body {
+			.prop:not(.user-entry-required) {
+				width: 30%;
+			}
+		}
+	}
 }
