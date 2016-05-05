@@ -25,13 +25,13 @@
 		&.plan-info {
 			display: flex;
 			flex-direction: column;
-			flex: 1 0 0;
+			flex: 1 0 auto;
 		}
 
 		&.plan-supporters {
 			display: flex;
 			flex-direction: column;
-			flex: 1 0 0;
+			flex: 1 0 auto;
 		}
 
 		&.search.search-wrapper {
@@ -152,6 +152,11 @@
 
 .user-positions.plan-positions {
 	margin-top: -2rem;
+
+	.miwt-table-con {
+		overflow: auto;
+		width: 100%;
+	}
 
 	.miwt-table {
 		border: none;
