@@ -10,7 +10,7 @@ $tab-content-color-bg: inherit;
 	display: flex;
 }
 
-.repo-item-selector {
+.repo-item-selector.goal-selector {
 	flex: 0 0 auto; /* need to explicitly state all 0 0 auto for safari */
 	background: #fff;
 	border-right: 1px solid #ddd;
@@ -390,7 +390,7 @@ div.window.dialog {
 
 	}
 
-	.repo-item-selector {
+	.repo-item-selector.goal-selector {
 		width: 15rem;
 	}
 
