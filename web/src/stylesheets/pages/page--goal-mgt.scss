@@ -15,6 +15,11 @@ $tab-content-color-bg: inherit;
 	background: #fff;
 	border-right: 1px solid #ddd;
 	padding: 0 .75rem;
+
+	.actions .btn {
+		white-space: normal;
+	}
+
 }
 
 .goal-configuration {
@@ -279,7 +284,7 @@ div.window.dialog {
 
 }
 
-@media (max-width:767px) {
+@media (max-width:768px) {
 	#main-content-wc-0 {
 		padding: .5rem .75rem;
 	}
@@ -384,4 +389,9 @@ div.window.dialog {
 		}
 
 	}
+
+	.repo-item-selector {
+		width: 15rem;
+	}
+
 }
