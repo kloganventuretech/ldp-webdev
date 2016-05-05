@@ -120,7 +120,7 @@
 
 	}
 
-	.description, .start-date, .end-date {
+	.description, .start-date, .end-date, .goal-ev {
 
 		label {
 			display: block;
@@ -136,6 +136,11 @@
 			display: inline-block;
 		}
 
+	}
+
+	.goal-ev {
+		flex: 2 1 100%;
+		padding-bottom: 1.5rem;
 	}
 
 	.description {
@@ -428,6 +433,19 @@ section.tracking-metrics {
 
 		}
 
+	}
+
+}
+
+div.window.dialog {
+
+	.goal-repo-item-editor {
+		.prop-header-actions {
+			display: none;
+		}
+		.prop-body .predicted-ev-editor {
+			margin-top: 1rem;
+		}
 	}
 
 }
