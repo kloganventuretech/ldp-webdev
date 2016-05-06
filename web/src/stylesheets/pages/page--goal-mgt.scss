@@ -153,6 +153,27 @@ $tab-content-color-bg: inherit;
 			font-weight: 300;
 		}
 	}
+
+	.prop-group {
+
+		&.goal-tracking, &.goal-alignment {
+
+			.btn.add {
+				background-color: $color-white;
+				border-color: $color-lr-brand;
+				color: $color-lr-brand;
+
+				&:hover {
+					background: lighten($color-lr-light-grey, 25%);
+					color: $color-lr-brand;
+				}
+
+			}
+
+		}
+
+	}
+
 }
 
 .make-smart-label {
