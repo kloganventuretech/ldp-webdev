@@ -186,11 +186,15 @@
 			display: flex;
 			flex-flow: column nowrap;
 			padding: .5rem;
-			background: lighten($color-lr-light-grey, 15%);
+			background: lighten($color-lr-light-grey, 20%);
 			margin: .15rem;
 			border-radius: $border-radius;
 			border: 1px solid $color-lr-light-grey;
-			//min-width: 6rem;
+			font-family: $font-roboto;
+
+			&::before {
+				font-family: FontAwesome;
+			}
 
 			> span {
 				flex: 1;
