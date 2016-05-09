@@ -746,6 +746,19 @@
 		.actions.configuration-actions { padding: 0; }
 	}
 
+	//Hide View button on the following completed tasks
+	&.completed {
+
+		&.confirmationengagementtype,
+		&.reminderengagementtype,
+		&.emailengagementtype {
+			.task-item-actions a.view {
+				display: none;
+			}
+		}
+
+	}
+
 }
 
 .prop-group.dates {
