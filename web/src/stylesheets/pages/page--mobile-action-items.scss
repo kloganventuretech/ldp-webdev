@@ -5,17 +5,18 @@
 		display: block;
 		border-left: none;
 		padding-left: 0;
-
-		.engagement-data-wrapper {
-			.engagement-data {
-				padding-left: 0;
-			}
-		}
-
 	}
 
 	#action-item-mgt .miwt-table > tbody > tr > td {
 		padding: 0 0 1.75rem;
 	}
 
+}
+
+@media (min-width: 768px) {
+	.pager-engagement-results {
+		.engagement-actions {
+			top: 27px;
+		}
+	}
 }
