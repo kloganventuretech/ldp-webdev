@@ -16,7 +16,8 @@
 
 		&.confirmationengagementtype,
 		&.reminderengagementtype,
-		&.emailengagementtype {
+		&.emailengagementtype,
+		&.assignegengagementtype {
 			.task-item-actions a.view {
 				display: block;
 			}
