@@ -151,20 +151,23 @@
 	.engagement-actions {
 		position: absolute;
 		right: 8px;
-		bottom: 2px;
+		top: 27px;
 		z-index: 1;
 
 		.btn {
-			background: none;
-			border: none;
-			font-size: 80%;
-			padding: 0;
+			background: $color-white;
+			border: 1px solid darken($color-lr-brand, 10%);
+			font-size: 75%;
+			padding: .125rem 1.25rem .125rem .5rem;
 			font-family: $font-roboto;
-			color: $color-lr-brand;
+			color: darken($color-lr-brand, 10%);
 
 			&::before {
 				padding-right: 4px;
-				font-family: FontAwesome
+				font-family: FontAwesome;
+				position: absolute;
+				right: 3px;
+				top: 4px;
 			}
 
 		}
@@ -217,7 +220,7 @@
 			clear: both;
 			float: left;
 			width: 100%;
-			padding: 1rem 1rem 1.25rem;
+			padding: 1.95rem 1rem 1.75rem 1.5rem;
 			background: #fff;
 			border: 1px solid lighten($color-lr-light-grey, 25%);
 			border-radius: $border-radius-lg;
@@ -253,11 +256,40 @@
 
 }
 
-@media (min-width: 768px)
-and (orientation: portrait) {
+@media (max-width: 1024px) {
 
-	#action-item-mgt .custom-search-btn-wrapper {
-		flex-direction: column;
+	.engagement-data-wrapper {
+		.profile-img {
+			height: 55px !important;
+			min-height: 55px !important;
+			max-width: 55px !important;
+			min-width: 55px;
+		}
+	}
+
+}
+
+@media (max-width: 1120px) {
+
+	#action-item-mgt {
+
+		.custom-search-btn-wrapper {
+
+			.custom-search-btn {
+				margin-bottom: .75rem;
+			}
+
+		}
+
+	}
+
+	.engagement-data-wrapper {
+
+		.profile-img {
+			margin-bottom: 1rem;
+			align-self: center;
+		}
+
 	}
 
 }
@@ -271,47 +303,8 @@ and (orientation: portrait) {
 	}
 	.pager-engagement-results  {
 		.engagement-actions {
-			//top: 35px;
+			top: 41px;
 		}
-	}
-
-}
-
-@media (max-width: 1120px) {
-
-	#action-item-mgt {
-
-		.custom-search-btn-wrapper {
-			flex-direction: column;
-
-			.custom-search-btn {
-				margin-bottom: .75rem;
-			}
-
-		}
-
-	}
-
-	.engagement-data-wrapper {
-		flex-direction: column;
-
-		.profile-img {
-			margin-bottom: 1rem;
-			align-self: center;
-		}
-
-		.engagement-data {
-			width: 100%;
-			flex: 2;
-
-			.engagement-name {
-				&::after, &::before {
-					display: none;
-				}
-			}
-
-		}
-
 	}
 
 }

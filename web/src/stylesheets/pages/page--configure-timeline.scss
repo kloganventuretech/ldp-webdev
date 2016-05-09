@@ -10,3 +10,18 @@
 .task-item-scheduling, .prop.task-type {
 	display: block;
 }
+
+.task-item {
+	&.completed {
+
+		&.confirmationengagementtype,
+		&.reminderengagementtype,
+		&.emailengagementtype,
+		&.assignegengagementtype {
+			.task-item-actions a.view {
+				display: block;
+			}
+		}
+
+	}
+}

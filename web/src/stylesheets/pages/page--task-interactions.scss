@@ -29,6 +29,15 @@
 		top: 15px;
 	}
 
+	.prop .actions.entity-actions {
+		padding: .25rem 0;
+
+		.menu-component {
+			margin-right: 0;
+		}
+
+	}
+
 	.persistence-actions.top {
 		display: none;
 	}
@@ -169,6 +178,7 @@
 	.miwt-table-con {
 		overflow: auto;
 		margin-bottom: 1rem;
+		clear: both;
 	}
 
 	.report-actions {
@@ -190,10 +200,22 @@
 		}
 	}
 
-	.email-engagement-terminal {
+	.email-engagement-terminal, .resource-engagement-terminal {
 		.email-notifications {
 			display: none;
 		}
+	}
+
+	.resource-engagement {
+		.btn {
+			@include button-variant($color-lr-brand, $color-white, $color-lr-brand);
+			margin-bottom: 1rem;
+		}
+
+		.resource-selector-label {
+			font-weight: 400;
+		}
+
 	}
 
 	.result-upload-interactive {
