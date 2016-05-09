@@ -33,7 +33,17 @@
 	border-bottom: 1px solid lighten($color-lr-light-grey, 25%);
 	padding-bottom: .75rem;
 	margin-bottom: 0;
-	font-weight: 400;
+
+	.goal-type-label {
+		font-weight: 400;
+
+		&::after {
+			content: ':';
+			padding-right: 5px;
+		}
+
+	}
+
 }
 
 div.prop.goal-progress {
@@ -142,7 +152,7 @@ section.tracking-metrics-update {
 }
 
 .click-here-container {
-	span { padding-right: 5px; }
+	span { padding: 0 5px; }
 }
 
 @media (max-width: 600px) {
