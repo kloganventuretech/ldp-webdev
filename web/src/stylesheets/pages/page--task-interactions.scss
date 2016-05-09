@@ -29,6 +29,15 @@
 		top: 15px;
 	}
 
+	.prop .actions.entity-actions {
+		padding: .25rem 0;
+
+		.menu-component {
+			margin-right: 0;
+		}
+
+	}
+
 	.persistence-actions.top {
 		display: none;
 	}
@@ -169,6 +178,7 @@
 	.miwt-table-con {
 		overflow: auto;
 		margin-bottom: 1rem;
+		clear: both;
 	}
 
 	.report-actions {
