@@ -1,8 +1,11 @@
 $tab-content-color-bg: inherit;
 @import "../components/goal_tabs";
 @import "../components/strength-meter";
-@import "../../../../bower_components/bootstrap/scss/mixins/border-radius";
-@import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
+@import "../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../bower_components/bootstrap/scss/buttons";
+//@import "../../../../bower_components/bootstrap/scss/mixins/border-radius";
+//@import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
 
 .personal-goals,
 .leadership-goals,
@@ -18,6 +21,24 @@ $tab-content-color-bg: inherit;
 
 	.actions .btn {
 		white-space: normal;
+		width: 100%;
+
+		&.status-active {
+			@include button-variant($color-white, $color-lr-brand, darken($color-lr-brand, 15%));
+		}
+
+		&.status-completed {
+			@include button-variant(darken($color-lr-brand, 15%), lighten($color-lr-brand, 30%), darken($color-lr-brand, 25%));
+		}
+
+		&.status-draft {
+			@include button-variant(darken($color-lr-light-grey, 18%), lighten($color-lr-light-grey, 25%), $color-lr-light-grey);
+		}
+
+		&.active {
+			box-shadow: 0 0 10px rgba(0,0,0,0.7) !important;
+		}
+
 	}
 
 }
