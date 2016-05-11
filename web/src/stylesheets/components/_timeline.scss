@@ -779,6 +779,10 @@
 
 }
 
+.task-item-info.prop-body {
+	padding-right: 1.25rem;
+}
+
 .prop-group.dates {
 	.prop + .prop { margin-left: 1rem; }
 }
@@ -801,8 +805,12 @@
 	}
 }
 
-.task-item.pending .actions.task-item-actions, .activity-details .prop.activity-program-name,
-.task-item-scheduling, .prop.task-type {
+.task-item.pending .actions.task-item-actions,
+.activity-details .prop.activity-program-name,
+.task-item-scheduling,
+.prop.task-type,
+.cat-meeting .prop.organizer,
+.cat-meeting .prop.attendees {
 	display: none;
 }
 
@@ -855,6 +863,7 @@
 	.prop-wrapper {
 
 		.task-item-info {
+
 			.task-item-name {
 				font-size: 1rem;
 			}
