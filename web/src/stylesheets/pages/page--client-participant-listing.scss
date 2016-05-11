@@ -2,19 +2,93 @@
 	display: none !important;
 }
 
+table.search-results {
+	border: none;
+
+	tbody {
+		display: flex;
+		flex-flow: row wrap;
+
+		&.miwt-clear-row-selection,
+		&.miwt-select-all-rows {
+			display: none;
+		}
+
+		> tr {
+			display: flex;
+			flex: 1 0 0;
+
+			> td {
+				display: flex;
+				flex: 1 0 0;
+				background: transparent !important;
+			}
+
+		}
+
+	}
+
+}
+
 section.card {
 	display: flex;
+	flex: 1 0 0;
+	flex-flow: row wrap;
+
+	.participant, .plan-info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.participant {
+		flex: 1;
+		align-items: center;
+		max-width: 200px;
+
+		img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 100%;
+			overflow: hidden;
+		}
+
+		h1 {
+			font-size: 1.5rem;
+		}
+
+	}
+
+	.plan-info {
+		flex: 2;
+
+		a.plan-link{
+			font-size:1.75rem;
+			line-height: 1.25;
+			display: block;
+			margin-bottom: 1rem;
+		}
+
+		label {
+			font-weight: 400;
+			margin-bottom: .25rem;
+
+			&:after {
+				content: ":";
+				padding-right: 1ch;
+				padding-bottom: 1rem;
+			}
+
+		}
+
+		.prop {
+			line-height: 1;
+		}
+
+	}
+
 }
 .card-title{
 	text-align: center;
-}
-a.plan-link{
-	font-size:2rem;
-}
-.prop label:after {
-	content: ":";
-	padding-right: 1ch;
-	padding-bottom: 1rem;
 }
 .search-results thead{
 	display: none;
