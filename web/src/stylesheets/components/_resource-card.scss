@@ -29,7 +29,7 @@
 	font-size:1.15rem;
 	margin: 0;
 	text-align: center;
-	padding: $card-spacer-y $card-spacer-x;
+	padding: $card-spacer-y $card-spacer-x !important;
 	background-color: lighten($color-lr-light-grey, 25%);
 	border-top-left-radius: $border-radius-sm;
 	border-top-right-radius: $border-radius-sm;
@@ -42,10 +42,14 @@
 
 .resource-icon {
 	margin-bottom: $card-spacer-y;
-	border-top: 1px #ddd solid;
-	border-bottom: 1px #777 solid;
+	//border-top: 1px #ddd solid;
+	//border-bottom: 1px #777 solid;
 	text-align: center;
 	overflow: hidden;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 }
 
 .resource-description {
@@ -57,11 +61,18 @@
 .resource-content{
 	display: block;
 	text-align: center;
-	margin-top: $card-spacer-y;
+	margin: $card-spacer-y 0;
 
-	.resource-action a {
-		@include hover {
-			text-decoration: none;
+	.resource-action {
+
+		.btn {
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+
+			&:hover {
+				text-decoration: none;
+			}
+
 		}
 
 		+ .resource-action {
@@ -87,6 +98,8 @@
 
 		label{
 			margin-right: 4px;
+			margin-bottom: 0;
+			font-weight: 400;
 		}
 		label:after {
 			content: ": ";
@@ -100,18 +113,18 @@
 
 .resource-listing {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-flow: column nowrap;
 
-	.resource{
+	div.resource{
 		position:relative;
 		display: flex;
-		flex: 1;
+		flex: 1 0 0;
+		justify-content: center;
 
 		.resource-viewer {
 			display: flex;
 			flex-flow: column nowrap;
-			flex: 1;
+			flex: 1 0 0;
 			justify-content: space-between;
 		}
 
