@@ -16,7 +16,8 @@ table.search-results {
 
 		> tr {
 			display: flex;
-			flex: 1 0 0;
+			flex: 1 0 25%;
+			max-width: 50%;
 
 			> td {
 				display: flex;
