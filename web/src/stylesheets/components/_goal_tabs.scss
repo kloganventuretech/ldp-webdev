@@ -48,7 +48,7 @@ h2.plan-name {
 
 			&.show-completed {
 				&::before {
-					content: '\f058';
+					content: '\f05d';
 					font-family: FontAwesome;
 					padding-right: 3px;
 				}
@@ -56,7 +56,8 @@ h2.plan-name {
 
 			&.hide-completed {
 				&::before {
-					content: '\f05d';
+					content: '\f058';
+
 					font-family: FontAwesome;
 					padding-right: 3px;
 				}
