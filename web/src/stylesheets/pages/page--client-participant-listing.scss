@@ -7,7 +7,7 @@ table.search-results {
 
 	tbody {
 		display: flex;
-		flex-flow: row wrap;
+		flex-flow: column nowrap;
 
 		&.miwt-clear-row-selection,
 		&.miwt-select-all-rows {
@@ -16,8 +16,7 @@ table.search-results {
 
 		> tr {
 			display: flex;
-			flex: 1 0 25%;
-			max-width: 50%;
+			flex: 1 0 0;
 
 			> td {
 				display: flex;
@@ -93,4 +92,34 @@ section.card {
 }
 .search-results thead{
 	display: none;
+}
+
+@media (min-width: 768px) {
+	table.search-results {
+
+		tbody {
+			flex-flow: row wrap;
+
+			> tr {
+				display: flex;
+				flex: 1 0 50%;
+				max-width: 50%;
+			}
+		}
+	}
+}
+
+@media (min-width: 1280px) {
+	table.search-results {
+
+		tbody {
+			flex-flow: row wrap;
+
+			> tr {
+				display: flex;
+				flex: 1 0 25%;
+				max-width: 25%;
+			}
+		}
+	}
 }
