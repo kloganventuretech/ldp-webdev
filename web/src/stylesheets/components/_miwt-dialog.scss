@@ -310,6 +310,18 @@ div.window.dialog /*specificity*/ {
 		}
 	}
 
+	&.select-resources-dialog {
+		.resource-selector-wrapper {
+			.actions.nav-actions {
+				margin-bottom: 0;
+
+				> .btn.done-action {
+					@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+				}
+			}
+		}
+	}
+
 	&.close-plan-dialog {
 		input[type="number"] {
 			border: 1px solid lighten($color-lr-light-grey, 25%);
