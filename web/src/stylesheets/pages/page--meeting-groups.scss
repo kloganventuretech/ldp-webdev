@@ -90,6 +90,12 @@
 		flex-wrap: wrap;
 		> .prop {
 			flex: 1 0 50%;
+
+			&.schedule {
+				> div.val {
+					width: 100%;
+				}
+			}
 		}
 	}
 }
