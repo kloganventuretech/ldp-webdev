@@ -204,11 +204,23 @@ input[type=number]{
 		}
 
 		&.repeat-interval-wrapper {
-			margin-right: 1rem;
 			display: inline-block;
+			margin: 2rem 1rem 0 0;
 			+ .frequency {
 				display: inline-block;
+				vertical-align: top;
+				margin: 2rem 0 1rem;
+				padding: 0;
+
+				> label {
+					display: block;
+					color: transparent;
+				}
 			}
+		}
+		&.by, &.dom {
+			padding: 0;
+			margin-bottom: 1rem;
 		}
 	}
 	.prop.dow {
@@ -223,4 +235,13 @@ input[type=number]{
 		@include checkboxSwitch(false, 6ch);
 		width: 100%;
 	}
+
+	span.rtb.label-after {
+		display: block;
+
+		+ span.rtb.label-after {
+			padding-left: 0;
+		}
+	}
+
 }
