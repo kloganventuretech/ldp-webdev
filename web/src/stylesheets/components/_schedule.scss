@@ -102,6 +102,47 @@
 		display: none;
 	}
 
+	.dow-wom-wrapper {
+		.actions {
+			margin-top: 0 !important;
+			margin-bottom: .5rem;
+			text-align: left !important;
+			padding: 0 !important;
+		}
+
+		.prop.dow, .prop.wom {
+			padding: 0;
+
+			span.rtb.label-after {
+				display: block;
+				.tbl {
+					width: auto;
+					font-family: $font-roboto;
+					text-transform: none;
+					margin-bottom: .25rem;
+					vertical-align: middle;
+				}
+
+			}
+
+		}
+
+	}
+
+	> .prop.dow {
+		span.ctb.label-after {
+			display: block;
+			.tbl {
+				width: auto;
+				font-family: $font-roboto;
+				text-transform: none;
+				margin-bottom: .25rem;
+				vertical-align: middle;
+			}
+
+		}
+	}
+
 }
 
 .prop-wrapper {
