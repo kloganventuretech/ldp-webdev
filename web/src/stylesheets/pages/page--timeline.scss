@@ -318,8 +318,8 @@
 		}
 
 		.resource-selector-label {
-			font-weight: 400;
-			margin-bottom: -2.5rem;
+			//font-weight: 400;
+			//margin-bottom: -2.5rem;
 
 			+ .actions {
 				float: right;
@@ -441,6 +441,14 @@ div.window.configure-task  {
 
 }
 
+@media (max-width: 768px)
+and (orientation: portrait) {
+	div.window.dialog {
+		left: 0 !important;
+		width: 100% !important;
+	}
+}
+
 @media (max-width: 768px) {
 
 	.flex-container {
@@ -513,7 +521,7 @@ div.window.configure-task  {
 
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 	.flex-container {
 		> .tasks {
 			display: block;
