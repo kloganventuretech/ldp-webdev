@@ -245,6 +245,13 @@
 			font-weight: 400;
 		}
 
+		.prop.search {
+			.entity-actions.actions {
+				margin-bottom: -1rem;
+				margin-top: 0;
+			}
+		}
+
 	}
 
 	.result-upload-interactive {
