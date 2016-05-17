@@ -4,8 +4,15 @@
 	padding: 0;
 
 	.constraint {
+		margin: 0;
+		padding: 0;
+
 		.resource-keyword {
 			padding: 0;
+		}
+
+		+ .constraint {
+			margin-left: 1.5rem;
 		}
 	}
 
@@ -20,4 +27,34 @@
 	float:none;
 	margin: 1rem;
 	text-align: right;
+}
+
+.actions.content-actions {
+	label {
+		display: block;
+		margin-bottom: .25rem;
+		font-size: 90%;
+	}
+}
+
+@media (min-width: 768px) {
+
+	.resource-listing {
+		flex-flow: row wrap;
+
+		div.resource {
+			flex: 1 0 50%;
+			max-width: 50%;
+		}
+	}
+
+}
+
+@media (min-width: 1300px) {
+	.resource-listing {
+		div.resource {
+			flex: 1 0 25%;
+			max-width: 25%;
+		}
+	}
 }

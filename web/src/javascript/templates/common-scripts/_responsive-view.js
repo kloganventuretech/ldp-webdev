@@ -29,4 +29,8 @@ jQuery(function(){
 	if (w.orientation && w.orientation === 0 && sessionStorage[SIDE_BAR_CLOSED] === undefined) {
 		openSidebar(false);
 	}
+	//noinspection JSUnresolvedVariable
+	if ($w.width() < 600 && sessionStorage[SIDE_BAR_CLOSED] === undefined) {
+		openSidebar(false);
+	}
 });

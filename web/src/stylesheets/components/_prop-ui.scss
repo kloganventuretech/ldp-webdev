@@ -1,4 +1,5 @@
 @import "../config/base-vars";
+@import "../mixins/miwt-switch";
 @import "../../../../bower_components/bootstrap/scss/mixins/buttons";
 
 /* ==========================================================================
@@ -189,4 +190,58 @@ input[type=number]{
 			}
 		}
 	}
+}
+
+.prop.schedule {
+	width: 100%;
+	margin-top: 1rem;
+
+	> div {
+		width: 8rem;
+		.select2-container {
+			max-width: 100%;
+			width: 100% !important;
+		}
+
+		&.repeat-interval-wrapper {
+			display: inline-block;
+			margin: 2rem 1rem 0 0;
+			+ .frequency {
+				display: inline-block;
+				vertical-align: top;
+				margin: 2rem 0 1rem;
+				padding: 0;
+
+				> label {
+					display: block;
+					color: transparent;
+				}
+			}
+		}
+		&.by, &.dom {
+			padding: 0;
+			margin-bottom: 1rem;
+		}
+	}
+	.prop.dow {
+		span.ctb + span.ctb {
+			padding-left: 0;
+		}
+	}
+	.prop.repeat {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		@include checkboxSwitch(false, 6ch);
+		width: 100%;
+	}
+
+	span.rtb.label-after {
+		display: block;
+
+		+ span.rtb.label-after {
+			padding-left: 0;
+		}
+	}
+
 }
