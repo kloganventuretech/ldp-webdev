@@ -48,7 +48,6 @@ jQuery(function () {
 				});
 			},
 			postUpdate: function () {
-				window.scrollTo(0,0);
 				$(this).trigger('vs:miwt-post-update');
 			}
 		};

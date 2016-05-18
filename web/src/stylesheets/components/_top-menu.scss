@@ -160,6 +160,10 @@ header {
 		font-size: 1.5rem;
 	}
 
+	li.help {
+		display: none;
+	}
+
 	li.link a span {
 		display: inline-block;
 		margin-top: 5px;
@@ -276,6 +280,10 @@ header {
 					//overflow: hidden;
 					//white-space: nowrap;
 				}
+			}
+
+			&.help {
+				display: none;
 			}
 		}
 
