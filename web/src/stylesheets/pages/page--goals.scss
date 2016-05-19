@@ -209,6 +209,13 @@
 
 	.carousel-inner {
 
+		.config-graph {
+			canvas {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+
 		.carousel-caption {
 			position: relative;
 			bottom: auto;
@@ -231,21 +238,30 @@
 }
 
 .chart-legend {
-	float:left;
+	//float:left;
+	min-width: 8rem;
+
 	.legend-header {
 		color:$color-lr-grey;
 		font-weight: 500;
 		margin-bottom: .25rem;
-		font-size: .9rem;
+		font-size: 1rem;
 	}
+
 	ul {
 		list-style: none;
 		margin-left: 0;
 		padding-left: 0;
+
+		&:not(.radar-legend) {
+			text-align: left;
+		}
+
 	}
+
 	li {
 		padding: 0;
-		margin: 0;
+		margin: 0 0 .25rem;
 		font-size: .75rem;
 		span {
 			display: inline-block;
@@ -253,6 +269,17 @@
 			height: 12px;
 			margin-right: 5px;
 			border-radius: 100%;
+
+			&.legend-label {
+				width: auto;
+			}
+
+			&.aligned {
+				font-weight: 500;
+				font-size: .85rem;
+				color: $color-lr-brand;
+			}
+
 		}
 	}
 }
@@ -311,10 +338,25 @@ section.tracking-metrics {
 				text-align: center;
 				margin: 0 auto;
 			}
+
+			[data-chart-type="pie"] {
+				max-width: 250px;
+				margin: 0 auto;
+
+				canvas {
+					margin-left: -3rem;
+				}
+
+				.chart-legend .legend-header {
+					text-align: left;
+				}
+
+			}
+
 			.metric-last-updated {
 				font-size: $font-size-sm;
-				font-style: italic;
 				color: $color-lr-red;
+				font-style: italic;
 				&::before {
 					content: '\f12a';
 					font: normal normal normal 14px/1 FontAwesome;
@@ -334,12 +376,38 @@ section.tracking-metrics {
 
 			}
 
-			[data-chart-type="pie"] {
-				max-width: 250px;
-				margin: 0 auto;
-			}
-
 		}
+
+
+
+	}
+
+}
+
+.measure-info {
+	text-align: center;
+	font-size: $font-size-sm;
+
+	.metric-last-updated {
+		color: $color-lr-red;
+		font-style: italic;
+		&::before {
+			content: '\f12a';
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			padding-right: 5px;
+		}
+
+		&.interval-update-received {
+			color: $color-lr-light-grey;
+			&::before {
+				content: '\f087';
+			}
+		}
+
 	}
 
 }
@@ -368,18 +436,13 @@ section.tracking-metrics {
 
 }
 
-.personal-alignment {
+.personal-alignment, .leadership-alignment {
 
 	.chart-legend {
 		padding-top: 1rem;
 		float: none;
 		margin: 0 auto;
 		width: 10rem;
-
-		ul {
-			text-align: left;
-		}
-
 	}
 
 }
@@ -446,6 +509,21 @@ div.window.dialog {
 		}
 		.prop-body .predicted-ev-editor {
 			margin-top: 1rem;
+		}
+	}
+
+	.boolean-measure-editor {
+		.val > span {
+			display: block;
+
+			+ span {
+				padding-left: 0;
+			}
+
+			label {
+				display: inline;
+				padding-left: 5px;
+			}
 		}
 	}
 
@@ -616,6 +694,11 @@ and (orientation:portrait) {
 			.tracking-metric {
 				width: 100%;
 				margin: 1rem 0;
+
+				[data-chart-type="pie"] canvas {
+					margin-left: 0;
+				}
+
 			}
 		}
 

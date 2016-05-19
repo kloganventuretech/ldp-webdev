@@ -1,0 +1,25 @@
+@import "../config/base-vars";
+
+// OPERATIONS & CONFIGURATION
+// LANDING PAGE STYLES
+#operation, #configuration {
+
+  #main-content-wc-0 > .text {
+    border-bottom: 1px solid $color-lr-grey;
+    h1, h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  .search-wrapper {
+
+    .actions.entity-actions {
+      margin-top: -4rem;
+    }
+
+    .search-bar {
+      clear: both;
+    }
+  }
+
+}
