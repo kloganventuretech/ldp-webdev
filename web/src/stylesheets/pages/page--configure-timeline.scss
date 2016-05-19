@@ -25,3 +25,26 @@
 
 	}
 }
+
+.participant-timeline-configurator {
+	.tab-container {
+		position: fixed;
+		padding-right: 3rem;
+		transition: all 1s;
+	}
+
+	.tab-content {
+		overflow: auto;
+		max-height: calc(98vh - 280px);
+		transition: all 1s;
+	}
+}
+
+.participant-timeline-configurator.scrolled {
+	.tab-container {
+		top: 3rem;
+	}
+	.tab-content {
+		max-height: 86vh;
+	}
+}
