@@ -3,6 +3,10 @@
 @import "../../../../bower_components/bootstrap/scss/mixins";
 @import "../../../../bower_components/bootstrap/scss/buttons";
 
+#operation #main-content-wc-0 > .text.ui_heading {
+	border-bottom: none;
+}
+
 .flex-container{
 	display:flex;
 	flex-flow: column nowrap;
