@@ -147,29 +147,6 @@ p.instructions {
 
 }
 
-// OPERATIONS TEMPLATE STYLES
-#operation {
-
-	> .text {
-		border-bottom: 1px solid $color-lr-grey;
-		h1 {
-			margin-bottom: 0;
-		}
-	}
-
-	.search {
-
-		.actions.entity-actions {
-			margin-top: -4rem;
-		}
-
-		.search-bar {
-			clear: both;
-		}
-	}
-
-}
-
 #page-footer {
 	padding: 2rem 0;
 	background: #4F5A69;
