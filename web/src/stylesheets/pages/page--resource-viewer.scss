@@ -37,6 +37,31 @@
 	}
 }
 
+@media (max-width: 600px) {
+	.search-bar {
+		.constraint {
+			margin-bottom: 1rem;
+			+ .constraint {
+				margin-left: 0;
+			}
+		}
+		.actions {
+			padding: 0;
+		}
+	}
+	#main-content-wc-0 h1 {
+		padding-left: 0 !important;
+	}
+	.resource-listing {
+		div.resource {
+			flex: 1 0 auto;
+			.resource-viewer {
+				margin: 1rem 0;
+			}
+		}
+	}
+}
+
 @media (min-width: 768px) {
 
 	.resource-listing {
@@ -58,3 +83,4 @@
 		}
 	}
 }
+
