@@ -524,7 +524,7 @@
 	.task-item.scheduled &:after {
 		content: "\f274";
 	}
-	.task-item.in-progress &:after {
+	.task-item.in-progress:not(.overdue) &:after {
 		content: "\f110";
 		animation: fa-spin 5s infinite steps(8);
 	}
@@ -534,8 +534,9 @@
 	.task-item.rescheduled &:after {
 		content: "\f272";
 	}
-	.task-item.overdue &:after {
+	.task-item.overdue &:after, .task-item.overdue.in-progress &:after {
 		content: "\f06d";
+		animation: none;
 	}
 }
 .timeline-card {
@@ -730,9 +731,9 @@
 		@include alert-variant(lighten($color-lr-brand, 30%), darken($color-lr-brand, 15%), darken($color-lr-brand, 25%));
 		border-left-color: darken($color-lr-brand, 15%);
 	}
-	&.overdue {
-		@include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
-		border-left-color: $brand-danger;
+	&.overdue, &.overdue.in-progress {
+		@include alert-variant(lighten($color-lr-red, 25%), darken($color-lr-red, 10%), darken($color-lr-red, 15%));
+		border-left-color: darken($color-lr-red, 10%);
 	}
 	&.in-progress {
 		@include alert-variant($color-lr-brand, darken($color-lr-brand, 15%), $color-white);
