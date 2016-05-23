@@ -38,6 +38,11 @@
 }
 
 @media (max-width: 600px) {
+
+	.resource-library-heading {
+		margin-top: -3rem;
+	}
+
 	.search-bar {
 		.constraint {
 			margin-bottom: 1rem;
