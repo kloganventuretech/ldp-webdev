@@ -87,6 +87,10 @@
 		position: relative;
 	}
 
+	.info.message {
+		font-size: 1rem;
+	}
+
 }
 
 .goal-wrapper {
@@ -364,12 +368,13 @@ section.tracking-metrics {
 	font-size: $font-size-sm;
 	color: $color-lr-light-grey;
 
-	span.label {
+	label {
 		font-weight: 500;
 		font-size: $font-size-sm;
 		color: $color-lr-light-grey;
 		&::after {
 			content: ':';
+			padding-right: 5px;
 		}
 	}
 
@@ -593,7 +598,7 @@ div.window.dialog {
 @media (min-width: 1500px) {
 
 	.goal-wrapper {
-		max-height: 39rem;
+		//max-height: 39rem;
 
 		.goal-measurement {
 			justify-content: center;
