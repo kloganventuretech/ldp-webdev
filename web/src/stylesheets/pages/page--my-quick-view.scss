@@ -52,7 +52,7 @@
 			flex-flow: column nowrap;
 
 			> .constraint {
-				flex: 1 0 0;
+				flex: 1 0 auto;
 				align-self: center;
 				padding: 1rem;
 				width: 100%;
