@@ -246,9 +246,35 @@
 
 	}
 
-	.likert-columns {
-		.question tr:nth-of-type(2) {
-			display: none !important;
+	.elq-survey, .elc-survey {
+		&.likert-columns {
+			.likert_heading-con {
+				display: none;
+			}
+			.question .user-entry-required {
+				padding: .5rem;
+
+				&:nth-of-type(even) {
+					background: lighten($color-lr-light-grey, 35%);
+				}
+			}
+		}
+	}
+
+	.wol-survey {
+		.likert-columns_content {
+			.question {
+
+				.user-entry-required {
+					padding: .5rem;
+				}
+
+				&:nth-of-type(even) {
+					.user-entry-required {
+						background: lighten($color-lr-light-grey, 30%);
+					}
+				}
+			}
 		}
 	}
 
@@ -358,7 +384,7 @@
 					}
 					&[class*=' likert_label'], &[class^='likert_label'] {
 						max-width: none;
-						width: 80%;
+						width: 85%;
 						padding: 0;
 						text-align: left !important;
 
@@ -370,6 +396,21 @@
 					}
 				}
 
+			}
+
+			&.wol-survey {
+				.question td.likert_heading-con {
+					max-width: none;
+					width: 85%;
+					padding: 0 0 .5rem;
+					text-align: left !important;
+					display: block;
+
+					label {
+						margin: 0;
+						padding: 0;
+					}
+				}
 			}
 
 		}
