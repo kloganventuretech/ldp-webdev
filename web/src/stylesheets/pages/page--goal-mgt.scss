@@ -70,6 +70,12 @@ $tab-content-color-bg: inherit;
 
 	}
 
+	.message-container {
+		.actionable-message {
+			flex-direction: column;
+		}
+	}
+
 }
 
 .smart-wrapper > .prop-group,
@@ -343,14 +349,25 @@ div.window.dialog {
 
 	.repo-item-selector {
 		padding: 0;
+
+		&.goal-selector {
+			.actions .btn {
+				width: auto;
+			}
+		}
 	}
 
 	.goal-management {
 
-		.repo-item-search .search-bar {
-			clear: none;
-			float: right;
-			margin: 0;
+		.repo-item-search {
+			.search-bar {
+				clear: none;
+				float: right;
+				margin: 0;
+			}
+			.pager-goalconfig-results {
+				clear: both;
+			}
 		}
 
 		.goalconfig-results .actions {
@@ -418,6 +435,18 @@ div.window.dialog {
 		width: 95% !important;
 	}
 
+}
+
+@media (max-width:1024px) {
+	.goal-basics {
+		.prop.description {
+			width: 100%;
+			padding-bottom: 1.5rem;
+		}
+		.prop.status {
+			padding-left: 0;
+		}
+	}
 }
 
 @media (min-width:1024px) {
