@@ -12,35 +12,37 @@ function errorMessageCleanup(){
 }
 
 function setupErrorMessages(ctx){
-	var $ctx = $(ctx || document), first;
-	var $mc = $ctx.hasClass('message-container') ? $ctx : $ctx.find('.message-container');
-	if($mc.length === 0)
+	var $ctx = $(ctx || document), hasErrors;
+	var $mcs = $ctx.hasClass('message-container') ? $ctx : $ctx.find('.message-container');
+	if($mcs.length === 0)
 		return;
-	$mc.find('.error [data-source]').each(function (idx, el) {
-		var $el = $(el), id = $el.data('source');
-		var $prop = $('#' + id);
-		if($prop.length === 0)
-			return;
-		if($prop.prop('tagName').toLowerCase() != 'div') {
-			$prop.wrap("<span></span>");
-			$prop.parent().addClass(CN_HAS_ERROR);
-			$prop.parent().append('<span class="error-message"><span class="error-text">' + $el.text() + '</span></span>');
-			if(!first) {
-				first = $prop;
+	$mcs.each(function (idx, mc) {
+		var $mc = $(mc);
+		$mc.find('.error [data-source]').each(function (idx, el) {
+			var $el = $(el), id = $el.data('source');
+			var $prop = $('#' + id);
+			if($prop.length === 0)
+				return;
+			if($prop.prop('tagName').toLowerCase() != 'div') {
+				$prop.wrap("<span></span>");
+				$prop.parent().addClass(CN_HAS_ERROR);
+				$prop.parent().append('<span class="error-message"><span class="error-text">' + $el.text() + '</span></span>');
+				hasErrors = true;
+			} else {
+				$prop.addClass(CN_HAS_ERROR);
+				$prop.append('<div class="error-message"><span class="error-text">' + $el.text() + '</span></div>');
+				hasErrors = true;
 			}
-		} else {
-			$prop.addClass(CN_HAS_ERROR);
-			$prop.append('<div class="error-message"><span class="error-text">' + $el.text() + '</span></div>');
-			if(!first) {
-				first = $prop;
-			}
-		}
-		$el.parent().remove();
+			$el.parent().remove();
+		});
 	});
-	if(!!first && first.length > 0) {
-		$mc.append('<div class="message error"><span class="brief">Please review the errors below</span></div>');
+	if(hasErrors) {
+		$mcs.append('<div class="message error"><span class="brief">Please review the errors below</span></div>');
 		//noinspection JSUnresolvedFunction - defined in MIWT util.js
-		first.get(0).scrollIntoView();
+		var scrollTo = $('.error-message').parent().first()[0];
+		setTimeout(function(){
+			scrollTo.scrollIntoViewIfNeeded(true);
+		}, 50);
 	}
 
 	// if($mc.children().length === 0)

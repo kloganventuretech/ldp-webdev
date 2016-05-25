@@ -20,8 +20,9 @@ function scrollToTaskIfSpecified() {
 	if(scrollTo) {
 		var $target = $ctx.find('[data-task-id=' + scrollTo + ']').closest('article');
 		addTLExpanded($target.find('[data-advanced-collapse-id]').attr('data-advanced-collapse-id'));
-		$('html, body').animate({
-			scrollTop: $target.offset().top + 'px'
-		}, 'fast');
+		var scrollToElement = $target.get(0);
+		setTimeout(function(){
+			scrollToElement.scrollIntoViewIfNeeded(true);
+		}, 50);
 	}
 }
