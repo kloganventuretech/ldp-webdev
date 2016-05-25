@@ -32,7 +32,7 @@
 
 #side-nav {
 	width: 210px;
-	min-height: calc(100vh - 125px);
+	min-height: calc(100vh - 68px); // minus header height
 	background: #2a3542;
 }
 .sidebar-open #main-content,
