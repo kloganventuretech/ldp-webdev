@@ -252,12 +252,16 @@ h2.plan-name {
 
 	.goals-viewer,
 	.goal-management{
+		.persistence-actions {
+			padding-right: 2.75rem;
+		}
 		.btn {
 			&.configure, &.completed-goals-toggle {
 				color: transparent !important;
-				width: 48px;
+				width: 40px;
 				overflow: hidden;
 				white-space: nowrap;
+				padding: .375rem .75rem;
 				&::before {
 					color: $color-lr-brand !important;
 				}
@@ -279,8 +283,9 @@ h2.plan-name {
 				a {
 					color: transparent;
 					white-space: nowrap;
-					width: 52px;
+					width: 45px;
 					font-size: 0 !important;
+					padding: .6rem .9rem;
 
 					&::before {
 						color: $color-white;
@@ -290,5 +295,14 @@ h2.plan-name {
 			}
 		}
 
+	}
+	.nav-actions {
+		padding-right: 0;
+		.back {
+			width: 40px;
+			&::before {
+				padding: .375rem .75rem;
+			}
+		}
 	}
 }

@@ -91,7 +91,7 @@ section {
 .miwt .menu-component .menu-items {
 	.default, .meeting, .meeting-group,
 	.plan-start-date, .form, .email, .resource, .reminder, .email-login-info, .assign-eg, .confirmation,
-	.result-upload,	.fileentity, .uri, .manual {
+	.result-upload,	.fileentity, .uri, .manual, .lesson-group {
 		a.menu-item{
 			display: inline-block;
 			width: calc(100% - 30px);
@@ -117,9 +117,11 @@ section {
 	.confirmation:before {content: "\f087";}
 	.result-upload:before {content: "\f093";}
 
+
 	.default:before {content: "\f012";}
 	.meeting:before {content: "\f007";}
 	.meeting-group:before {content: "\f0c0";}
+	.lesson-group:before {content: "\f02d";}
 
 	.fileentity:before {content: "\f016";}
 	.uri:before {content: "\f0c1";}

@@ -357,6 +357,19 @@ div.window.dialog /*specificity*/ {
 	}
 }
 
+@media (max-width: 1050px) {
+	div.window.dialog {
+		.prop-group.time {
+			.zoned-time-editor {
+				span.timezone {
+					margin-left: 0;
+					display: block;
+				}
+			}
+		}
+	}
+}
+
 @media (min-width:1300px) {
 	div.window.dialog:not(.activity-configurer-dialog) {
 		max-width: 65rem;

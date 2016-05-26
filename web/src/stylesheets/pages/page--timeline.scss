@@ -480,7 +480,7 @@ and (orientation: portrait) {
 			button {
 				display: inline-block;
 				@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
-				padding: 0.5rem;
+				padding: 0.5rem .5rem .35rem;
 				background: #fff;
 				border: 1px solid $color-lr-brand;
 				border-radius: 100%;

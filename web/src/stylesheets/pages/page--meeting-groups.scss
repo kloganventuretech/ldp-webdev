@@ -106,6 +106,12 @@
 	}
 }
 
+div.window.dialog {
+	.timezone .select2-container {
+		width: 245px !important;
+	}
+}
+
 textarea.note-content {
 	resize: both;
 }
