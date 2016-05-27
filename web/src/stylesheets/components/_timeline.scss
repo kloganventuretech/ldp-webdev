@@ -668,6 +668,8 @@
 		margin-right: 1.5rem;
 
 		.ical-actions {
+			/* Hide ical icon: LR-1052 */
+			display: none;
 			a {
 				color: transparent;
 				width: 25px;
