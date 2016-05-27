@@ -41,33 +41,33 @@ $(function () {
 		steps: [
 			{
 				element: ".dropdown.profile",
-				title: "Your profile",
-				content: "Click the image to access your profile or logout of the platform.",
+				title: "My Account",
+				content: "Click the image to access My Account or logout of the platform.",
 				placement: "left"
 			},
 			{
 				element: ".top-menu li.link.resources",
 				title: "Resource Library",
-				content: "Click here to view resources available to all LR Success Path members.",
+				content: "Click here to view public resources available to all LRSuccessPath members.",
 				placement: "left"
 			},
 			{
 				element: ".top-menu li.link.client-participant-listing",
 				title: "My Participants",
-				content: "Click here at anytime to return back to your participant listing.",
+				content: "Click here at anytime to see your list of participants.",
 				placement: "left"
 			},
 			{
 				element: ".search-results",
-				title: "Your participants",
-				content: "All participants that are assigned to you will be listed here.",
+				title: "My Participant Search",
+				content: "Use this area to search for participants.",
 				placement: "top"
 			},
 			{
 				element: ".search-results tr.first a.plan-link",
 				title: "View a Participant",
-				content: "Click the process name associated with each participant to view their Timeline, Goals" +
-				", Profile and Resources. To continue the tour, click the highlighted process name.",
+				content: "To continue the tour, click the highlighted process name to view the participant's Goals," +
+				"Timeline, Profile and Resources.",
 				placement: "bottom"
 			}
 		],
