@@ -28,6 +28,24 @@ $(function () {
 
 				}
 
+				if (userInfo.toured["executive-sponsor"] === false) {
+					// Initialize the tour
+					//noinspection JSUnresolvedVariable
+					myParticipantTour.init();
+
+					// Start the tour
+					//noinspection JSUnresolvedVariable
+					myParticipantTour.start(true);
+
+					$('body').on('click', '.popover-navigation > button', function () {
+						userInfo.toured["executive-sponsor"] = true;
+						xhr.onreadystatechange = null;
+						xhr.open('post', '/ws/user-info');
+						xhr.send(JSON.stringify(userInfo));
+					});
+
+				}
+
 			}
 		};
 
@@ -64,11 +82,11 @@ $(function () {
 				placement: "top"
 			},
 			{
-				element: ".search-results tr.first a.plan-link",
+				element: ".search-results tr.first .card.plan",
 				title: "View a Participant",
 				content: "To continue the tour, click the highlighted process name to view the participant's Goals," +
 				"Timeline, Profile and Resources.",
-				placement: "bottom"
+				placement: "top"
 			}
 		],
 		storage: false,
