@@ -10,34 +10,48 @@ $(function () {
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var userInfo = JSON.parse(xhr.responseText);
-				if (userInfo.toured["participant"] === false) {
+				if (userInfo.toured["executive-decision-maker"] === false) {
 					// Initialize the tour
 					//noinspection JSUnresolvedVariable
-					goalTour.init();
+					edmGoalTour.init();
 
 					// Start the tour
 					//noinspection JSUnresolvedVariable
-					goalTour.start(true);
+					edmGoalTour.start(true);
 
 					$('body').on('click', '.popover-navigation > button', function () {
-						userInfo.toured["participant"] = true;
+						userInfo.toured["executive-decision-maker"] = true;
 						xhr.onreadystatechange = null;
 						xhr.open('post', '/ws/user-info');
 						xhr.send(JSON.stringify(userInfo));
 					});
-				}
-
-				if (userInfo.toured["executive-decision-maker"] === false) {
+				} else if (userInfo.toured["executive-sponsor"] === false) {
 					// Initialize the tour
 					//noinspection JSUnresolvedVariable
-					goalTour.init();
+					edmGoalTour.init();
 
 					// Start the tour
 					//noinspection JSUnresolvedVariable
-					goalTour.start(true);
+					edmGoalTour.start(true);
 
 					$('body').on('click', '.popover-navigation > button', function () {
-						userInfo.toured["executive-decision-maker"] = true;
+						userInfo.toured["executive-sponsor"] = true;
+						xhr.onreadystatechange = null;
+						xhr.open('post', '/ws/user-info');
+						xhr.send(JSON.stringify(userInfo));
+					});
+
+				} else if (userInfo.toured["participant"] === false) {
+					// Initialize the tour
+					//noinspection JSUnresolvedVariable
+					participantGoalTour.init();
+
+					// Start the tour
+					//noinspection JSUnresolvedVariable
+					participantGoalTour.start(true);
+
+					$('body').on('click', '.popover-navigation > button', function () {
+						userInfo.toured["participant"] = true;
 						xhr.onreadystatechange = null;
 						xhr.open('post', '/ws/user-info');
 						xhr.send(JSON.stringify(userInfo));
@@ -52,7 +66,7 @@ $(function () {
 
 	// Instance the Participant tour
 	//noinspection LongLine
-	var goalTour = new Tour({
+	var participantGoalTour = new Tour({
 		steps: [
 			{
 				element: ".dropdown.profile",
@@ -106,22 +120,22 @@ $(function () {
 			{
 				element: ".lr-participant-menu .goals",
 				title: "Goals",
-				content: "Click here to view, configure and update your goals"
+				content: "Click here to view Emerging Leader's goals."
 			},
 			{
 				element: ".lr-participant-menu .timeline-nav",
 				title: "Timeline",
-				content: "Click here to view the timeline - a path of all activities."
+				content: "Click here to view Emerging Leader's timeline - the development journey."
 			},
 			{
 				element: ".lr-participant-menu .profile",
 				title: "Profile",
-				content: "Click here to see your profile."
+				content: "Click here to view Emerging Leader's profile."
 			},
 			{
 				element: ".lr-participant-menu .resources",
-				title: "Resources",
-				content: "Click here to see helpful resources that are assigned to you."
+				title: "My Resources",
+				content: "Click here to view resources assigned to Emerging Leader's timeline."
 			}/*,
 			{
 				// Automatically go to Timeline page
@@ -136,6 +150,44 @@ $(function () {
 		backdropPadding: 5
 	});
 
-	launchTourIfNecessary(goalTour);
+	// Instance the Participant tour
+	//noinspection LongLine
+	var edmGoalTour = new Tour({
+		steps: [
+			{
+				element: ".sidebar-toggle-box .fa-bars",
+				title: "Menu Toggle",
+				content: "Click here to collapse the side navigation to icons only, or expand it to view the entire navigation.",
+				placement: "right"
+			},
+			{
+				element: ".lr-participant-menu .goals",
+				title: "Goals",
+				content: "Click here to view Emerging Leader's goals."
+			},
+			{
+				element: ".lr-participant-menu .timeline-nav",
+				title: "Timeline",
+				content: "Click here to view Emerging Leader's timeline - the development journey."
+			},
+			{
+				element: ".lr-participant-menu .profile",
+				title: "Profile",
+				content: "Click here to view Emerging Leader's profile."
+			},
+			{
+				element: ".lr-participant-menu .resources",
+				title: "My Resources",
+				content: "Click here to view resources assigned to Emerging Leader's timeline."
+			}
+		],
+		storage: false,
+		backdrop: true,
+		backdropPadding: 5
+	});
+
+	launchTourIfNecessary(participantGoalTour);
+
+	launchTourIfNecessary(edmGoalTour);
 
 });
