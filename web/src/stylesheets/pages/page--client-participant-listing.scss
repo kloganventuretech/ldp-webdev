@@ -16,11 +16,13 @@ table.search-results {
 
 		> tr {
 			display: flex;
-			flex: 1 0 0;
+			flex-grow: 1;
+			flex-shrink: 0;
 
 			> td {
 				display: flex;
-				flex: 1 0 0;
+				flex-grow: 1;
+				flex-shrink: 1;
 				background: transparent !important;
 			}
 
@@ -32,8 +34,9 @@ table.search-results {
 
 section.card {
 	display: flex;
-	flex: 1 0 0;
-	flex-flow: row wrap;
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-flow: column nowrap;
 
 	.participant, .plan-info {
 		display: flex;
@@ -43,23 +46,28 @@ section.card {
 	.participant {
 		flex: 1;
 		align-items: center;
-		max-width: 200px;
+		padding-bottom: 0;
 
 		img {
 			max-width: 100%;
-			height: auto;
 			border-radius: 100%;
 			overflow: hidden;
+			width: 90px;
+			height: 90px;
 		}
 
 		h1 {
-			font-size: 1.5rem;
+			font-size: 1.25rem;
+			width: 100%;
+			padding-left: 0 !important;
 		}
 
 	}
 
 	.plan-info {
 		flex: 2;
+		text-align: left;
+		padding-top: 0;
 
 		a.plan-link{
 			font-size:1.75rem;
@@ -107,9 +115,38 @@ section.card {
 			}
 		}
 	}
+
+	section.card {
+		flex-flow: row wrap;
+
+		.participant {
+			max-width: 150px;
+			padding-bottom: 1.25rem;
+		}
+
+		.plan-info {
+			max-width: 330px;
+			padding-top: 1.25rem;
+		}
+	}
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1281px) {
+	table.search-results {
+
+		tbody {
+			flex-flow: row wrap;
+
+			> tr {
+				display: flex;
+				flex: 1 0 33%;
+				max-width: 33%;
+			}
+		}
+	}
+}
+
+@media (min-width: 1500px) {
 	table.search-results {
 
 		tbody {
