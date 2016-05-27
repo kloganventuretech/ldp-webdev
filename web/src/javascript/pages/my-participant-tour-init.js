@@ -58,7 +58,7 @@ $(function () {
 				placement: "left"
 			},
 			{
-				element: ".search-results",
+				element: ".search-bar",
 				title: "My Participant Search",
 				content: "Use this area to search for participants.",
 				placement: "top"
