@@ -18,7 +18,7 @@ function scrollToTaskIfSpecified() {
 	var $ctx = $(document);
 	var scrollTo = getUrlParameter('scroll-to-task');
 	if(scrollTo) {
-		var $target = $ctx.find('[data-task-id=' + scrollTo + ']').closest('article');
+		var $target = $ctx.find('[data-task-id="' + scrollTo + '"]').closest('article');
 		addTLExpanded($target.find('[data-advanced-collapse-id]').attr('data-advanced-collapse-id'));
 		$('html, body').animate({
 			scrollTop: $target.offset().top + 'px'
