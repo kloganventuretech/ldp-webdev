@@ -80,6 +80,10 @@
 		flex: 1;
 		border-left: 1px solid #ddd;
 		padding-left: 1rem;
+
+		.tab-container {
+			position: relative;
+		}
 	}
 }
 
@@ -106,20 +110,22 @@
 	}
 }
 
-div.window.dialog {
-	.timezone .select2-container {
-		width: 245px !important;
-	}
-}
-
 textarea.note-content {
 	resize: both;
 }
 
-.note-editor-dialog {
+div.window.dialog.note-editor-dialog {
 	width: 45rem !important;
 	.prop-editor {
 		text-align: center;
+
+		textarea {
+			width: 100%;
+			height: 6rem;
+		}
+	}
+	.timezone .select2-container {
+		width: 245px !important;
 	}
 }
 
@@ -134,15 +140,19 @@ textarea.note-content {
 
 .group-meeting-notes-manager {
 	.notes-manager-actions {
-		float: right;
-		margin-top: -3.35rem;
+		/*float: right;
+		margin-top: -3.35rem;*/
+		position: absolute;
+		top: .5rem;
+		right: .5rem;
+
 		.btn {
-			@include button-variant($color-lr-grey, $btn-secondary-bg, $color-lr-light-grey);
+			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius);
 		}
 	}
 	.message-container {
-		width: calc(100% - 5rem);
+		width: 100%;
 	}
 }
 
@@ -152,9 +162,12 @@ textarea.note-content {
 	flex-wrap: wrap;
 
 	.card {
+		display: flex;
+		flex-direction: column;
 		flex: 1 0 15rem;
-		padding: .5rem;
+		padding: 0;
 		margin: 5px;
+		justify-content: space-between;
 
 		.actions {
 			position: absolute;
@@ -163,22 +176,61 @@ textarea.note-content {
 			z-index: 1;
 			.btn {
 				padding: 0;
-				margin: 0;
+				margin: .25rem;
 				font-size: 16px;
-				height: 24px;
-				width: 24px;
+				height: 20px;
+				width: 21px;
 				overflow: hidden;
-				color: #white;
+				//color: $color-white;
 				&:before {
 					display: block;
-					content: "\f00d";
-					font-size: 1rem;
+					font-size: .8rem;
 					font-family: FontAwesome;
 				}
-				&:hover {
-					background: $btn-danger-bg;
+				&.edit {
+					margin-right: 0;
+					&::before {
+						content: '\f040';
+					}
+					&:hover {
+						background: $color-lr-brand;
+						color: $color-white;
+					}
+				}
+				&.delete {
+					&::before {
+						content: '\f00d';
+					}
+					&:hover {
+						background: $btn-danger-bg;
+					}
 				}
 			}
 		}
+
+		.card-block {
+			padding: 1.6rem 1.25rem 1.25rem;
+
+			p {
+				font-size: .9rem;
+				font-style: italic;
+			}
+
+		}
+
+		.card-footer {
+			font-size: .65rem;
+			padding: .5rem 1.25rem;
+
+			label {
+				margin-bottom: 0;
+				font-weight: 400;
+				&::after {
+					content: ':';
+					padding-right: 5px;
+				}
+			}
+		}
+
 	}
 }

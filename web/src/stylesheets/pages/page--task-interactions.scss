@@ -11,21 +11,22 @@
 	background: $color-white;
 	border: 1px solid lighten($color-lr-light-grey, 25%);
 	border-radius: $border-radius-lg;
-	margin: 2rem auto 0;
-	padding: 2rem;
+	margin: 4rem auto 0;
+	padding: 1.5rem;
 	width: 70%;
-	overflow: hidden;
 	color: $color-lr-grey;
 	position: relative;
 
 	.heading {
+		border-bottom: 1px solid lighten($color-lr-light-grey, 25%);
+		margin-bottom: .5rem;
+		padding-bottom: 1rem;
 
 		h1 {
-			border-bottom: 1px solid lighten($color-lr-light-grey, 25%);
 			font-size: 1.35rem;
-			padding-top: 0 !important;
-			padding-left: 0 !important;
-			margin-top: 0 !important;
+			padding: 0 !important;
+			margin: 0 !important;
+			display: inline;
 		}
 
 	}
@@ -36,8 +37,51 @@
 
 	.actions.top-actions {
 		position: absolute;
-		right: 15px;
-		top: 15px;
+		right: -5px;
+		top: -47px;
+
+		.btn {
+			float: right;
+			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+			color: transparent;
+			width: 40px;
+			overflow: hidden;
+			white-space: nowrap;
+
+			&::before {
+				font-family: FontAwesome;
+				display: inline-block;
+				font-size: inherit;
+				padding-right: 5px;
+				color: $color-lr-brand;
+			}
+
+			&:hover, &:focus {
+				color: transparent !important;
+			}
+
+			&.back {
+				&::before {
+					content: '\f112';
+				}
+			}
+
+			&.configure {
+				&::before {
+					content: '\f013';
+				}
+			}
+
+			&:not(.back):not(.configure) {
+				&::before {
+					content: '\f126';
+					padding-left: 3px;
+				}
+			}
+
+		}
+
 	}
 
 	.prop .actions.entity-actions {
@@ -54,54 +98,6 @@
 	}
 
 	.btn {
-
-		&.back {
-			float: right;
-			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
-			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
-			color: transparent;
-			width: 40px;
-			overflow: hidden;
-			white-space: nowrap;
-
-			&::before {
-				content: '\f112';
-				font-family: FontAwesome;
-				display: inline-block;
-				font-size: inherit;
-				padding-right: 5px;
-				color: $color-lr-brand;
-			}
-
-			&:hover, &:focus {
-				color: transparent !important;
-			}
-
-		}
-
-		&.configure {
-			float: right;
-			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
-			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
-			color: transparent;
-			width: 40px;
-			overflow: hidden;
-			white-space: nowrap;
-
-			&::before {
-				content: '\f013';
-				font-family: FontAwesome;
-				display: inline-block;
-				font-size: inherit;
-				padding-right: 5px;
-				color: $color-lr-brand;
-			}
-
-			&:hover, &:focus {
-				color: transparent !important;
-			}
-
-		}
 
 		&.remove {
 			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
@@ -346,8 +342,13 @@
 	.task-interaction {
 		max-width: 91vw;
 		width: 100%;
-		padding: 3rem 1rem 2rem;
+		padding: 1.5rem 1rem;
 		font-size: 1.15rem;
+
+		.actions.top-actions {
+			z-index: 99;
+		}
+
 	}
 	.btn {
 		white-space: normal;
@@ -356,6 +357,10 @@
 
 @media (min-width: 768px) {
 	.task-interaction {
+
+		.actions.top-actions {
+			top: -53px;
+		}
 
 		.footer {
 			.details {
@@ -372,23 +377,16 @@
 
 @media (min-width: 1024px) {
 	.task-interaction {
-		.btn {
 
-			&.back {
-				float: right;
-				@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
-				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+		.actions.top-actions {
+			.btn {
+
 				color: $color-lr-brand;
 				width: auto;
 				overflow: visible;
 				white-space: normal;
 
 				&::before {
-					content: '\f112';
-					font-family: FontAwesome;
-					display: inline-block;
-					font-size: inherit;
-					padding-right: 5px;
 					color: $color-lr-brand;
 				}
 
@@ -396,7 +394,16 @@
 					color: $color-lr-brand !important;
 				}
 
+				&:nth-of-type(2) {
+					&::before {
+						padding-left: 0;
+					}
+				}
+
 			}
+
 		}
+
 	}
+
 }

@@ -15,14 +15,14 @@ function setupTopMenuActive() {
             href = href.slice(hostIndex + host.length);
         }
         if(href !== '/') { // Not doing home page ref
-            if (path.startsWith(href)) {
+            if (path.indexOf(href) === 0) {
                 $li.addClass('mi-active').removeClass('mi-inactive');
             }
             else {
                 $li.addClass('mi-inactive').removeClass('mi-active');
             }
         } else if(href === path) {
-            if (path.startsWith(href)) {
+            if (path.indexOf(href) === 0) {
                 $li.addClass('mi-active').removeClass('mi-inactive');
             }
             else {

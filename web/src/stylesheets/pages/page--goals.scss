@@ -247,7 +247,7 @@
 
 	.legend-header {
 		color:$color-lr-grey;
-		font-weight: 500;
+		font-weight: 300;
 		margin-bottom: .25rem;
 		font-size: 1rem;
 	}
@@ -280,8 +280,8 @@
 
 			&.aligned {
 				font-weight: 500;
-				font-size: .85rem;
-				color: $color-lr-brand;
+				font-size: 1.25rem;
+				color: $color-lr-grey;
 			}
 
 		}
@@ -441,7 +441,7 @@ section.tracking-metrics {
 		padding-top: 1rem;
 		float: none;
 		margin: 0 auto;
-		width: 10rem;
+		width: 12rem;
 	}
 
 }

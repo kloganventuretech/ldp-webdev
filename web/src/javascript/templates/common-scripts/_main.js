@@ -74,4 +74,8 @@ jQuery(function () {
 		});
 	})(window);
 
+	$('button.add-tracking-metric').click(function(){
+		$(this).tooltip('hide');
+	});
+
 });

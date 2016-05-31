@@ -9,7 +9,7 @@ function deserialzeBS() {
 		return;
 	// FIXME : loop over array and add classname "in"
 	for (var i = 0, id; id = myArray[i]; i++) {
-		var $found = $ctx.find("[data-advanced-collapse-id=\"" + id + "\"");
+		var $found = $ctx.find("[data-advanced-collapse-id=\"" + id + "\"]");
 		if($found.length > 0) {
 			// One-shot?
 			//myArray = myArray.filter(function (el) {return el != id;});
