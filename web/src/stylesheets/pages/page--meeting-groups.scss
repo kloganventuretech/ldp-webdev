@@ -80,6 +80,10 @@
 		flex: 1;
 		border-left: 1px solid #ddd;
 		padding-left: 1rem;
+
+		.tab-container {
+			position: relative;
+		}
 	}
 }
 
@@ -136,15 +140,19 @@ div.window.dialog.note-editor-dialog {
 
 .group-meeting-notes-manager {
 	.notes-manager-actions {
-		float: right;
-		margin-top: -3.35rem;
+		/*float: right;
+		margin-top: -3.35rem;*/
+		position: absolute;
+		top: .5rem;
+		right: .5rem;
+
 		.btn {
 			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius);
 		}
 	}
 	.message-container {
-		width: calc(100% - 5rem);
+		width: 100%;
 	}
 }
 
