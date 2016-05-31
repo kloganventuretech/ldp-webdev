@@ -38,6 +38,49 @@
 		position: absolute;
 		right: 15px;
 		top: 15px;
+
+		.btn {
+			float: right;
+			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+			color: transparent;
+			width: 40px;
+			overflow: hidden;
+			white-space: nowrap;
+
+			&::before {
+				font-family: FontAwesome;
+				display: inline-block;
+				font-size: inherit;
+				padding-right: 5px;
+				color: $color-lr-brand;
+			}
+
+			&:hover, &:focus {
+				color: transparent !important;
+			}
+
+			&.back {
+				&::before {
+					content: '\f112';
+				}
+			}
+
+			&.configure {
+				&::before {
+					content: '\f013';
+				}
+			}
+
+			&:nth-of-type(2) {
+				&::before {
+					content: '\f126';
+					padding-left: 3px;
+				}
+			}
+
+		}
+
 	}
 
 	.prop .actions.entity-actions {
@@ -55,7 +98,7 @@
 
 	.btn {
 
-		&.back {
+		/*&.back {
 			float: right;
 			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
 			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
@@ -101,7 +144,7 @@
 				color: transparent !important;
 			}
 
-		}
+		}*/
 
 		&.remove {
 			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
@@ -372,23 +415,16 @@
 
 @media (min-width: 1024px) {
 	.task-interaction {
-		.btn {
 
-			&.back {
-				float: right;
-				@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
-				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+		.actions.top-actions {
+			.btn {
+
 				color: $color-lr-brand;
 				width: auto;
 				overflow: visible;
 				white-space: normal;
 
 				&::before {
-					content: '\f112';
-					font-family: FontAwesome;
-					display: inline-block;
-					font-size: inherit;
-					padding-right: 5px;
 					color: $color-lr-brand;
 				}
 
@@ -396,7 +432,16 @@
 					color: $color-lr-brand !important;
 				}
 
+				&:nth-of-type(2) {
+					&::before {
+						padding-left: 0;
+					}
+				}
+
 			}
+
 		}
+
 	}
+
 }
