@@ -77,7 +77,7 @@ $(function () {
 			{
 				element: ".top-menu li.link.resources",
 				title: "Resource Library",
-				content: "Click here to view resources available to all LR Success Path members.",
+				content: "Click here to view resources available to all LRSuccessPath members.",
 				placement: "left"
 			},
 			{
@@ -86,64 +86,64 @@ $(function () {
 				content: "Click here to collapse the side navigation to icons only, or expand it to view the entire navigation.",
 				placement: "right"
 			},
-			/*{
-				element: ".goals-viewer .persistence-actions button.configure",
-				title: "Configure Goals",
-				content: "Click here to set up new goals or configure existing goals.",
-				placement: "bottom"
-			},
-			{
-				element: ".goals-viewer .persistence-actions button.completed-goals-toggle",
-				title: "Completed Goals",
-				content: "Completed goals aren't shown on the dashboard by default. Use this button to toggle" +
-				"between showing or hiding completed goals",
-				placement: "bottom"
-			},
-			{
-				element: ".tab-container .tab-items .personal",
-				title: "Organizational Goals",
-				content: "Click here to view and update Personal Goals.",
-				placement: "bottom"
-			},
-			{
-				element: ".tab-container .tab-items .leadership",
-				title: "Organizational Goals",
-				content: "Click here to view and update Leadership Goals.",
-				placement: "bottom"
-			},
-			{
-				element: ".tab-container .tab-items .organizational",
-				title: "Organizational Goals",
-				content: "Click here to view and update Organizational Goals.",
-				placement: "bottom"
-			},*/
 			{
 				element: ".lr-participant-menu .goals",
 				title: "Goals",
-				content: "Click here to view Emerging Leader's goals."
+				content: "Click here to view Emerging Leader goals."
 			},
 			{
 				element: ".lr-participant-menu .timeline-nav",
 				title: "Timeline",
-				content: "Click here to view Emerging Leader's timeline - the development journey."
+				content: "Click here to view Emerging Leader timeline - the development journey."
 			},
 			{
 				element: ".lr-participant-menu .profile",
 				title: "Profile",
-				content: "Click here to view Emerging Leader's profile."
+				content: "Click here to view Emerging Leader profile."
 			},
 			{
 				element: ".lr-participant-menu .resources",
 				title: "My Resources",
-				content: "Click here to view resources assigned to Emerging Leader's timeline."
-			}/*,
+				content: "Click here to view resources assigned to Emerging Leader timeline."
+			},
+			{
+				element: ".tab-container li.organizational",
+				title: "Organizational Tab",
+				content: "These goals directly impact the current organizational/business goals.",
+				placement: "right"
+			},
+			{
+				element: ".tab-container li.leadership",
+				title: "Leadership Tab",
+				content: "Goals related to leadership and/or behaviors and/or attitudes.",
+				placement: "right"
+			},
+			{
+				element: ".tab-container li.personal",
+				title: "Personal Tab",
+				content: "Goals outside of business, important to the individual, but not necessarily directly tied" +
+				" to EDM expectations.",
+				placement: "right"
+			},
+			{
+				element: ".goals-viewer > .persistence-actions button.completed-goals-toggle",
+				title: "Show Completed Goals",
+				content: "Click here to see goals that have already been completed.",
+				placement: "left"
+			},
+			{
+				element: ".goals-viewer > .persistence-actions button.configure",
+				title: "Configure Goals",
+				content: "Click here to add new goals or edit existing goals.",
+				placement: "left"
+			},
 			{
 				// Automatically go to Timeline page
 				path: function() {
 					var goToTimeline = "/participant/timeline" + location.pathname.substring("/participant/goals".length);
 					location.href = goToTimeline;
 				}
-			}*/
+			}
 		],
 		storage: false,
 		backdrop: true,
@@ -163,22 +163,60 @@ $(function () {
 			{
 				element: ".lr-participant-menu .goals",
 				title: "Goals",
-				content: "Click here to view Emerging Leader's goals."
+				content: "Click here to view Emerging Leader goals."
 			},
 			{
 				element: ".lr-participant-menu .timeline-nav",
 				title: "Timeline",
-				content: "Click here to view Emerging Leader's timeline - the development journey."
+				content: "Click here to view Emerging Leader timeline - the development journey."
 			},
 			{
 				element: ".lr-participant-menu .profile",
 				title: "Profile",
-				content: "Click here to view Emerging Leader's profile."
+				content: "Click here to view Emerging Leader profile."
 			},
 			{
 				element: ".lr-participant-menu .resources",
 				title: "My Resources",
-				content: "Click here to view resources assigned to Emerging Leader's timeline."
+				content: "Click here to view resources assigned to Emerging Leader timeline."
+			},
+			{
+				element: ".tab-container li.organizational",
+				title: "Organizational Tab",
+				content: "These goals directly impact the current organizational/business goals.",
+				placement: "right"
+			},
+			{
+				element: ".tab-container li.leadership",
+				title: "Leadership Tab",
+				content: "Goals related to leadership and/or behaviors and/or attitudes.",
+				placement: "right"
+			},
+			{
+				element: ".tab-container li.personal",
+				title: "Personal Tab",
+				content: "Goals outside of business, important to the individual, but not necessarily directly tied" +
+				" to EDM expectations.",
+				placement: "right"
+			},
+			{
+				element: ".goals-viewer > .persistence-actions button.completed-goals-toggle",
+				title: "Show Completed Goals",
+				content: "Click here to see goals that have already been completed.",
+				placement: "left"
+			},
+			{
+				element: ".goals-viewer > .persistence-actions button.configure",
+				title: "Configure Goals",
+				content: "Click here to add new goals or edit existing goals.",
+				placement: "left"
+			},
+			{
+				// Automatically go to Timeline page
+				path: function() {
+					var goToTimeline = "/participant/timeline" + location.pathname.substring("/participant/goals".length);
+					location.href = goToTimeline;
+				}
 			}
 		],
 		storage: false,

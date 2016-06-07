@@ -330,6 +330,16 @@ div.window.dialog {
 		}
 	}
 
+	.add-new-alignment {
+		label {
+			display: block;
+			margin-bottom: .25rem;
+		}
+		.select2-container {
+			margin-bottom: 1.75rem;
+		}
+	}
+
 }
 
 @media (max-width:768px) {
