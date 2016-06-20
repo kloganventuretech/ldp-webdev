@@ -14,7 +14,7 @@
 .action-login, .action-password {
 	@extend .btn-block;
 	@extend .btn-lg;
-	@extend .btn-login;
+	@extend .btn-login !optional;
 	font-weight: 300;
 	text-transform: uppercase;
 }
@@ -221,7 +221,7 @@
 			@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 			@extend .btn-block;
 			@extend .btn-lg;
-			@extend .btn-login;
+			@extend .btn-login !optional;
 		}
 
 	}

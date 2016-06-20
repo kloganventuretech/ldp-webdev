@@ -279,7 +279,7 @@
 
 		}
 
-		.engagement-type {
+		.engagement-header {
 			background: $color-lr-grey;
 			color: #fff;
 			font-size: 1.25rem;
@@ -287,6 +287,10 @@
 			margin: 1.25rem 0 .75rem -2rem;
 			display: block;
 			padding: .5rem .75rem;
+
+			.engagement-type::after {
+				content: ": ";
+			}
 		}
 
 		.miwt-table {
