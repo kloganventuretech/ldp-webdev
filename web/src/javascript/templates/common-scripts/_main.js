@@ -24,6 +24,8 @@ jQuery(function () {
 
 	navHighlight();
 
+	setupCustomDropdowns();
+
 	$('form.miwt-form').each(function (idx, form) {
 		//noinspection JSUnusedGlobalSymbols
 		form.submit_options = {
@@ -40,6 +42,7 @@ jQuery(function () {
 					deserialzeBS();
 					setupCharts(ctx);
 					navHighlight();
+					setupCustomDropdowns(ctx);
 					if($(ctx).hasClass('message-container') || $(ctx).find('.message-container').length > 0)
 						errorMessageCleanup();
 					setTimeout(function () {
