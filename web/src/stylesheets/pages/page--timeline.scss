@@ -120,6 +120,29 @@
 
 		}
 
+		section.activity-template-value-editor {
+			.prop.name {
+				label {
+					display: none;
+				}
+				span.val {
+					font-weight: 400;
+				}
+			}
+
+			.prop.description {
+				label, span.val {
+					display: inline;
+					font-weight: 300;
+					font-style: italic;
+					font-size: .9rem;
+				}
+				label::after {
+					content: ": ";
+				}
+			}
+		}
+
 		.prop.start-time, .prop.meeting-group {
 			padding: 2rem 2rem 0;
 
@@ -280,16 +303,47 @@
 		}
 
 		.engagement-header {
-			background: $color-lr-grey;
+			/*background: $color-lr-grey;
 			color: #fff;
 			font-size: 1.25rem;
 			font-weight: 400;
 			margin: 1.25rem 0 .75rem -2rem;
 			display: block;
-			padding: .5rem .75rem;
+			padding: .5rem .75rem;*/
 
-			.engagement-type::after {
+			/*.engagement-type::after {
 				content: ": ";
+			}*/
+
+			.engagement-type {
+				display: none;
+			}
+
+			.engagement-name {
+				background: $color-lr-grey;
+				color: #fff;
+				font-size: 1.25rem;
+				font-weight: 400;
+				margin: 1.25rem 0 .75rem -2rem;
+				display: block;
+				padding: .5rem .75rem;
+			}
+
+		}
+
+		.engagement-editor {
+			.engagement .description {
+				margin-bottom: 1rem;
+
+				label, span.val {
+					display: inline;
+					font-weight: 300;
+					font-style: italic;
+					font-size: .9rem;
+				}
+				label::after {
+					content: ": ";
+				}
 			}
 		}
 
@@ -441,6 +495,12 @@ div.window.configure-task  {
 
 		.prop-header-actions { display: none; }
 
+	}
+
+	.prop.reminder-for-task {
+		+ .prop.task-assignment.search {
+			margin-top: 3rem;
+		}
 	}
 
 }
