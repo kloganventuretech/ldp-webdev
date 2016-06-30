@@ -238,8 +238,12 @@ div.window.dialog /*specificity*/ {
 		}
 	}
 
-	.email-preview-content {
+	textarea.email-preview-content {
 		height: 200px;
+	}
+
+	div.email-preview-content {
+		height: auto;
 	}
 
 	.engagement-viewer {
