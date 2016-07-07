@@ -444,3 +444,10 @@ and (orientation: portrait) {
 
 	}
 }
+
+@media (min-width: 1024px)
+and (max-width: 1080px) {
+	.top-menu > li.link {
+		max-width: 5.5rem;
+	}
+}
