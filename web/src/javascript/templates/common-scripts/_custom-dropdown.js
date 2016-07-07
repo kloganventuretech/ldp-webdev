@@ -10,13 +10,13 @@ function setupCustomDropdowns(ctx) {
         + 'text-indent: -75rem;'
         + 'white-space: nowrap;'
         + 'margin-left: 7px;'
-        + 'width: 7rem;'
+        + 'width: 12rem;'
         + 'display: inline-block;'
         + 'vertical-align: middle;'
         + 'font-size: 2rem;'
         + 'color: #2e2e2e;'
         + 'text-transform: uppercase;'
-        + 'background: url(' + backgroundurl + ') left center/contain no-repeat;';
+        + 'background: url(' + backgroundurl + ') center center/contain no-repeat;';
         target.style.cssText += styleString;
     });
 
