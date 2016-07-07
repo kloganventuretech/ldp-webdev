@@ -28,17 +28,39 @@
 @media (min-width: 768px)
 and (orientation: portrait) {
   .plan-switcher {
-    top: 6.25rem;
+    position: relative;
+    left: 0;
+    right: auto;
+    top: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  #main-content-wc-0 {
+
+    > h2.plan-name {
+      max-width: 100%;
+      text-align: center;
+    }
+
   }
 }
 
 @media (max-width: 767px) {
+  #main-content-wc-0 {
+
+    > h2.plan-name {
+      max-width: 100%;
+      text-align: center;
+    }
+
+  }
+
   .plan-switcher {
     position: relative;
     left: 0;
     right: auto;
     top: 0;
-    text-align: left;
+    text-align: center;
     margin-bottom: 1rem;
   }
 }
