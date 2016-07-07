@@ -48,10 +48,11 @@
 	.toggler-wrapper {
 		display: inline-block;
 		cursor: pointer;
-		max-width: 9.375rem;
+		max-width: 15rem;
 
 		span.fa-chevron-right {
 			vertical-align: middle;
+			padding-left: .4rem;
 		}
 
 	}
@@ -250,10 +251,81 @@ a.logo span {
 
 @media (max-width: 768px)
 and (orientation: portrait) {
+
+	div.lr-top-menu {
+		position: fixed;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		background: #fff;
+		z-index: 999;
+
+	}
+
 	.top-menu {
-		> li.link {
-			max-width: 5.5rem;
+		margin-top: 0;
+		@include clearfix();
+		display: flex;
+		justify-content: center;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+		.dropdown {
+			margin-top: 0;
 		}
+
+		> li.dropdown {
+			flex: 1;
+			float: none;
+			display: flex;
+			min-width: 9.5rem;
+
+			a.dropdown-toggle {
+				margin: 0 auto;
+				width: 100%;
+				img.profile-pic {
+					max-width: 75% !important;
+					height: auto !important;
+				}
+				span.welcome, img.profile-pic {
+					display: inline-block;
+				}
+			}
+
+		}
+
+		> li.link {
+			margin: 0;
+			float: none;
+			flex: 1;
+			display: flex;
+
+			&.help {
+				display: none;
+			}
+		}
+
+		.dropdown-toggle::after {
+			display: none;
+		}
+
+		.dropdown-menu.extended {
+			top: auto;
+			bottom: 3.1rem;
+			left: auto;
+			right: 0;
+			border-radius: 0;
+			box-shadow: 0 0 5px rgba(0,0,0,0.3);
+
+			> li:last-child {
+				border-radius: 0;
+			}
+
+			.log-arrow-up {
+				display: none;
+			}
+
+		}
+
 	}
 }
 
