@@ -1,6 +1,11 @@
+@import "../components/plan-switcher";
 @import "../components/goal_tabs";
 @import "../components/strength-meter";
 @import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
+
+h2.plan-name {
+	border-bottom: none;
+}
 
 .goal-viewer-wrapper {
 	display: flex;
