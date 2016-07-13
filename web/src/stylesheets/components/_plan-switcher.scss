@@ -21,6 +21,7 @@
 
   span.select2-container {
     text-align: left;
+    width: 20rem !important;
   }
 
 }
@@ -42,6 +43,15 @@ and (orientation: portrait) {
       text-align: center;
     }
 
+  }
+}
+
+@media (min-width: 768px) {
+  .plan-switcher {
+    span.select2-container {
+      text-align: left;
+      width: 25rem !important;
+    }
   }
 }
 
