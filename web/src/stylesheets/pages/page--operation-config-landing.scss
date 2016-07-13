@@ -4,11 +4,13 @@
 // LANDING PAGE STYLES
 #operation, #configuration {
 
-  #main-content-wc-0 > .text {
-    border-bottom: 1px solid $color-lr-grey;
+  #main-content-wc-0 .inlinewindowcontent > div, #main-content-wc-0 .inlinewindowcontent > section {
+
     h1, h2 {
       margin-bottom: 0;
+      border-bottom: 1px solid $color-lr-grey;
     }
+
   }
 
   .search-wrapper {
