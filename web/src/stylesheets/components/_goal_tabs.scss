@@ -24,7 +24,7 @@ h2.plan-name {
 .goals-viewer,
 .goal-management{
 	position: relative;
-	.persistence-actions{
+	.persistence-actions {
 		/*position: absolute;
 		right:4.25rem;
 		top: 4rem;
@@ -69,8 +69,15 @@ h2.plan-name {
 			}
 		}
 	}
+
 	.nav-actions {
 		$nav-action-color: $brand-primary;
+		margin-bottom: 0;
+		padding-right: 0;
+		position: absolute;
+		right: 15px;
+		top: 4px;
+
 		.back /*, .other */ {
 			&:before {
 				color: $nav-action-color;
@@ -251,7 +258,7 @@ h2.plan-name {
 	}
 
 	.goals-viewer,
-	.goal-management{
+	.goal-management {
 		.persistence-actions {
 			padding-right: 2.75rem;
 		}
@@ -295,14 +302,17 @@ h2.plan-name {
 			}
 		}
 
-	}
-	.nav-actions {
-		padding-right: 0;
-		.back {
-			width: 40px;
-			&::before {
-				padding: .375rem .75rem;
+		.nav-actions {
+			padding-right: 0;
+			right: 0;
+
+			.back {
+				width: 40px;
+				&::before {
+					padding: .375rem .75rem;
+				}
 			}
 		}
+
 	}
 }

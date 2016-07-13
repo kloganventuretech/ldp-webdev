@@ -50,6 +50,19 @@
 		cursor: pointer;
 		max-width: 15rem;
 
+		span.selected-logo {
+			color: $color-lr-grey;
+			font-weight: 400;
+			display: inline-block;
+			font-size: 1rem;
+			padding: .9rem 0;
+			margin-left: 7px;
+			overflow: hidden;
+			vertical-align: middle;
+			width: 12rem;
+			text-align: center;
+		}
+
 		span.fa-chevron-right {
 			vertical-align: middle;
 			padding-left: .4rem;
@@ -58,7 +71,7 @@
 	}
 	.dropdown-menu {
 		top: 10px;
-		left: 150px;
+		left: 225px;
 		padding: 10px 20px 10px 12px;
 
 		button.dropdown-item {
@@ -298,6 +311,7 @@ and (orientation: portrait) {
 			float: none;
 			flex: 1;
 			display: flex;
+			justify-content: center;
 
 			&.help {
 				display: none;
