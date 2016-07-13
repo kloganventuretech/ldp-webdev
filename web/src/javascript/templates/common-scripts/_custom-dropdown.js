@@ -16,6 +16,7 @@ function setupCustomDropdowns(ctx) {
         + 'font-size: 2rem;'
         + 'color: #2e2e2e;'
         + 'text-transform: uppercase;'
+        + 'padding: 0;'
         + 'background: url(' + backgroundurl + ') center center/contain no-repeat;';
         target.style.cssText += styleString;
     });
