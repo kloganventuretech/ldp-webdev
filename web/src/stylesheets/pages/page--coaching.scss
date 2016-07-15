@@ -1,0 +1,55 @@
+@import "../config/base-vars";
+@import "../../../../bower_components/bootstrap/scss/mixins";
+
+.coaching-entity-editor {
+	.picture-editor.image-selected {
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.coaching-entity-viewer {
+	.categories-management, .tags-management {
+		.actions.entity_actions {
+			text-align: right;
+			margin: -3.75rem 0 2rem;
+			.btn {
+				@include button-variant($color-white, $color-lr-brand, $color-lr-brand)
+			}
+		}
+		.search_bar {
+			.actions.search_actions, .constraints {
+				display: inline-block;
+				vertical-align: baseline;
+			}
+			.actions.search_actions .btn {
+				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+			}
+		}
+		label {
+			display: block;
+			margin-bottom: 0;
+		}
+		input[type="text"] {
+			border: 1px solid #aaa;
+			border-radius: $border-radius-sm;
+			margin: 0 .5rem 1rem 0;
+			padding: .2rem;
+		}
+
+		.property-editor {
+
+			input[type="text"] {
+				width: 20rem;
+			}
+
+			.actions.persistence-actions {
+				margin: 1rem 0 1.5rem;
+			}
+
+		}
+
+	}
+}
