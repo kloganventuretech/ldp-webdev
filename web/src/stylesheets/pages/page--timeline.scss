@@ -504,6 +504,17 @@ div.window.configure-task  {
 		}
 	}
 
+	.prop.task-assignment {
+		.miwt-table caption {
+			margin-top: -.5rem;
+		}
+		.entity-actions.actions {
+			.entity-action.menu-component {
+				margin-bottom: -3.25rem;
+			}
+		}
+	}
+
 }
 
 @media (max-width: 768px)

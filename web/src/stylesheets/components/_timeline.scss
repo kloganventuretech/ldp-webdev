@@ -293,15 +293,34 @@
 		content: "\f19d";
 	}
 
-	.cat-default:before {content: "\f012";}
-	.cat-meeting:before {content: "\f007";}
-	.cat-group_meeting:before {content: "\f0c0";}
-	.cat-survey:before {content: "\f044";}
-	.cat-assessment:before {content: "\f19c";}
-	.cat-on_boarding:before {content: "\f21d";}
-	.cat-file:before {content: "\f093";}
-	.cat-email:before {content:"\f003";}
-	.cat-general:before {content: "\f0d0";}
+	//Activity Type Fallbacks
+	.type-lessongroupactivitytype {
+		.repo-item::before {content: "\f0c0";}
+	}
+
+	.type-defaultactivitytype {
+		.repo-item::before {content: "\f073";}
+	}
+
+	.type-meetingactivitytype {
+		.repo-item::before {content: "\f0e6";}
+	}
+
+	.type-meetinggroupactivitytype {
+		.repo-item::before {content: "\f234";}
+	}
+
+	//Actual icons based on category
+	.cat-default:before {content: "\f012" !important;}
+	.cat-meeting:before {content: "\f007" !important;}
+	.cat-group_meeting:before {content: "\f0c0" !important;}
+	.cat-survey:before {content: "\f044" !important;}
+	.cat-assessment:before {content: "\f19c" !important;}
+	.cat-on_boarding:before {content: "\f21d" !important;}
+	.cat-file:before {content: "\f093" !important;}
+	.cat-email:before {content:"\f003" !important;}
+	.cat-general:before {content: "\f0d0" !important;}
+	.cat-assignment:before {content: "\f0f6" !important;}
 }
 .timeline-actions {
 	text-align: center;
