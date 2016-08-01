@@ -33,13 +33,50 @@
 .myquickview-mgt {
 
 	.actions.search-actions {
-		.btn {
+		text-align: right;
+
+		div.menu-component {
+			float: left;
+			display: block;
+
+			a.menu-item {
+				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+				@include button-variant($color-lr-brand, $color-white, $color-lr-brand);
+				border: 1px solid $color-lr-brand;
+			}
+
+			ul.menu-items {
+				padding: 16px 18px 8px;
+				left: 0;
+				right: auto;
+				text-align: left;
+
+				li.menu {
+					margin-bottom: .5rem;
+					padding: 0 .25rem;
+				}
+
+			}
+
+			label {
+				margin: 0;
+			}
+
+			input[type="checkbox"] {
+				margin-right: 3px;
+				vertical-align: baseline;
+			}
+
+		}
+
+		> .btn {
 			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
 
 			&.search {
 				display: none;
 			}
 		}
+
 	}
 
 	.constraints {
@@ -82,6 +119,54 @@
 			visibility: hidden;
 			width: 0;
 			height: 0;
+		}
+
+		&.super-constraints {
+			font-size: 90%;
+			text-align: right;
+			margin: -3.5rem 0 .9rem;
+
+			> .constraint {
+				margin-right: 1rem;
+				text-align: left;
+				display: inline-block;
+			}
+
+			label {
+				display: block;
+				color: $color-lr-grey;
+				margin-bottom: .25rem;
+			}
+
+			.select2-container {
+				max-width: 10rem !important;
+			}
+
+		}
+
+		&.dynamic-constraints {
+			font-size: 90%;
+
+			.composite-constraint-child {
+				text-align: left;
+				display: inline-block;
+				margin: 0 1rem 1rem 0;
+
+				span:not(.select2-container) {
+					display: block;
+					margin-bottom: .25rem;
+				}
+
+				.select2-container {
+					max-width: 11rem !important;
+				}
+			}
+
+			input[type="text"] {
+				border-radius: $border-radius;
+				border: 1px solid $color-lr-light-grey;
+			}
+
 		}
 
 	}
@@ -263,6 +348,7 @@
 	}
 
 	.pager {
+		clear: both;
 
 		.miwt-table > tbody {
 
@@ -304,6 +390,12 @@
 
 }
 
+@media (max-width: 850px) {
+	.sidebar-open .myquickview-mgt .constraints.super-constraints {
+		margin-top: 0;
+	}
+}
+
 @media (min-width:768px) {
 	.myquickview-mgt {
 		.constraints {
@@ -318,7 +410,7 @@
 	}
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
 
 	.flex-container {
 		flex-flow: row nowrap;

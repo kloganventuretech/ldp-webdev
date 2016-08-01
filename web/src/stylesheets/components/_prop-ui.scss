@@ -167,8 +167,14 @@ input[type=number]{
 	box-sizing: content-box;
 }
 
-.picture-editor .actions.bottom {
-	text-align: center;
+.picture-editor {
+	.crop-file input[type="file"] {
+		width: 225px;
+	}
+
+	.actions.bottom {
+		text-align: center;
+	}
 }
 
 .prop.picture {
