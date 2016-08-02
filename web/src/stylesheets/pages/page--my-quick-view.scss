@@ -87,6 +87,7 @@
 			display: flex;
 			justify-content: space-between;
 			flex-flow: column nowrap;
+			clear: both;
 
 			> .constraint {
 				flex: 1 0 auto;
@@ -125,11 +126,14 @@
 			font-size: 90%;
 			text-align: right;
 			margin: -3.5rem 0 .9rem;
+			max-width: 60%;
+			float: right;
 
 			> .constraint {
 				margin-right: 1rem;
 				text-align: left;
 				display: inline-block;
+				margin-bottom: .5rem;
 			}
 
 			label {
@@ -139,7 +143,7 @@
 			}
 
 			.select2-container {
-				max-width: 10rem !important;
+				max-width: 9rem !important;
 			}
 
 		}
@@ -390,11 +394,11 @@
 
 }
 
-@media (max-width: 850px) {
+/*@media (max-width: 850px) {
 	.sidebar-open .myquickview-mgt .constraints.super-constraints {
 		margin-top: 0;
 	}
-}
+}*/
 
 @media (min-width:768px) {
 	.myquickview-mgt {
