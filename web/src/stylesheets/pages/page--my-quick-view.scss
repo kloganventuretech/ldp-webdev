@@ -35,25 +35,38 @@
 	.actions.search-actions {
 		text-align: right;
 
-		div.menu-component {
+		div.menu2-component {
 			float: left;
 			display: block;
 
-			a.menu-item {
+			a.menu2-item {
 				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
 				@include button-variant($color-lr-brand, $color-white, $color-lr-brand);
 				border: 1px solid $color-lr-brand;
+				font-weight: 400;
+				clear: left;
+				display: block;
+
+				&:hover {
+					text-decoration: none;
+				}
+
 			}
 
-			ul.menu-items {
-				padding: 16px 18px 8px;
+			ul.menu2-items {
+				padding: 9px 9px 3px;
 				left: 0;
 				right: auto;
+				top: auto;
 				text-align: left;
+				background: $color-white;
 
-				li.menu {
+				li.menu2 {
 					margin-bottom: .5rem;
 					padding: 0 .25rem;
+					&:hover {
+						background: lighten($color-lr-light-grey, 15%);
+					}
 				}
 
 			}
@@ -87,6 +100,7 @@
 			display: flex;
 			justify-content: space-between;
 			flex-flow: column nowrap;
+			clear: both;
 
 			> .constraint {
 				flex: 1 0 auto;
@@ -125,11 +139,14 @@
 			font-size: 90%;
 			text-align: right;
 			margin: -3.5rem 0 .9rem;
+			max-width: 60%;
+			float: right;
 
 			> .constraint {
 				margin-right: 1rem;
 				text-align: left;
 				display: inline-block;
+				margin-bottom: .5rem;
 			}
 
 			label {
@@ -139,7 +156,7 @@
 			}
 
 			.select2-container {
-				max-width: 10rem !important;
+				max-width: 9rem !important;
 			}
 
 		}
@@ -390,11 +407,11 @@
 
 }
 
-@media (max-width: 850px) {
+/*@media (max-width: 850px) {
 	.sidebar-open .myquickview-mgt .constraints.super-constraints {
 		margin-top: 0;
 	}
-}
+}*/
 
 @media (min-width:768px) {
 	.myquickview-mgt {
