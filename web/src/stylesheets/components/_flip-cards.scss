@@ -1,0 +1,29 @@
+@import "../config/base-vars";
+
+.flip-card {
+	perspective: 800;
+	position: relative;
+	text-align: center;
+}
+.flip-card.flipped {
+	transform: rotatey(-180deg);
+}
+.flip-card {
+	width: 270px;
+	transform-style: preserve-3d;
+	transition: 0.5s;
+	background-color: #fff;
+
+}
+.flip-card .face {
+	backface-visibility: hidden ;
+	z-index: 2;
+}
+.flip-card .face.front {
+	position: absolute;
+	z-index: 1;
+}
+.flip-card .face.back {
+	padding-top: 10%;
+	transform: rotatey(-180deg);
+}
