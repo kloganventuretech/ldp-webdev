@@ -26,6 +26,8 @@ jQuery(function () {
 
 	setupCustomDropdowns();
 
+	setupFlipCards();
+
 	$('form.miwt-form').each(function (idx, form) {
 		//noinspection JSUnusedGlobalSymbols
 		form.submit_options = {
@@ -43,6 +45,7 @@ jQuery(function () {
 					setupCharts(ctx);
 					navHighlight();
 					setupCustomDropdowns(ctx);
+					setupFlipCards(ctx);
 					if($(ctx).hasClass('message-container') || $(ctx).find('.message-container').length > 0)
 						errorMessageCleanup();
 					setTimeout(function () {
