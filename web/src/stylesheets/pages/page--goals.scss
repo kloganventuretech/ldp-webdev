@@ -62,13 +62,16 @@ h2.plan-name {
 		cursor: pointer;
 		background: lighten($color-lr-light-grey, 15%);
 		color: $color-white;
+		border: 1px solid darken($color-lr-light-grey, 5%);
 		margin: 1.5rem auto 0;
 		width: 75%;
-		border: 1px solid darken($color-lr-light-grey, 5%);
-		box-shadow: inset 0 0 3px lighten($color-lr-light-grey, 30%);
 		font-size: 1.75rem;
 		font-weight: 400;
 		line-height: 2.5rem;
+
+		.face {
+
+		}
 
 		.card-block {
 			padding: 3rem 2rem;
@@ -77,6 +80,16 @@ h2.plan-name {
 			flex: 1;
 			align-items: center;
 			justify-content: center;
+			width: 100%;
+
+			.fa-info-circle {
+				&::before {
+					font-size: 60%;
+					margin-left: .5rem;
+					vertical-align: middle;
+				}
+			}
+
 		}
 
 		+ .card {
@@ -87,6 +100,12 @@ h2.plan-name {
 			background: $color-lr-light-grey;
 			border: 1px solid darken($color-lr-light-grey, 5%);
 			box-shadow: 0 0 19px rgba(42, 53, 66, 0.7);
+
+			.face {
+				background: $color-lr-light-grey;
+				border: 1px solid darken($color-lr-light-grey, 5%);
+			}
+
 		}
 
 	}
@@ -330,8 +349,9 @@ section.tracking-metrics {
 			h1 {
 				font-weight: 500;
 				text-align: center;
-				font-size: 1rem;
+				font-size: 1rem !important;
 				color: $color-lr-grey;
+				line-height: 1.25;
 			}
 			.measure-config-graph{
 				margin-top:2rem;
@@ -611,6 +631,14 @@ div.window.dialog {
 		}
 	}
 
+	section.tracking-metrics {
+		div.tracking-metrics .tracking-metric {
+			h1 {
+				min-height: 4.5rem;
+			}
+		}
+	}
+
 }
 
 @media (max-width: 1499px) {
@@ -765,6 +793,405 @@ and (orientation:portrait) {
 		bottom: auto;
 		margin-top: .75rem;
 		right: .5rem;
+	}
+
+}
+
+
+/* ----- ##### BEGIN PRINT STYLES ##### ----- */
+@media print {
+
+	@page {
+		size: landscape;
+		margin: 0;
+	}
+
+	#main-content-wc-0 {
+		margin: 1rem;
+
+		h1, h2, h3, .goal-viewer, .alignment .alignment-header {
+			color: #000 !important;
+		}
+
+		h1, .alignment .alignment-header {
+			font-size: 1.15rem;
+		}
+
+		h2.plan-name {
+			position: absolute;
+			right: 1rem;
+			top: 1rem;
+			font-size: 1.5rem;
+		}
+
+		&::before {
+			content: 'Goal Progress Report';
+			font-size: 1.5rem;
+			display: block;
+			width: 100%;
+			text-align: left;
+			font-weight: 400;
+			margin-bottom: .75rem;
+			border-bottom: 1px solid lighten($color-lr-light-grey, 25%);
+			padding: 0 0 .5rem;
+
+			/*position: absolute;
+			left: 0;
+			top: .75rem;*/
+		}
+
+	}
+
+	#main-header, .sidebar-toggle-box, .coaching-selector.dropdown,
+	#side-nav, #page-footer,
+	ul.tab-items, nav.goal-selector, .actions,
+	.goal-wrapper .carousel-control {
+		display: none !important;
+	}
+
+	.carousel-inner {
+
+		> .carousel-item {
+			display: inline-block !important;
+			vertical-align: top;
+
+			&.measurement-line {
+				width: 60% !important;
+			}
+
+			&.measurement-gauge {
+				width: 25% !important;
+				float: right;
+			}
+
+		}
+
+		.carousel-caption p {
+			font-size: 80% !important;
+		}
+
+	}
+
+	.goal-wrapper .prop-group.goal-measurement .measurement-gauge .measure-config-graph .config-graph {
+		width: 100% !important;
+		height: auto !important;
+	}
+
+	.goal-wrapper .prop-group.goal-measurement .measurement-line .measure-config-graph .config-graph {
+		width: 100% !important;
+		height: 280px !important;
+		//max-height: 560px !important;
+		canvas {
+			//max-width: none;
+			//max-height: none;
+			width: 100% !important;
+			height: auto !important;
+		}
+	}
+
+	.goal-wrapper {
+		padding-right: 1rem;
+		border-right: 1px solid lighten($color-lr-light-grey, 25%);
+		position: relative;
+
+		.goal-info-wrapper {
+			order: 1;
+			flex: 1 0 100%;
+			flex-flow: row wrap;
+
+			.description {
+				label, .val {
+					display: inline;
+				}
+			}
+
+		}
+
+		.prop-group.goal-measurement {
+			order: 2;
+			flex: 1 0 100%;
+		}
+
+		.description {
+			order: 1;
+			flex: 1 0 100%;
+		}
+		.prop-group.smart-gauge {
+			order: 2;
+		}
+		.start-date {
+			order: 3;
+		}
+		.end-date {
+			order: 4;
+		}
+		.measure-info, .metric-last-updated {
+			text-align: left;
+			font-size: .8rem;
+			label {
+				font-size: .8rem;
+			}
+		}
+		.measure-info {
+			position: absolute;
+			right: 1rem;
+			bottom: 4rem;
+		}
+	}
+
+	.goals-viewer {
+
+		.measure-info .metric-last-updated .val {
+			font-style: normal;
+			color: #000;
+
+			&::after {
+				display: none;
+			}
+
+		}
+
+		.goal-viewer-wrapper {
+			flex-direction: row;
+		}
+
+		.tab-container .tab-content, section.tracking-metrics {
+			border: none;
+		}
+		section.tracking-metrics {
+			margin: 0;
+			padding-top: 0;
+			page-break-before: always;
+			//page-break-inside: avoid;
+
+			h1.tracking-metrics-label {
+				font-weight: 400;
+				margin-top: 2rem !important;
+			}
+
+			div.tracking-metrics {
+				display: block;
+				padding: 1rem;
+				margin-right: -15rem;
+
+				.tracking-metric {
+					width: 100%;
+					display: block;
+					margin: 0 0 3rem;
+					padding: 1rem;
+					border: 1px solid #000;
+					border-radius: $border-radius;
+					//page-break-after: always;
+					position: relative;
+
+					.measure-config-graph {
+						margin-top: .25rem;
+					}
+
+					.config-graph {
+						width: 350px !important;
+						height: 260px !important;
+						//max-height: 16rem !important;
+
+						canvas {
+							width: 100% !important;
+							height: auto !important;
+							margin-left: 0;
+						}
+
+					}
+
+					&:nth-of-type(3), &:nth-of-type(5) {
+						margin-top: 3rem;
+						page-break-before: always;
+					}
+
+				}
+
+				h1.metric-label {
+					font-size: 1.05rem !important;
+					width: 100%;
+					text-align: center;
+				}
+
+			}
+
+			.chart-legend {
+				left: 2rem;
+				top: auto;
+				bottom: 0;
+				margin-left: 0;
+				position: absolute;
+			}
+
+			.measure-info {
+				color: #000;
+				position: absolute;
+				right: 2rem;
+				bottom: 2rem;
+				text-align: left;
+
+				.metric-last-updated {
+					text-align: left;
+				}
+
+				label {
+					margin-bottom: 0;
+				}
+
+				.metric-last-updated {
+					margin-top: .25rem;
+				}
+
+				span.val {
+					color: #000;
+				}
+
+			}
+
+			h2 {
+				display: none;
+			}
+
+		}
+
+		.goal-viewer {
+			padding: 0;
+			flex: 2 1 70%;
+
+			> h1 {
+				margin: 0 !important;
+			}
+
+			label {
+				margin-bottom: 0 !important;
+			}
+
+		}
+
+	}
+
+	.chart-legend {
+		left: 2rem;
+		top: auto;
+		bottom: 0;
+		margin-left: 0;
+
+		ul.pie-legend {
+			li:first-child {
+				span {
+					background-color: #46BFBD !important;
+					-webkit-print-color-adjust: exact;
+				}
+			}
+			li:last-child {
+				span {
+					background-color: #F7464A !important;
+					-webkit-print-color-adjust: exact;
+				}
+			}
+		}
+
+	}
+
+	.alignment {
+		margin: 0;
+		padding: 0 1rem;
+		flex: 1 1 30%;
+		border: none;
+
+		.alignment-header {
+			margin-bottom: .5rem;
+
+			&::before {
+				content: 'Aligned to';
+				display: block;
+			}
+		}
+
+		.card {
+			background: transparent;
+			border: none;
+			box-shadow: none;
+			color: #000;
+			margin: 1rem 0 0;
+			width: 100%;
+			padding: .5rem 1rem 1rem;
+
+			&.primary {
+				background: transparent;
+				border: 1px solid $color-lr-grey;
+				box-shadow: none;
+				color: #000;
+
+				.face {
+					border: none;
+				}
+
+			}
+
+			.card-block {
+				display: block;
+				position: relative;
+				text-align: left;
+				padding: 0;
+				min-height: 0;
+
+				&.face {
+					display: block;
+					position: relative;
+					text-align: center;
+					min-height: 0;
+					font-size: 1.35rem;
+					line-height: 1.35;
+					border: none;
+				}
+
+				.fa.fa-info-circle {
+					display: none;
+				}
+
+				&.back {
+					transform: none;
+					text-align: left;
+
+					.card-text {
+						font-size: .8rem;
+						line-height: 1.25;
+						font-weight: 300;
+						font-style: italic;
+					}
+				}
+			}
+
+		}
+
+		&.personal-alignment, &.leadership-alignment {
+
+			canvas {
+				width: 100% !important;
+				height: auto !important;
+			}
+
+			.chart-legend {
+				text-align: center;
+				max-width: none;
+				margin: 0 auto;
+				flex-flow: column nowrap;
+
+				.polararea-legend {
+					text-align: center;
+				}
+
+				&::after {
+					content: 'This goal is aligned with the bolded category/categories.';
+					display: block;
+					margin-top: 1rem;
+					font-style: italic;
+					font-size: .7rem;
+				}
+			}
+		}
 	}
 
 }
