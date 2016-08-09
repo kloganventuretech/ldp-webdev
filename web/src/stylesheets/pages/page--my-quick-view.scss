@@ -36,18 +36,26 @@
 		text-align: right;
 
 		div.menu2-component {
-			float: left;
+			text-align: right;
 			display: block;
 
 			a.menu2-item {
-				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
-				@include button-variant($color-lr-brand, $color-white, $color-lr-brand);
-				border: 1px solid $color-lr-brand;
-				font-weight: 400;
-				clear: left;
-				display: block;
+				color: $color-lr-brand;
+				font-weight: 300;
+				font-size: 90%;
+				border-bottom: 1px solid $color-lr-brand;
+				line-height: 1.15;
+				display: inline-block;
+				margin-bottom: .5rem;
+
+				&::after {
+					content: '+';
+					padding-left: 3px;
+					text-decoration: none;
+				}
 
 				&:hover {
+					border-bottom: 1px solid transparent;
 					text-decoration: none;
 				}
 
@@ -55,11 +63,12 @@
 
 			ul.menu2-items {
 				padding: 9px 9px 3px;
-				left: 0;
-				right: auto;
+				left: auto;
+				right: 0;
 				top: auto;
 				text-align: left;
 				background: $color-white;
+				box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 
 				li.menu2 {
 					margin-bottom: .5rem;
@@ -137,10 +146,8 @@
 
 		&.super-constraints {
 			font-size: 90%;
-			text-align: right;
-			margin: -3.5rem 0 .9rem;
-			max-width: 60%;
-			float: right;
+			text-align: left;
+			width: 100%;
 
 			> .constraint {
 				margin-right: 1rem;
@@ -157,12 +164,40 @@
 
 			.select2-container {
 				max-width: 9rem !important;
+				width: 9rem !important;
+			}
+
+			a.reset {
+				float: right;
+				margin: 2rem 1rem 0 0;
+				display: inline-block;
+				border-bottom: 1px solid $color-lr-brand;
+				line-height: 1.15;
+
+				&:hover {
+					text-decoration: none;
+					border-bottom: 1px solid transparent;
+				}
+
 			}
 
 		}
 
 		&.dynamic-constraints {
 			font-size: 90%;
+
+
+			> span.constraint {
+				display: block;
+				width: 100%;
+				text-align: left;
+
+				> span[data-features="watch"] {
+					display: block;
+					width: 100%;
+				}
+
+			}
 
 			.composite-constraint-child {
 				text-align: left;
@@ -309,36 +344,79 @@
 				align-items: flex-end;
 				justify-content: center;
 				margin-top: .5rem;
-				padding-top: 8px;
+				padding: 8px 0 5px;
 
 				span.constraint {
 					flex: 1;
 
 					&.danger {
-						background: $color-lr-red;
+						label.checkbox-constrsint {
+							background: $color-lr-red;
+						}
 
-						.checkbox-constrsint[checked="checked"] + label.checkbox-constrsint {
-							border-bottom: 3px solid darken($color-lr-red, 15%);
+						.checkbox-constrsint[checked="checked"] {
+							+ label.checkbox-constrsint {
+								border-bottom: 3px solid darken($color-lr-red, 15%);
+							}
 						}
 
 					}
 
 					&.warning {
-						background: $color-lr-yellow;
+						label.checkbox-constrsint {
+							background: $color-lr-yellow;
+						}
 
-						.checkbox-constrsint[checked="checked"] + label.checkbox-constrsint {
-							border-bottom: 3px solid darken($color-lr-yellow, 15%);
+						.checkbox-constrsint[checked="checked"] {
+							+ label.checkbox-constrsint {
+								border-bottom: 3px solid darken($color-lr-yellow, 15%);
+							}
 						}
 
 					}
 
 					&.success {
-						background: $color-lr-brand;
-
-						.checkbox-constrsint[checked="checked"] + label.checkbox-constrsint {
-							border-bottom: 3px solid darken($color-lr-brand, 15%);
+						label.checkbox-constrsint {
+							background: $color-lr-brand;
 						}
 
+						.checkbox-constrsint[checked="checked"] {
+							+ label.checkbox-constrsint {
+								border-bottom: 3px solid darken($color-lr-brand, 15%);
+							}
+						}
+
+					}
+
+					.checkbox-constrsint[checked="checked"] + label.checkbox-constrsint {
+
+						&::after {
+							content: '';
+							background: transparent;
+							box-shadow: 0 0 8px rgba(0,0,0,0.8);
+							display: block;
+							height: 100%;
+							width: 100%;
+							position:absolute;
+							top: 0;
+							left: 0;
+							z-index: -1;
+						}
+
+						span {
+							position: relative;
+							&::after {
+								content: '';
+								position: absolute;
+								left: 50%;
+								margin-left: -15px;
+								bottom: -19px;
+								border-bottom: 10px solid $color-lr-light-grey;
+								border-left: 15px solid transparent;
+								border-right: 15px solid transparent;
+								display: block;
+							}
+						}
 					}
 
 					> span.ctb.label-after {
@@ -353,7 +431,9 @@
 					}
 
 					input.checkbox-constrsint {
-						margin-left: -4px;
+						//margin-left: -4px;
+						margin-left: 0;
+						display: none;
 					}
 
 				}
@@ -458,4 +538,23 @@
 
 	}
 
+}
+
+@media (min-width: 1400px) {
+	.myquickview-mgt {
+		.constraints.dynamic-constraints {
+			.composite-constraint-child {
+				width: 18%;
+
+				span:not(.select2-container) {
+					display: block;
+					margin-bottom: .25rem;
+				}
+
+				input[type="text"], .select2-container {
+					width: 100% !important;
+				}
+			}
+		}
+	}
 }
