@@ -354,6 +354,12 @@ div.window.dialog /*specificity*/ {
 	max-width: 65%;
 }
 
+#operation div.window.dialog {
+	textarea {
+		height: 8rem;
+	}
+}
+
 @media (max-width: 767px) {
 	div.window.dialog {
 		.windowcontent {
