@@ -358,6 +358,9 @@ div.window.dialog /*specificity*/ {
 	textarea {
 		height: 8rem;
 	}
+	.select2-container {
+		width: 11rem !important;
+	}
 }
 
 @media (max-width: 767px) {
