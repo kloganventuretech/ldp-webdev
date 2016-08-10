@@ -4,9 +4,17 @@
 	perspective: 800;
 	position: relative;
 	text-align: center;
-}
-.flip-card.flipped {
-	transform: rotatey(-180deg);
+	//backface-visibility: hidden;
+
+	&.flipped {
+		transform: rotatey(-180deg);
+
+		.face.back {
+			transform: rotatey(180deg);
+			backface-visibility: visible;
+		}
+
+	}
 }
 .flip-card {
 	width: 270px;
@@ -16,7 +24,7 @@
 
 }
 .flip-card .face {
-	backface-visibility: hidden ;
+	backface-visibility: hidden;
 	z-index: 2;
 }
 .flip-card .face.front {
@@ -26,4 +34,11 @@
 .flip-card .face.back {
 	padding-top: 10%;
 	transform: rotatey(-180deg);
+	background: $color-lr-light-grey;
+
+	.card-text {
+		font-size: 1.25rem;
+		line-height: 1.5rem;
+	}
+
 }
