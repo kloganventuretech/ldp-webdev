@@ -55,6 +55,8 @@ function setupChart(target) {
 				var canvasContext = canvas.getContext('2d');
 				canvas.setAttribute("height", "150");
 				canvas.setAttribute("width", "150");
+
+				options.showTooltips = false;
 				//noinspection JSUnresolvedFunction
 				return new Chart(canvasContext).Pie(data, options);
 			}
