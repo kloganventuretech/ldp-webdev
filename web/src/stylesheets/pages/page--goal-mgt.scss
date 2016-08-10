@@ -28,7 +28,7 @@ $tab-content-color-bg: inherit;
 		white-space: normal;
 		width: 100%;
 
-		&.status-active {
+		/*&.status-active {
 			@include button-variant($color-white, $color-lr-brand, darken($color-lr-brand, 15%));
 		}
 
@@ -42,8 +42,64 @@ $tab-content-color-bg: inherit;
 
 		&.active {
 			box-shadow: 0 0 10px rgba(0,0,0,0.7) !important;
+		}*/
+
+	}
+
+	.goalconfig-results {
+
+		.actions {
+			padding: .75rem 0 1.25rem;
+			border-bottom: 1px solid lighten($color-lr-light-grey, 15%);
+
+			.btn {
+				background: transparent;
+				border: none;
+				box-shadow: none;
+				color: $color-lr-brand;
+				text-decoration: underline;
+				font-size: .9rem;
+				padding: .5rem .375rem;
+				margin: 0;
+				line-height: 1.35;
+
+				&:hover {
+					text-decoration: none;
+				}
+
+				&.active {
+					border: 1px solid $color-lr-brand;
+					box-shadow: 0 0 10px rgba(0,0,0,0.5) !important;
+					text-decoration: none;
+				}
+
+			}
+
 		}
 
+		tr.last {
+
+			.actions {
+				border-bottom: 0;
+			}
+
+		}
+
+	}
+
+	.repo-item-search {
+		.search > .actions.entity-actions {
+			.btn.add {
+				&::after {
+					content: '+';
+					display: inline-block;
+					vertical-align: middle;
+					padding-left: 3px;
+					margin-top: -2px;
+					font-size: 110%;
+				}
+			}
+		}
 	}
 
 }
@@ -314,6 +370,33 @@ $tab-content-color-bg: inherit;
 
 }
 
+.goal-management {
+
+	.actions.nav-actions {
+
+		a.view-progress {
+			border: 1px solid $btn-primary-border;
+			@include button-variant($color-lr-brand, $color-white, $btn-primary-border);
+			@include button-size($btn-padding-y, $btn-padding-x, $font-size-root, $line-height-lg, $border-radius-sm);
+			display: inline-block;
+			font-weight: 400;
+
+			&::before {
+				content: '\f080';
+				font-family: FontAwesome;
+				padding-right: 3px;
+			}
+
+			&:hover {
+				text-decoration: none;
+			}
+
+		}
+
+	}
+
+}
+
 div.window.dialog {
 
 	.prop-header-actions {
@@ -374,11 +457,17 @@ div.window.dialog {
 
 	.goal-management {
 
+		.goal-selector {
+			text-align: center;
+		}
+
 		.repo-item-search {
+
 			.search-bar {
-				clear: none;
-				float: right;
-				margin: 0;
+				width: 10rem;
+				float: none;
+				margin: 0 auto;
+				text-align: left;
 			}
 			.pager-goalconfig-results {
 				clear: both;
@@ -480,4 +569,19 @@ div.window.dialog {
 		width: 15rem;
 	}
 
+}
+
+@media (max-width: 640px) {
+	.goal-management {
+		.actions.nav-actions a.view-progress {
+			color: transparent !important;
+			width: 40px;
+			overflow: hidden;
+			white-space: nowrap;
+			padding: .375rem .75rem;
+			&::before {
+				color: $color-lr-brand !important;
+			}
+		}
+	}
 }
