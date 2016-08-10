@@ -10,6 +10,7 @@
             <mapping deploy="Design/Entropy/font" local="$PROJECT_DIR$/web/build/design/fonts" web="/Design/Entropy/font" />
             <mapping deploy="Javascript/Entropy/components" local="$PROJECT_DIR$/web/build/javascript/components" web="Javascript/Entropy/components" />
             <mapping deploy="Javascript/Entropy/templates" local="$PROJECT_DIR$/web/build/javascript/templates" web="Javascript/Entropy/templates" />
+            <mapping deploy="Javascript/Entropy/pages" local="$PROJECT_DIR$/web/build/javascript/pages" web="Javascript/Entropy/pages" />
           </mappings>
         </serverdata>
       </paths>
