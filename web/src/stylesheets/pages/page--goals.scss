@@ -49,6 +49,30 @@ h2.plan-name {
 	margin: 1rem 0 1rem 1rem;
 	text-align: center;
 	padding-top: 2.5rem;
+	position: relative;
+
+	.printpage {
+		position: absolute;
+		right: -.25rem;
+		top: -1.25rem;
+
+		a {
+			color: transparent;
+			text-decoration: none;
+			height: 2.75rem;
+			padding: .5rem;
+			display: block;
+
+			&::before {
+				content: '\f02f';
+				font-family: FontAwesome;
+				color: $color-lr-brand;
+				font-size: 1.35rem;
+				display: block;
+			}
+		}
+
+	}
 
 	.alignment-header {
 		margin-bottom: 1.25rem;
@@ -579,6 +603,12 @@ div.window.dialog {
 
 /* ----- MEDIA QUERIES */
 
+@media (max-width: 1024px) {
+	.alignment .printpage {
+		display: none;
+	}
+}
+
 @media (max-width: 1099px) {
 	.goals-viewer,
 	.goal-management {
@@ -1100,6 +1130,10 @@ and (orientation:portrait) {
 		flex: 1 1 30%;
 		border: none;
 
+		.printpage {
+			display: none;
+		}
+
 		.alignment-header {
 			margin-bottom: .5rem;
 
@@ -1117,6 +1151,12 @@ and (orientation:portrait) {
 			margin: 1rem 0 0;
 			width: 100%;
 			padding: .5rem 1rem 1rem;
+
+			&.flipped {
+				.face.back, .face.front {
+					transform: rotatey(180deg);
+				}
+			}
 
 			&.primary {
 				background: transparent;

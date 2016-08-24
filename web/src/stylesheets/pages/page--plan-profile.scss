@@ -231,6 +231,48 @@
 		padding: 0;
 
 	}
+
+	.goal-notification-time {
+		padding: 0;
+
+		> label {
+			margin-top: 1.5rem;
+			font-size: 1rem;
+		}
+
+		.zoned-time-editor {
+			label {
+				margin-top: 0;
+				font-size: 1rem;
+				font-weight: 300;
+			}
+
+			.time > span {
+				display: inline-block;
+				vertical-align: baseline;
+				margin-bottom: .15rem;
+
+				&.hours, &.minutes, &.clock-period {
+					width: 5rem;
+				}
+
+				&.clock-period {
+					.select2-container {
+						width: 100% !important;
+						max-width: none !important;
+					}
+				}
+
+			}
+
+			.prop.hours, .prop.timezone {
+				padding-left: 0;
+			}
+
+		}
+
+	}
+
 }
 
 .supporters-content {
@@ -364,6 +406,20 @@
 		}
 	}
 
+}
+
+div.window.dialog {
+	&.manage-supporters-dialog {
+		.search-wrapper, .search {
+			.entity-actions {
+				margin-top: .25rem;
+			}
+			.entity-action.menu-component {
+				margin-right: 0;
+				margin-top: -.5rem;
+			}
+		}
+	}
 }
 
 @media (min-width: 768px) {
