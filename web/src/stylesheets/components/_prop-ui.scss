@@ -17,7 +17,7 @@
 
 	input,
 	textarea {
-		border: 1px solid #B7B7B5;
+		border: 1px solid #aaa;
 		padding: 2px 5px;
 		margin: 2px;
 		border-radius: $border-radius-lg;
@@ -203,7 +203,7 @@ input[type=number]{
 	margin-top: 1rem;
 
 	> div {
-		width: 8rem;
+		width: 100%;
 		.select2-container {
 			max-width: 100%;
 			width: 100% !important;
@@ -243,7 +243,9 @@ input[type=number]{
 	}
 
 	span.rtb.label-after {
-		display: block;
+		display: inline-block;
+		user-select: none;
+		margin-right: .75rem;
 
 		+ span.rtb.label-after {
 			padding-left: 0;

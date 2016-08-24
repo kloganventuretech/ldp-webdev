@@ -119,7 +119,7 @@ div.window.dialog /*specificity*/ {
 	}
 
 	textarea {
-		border: 1px solid lighten($color-lr-light-grey, 25%);
+		border: 1px solid #aaa;
 		border-radius: $border-radius-sm;
 		height: 3rem;
 	}
@@ -135,7 +135,7 @@ div.window.dialog /*specificity*/ {
 	}
 
 	input[type="text"] {
-		border: 1px solid lighten($color-lr-light-grey, 25%);
+		border: 1px solid #aaa;
 		border-radius: $border-radius-sm;
 		padding: 2px 5px;
 	}
@@ -157,9 +157,76 @@ div.window.dialog /*specificity*/ {
 
 	}
 
+	.prop-group.goal-notification-time {
+		label.prop-group-title {
+			margin-bottom: 0;
+			font-size: 1rem;
+		}
+
+		.zoned-time-editor {
+			span.time, span.timezone {
+				display: inline-block;
+				vertical-align: top;
+			}
+			span.time {
+				.select2-container {
+					max-width: none !important;
+					width: 4rem !important;
+				}
+
+				.prop.hours {
+					padding-left: 0;
+				}
+
+				input {
+					margin: 0;
+				}
+
+				> span {
+					display: inline-block;
+					vertical-align: baseline;
+				}
+			}
+			span.timezone {
+				margin-left: 1.5rem;
+				> label {
+					margin-top: 0;
+				}
+				.select2-container {
+					max-width: none !important;
+					width: 9.5rem !important;
+					margin-top: 0;
+				}
+			}
+		}
+
+	}
+
+	.zoned-time-editor {
+		.select2-container {
+			margin-top: -2px;
+			.select2-selection--single {
+				height: 30px;
+			}
+		}
+	}
+
+	.prop-group.end_time {
+		.prop-group-title {
+			font-size: 1rem;
+			margin-top: 0;
+		}
+	}
+
 	.prop.subject {
 		input[type="text"] {
 			width: 100%;
+		}
+	}
+
+	.mtg-instructions {
+		+ .task-assignment {
+			margin-top: 2rem;
 		}
 	}
 
@@ -332,7 +399,7 @@ div.window.dialog /*specificity*/ {
 
 	&.close-plan-dialog {
 		input[type="number"] {
-			border: 1px solid lighten($color-lr-light-grey, 25%);
+			border: 1px solid #aaa;
 			border-radius: $border-radius-sm;
 			display: block;
 			margin: 1rem 0;
@@ -344,6 +411,22 @@ div.window.dialog /*specificity*/ {
 			padding: 20px 0 15px;
 			text-align: right;
 			width: 100%;
+		}
+
+	}
+
+	.prop.new-user-email {
+		margin: .5rem 0 1.5rem;
+
+		label {
+			display: block;
+			margin-bottom: 0;
+			font-weight: 400;
+		}
+
+		input {
+			border: 1px solid #aaa;
+			border-radius: $border-radius-sm;
 		}
 
 	}

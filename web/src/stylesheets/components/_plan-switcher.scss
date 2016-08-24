@@ -3,16 +3,20 @@
 #main-content-wc-0 {
 
   > h2.plan-name {
-    max-width: 70%;
+    max-width: calc(100% - 16.25rem);
+    float: left;
   }
 
 }
 
 .plan-switcher {
   display: block;
-  position: absolute;
+  float: right;
+  width: 16.25rem;
+  padding-top: 1rem;
+  /*position: absolute;
   right: 2rem;
-  top: 5.75rem;
+  top: 5.75rem;*/
   text-align: right;
 
   button.btn-switch {
@@ -21,7 +25,8 @@
 
   span.select2-container {
     text-align: left;
-    width: 20rem !important;
+    width: 100% !important;
+    max-width: none !important;
   }
 
 }
@@ -35,6 +40,7 @@ and (orientation: portrait) {
     top: 0;
     text-align: center;
     margin-bottom: 1rem;
+    float: none;
   }
   #main-content-wc-0 {
 
@@ -43,15 +49,6 @@ and (orientation: portrait) {
       text-align: center;
     }
 
-  }
-}
-
-@media (min-width: 768px) {
-  .plan-switcher {
-    span.select2-container {
-      text-align: left;
-      width: 25rem !important;
-    }
   }
 }
 
@@ -66,10 +63,7 @@ and (orientation: portrait) {
   }
 
   .plan-switcher {
-    position: relative;
-    left: 0;
-    right: auto;
-    top: 0;
+    float: none;
     text-align: center;
     margin-bottom: 1rem;
   }

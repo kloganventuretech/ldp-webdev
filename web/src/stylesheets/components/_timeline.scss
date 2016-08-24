@@ -62,6 +62,9 @@
 	select.val {
 		min-width: 8.5rem;
 	}
+	.select2-container {
+		max-width: none;
+	}
 }
 .timeline {
 	position: relative;
@@ -706,6 +709,18 @@
 
 	.prop.start-time {
 		margin-right: 1.5rem;
+	}
+
+	.prop.re-reminder {
+		a {
+			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+			border: 1px solid $color-lr-brand;
+			display: inline-block;
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 
 }

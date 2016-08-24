@@ -364,7 +364,35 @@ $tab-content-color-bg: inherit;
 	.prop-header{
 		display: none;
 	}
-	.prop-body{
+
+	.notification-schedule {
+		margin-bottom: 0;
+
+		.prop {
+
+			&.schedule {
+				padding: 0;
+				margin: 0;
+			}
+
+			&.month {
+				padding: 0;
+
+				.select2-container {
+					width: 8rem !important;
+					max-width: none !important;
+				}
+			}
+
+			&.dow, &.wom {
+				padding: 0;
+			}
+
+			.label-after label, .label-after label span {
+				text-transform: none;
+			}
+
+		}
 
 	}
 
@@ -374,23 +402,34 @@ $tab-content-color-bg: inherit;
 
 	.actions.nav-actions {
 
-		a.view-progress {
+		a.view-progress, .btn {
 			border: 1px solid $btn-primary-border;
 			@include button-variant($color-lr-brand, $color-white, $btn-primary-border);
 			@include button-size($btn-padding-y, $btn-padding-x, $font-size-root, $line-height-lg, $border-radius-sm);
 			display: inline-block;
+			vertical-align: middle;
 			font-weight: 400;
-
-			&::before {
-				content: '\f080';
-				font-family: FontAwesome;
-				padding-right: 3px;
-			}
 
 			&:hover {
 				text-decoration: none;
 			}
 
+		}
+
+		a.view-progress {
+			&::before {
+				content: '\f080';
+				font-family: FontAwesome;
+				padding-right: 3px;
+			}
+		}
+
+		.btn {
+			&::before {
+				content: '\f140';
+				font-family: FontAwesome;
+				padding-right: 3px;
+			}
 		}
 
 	}
@@ -425,6 +464,56 @@ div.window.dialog {
 		}
 		.select2-container {
 			margin-bottom: 1.75rem;
+		}
+	}
+
+	.preferences-editor {
+
+		.prop.personal-goals-private-editor {
+			padding: 0;
+			margin: 0;
+		}
+
+		.goal-notification-time {
+			padding: 0;
+			margin-bottom: 2rem;
+
+			> label {
+				margin-top: 1.5rem;
+				font-size: 1rem;
+			}
+
+			.zoned-time-editor {
+				label {
+					margin-top: 0;
+					font-size: 1rem;
+					font-weight: 300;
+				}
+
+				.time > span {
+					display: inline-block;
+					vertical-align: baseline;
+					margin-bottom: .15rem;
+
+					&.hours, &.minutes, &.clock-period {
+						width: 5rem;
+					}
+
+					&.clock-period {
+						.select2-container {
+							width: 100% !important;
+							max-width: none !important;
+						}
+					}
+
+				}
+
+				.prop.hours, .prop.timezone {
+					padding-left: 0;
+				}
+
+			}
+
 		}
 	}
 
@@ -573,14 +662,16 @@ div.window.dialog {
 
 @media (max-width: 640px) {
 	.goal-management {
-		.actions.nav-actions a.view-progress {
-			color: transparent !important;
-			width: 40px;
-			overflow: hidden;
-			white-space: nowrap;
-			padding: .375rem .75rem;
-			&::before {
-				color: $color-lr-brand !important;
+		.actions.nav-actions {
+			a.view-progress, .btn {
+				color: transparent !important;
+				width: 40px;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: .375rem .75rem;
+				&::before {
+					color: $color-lr-brand !important;
+				}
 			}
 		}
 	}

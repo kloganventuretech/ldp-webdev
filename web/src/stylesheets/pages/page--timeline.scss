@@ -8,6 +8,7 @@
 
 .flex-container {
 	display: flex;
+	clear: both;
 
 	.no-config-message {
 		display: none;
@@ -153,7 +154,7 @@
 			}
 
 			input[type="text"] {
-				border: 1px solid #B7B7B5;
+				border: 1px solid #aaa;
 				border-radius: $border-radius-sm;
 				padding: 2px 5px;
 			}
@@ -513,6 +514,29 @@ div.window.configure-task  {
 				margin-bottom: -3.25rem;
 			}
 		}
+	}
+
+}
+
+#operation {
+	div.window.dialog {
+		.zoned-time-editor {
+			.clock-period {
+				.select2-container {
+					width: 4rem !important;
+				}
+			}
+		}
+	}
+}
+
+div.window.activity-configurer-dialog {
+	.instructions {
+		padding: 2rem 0 0 2rem;
+	}
+
+	.instructions + .start-time {
+		padding-top: .5rem;
 	}
 
 }
