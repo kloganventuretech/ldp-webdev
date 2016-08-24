@@ -40,6 +40,31 @@ h2.plan-name {
 	}
 
 }
+
+.printpage {
+	position: absolute;
+	right: 0;
+	top: 4.75rem;
+	z-index: 99;
+
+	a {
+		color: transparent;
+		text-decoration: none;
+		height: 2.75rem;
+		padding: .5rem;
+		display: block;
+
+		&::before {
+			content: '\f02f';
+			font-family: FontAwesome;
+			color: $color-lr-brand;
+			font-size: 1.15rem;
+			display: block;
+		}
+	}
+
+}
+
 .alignment {
 	display: flex;
 	flex-flow: column nowrap;
@@ -50,29 +75,6 @@ h2.plan-name {
 	text-align: center;
 	padding-top: 2.5rem;
 	position: relative;
-
-	.printpage {
-		position: absolute;
-		right: -.25rem;
-		top: -1.25rem;
-
-		a {
-			color: transparent;
-			text-decoration: none;
-			height: 2.75rem;
-			padding: .5rem;
-			display: block;
-
-			&::before {
-				content: '\f02f';
-				font-family: FontAwesome;
-				color: $color-lr-brand;
-				font-size: 1.35rem;
-				display: block;
-			}
-		}
-
-	}
 
 	.alignment-header {
 		margin-bottom: 1.25rem;
@@ -667,6 +669,21 @@ div.window.dialog {
 				min-height: 4.5rem;
 			}
 		}
+	}
+
+	.printpage {
+		position: absolute;
+		right: -.25rem;
+		top: 5.25rem;
+		z-index: 99;
+
+		a {
+
+			&::before {
+				font-size: 1.35rem;
+			}
+		}
+
 	}
 
 }
