@@ -14,9 +14,7 @@ function enableTooltips(ctx) {
 			}
 		});
 		$ctx.find('[data-toggle="tooltip"]').tooltip();
-		$ctx.find('[data-toggle="popover"]').popover({
-			trigger: 'hover'
-		});
+		$ctx.find('[data-toggle="popover"]').popover();
 	}
 
 }
