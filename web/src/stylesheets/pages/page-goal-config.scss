@@ -1,0 +1,137 @@
+@import "../config/base-vars";
+@import "../components/strength-meter";
+@import "../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../bower_components/bootstrap/scss/buttons";
+
+#main-content-wc-0 .goal-configuration {
+	h1 {
+		&.title {
+			color: $brand-primary;
+			text-transform: uppercase;
+		}
+		&.step-name {
+			color: $brand-primary;
+			margin-top:-1rem;
+		}
+	}
+	.goal-name {
+		h1.step-name {
+			display: inline-block;
+		}
+		.goal-status {
+			display: inline-block;
+			color: $color-light-grey;
+			padding-left: .5rem;
+			line-height: 3.75rem; // h1 height
+			&:before {
+				display: inline-block;
+				content: "\2014";
+
+			}
+		}
+	}
+}
+
+.step-wrapper {
+	display: flex;
+	.prop {
+		margin-right: 2rem;
+	}
+}
+
+section.goal-step {
+	background-color: #fff;
+	padding:.75rem;
+	margin-top: 1rem;
+	.persistence-actions {
+		float: right;
+	}
+}
+
+.goal-header {
+	@include clearfix;
+	.actions {
+		float: right;
+		text-align: center;
+		margin-top: -2rem;
+	}
+	.row1 {
+		margin-bottom: .5rem;
+		.btn {
+			margin:0;
+			border-color: #000;
+		}
+		.view {
+			border-right: none;
+			border-radius:25% 0 0 25%;
+		}
+		.edit {
+			border-left: none;
+			border-radius: 0 25% 25% 0;
+			background-color: darken($brand-primary, 20%);
+			color: #fff;
+		}
+	}
+}
+
+.goal-definition {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	.reporting-frequency,
+	.goal-statement {
+		flex-grow:2;
+
+	}
+	.goal-accomplished-by,
+	.goal-measured-by,
+	.goal-baseline-amount,
+	.goal-target-amount {
+		flex-grow:1;
+		width: 45%;
+		padding-right: 2%;
+	}
+}
+
+.step-specific {
+	ul {
+		list-style: none;
+	}
+	li {
+		margin-top: .5rem;
+		.author {
+			&:after {
+				content: ": ";
+			}
+		}
+		.description {
+			display: block;
+			font-style: italic;
+		}
+	}
+}
+#main-content-wc-0 .step-measurable {
+	.behaviors, .attitudes {
+		min-width: 40%;
+		padding: 0 2rem;
+	}
+	.behaviors{
+		border-right: $color-light-grey 1px solid;
+	}
+	.leading-indicator {
+		border: $color-grey 1px solid;
+		padding:.5rem .5rem 0 .5rem;
+		margin-bottom: 1rem;
+		background-color: $color-lighter-grey;
+
+		h1 {
+			font-size: 1.2rem;
+			font-style: italic;
+			font-weight: 400;
+			color:#000;
+			margin: 0 0 1rem;
+			padding: 5px;
+		}
+	}
+}
